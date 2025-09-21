@@ -76,7 +76,7 @@ export const upload = multer({
     storage: storage,
     fileFilter: fileFilter,
     limits: {
-        fileSize: 10 * 1024 * 1024, // 10MB máximo
+        fileSize: 50 * 1024 * 1024, // 50MB máximo (aumentado desde 10MB)
         files: 5 // Máximo 5 archivos por vez
     }
 });
@@ -144,6 +144,54 @@ export const uploadFiles = async (req, res) => {
 };
 
 /**
+ * Middleware para manejar errores de multer
+ * @param {Error} error - Error object
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Next middleware function
+ */
+export const handleMulterError = (error, req, res, next) => {
+    if (error instanceof multer.MulterError) {
+        if (error.code === 'LIMIT_FILE_SIZE') {
+            return res.status(413).json({
+                success: false,
+                message: 'El archivo es demasiado grande. El tamaño máximo permitido es 50MB.',
+                error: 'FILE_TOO_LARGE'
+            });
+        }
+        if (error.code === 'LIMIT_FILE_COUNT') {
+            return res.status(413).json({
+                success: false,
+                message: 'Demasiados archivos. Máximo 5 archivos por vez.',
+                error: 'TOO_MANY_FILES'
+            });
+        }
+        if (error.code === 'LIMIT_UNEXPECTED_FILE') {
+            return res.status(400).json({
+                success: false,
+                message: 'Campo de archivo inesperado.',
+                error: 'UNEXPECTED_FILE'
+            });
+        }
+    }
+    
+    if (error.message && error.message.includes('Solo se permiten archivos')) {
+        return res.status(400).json({
+            success: false,
+            message: error.message,
+            error: 'INVALID_FILE_TYPE'
+        });
+    }
+
+    // Error genérico
+    return res.status(500).json({
+        success: false,
+        message: 'Error al procesar el archivo',
+        error: 'UPLOAD_ERROR'
+    });
+};
+
+/**
  * Controlador para listar archivos en una carpeta específica
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object
@@ -188,14 +236,14 @@ export const listFiles = async (req, res) => {
             })
         );
 
-        // Filtrar solo archivos Excel y CSV
-        const excelFiles = fileDetails.filter(file => 
-            ['.xlsx', '.xls', '.csv'].includes(file.extension)
+        // Filtrar archivos (Excel, CSV y TXT)
+        const validFiles = fileDetails.filter(file => 
+            ['.xlsx', '.xls', '.csv', '.txt'].includes(file.extension)
         );
 
         res.render('file-list', {
             title: `${folderName}`,
-            files: excelFiles,
+            files: validFiles,
             folderType: type,
             folderName: folderName
         });
@@ -204,7 +252,7 @@ export const listFiles = async (req, res) => {
         console.error('Error al listar archivos:', error);
         res.status(500).render('error', {
             title: 'Error',
-            message: 'Error al cargar la lista de archivos'
+            message: 'Error interno del servidor al listar archivos'
         });
     }
 };

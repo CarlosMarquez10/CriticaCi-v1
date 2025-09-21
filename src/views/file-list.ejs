@@ -52,6 +52,8 @@
                                                 <i class="fas fa-file-excel text-success"></i>
                                             <% } else if (file.extension === '.csv') { %>
                                                 <i class="fas fa-file-csv text-info"></i>
+                                            <% } else if (file.extension === '.txt') { %>
+                                                <i class="fas fa-file-alt text-warning"></i>
                                             <% } else { %>
                                                 <i class="fas fa-file text-secondary"></i>
                                             <% } %>
@@ -165,6 +167,7 @@ let folderTypeToDelete = '';
 
 // Función para confirmar eliminación
 function confirmDelete(filename, folderType) {
+    console.log('confirmDelete llamado con:', filename, folderType);
     fileToDelete = filename;
     folderTypeToDelete = folderType;
     document.getElementById('fileToDelete').textContent = filename;
@@ -195,43 +198,67 @@ function downloadFile(filename, folderType) {
 
 // Event listener para el botón de confirmación
 document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+    console.log('Intentando eliminar:', fileToDelete, 'del tipo:', folderTypeToDelete);
     if (fileToDelete && folderTypeToDelete) {
         deleteFile(fileToDelete, folderTypeToDelete);
         bootstrap.Modal.getInstance(document.getElementById('deleteModal')).hide();
+    } else {
+        console.error('Variables no definidas:', { fileToDelete, folderTypeToDelete });
     }
 });
 
 // Función para eliminar archivo
 function deleteFile(filename, folderType) {
+    console.log('deleteFile llamado con:', filename, folderType);
+    
+    // Validar que tenemos los parámetros necesarios
+    if (!filename || !folderType) {
+        console.error('Parámetros faltantes:', { filename, folderType });
+        return;
+    }
+    
     const deleteBtn = document.querySelector(`[data-filename="${filename}"]`);
+    if (!deleteBtn) {
+        console.error('No se encontró el botón de eliminar para:', filename);
+        return;
+    }
+    
     const originalContent = deleteBtn.innerHTML;
     
     // Mostrar estado de carga
     deleteBtn.disabled = true;
     deleteBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
     
-    fetch(`/api/files/${folderType}/${encodeURIComponent(filename)}`, {
+    const deleteUrl = `/api/files/${folderType}/${encodeURIComponent(filename)}`;
+    console.log('URL de eliminación:', deleteUrl);
+    
+    fetch(deleteUrl, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
         }
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log('Respuesta del servidor:', response.status, response.statusText);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
+        console.log('Datos recibidos:', data);
         if (data.success) {
-            showAlert('success', data.message);
             // Recargar la página después de un breve delay
             setTimeout(() => {
                 window.location.reload();
-            }, 1500);
+            }, 1000);
         } else {
-            showAlert('danger', `Error: ${data.message}`);
             deleteBtn.disabled = false;
             deleteBtn.innerHTML = originalContent;
         }
     })
     .catch(error => {
-        showAlert('danger', `Error de conexión: ${error.message}`);
+        console.error('Error completo:', error);
         deleteBtn.disabled = false;
         deleteBtn.innerHTML = originalContent;
     });

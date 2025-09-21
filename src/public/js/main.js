@@ -101,7 +101,8 @@ function formatFileSize(bytes) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
-// Función para eliminar archivos
+// Función para eliminar archivos - COMENTADA para usar la nueva función en file-list.ejs
+/*
 function deleteFile(url, fileName) {
     // Mostrar indicador de carga
     const loadingAlert = document.createElement('div');
@@ -139,6 +140,7 @@ function deleteFile(url, fileName) {
         showAlert('danger', `Error de conexión: ${error.message}`);
     });
 }
+*/
 
 // Función para mostrar alertas
 function showAlert(type, message) {

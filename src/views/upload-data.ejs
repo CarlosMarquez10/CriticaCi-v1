@@ -25,14 +25,14 @@
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle me-2"></i>
                         <strong>Información:</strong> Los archivos se guardarán en la carpeta <code>src/data</code>. 
-                        Solo se permiten archivos Excel (.xlsx, .xls) y CSV (.csv) con un tamaño máximo de 10MB.
+                        Solo se permiten archivos Excel (.xlsx, .xls) y CSV (.csv) con un tamaño máximo de 50MB.
                     </div>
                     
                     <form id="uploadForm" action="/api/upload/data" method="POST" enctype="multipart/form-data">
                         <div class="upload-area">
                             <i class="fas fa-cloud-upload-alt fa-3x mb-3" style="color: #ff6b35;"></i>
                             <h5>Arrastra archivos aquí o haz clic para seleccionar</h5>
-                            <p class="text-muted">Archivos permitidos: .xlsx, .xls, .csv (máx. 10MB cada uno)</p>
+                            <p class="text-muted">Archivos permitidos: .xlsx, .xls, .csv (máx. 50MB cada uno)</p>
                             
                             <input type="file" 
                                    id="fileInput" 
@@ -76,7 +76,7 @@
                 <div class="card-body">
                     <ol>
                         <li>Selecciona uno o varios archivos Excel (.xlsx, .xls) o CSV (.csv)</li>
-                        <li>Verifica que cada archivo no supere los 10MB</li>
+                        <li>Verifica que cada archivo no supere los 50MB</li>
                         <li>Haz clic en "Subir Archivos" para procesarlos</li>
                         <li>Los archivos se guardarán automáticamente en la carpeta de datos</li>
                         <li>Puedes ver los archivos subidos en la sección "Ver Archivos > Carpeta Data"</li>

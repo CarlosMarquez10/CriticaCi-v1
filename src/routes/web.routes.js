@@ -4,6 +4,8 @@
  */
 
 import { Router } from 'express';
+import path from 'path';
+import { promises as fs } from 'fs';
 import { 
     upload, 
     showUploadDataView, 
@@ -11,7 +13,8 @@ import {
     uploadFiles, 
     listFiles, 
     deleteFile,
-    downloadFile 
+    downloadFile,
+    handleMulterError 
 } from '../controllers/upload.controller.js';
 
 const router = Router();
@@ -45,7 +48,7 @@ router.get('/upload-times', showUploadTimesView);
 router.post('/api/upload/data', upload.array('files', 5), (req, res) => {
     req.body.uploadType = 'data';
     uploadFiles(req, res);
-});
+}, handleMulterError);
 
 /**
  * @route POST /api/upload/times
@@ -54,7 +57,7 @@ router.post('/api/upload/data', upload.array('files', 5), (req, res) => {
 router.post('/api/upload/times', upload.array('files', 5), (req, res) => {
     req.body.uploadType = 'times';
     uploadFiles(req, res);
-});
+}, handleMulterError);
 
 /**
  * @route GET /files/:type
