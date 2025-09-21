@@ -210,6 +210,50 @@ export const listFiles = async (req, res) => {
 };
 
 /**
+ * Controlador para descargar un archivo específico
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ */
+export const downloadFile = async (req, res) => {
+    try {
+        const { type, filename } = req.params;
+        let folderPath;
+        
+        if (type === 'times') {
+            folderPath = path.join(__dirname, '../../filesTiempos');
+        } else {
+            folderPath = path.join(__dirname, '../data');
+        }
+
+        const filePath = path.join(folderPath, filename);
+
+        // Verificar que el archivo existe
+        try {
+            await fs.access(filePath);
+        } catch {
+            return res.status(404).json({
+                success: false,
+                message: 'El archivo no existe'
+            });
+        }
+
+        // Configurar headers para la descarga
+        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+        res.setHeader('Content-Type', 'application/octet-stream');
+
+        // Enviar el archivo
+        res.sendFile(path.resolve(filePath));
+
+    } catch (error) {
+        console.error('Error al descargar archivo:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error interno del servidor al descargar el archivo'
+        });
+    }
+};
+
+/**
  * Controlador para eliminar un archivo específico
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object

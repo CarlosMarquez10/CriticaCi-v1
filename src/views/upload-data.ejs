@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-lg-8 mx-auto">
             <div class="card">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header text-white" style="background: linear-gradient(135deg, #ff6b35 0%, #dc3545 100%);">
                     <h4 class="mb-0">
                         <i class="fas fa-file-excel me-2"></i>
                         Subir Archivos de Datos Excel
@@ -30,7 +30,7 @@
                     
                     <form id="uploadForm" action="/api/upload/data" method="POST" enctype="multipart/form-data">
                         <div class="upload-area">
-                            <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                            <i class="fas fa-cloud-upload-alt fa-3x mb-3" style="color: #ff6b35;"></i>
                             <h5>Arrastra archivos aquí o haz clic para seleccionar</h5>
                             <p class="text-muted">Archivos permitidos: .xlsx, .xls, .csv (máx. 10MB cada uno)</p>
                             
@@ -45,7 +45,8 @@
                             <input type="hidden" name="uploadType" value="data">
                             
                             <button type="button" 
-                                    class="btn btn-outline-primary mt-3" 
+                        class="btn mt-3"
+                        style="background: linear-gradient(135deg, #dc3545 0%, #ff6b35 100%); color: white; border: 1px solid #ff6b35;" 
                                     onclick="document.getElementById('fileInput').click()">
                                 <i class="fas fa-folder-open me-2"></i>
                                 Seleccionar Archivos
@@ -55,7 +56,8 @@
                         </div>
                         
                         <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg" id="uploadBtn" disabled>
+                            <button type="submit" class="btn btn-lg" id="uploadBtn" disabled
+                        style="background: linear-gradient(135deg, #ff6b35 0%, #dc3545 100%); color: white; border: none;">
                                 <i class="fas fa-upload me-2"></i>
                                 Subir Archivos
                             </button>

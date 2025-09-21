@@ -1,8 +1,24 @@
 /* Estilos personalizados para CriticaCi */
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal que ocupa el espacio disponible */
+.main-content {
+    flex: 1 0 auto;
+}
+
+/* Footer sticky */
+footer {
+    flex-shrink: 0;
 }
 
 .navbar-brand {
@@ -11,7 +27,7 @@ body {
 }
 
 .jumbotron {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #dc3545 100%);
     color: white;
     border: none;
 }
@@ -47,17 +63,17 @@ body {
 }
 
 .upload-area {
-    border: 2px dashed #007bff;
+    border: 2px dashed #ff6b35;
     border-radius: 10px;
     padding: 40px;
     text-align: center;
-    background-color: #f8f9ff;
+    background-color: #fff5f0;
     transition: all 0.3s ease;
 }
 
 .upload-area:hover {
-    border-color: #0056b3;
-    background-color: #e6f3ff;
+    border-color: #dc3545;
+    background-color: #ffe6e6;
 }
 
 .upload-area.dragover {

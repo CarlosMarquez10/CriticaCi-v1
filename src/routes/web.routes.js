@@ -10,7 +10,8 @@ import {
     showUploadTimesView, 
     uploadFiles, 
     listFiles, 
-    deleteFile 
+    deleteFile,
+    downloadFile 
 } from '../controllers/upload.controller.js';
 
 const router = Router();
@@ -69,6 +70,14 @@ router.get('/files/:type', listFiles);
  * @param {string} filename - Nombre del archivo a eliminar
  */
 router.delete('/api/files/:type/:filename', deleteFile);
+
+/**
+ * @route GET /api/files/:type/:filename/download
+ * @description Endpoint para descargar un archivo específico
+ * @param {string} type - Tipo de carpeta ('data' o 'times')
+ * @param {string} filename - Nombre del archivo a descargar
+ */
+router.get('/api/files/:type/:filename/download', downloadFile);
 
 /**
  * @route GET /api/files/:type

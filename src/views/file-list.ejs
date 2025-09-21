@@ -20,7 +20,7 @@
                         <% if (folderType === 'times') { %>
                             <i class="fas fa-stopwatch me-2 text-success"></i>
                         <% } else { %>
-                            <i class="fas fa-database me-2 text-primary"></i>
+                            <i class="fas fa-database me-2" style="color: #ff6b35;"></i>
                         <% } %>
                         <%= folderName %>
                     </h4>
@@ -30,8 +30,8 @@
                                 <i class="fas fa-plus me-2"></i>Subir Archivos
                             </a>
                         <% } else { %>
-                            <a href="/upload-data" class="btn btn-primary">
-                                <i class="fas fa-plus me-2"></i>Subir Archivos
+                            <a href="/upload-data" class="btn" style="background: linear-gradient(135deg, #ff6b35 0%, #dc3545 100%); color: white; border: none;">
+                                <i class="fas fa-plus me-1"></i>Subir Archivo
                             </a>
                         <% } %>
                     </div>
@@ -71,12 +71,21 @@
                                         </div>
                                     </div>
                                     <div class="file-actions">
-                                        <button class="btn btn-outline-primary btn-sm btn-action me-2" 
+                                        <button class="btn btn-sm btn-action me-2" 
+                        style="background: linear-gradient(135deg, #dc3545 0%, #ff6b35 100%); color: white; border: 1px solid #ff6b35;" 
                                                 onclick="runFile('<%= file.name %>')"
                                                 data-bs-toggle="tooltip" 
                                                 title="Ejecutar archivo (funcionalidad próximamente)">
                                             <i class="fas fa-play"></i>
                                             Run
+                                        </button>
+                                        <button class="btn btn-sm btn-action me-2" 
+                                                style="background: linear-gradient(135deg, #ff6b35 0%, #dc3545 100%); color: white; border: 1px solid #dc3545;"
+                                                onclick="downloadFile('<%= file.name %>', '<%= folderType %>')"
+                                                data-bs-toggle="tooltip" 
+                                                title="Descargar archivo">
+                                            <i class="fas fa-download"></i>
+                                            Descargar
                                         </button>
                                         <button class="btn btn-outline-danger btn-sm btn-action btn-delete" 
                                                 onclick="confirmDelete('<%= file.name %>', '<%= folderType %>')"
@@ -100,9 +109,9 @@
                                     <i class="fas fa-upload me-2"></i>Subir Archivos de Tiempos
                                 </a>
                             <% } else { %>
-                                <a href="/upload-data" class="btn btn-primary">
-                                    <i class="fas fa-upload me-2"></i>Subir Archivos de Datos
-                                </a>
+                                <a href="/upload-data" class="btn" style="background: linear-gradient(135deg, #ff6b35 0%, #dc3545 100%); color: white; border: none;">
+                                <i class="fas fa-upload me-2"></i>Subir Archivos de Datos
+                            </a>
                             <% } %>
                         </div>
                     <% } %>
@@ -167,6 +176,21 @@ function confirmDelete(filename, folderType) {
 // Función para ejecutar archivo (placeholder)
 function runFile(filename) {
     showAlert('info', `Funcionalidad "Run" para "${filename}" estará disponible próximamente`);
+}
+
+// Función para descargar archivo
+function downloadFile(filename, folderType) {
+    const downloadUrl = `/api/files/${folderType}/${encodeURIComponent(filename)}/download`;
+    
+    // Crear un enlace temporal para la descarga
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    showAlert('success', `Descargando archivo: ${filename}`);
 }
 
 // Event listener para el botón de confirmación
