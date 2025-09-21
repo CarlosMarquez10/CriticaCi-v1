@@ -3,7 +3,28 @@ import path from 'path';
 import ExcelJS from 'exceljs';
 import { asyncHandler } from '../middleware/asyncHandler.js';
 
-// Función para generar Excel desde los registros enriquecidos
+/**
+ * Genera un archivo Excel completo con todos los registros enriquecidos
+ * @async
+ * @function generateExcel
+ * @param {Object} req - Objeto de solicitud Express
+ * @param {Object} res - Objeto de respuesta Express
+ * @returns {Promise<void>} Descarga directa del archivo Excel
+ * @description
+ * Endpoint: GET /api/excel/generate
+ * Lee el archivo RegistrosEnriquecidos.json y genera un archivo Excel completo
+ * con todos los registros, incluyendo datos de medidores, empleados y lecturas históricas.
+ * El archivo se descarga automáticamente con formato profesional y estilos aplicados.
+ * 
+ * @throws {404} Cuando no se encuentra el archivo RegistrosEnriquecidos.json
+ * @throws {400} Cuando no hay registros para exportar
+ * @throws {500} Error interno del servidor
+ * 
+ * @example
+ * // Respuesta exitosa: descarga directa del archivo Excel
+ * // Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ * // Content-Disposition: attachment; filename="registros_enriquecidos_YYYYMMDD_HHMMSS.xlsx"
+ */
 export const generateExcel = asyncHandler(async (req, res) => {
   try {
     // Leer los datos de RegistrosEnriquecidos.json
@@ -158,7 +179,39 @@ export const generateExcel = asyncHandler(async (req, res) => {
   }
 });
 
-// Función para generar Excel personalizado con filtros
+/**
+ * Genera un archivo Excel personalizado con filtros específicos
+ * @async
+ * @function generateCustomExcel
+ * @param {Object} req - Objeto de solicitud Express
+ * @param {Object} req.body - Cuerpo de la solicitud con filtros
+ * @param {string} [req.body.zona] - Filtrar por zona específica
+ * @param {number} [req.body.ciclo] - Filtrar por ciclo específico
+ * @param {string} [req.body.tipoError] - Filtrar por tipo de error
+ * @param {string} [req.body.operario] - Filtrar por operario (búsqueda parcial)
+ * @param {boolean} [req.body.incluirLecturasHistoricas] - Incluir columnas de lecturas históricas
+ * @param {Object} res - Objeto de respuesta Express
+ * @returns {Promise<void>} Descarga directa del archivo Excel filtrado
+ * @description
+ * Endpoint: POST /api/excel/custom
+ * Genera un archivo Excel personalizado aplicando filtros específicos a los registros.
+ * Permite filtrar por zona, ciclo, tipo de error y operario.
+ * Opcionalmente incluye columnas adicionales de lecturas históricas.
+ * 
+ * @throws {404} Cuando no se encuentra el archivo RegistrosEnriquecidos.json
+ * @throws {400} Cuando no se encuentran registros con los filtros aplicados
+ * @throws {500} Error interno del servidor
+ * 
+ * @example
+ * // Body de ejemplo
+ * {
+ *   "zona": "A1",
+ *   "ciclo": 1,
+ *   "tipoError": "LECTURA_ERRONEA",
+ *   "operario": "Juan",
+ *   "incluirLecturasHistoricas": true
+ * }
+ */
 export const generateCustomExcel = asyncHandler(async (req, res) => {
   try {
     const { 
@@ -175,11 +228,18 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
     if (!fs.existsSync(dataPath)) {
       return res.status(404).json({ 
         ok: false, 
-        message: 'Archivo RegistrosEnriquecidos.json no encontrado' 
+        message: 'Archivo RegistrosEnriquecidos.json no encontrado. Ejecute primero el proceso de enriquecimiento.' 
       });
     }
 
     let registros = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+
+    if (!Array.isArray(registros) || registros.length === 0) {
+      return res.status(400).json({ 
+        ok: false, 
+        message: 'No hay registros para exportar' 
+      });
+    }
 
     // Aplicar filtros si se proporcionan
     if (zona) {
@@ -289,10 +349,9 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
 
   } catch (error) {
     console.error('Error generando Excel personalizado:', error);
-    res.status(500).json({ 
+    return res.status(500).json({ 
       ok: false, 
-      message: 'Error interno del servidor',
-      error: error.message 
+      message: 'Error interno generando Excel personalizado' 
     });
   }
 });

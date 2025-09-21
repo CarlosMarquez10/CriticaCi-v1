@@ -1,3 +1,8 @@
+/**
+ * @fileoverview Servidor principal de la aplicación CriticaCi
+ * @description Configuración y arranque del servidor Express con todas las rutas y middleware
+ */
+
 import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
@@ -10,12 +15,21 @@ import empleadosRoutes from './routes/empleados.routes.js';
 import excelRoutes from './routes/excel.routes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
-
+/**
+ * Aplicación Express principal
+ * @constant {express.Application} app
+ * @description
+ * Servidor Express configurado con:
+ * - Middleware de parsing JSON (límite 2MB)
+ * - Logger HTTP con Morgan
+ * - Rutas de API organizadas por funcionalidad
+ * - Middleware global de manejo de errores
+ */
 const app = express();
 app.use(express.json({ limit: '2mb' }));
 app.use(morgan('dev'));
 
-
+// Configuración de rutas API
 app.use('/api', filesRouter); // ruta mostrar los archivos subidos y para cargar los registros a la tabla de clientes
 app.use('/api', clientesRouter); // ruta para consultar clientes a traves de un array de clientes que se les pasa por el body
 app.use('/api', clienteRouter); // ruta para consultar un cliente por su id
@@ -24,9 +38,18 @@ app.use('/api', medidoresRoutes);// ruta para consultar los medidores de un clie
 app.use('/api/empleados', empleadosRoutes); // ruta para importar empleados desde un archivo Excel
 app.use('/api/excel', excelRoutes); // ruta para generar archivos Excel
 
-
+// Middleware de manejo de errores (debe ir al final)
 app.use(errorHandler);
 
-
+/**
+ * Puerto del servidor
+ * @constant {number} PORT
+ * @description Puerto obtenido de variable de entorno PORT o 3000 por defecto
+ */
 const PORT = process.env.PORT || 3000;
+
+/**
+ * Inicia el servidor HTTP
+ * @description Arranca el servidor Express en el puerto especificado
+ */
 app.listen(PORT, () => console.log(`API escuchando en http://localhost:${PORT}`));

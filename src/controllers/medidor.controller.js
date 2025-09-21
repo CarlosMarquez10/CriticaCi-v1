@@ -4,6 +4,40 @@ import {
   fetchMedidoresByClientes,
 } from '../services/medidor.service.js';
 
+/**
+ * Obtiene información de medidores para un cliente específico
+ * @async
+ * @function getMedidor
+ * @param {Object} req - Objeto de solicitud Express
+ * @param {Object} req.params - Parámetros de la URL
+ * @param {string} req.params.cliente_medidor - ID del cliente medidor (opcional)
+ * @param {Object} req.query - Parámetros de consulta
+ * @param {string} req.query.cliente_medidor - ID del cliente medidor (opcional)
+ * @param {Object} res - Objeto de respuesta Express
+ * @returns {Promise<Object>} Respuesta JSON con información del medidor
+ * @description
+ * Endpoint: GET /api/medidores/:cliente_medidor o GET /api/medidores?cliente_medidor=...
+ * Busca medidores asociados a un cliente específico en la base de datos.
+ * El cliente_medidor puede venir como parámetro de URL o query parameter.
+ * 
+ * @example
+ * // Respuesta exitosa
+ * {
+ *   "ok": true,
+ *   "cliente_medidor": "202957",
+ *   "total": 1,
+ *   "rows": [
+ *     {
+ *       "id": 1,
+ *       "cliente_medidor": "202957",
+ *       "num_medidor": "12345678",
+ *       "marca_medidor": "ELSTER",
+ *       "tecnologia_medidor": "ELECTRONICO",
+ *       "tipo_medidor": "MONOFASICO"
+ *     }
+ *   ]
+ * }
+ */
 export async function getMedidor(req, res) {
   try {
     const fromParam = req.params?.cliente_medidor;
@@ -37,6 +71,34 @@ export async function getMedidor(req, res) {
   }
 }
 
+/**
+ * Busca medidores para uno o múltiples clientes
+ * @async
+ * @function searchMedidores
+ * @param {Object} req - Objeto de solicitud Express
+ * @param {Object} req.body - Cuerpo de la solicitud
+ * @param {string} [req.body.cliente_medidor] - ID de un cliente específico
+ * @param {string[]} [req.body.clientes] - Array de IDs de clientes
+ * @param {Object} res - Objeto de respuesta Express
+ * @returns {Promise<Object>} Respuesta JSON con medidores encontrados
+ * @description
+ * Endpoint: POST /api/medidores/search
+ * Permite buscar medidores para uno o múltiples clientes en una sola consulta.
+ * Acepta tanto un cliente individual como un array de clientes.
+ * Limita la búsqueda a máximo 10,000 clientes por razones de rendimiento.
+ * 
+ * @example
+ * // Body para un cliente
+ * {
+ *   "cliente_medidor": "202957"
+ * }
+ * 
+ * @example
+ * // Body para múltiples clientes
+ * {
+ *   "clientes": ["202957", "123456", "789012"]
+ * }
+ */
 export async function searchMedidores(req, res) {
   try {
     const body = req.body ?? {};

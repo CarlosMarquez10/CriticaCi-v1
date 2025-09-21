@@ -1,7 +1,75 @@
 
 
+/**
+ * Clase para crear y enriquecer registros de lecturas de medidores
+ * @class CrearRegistro
+ * @description
+ * Clase principal para la creación y enriquecimiento de registros de lecturas.
+ * Combina datos básicos de lecturas con información adicional de medidores,
+ * empleados y lecturas históricas para generar registros completos.
+ */
 // src/service/CrearRegistro.js
 export class CrearRegistro {
+  /**
+   * Constructor de la clase CrearRegistro
+   * @constructor
+   * @param {Object} datosBasicos - Datos básicos del registro de lectura
+   * @param {string} datosBasicos.usuario - ID del usuario/cliente
+   * @param {string} datosBasicos.zona - Zona geográfica
+   * @param {number} datosBasicos.ciclo - Ciclo de facturación
+   * @param {string} datosBasicos.solucionConsumo - Solución de consumo aplicada
+   * @param {string} datosBasicos.fechaLectura - Fecha de la lectura
+   * @param {string} datosBasicos.fechaFactura - Fecha de facturación
+   * @param {number} datosBasicos.lecturaTomada - Lectura tomada del medidor
+   * @param {string} datosBasicos.observacionDeLectura - Observaciones de la lectura
+   * @param {string} datosBasicos.texto - Texto adicional
+   * @param {number} datosBasicos.lecturaFacturada - Lectura facturada
+   * @param {string} datosBasicos.aclaraciones - Aclaraciones del registro
+   * @param {string} datosBasicos.tipoLectura - Tipo de lectura realizada
+   * @param {string} datosBasicos.tipoDeError - Tipo de error encontrado
+   * @param {number} datosBasicos.kwAjustados - KW ajustados
+   * @param {string} datosBasicos.nue - Número único de elemento
+   * @param {string} datosBasicos.verifConsolidado - Verificación consolidada
+   * @param {string} datosBasicos.verifSemanaAnterior - Verificación semana anterior
+   * 
+   * @param {Object} [datosExtras={}] - Datos adicionales enriquecidos
+   * @param {number} [datosExtras.Lectura_1] - Primera lectura histórica
+   * @param {number} [datosExtras.Lectura_2] - Segunda lectura histórica
+   * @param {number} [datosExtras.Lectura_3] - Tercera lectura histórica
+   * @param {number} [datosExtras.Lectura_4] - Cuarta lectura histórica
+   * @param {string} [datosExtras.Obs_Lectura_1] - Observación primera lectura
+   * @param {string} [datosExtras.Obs_Lectura_2] - Observación segunda lectura
+   * @param {string} [datosExtras.Obs_Lectura_3] - Observación tercera lectura
+   * @param {string} [datosExtras.Obs_Lectura_4] - Observación cuarta lectura
+   * @param {string} [datosExtras.Operario] - Nombre del operario
+   * @param {string} [datosExtras.medidor] - Número del medidor
+   * @param {string} [datosExtras.marcamedidor] - Marca del medidor
+   * @param {string} [datosExtras.tipomedidor] - Tipo del medidor
+   * @param {string} [datosExtras.cedula] - Cédula del empleado
+   * @param {string} [datosExtras.tipo] - Tipo de empleado
+   * @param {string} [datosExtras.sede] - Sede del empleado
+   * @param {string} [datosExtras.Validacion] - Estado de validación
+   * @param {string} [datosExtras.obsValidacion] - Observaciones de validación
+   * 
+   * @param {Object} [raw={}] - Datos raw originales para referencia
+   * 
+   * @example
+   * const registro = new CrearRegistro(
+   *   {
+   *     usuario: "1170143751",
+   *     zona: "A1",
+   *     ciclo: 1,
+   *     solucionConsumo: "NORMAL",
+   *     fechaLectura: "2024-01-15",
+   *     lecturaTomada: 1250
+   *   },
+   *   {
+   *     Operario: "Juan Pérez",
+   *     medidor: "12345678",
+   *     marcamedidor: "ELSTER"
+   *   }
+   * );
+   */
   constructor(
     {
       usuario, zona, ciclo, solucionConsumo, fechaLectura, fechaFactura,

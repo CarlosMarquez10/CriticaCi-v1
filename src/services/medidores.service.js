@@ -5,10 +5,33 @@ import path from "path";
 import { pool } from "../connection/db.js";
 import { normalizeHeader, toNull, toInt } from "../utils/normalize.js";
 
+/**
+ * @fileoverview Servicio para carga masiva de medidores desde Excel
+ * @description Maneja la importación de medidores desde archivos Excel a la base de datos
+ */
+
+/**
+ * Tamaño del lote para inserción en base de datos
+ * @constant {number} BATCH_SIZE
+ */
 const BATCH_SIZE = Number(process.env.BATCH_SIZE || 500);
+
+/**
+ * Número máximo de filas por transacción
+ * @constant {number} TXN_ROWS
+ */
 const TXN_ROWS   = Number(process.env.TXN_ROWS || 20000);
+
+/**
+ * Ruta al archivo Excel de medidores
+ * @constant {string} FILE_PATH
+ */
 const FILE_PATH  = path.join(process.cwd(), "src", "data", "medidores.xlsx");
 
+/**
+ * Columnas de la tabla medidores para inserción
+ * @constant {Array<string>} COLUMNS
+ */
 // columnas en la tabla
 const COLUMNS = [
   "cliente_medidor",
@@ -18,6 +41,15 @@ const COLUMNS = [
   "tipo_medidor",
 ];
 
+/**
+ * Genera SQL de inserción para lotes de medidores
+ * @function buildInsertSQLMed
+ * @param {number} batchLen - Número de registros en el lote
+ * @returns {string} SQL de inserción con placeholders
+ * @example
+ * const sql = buildInsertSQLMed(3);
+ * // sql: "INSERT INTO medidores (cliente_medidor,num_medidor,...) VALUES (?,?,?),(?,?,?),(?,?,?)"
+ */
 // genera INSERT ... VALUES (...),(...),...
 function buildInsertSQLMed(batchLen) {
   const placeholders = Array.from({ length: batchLen })
@@ -26,6 +58,18 @@ function buildInsertSQLMed(batchLen) {
   return `INSERT INTO medidores (${COLUMNS.join(",")}) VALUES ${placeholders}`;
 }
 
+/**
+ * Inserta un lote de medidores de forma segura con manejo de errores
+ * @async
+ * @function insertBatchSafe
+ * @description Intenta insertar un lote; si falla, divide recursivamente hasta aislar filas problemáticas
+ * @param {Object} conn - Conexión a la base de datos
+ * @param {Array} rowsObjs - Array de objetos con datos de medidores
+ * @returns {Promise<{inserted: number, failed: Array}>} Resultado con registros insertados y fallidos
+ * @example
+ * const result = await insertBatchSafe(connection, medidoresData);
+ * // result: { inserted: 450, failed: [23, 67] } // filas 23 y 67 fallaron
+ */
 // inserta un lote; si falla, divide y aísla filas problemáticas
 async function insertBatchSafe(conn, rowsObjs) {
   try {
@@ -46,6 +90,11 @@ async function insertBatchSafe(conn, rowsObjs) {
   }
 }
 
+/**
+ * Mapeo de encabezados Excel a columnas de base de datos para medidores
+ * @constant {Object} HEADER_MAP
+ * @description Convierte nombres de columnas Excel normalizados a nombres de campos de BD
+ */
 // Encabezado Excel -> columna destino (normaliza a MAYÚSCULA sin acentos)
 const HEADER_MAP = {
   "CLIENTE_MEDIDOR": "cliente_medidor",
@@ -72,6 +121,22 @@ const HEADER_MAP = {
   "TIPO MEDIDOR": "tipo_medidor",
 };
 
+/**
+ * Carga medidores desde archivo Excel a la base de datos
+ * @async
+ * @function loadMedidoresFromExcel
+ * @description Lee un archivo Excel de medidores y los inserta en la base de datos usando transacciones y lotes optimizados
+ * @returns {Promise<{ok: boolean, inserted: number, failedRows: Array, file: string}>} Resultado de la operación
+ * @throws {Error} Si hay problemas de conexión, archivo no encontrado o errores de inserción
+ * @example
+ * try {
+ *   const result = await loadMedidoresFromExcel();
+ *   console.log(`Insertados: ${result.inserted}, Fallidos: ${result.failedRows.length}`);
+ *   // result: { ok: true, inserted: 1500, failedRows: [23, 67], file: "medidores.xlsx" }
+ * } catch (error) {
+ *   console.error('Error cargando medidores:', error.message);
+ * }
+ */
 export async function loadMedidoresFromExcel() {
   const workbookReader = new Excel.stream.xlsx.WorkbookReader(FILE_PATH, {
     entries: "emit",

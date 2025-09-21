@@ -5,22 +5,54 @@ import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { pool } from '../connection/db.js';
 
+/**
+ * @fileoverview Controlador para manejo de empleados y importación desde Excel
+ * @description Permite importar empleados desde archivos Excel y gestionar su información
+ */
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// --- Helpers ---
+/**
+ * Limpia y normaliza una cédula eliminando caracteres no numéricos
+ * @function limpiarCedula
+ * @param {string|number|null} valor - Valor de cédula a limpiar
+ * @returns {string|null} Cédula limpia solo con números o null si está vacía
+ * @example
+ * limpiarCedula("1.234.567-8") // "12345678"
+ * limpiarCedula(null) // null
+ */
 const limpiarCedula = (valor) => {
   if (valor == null) return null;
   const limpio = String(valor).replace(/[^\d]/g, '');
   return limpio.length ? limpio : null;
 };
 
+/**
+ * Recorta espacios en blanco de un valor y retorna null si está vacío
+ * @function trimOrNull
+ * @param {any} v - Valor a procesar
+ * @returns {string|null} String recortado o null si está vacío
+ * @example
+ * trimOrNull("  texto  ") // "texto"
+ * trimOrNull("") // null
+ * trimOrNull({text: "valor"}) // "valor"
+ */
 const trimOrNull = (v) => {
   if (v == null) return null;
   const s = String(typeof v === 'object' && v?.text ? v.text : v).trim();
   return s.length ? s : null;
 };
 
+/**
+ * Normaliza un header eliminando acentos, espacios y caracteres especiales
+ * @function norm
+ * @param {string} h - Header a normalizar
+ * @returns {string} Header normalizado en minúsculas
+ * @example
+ * norm("Cédula de Identidad") // "ceduladeidentidad"
+ * norm("NOMBRE COMPLETO") // "nombrecompleto"
+ */
 const norm = (h) =>
   String(h || '')
     .toLowerCase()
@@ -28,6 +60,10 @@ const norm = (h) =>
     .replace(/\s+/g, '')
     .replace(/[^\w]/g, '');
 
+/**
+ * Mapeo de headers normalizados a nombres de campos
+ * @constant {Object} headerMap
+ */
 const headerMap = {
   sede: 'sede',
   cedula: 'cedula',
@@ -35,6 +71,22 @@ const headerMap = {
   cargo: 'cargo',
 };
 
+/**
+ * Importa empleados desde un archivo Excel
+ * @async
+ * @function importarEmpleadosDesdeExcel
+ * @description Lee un archivo Excel con datos de empleados y los procesa para importación
+ * @param {Object} req - Objeto de solicitud Express
+ * @param {Object} res - Objeto de respuesta Express
+ * @returns {Promise<void>} Respuesta JSON con el resultado de la importación
+ * @throws {400} Error si el archivo Excel no tiene hojas válidas
+ * @throws {404} Error si no se encuentra el archivo Excel
+ * @example
+ * // Estructura esperada del Excel:
+ * // | Sede | Cédula | Nombre | Cargo |
+ * // |------|--------|--------|-------|
+ * // | A    | 123456 | Juan   | Dev   |
+ */
 export const importarEmpleadosDesdeExcel = async (req, res) => {
   const excelPath = path.join(process.cwd(), 'src', 'data', 'empleados.xlsx');
 

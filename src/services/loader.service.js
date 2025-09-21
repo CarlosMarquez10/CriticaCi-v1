@@ -12,9 +12,28 @@ import {
 } from "../utils/normalize.js";
 import { buildInsertSQL } from "../utils/sql.js";
 
+/**
+ * @fileoverview Servicio para carga masiva de datos desde Excel a base de datos
+ * @description Maneja la importación de registros de tiempo desde archivos Excel con procesamiento por lotes
+ */
+
+/**
+ * Tamaño del lote para inserción en base de datos
+ * @constant {number} BATCH_SIZE
+ */
 const BATCH_SIZE = Number(process.env.BATCH_SIZE || 500);
+
+/**
+ * Número máximo de filas por transacción
+ * @constant {number} TXN_ROWS
+ */
 const TXN_ROWS   = Number(process.env.TXN_ROWS || 20000);
 
+/**
+ * Mapeo de encabezados Excel a columnas de base de datos
+ * @constant {Object} HEADER_MAP
+ * @description Convierte nombres de columnas Excel a nombres de campos de BD
+ */
 // Encabezado Excel -> columna destino
 const HEADER_MAP = {
   'CORRERIA':'CORRERIA',
@@ -43,6 +62,19 @@ const HEADER_MAP = {
   'UBICACION':'UBICACION',
 };
 
+/**
+ * Inserta un lote de registros de forma segura con manejo de errores
+ * @async
+ * @function insertBatchSafe
+ * @description Intenta insertar un lote; si falla, divide recursivamente hasta aislar filas problemáticas
+ * @param {Object} conn - Conexión a la base de datos
+ * @param {Array} rowsObjs - Array de objetos con datos a insertar
+ * @param {Function} buildInsertSQLFn - Función para construir SQL de inserción
+ * @returns {Promise<{ok: number, errors: Array}>} Resultado con registros exitosos y errores
+ * @example
+ * const result = await insertBatchSafe(connection, rows, buildInsertSQL);
+ * // result: { ok: 450, errors: [{ row: 23, error: "Duplicate entry" }] }
+ */
 // Inserta el lote; si falla, divide en 2 hasta aislar la(s) fila(s) mala(s)
 async function insertBatchSafe(conn, rowsObjs, buildInsertSQLFn) {
   try {
