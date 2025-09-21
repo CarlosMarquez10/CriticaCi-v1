@@ -1,0 +1,66 @@
+<%- include('partials/header', { title: 'CriticaCi - Dashboard' }) %>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron bg-light p-5 rounded">
+                <h1 class="display-4">
+                    <i class="fas fa-chart-line text-primary me-3"></i>
+                    Bienvenido a CriticaCi
+                </h1>
+                <p class="lead">Sistema de gestión de archivos Excel y análisis de datos</p>
+                <hr class="my-4">
+                <p>Utiliza el menú de navegación para subir archivos o gestionar los existentes.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-upload fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Subir Archivos</h5>
+                    <p class="card-text">Carga archivos Excel de datos o archivos de tiempos al sistema.</p>
+                    <div class="btn-group" role="group">
+                        <a href="/upload-data" class="btn btn-primary">
+                            <i class="fas fa-file-excel me-1"></i>Datos
+                        </a>
+                        <a href="/upload-times" class="btn btn-outline-primary">
+                            <i class="fas fa-clock me-1"></i>Tiempos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-folder-open fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Gestionar Archivos</h5>
+                    <p class="card-text">Visualiza, ejecuta o elimina archivos existentes en el sistema.</p>
+                    <div class="btn-group" role="group">
+                        <a href="/files/data" class="btn btn-success">
+                            <i class="fas fa-database me-1"></i>Ver Data
+                        </a>
+                        <a href="/files/times" class="btn btn-outline-success">
+                            <i class="fas fa-stopwatch me-1"></i>Ver Tiempos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Información:</strong> Este sistema permite gestionar archivos Excel para análisis de datos y control de tiempos de manera eficiente.
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

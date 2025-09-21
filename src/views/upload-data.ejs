@@ -1,0 +1,146 @@
+<%- include('partials/header', { title: 'Subir Archivos de Datos' }) %>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active">Subir Archivos de Datos</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-file-excel me-2"></i>
+                        Subir Archivos de Datos Excel
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Información:</strong> Los archivos se guardarán en la carpeta <code>src/data</code>. 
+                        Solo se permiten archivos Excel (.xlsx, .xls) y CSV (.csv) con un tamaño máximo de 10MB.
+                    </div>
+                    
+                    <form id="uploadForm" action="/api/upload/data" method="POST" enctype="multipart/form-data">
+                        <div class="upload-area">
+                            <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                            <h5>Arrastra archivos aquí o haz clic para seleccionar</h5>
+                            <p class="text-muted">Archivos permitidos: .xlsx, .xls, .csv (máx. 10MB cada uno)</p>
+                            
+                            <input type="file" 
+                                   id="fileInput" 
+                                   name="files" 
+                                   multiple 
+                                   accept=".xlsx,.xls,.csv"
+                                   class="form-control mt-3"
+                                   style="display: none;">
+                            
+                            <input type="hidden" name="uploadType" value="data">
+                            
+                            <button type="button" 
+                                    class="btn btn-outline-primary mt-3" 
+                                    onclick="document.getElementById('fileInput').click()">
+                                <i class="fas fa-folder-open me-2"></i>
+                                Seleccionar Archivos
+                            </button>
+                            
+                            <div class="file-preview mt-3"></div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg" id="uploadBtn" disabled>
+                                <i class="fas fa-upload me-2"></i>
+                                Subir Archivos
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-question-circle me-2"></i>
+                        Instrucciones
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li>Selecciona uno o varios archivos Excel (.xlsx, .xls) o CSV (.csv)</li>
+                        <li>Verifica que cada archivo no supere los 10MB</li>
+                        <li>Haz clic en "Subir Archivos" para procesarlos</li>
+                        <li>Los archivos se guardarán automáticamente en la carpeta de datos</li>
+                        <li>Puedes ver los archivos subidos en la sección "Ver Archivos > Carpeta Data"</li>
+                    </ol>
+                    
+                    <div class="mt-3">
+                        <a href="/files/data" class="btn btn-outline-success">
+                            <i class="fas fa-folder-open me-2"></i>
+                            Ver Archivos de Datos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('fileInput');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const uploadForm = document.getElementById('uploadForm');
+    
+    // Habilitar botón cuando se seleccionen archivos
+    fileInput.addEventListener('change', function() {
+        uploadBtn.disabled = this.files.length === 0;
+    });
+    
+    // Manejar envío del formulario
+    uploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (fileInput.files.length === 0) {
+            showAlert('warning', 'Por favor selecciona al menos un archivo');
+            return;
+        }
+        
+        const formData = new FormData(this);
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Subiendo...';
+        
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showAlert('success', data.message);
+                fileInput.value = '';
+                document.querySelector('.file-preview').innerHTML = '';
+                uploadBtn.disabled = true;
+                uploadBtn.innerHTML = '<i class="fas fa-upload me-2"></i>Subir Archivos';
+            } else {
+                showAlert('danger', data.message);
+                uploadBtn.disabled = false;
+                uploadBtn.innerHTML = '<i class="fas fa-upload me-2"></i>Subir Archivos';
+            }
+        })
+        .catch(error => {
+            showAlert('danger', 'Error de conexión: ' + error.message);
+            uploadBtn.disabled = false;
+            uploadBtn.innerHTML = '<i class="fas fa-upload me-2"></i>Subir Archivos';
+        });
+    });
+});
+</script>
+
+<%- include('partials/footer') %>

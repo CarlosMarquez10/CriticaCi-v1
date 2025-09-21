@@ -6,6 +6,8 @@
 import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import filesRouter from './routes/files.routes.js';
 import clientesRouter from './routes/clientes.routes.js';
 import clienteRouter from './routes/cliente.routes.js';
@@ -13,7 +15,12 @@ import medidoresRouter from './routes/medidores.routes.js';
 import medidoresRoutes from './routes/medidor.routes.js';
 import empleadosRoutes from './routes/empleados.routes.js';
 import excelRoutes from './routes/excel.routes.js';
+import webRoutes from './routes/web.routes.js';
 import { errorHandler } from './middleware/errorHandler.js';
+
+// Configuración para ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Aplicación Express principal
@@ -22,12 +29,27 @@ import { errorHandler } from './middleware/errorHandler.js';
  * Servidor Express configurado con:
  * - Middleware de parsing JSON (límite 2MB)
  * - Logger HTTP con Morgan
+ * - Motor de plantillas EJS
+ * - Archivos estáticos
  * - Rutas de API organizadas por funcionalidad
  * - Middleware global de manejo de errores
  */
 const app = express();
+
+// Configuración del motor de plantillas EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Middleware
 app.use(express.json({ limit: '2mb' }));
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+
+// Archivos estáticos
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// Rutas web (vistas EJS)
+app.use('/', webRoutes);
 
 // Configuración de rutas API
 app.use('/api', filesRouter); // ruta mostrar los archivos subidos y para cargar los registros a la tabla de clientes

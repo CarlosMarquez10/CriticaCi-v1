@@ -1,0 +1,152 @@
+<%- include('partials/header', { title: 'Subir Archivos de Tiempos' }) %>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active">Subir Archivos de Tiempos</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-clock me-2"></i>
+                        Subir Archivos de Tiempos
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Información:</strong> Los archivos se guardarán en la carpeta <code>filesTiempos</code>. 
+                        Solo se permiten archivos Excel (.xlsx, .xls) y CSV (.csv) con un tamaño máximo de 10MB.
+                    </div>
+                    
+                    <form id="uploadForm" action="/api/upload/times" method="POST" enctype="multipart/form-data">
+                        <div class="upload-area">
+                            <i class="fas fa-stopwatch fa-3x text-success mb-3"></i>
+                            <h5>Arrastra archivos aquí o haz clic para seleccionar</h5>
+                            <p class="text-muted">Archivos de control de tiempos: .xlsx, .xls, .csv (máx. 10MB cada uno)</p>
+                            
+                            <input type="file" 
+                                   id="fileInput" 
+                                   name="files" 
+                                   multiple 
+                                   accept=".xlsx,.xls,.csv"
+                                   class="form-control mt-3"
+                                   style="display: none;">
+                            
+                            <input type="hidden" name="uploadType" value="times">
+                            
+                            <button type="button" 
+                                    class="btn btn-outline-success mt-3" 
+                                    onclick="document.getElementById('fileInput').click()">
+                                <i class="fas fa-folder-open me-2"></i>
+                                Seleccionar Archivos
+                            </button>
+                            
+                            <div class="file-preview mt-3"></div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-success btn-lg" id="uploadBtn" disabled>
+                                <i class="fas fa-upload me-2"></i>
+                                Subir Archivos
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Sobre los Archivos de Tiempos
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p>Los archivos de tiempos contienen información sobre:</p>
+                    <ul>
+                        <li>Registros de horas trabajadas</li>
+                        <li>Control de asistencia</li>
+                        <li>Tiempos de procesos</li>
+                        <li>Métricas de productividad</li>
+                    </ul>
+                    
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Importante:</strong> Asegúrate de que los archivos contengan las columnas necesarias 
+                        para el procesamiento correcto de los datos de tiempo.
+                    </div>
+                    
+                    <div class="mt-3">
+                        <a href="/files/times" class="btn btn-outline-success">
+                            <i class="fas fa-folder-open me-2"></i>
+                            Ver Archivos de Tiempos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('fileInput');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const uploadForm = document.getElementById('uploadForm');
+    
+    // Habilitar botón cuando se seleccionen archivos
+    fileInput.addEventListener('change', function() {
+        uploadBtn.disabled = this.files.length === 0;
+    });
+    
+    // Manejar envío del formulario
+    uploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (fileInput.files.length === 0) {
+            showAlert('warning', 'Por favor selecciona al menos un archivo');
+            return;
+        }
+        
+        const formData = new FormData(this);
+        uploadBtn.disabled = true;
+        uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Subiendo...';
+        
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showAlert('success', data.message);
+                fileInput.value = '';
+                document.querySelector('.file-preview').innerHTML = '';
+                uploadBtn.disabled = true;
+                uploadBtn.innerHTML = '<i class="fas fa-upload me-2"></i>Subir Archivos';
+            } else {
+                showAlert('danger', data.message);
+                uploadBtn.disabled = false;
+                uploadBtn.innerHTML = '<i class="fas fa-upload me-2"></i>Subir Archivos';
+            }
+        })
+        .catch(error => {
+            showAlert('danger', 'Error de conexión: ' + error.message);
+            uploadBtn.disabled = false;
+            uploadBtn.innerHTML = '<i class="fas fa-upload me-2"></i>Subir Archivos';
+        });
+    });
+});
+</script>
+
+<%- include('partials/footer') %>

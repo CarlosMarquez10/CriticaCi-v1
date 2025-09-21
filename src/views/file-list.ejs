@@ -1,0 +1,236 @@
+<%- include('partials/header', { title: title }) %>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active"><%= folderName %></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">
+                        <% if (folderType === 'times') { %>
+                            <i class="fas fa-stopwatch me-2 text-success"></i>
+                        <% } else { %>
+                            <i class="fas fa-database me-2 text-primary"></i>
+                        <% } %>
+                        <%= folderName %>
+                    </h4>
+                    <div>
+                        <% if (folderType === 'times') { %>
+                            <a href="/upload-times" class="btn btn-success">
+                                <i class="fas fa-plus me-2"></i>Subir Archivos
+                            </a>
+                        <% } else { %>
+                            <a href="/upload-data" class="btn btn-primary">
+                                <i class="fas fa-plus me-2"></i>Subir Archivos
+                            </a>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <% if (files && files.length > 0) { %>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Se encontraron <strong><%= files.length %></strong> archivo(s) en esta carpeta.
+                        </div>
+                        
+                        <div class="file-list">
+                            <% files.forEach(function(file, index) { %>
+                                <div class="file-item d-flex align-items-center justify-content-between fade-in">
+                                    <div class="d-flex align-items-center flex-grow-1">
+                                        <div class="file-icon me-3">
+                                            <% if (file.extension === '.xlsx' || file.extension === '.xls') { %>
+                                                <i class="fas fa-file-excel text-success"></i>
+                                            <% } else if (file.extension === '.csv') { %>
+                                                <i class="fas fa-file-csv text-info"></i>
+                                            <% } else { %>
+                                                <i class="fas fa-file text-secondary"></i>
+                                            <% } %>
+                                        </div>
+                                        <div class="file-info flex-grow-1">
+                                            <h6 class="mb-1 file-name"><%= file.name %></h6>
+                                            <small class="text-muted">
+                                                Tamaño: <%= formatFileSize(file.size) %> | 
+                                                Modificado: <%= new Date(file.modified).toLocaleDateString('es-ES', {
+                                                    year: 'numeric',
+                                                    month: 'short',
+                                                    day: 'numeric',
+                                                    hour: '2-digit',
+                                                    minute: '2-digit'
+                                                }) %>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="file-actions">
+                                        <button class="btn btn-outline-primary btn-sm btn-action me-2" 
+                                                onclick="runFile('<%= file.name %>')"
+                                                data-bs-toggle="tooltip" 
+                                                title="Ejecutar archivo (funcionalidad próximamente)">
+                                            <i class="fas fa-play"></i>
+                                            Run
+                                        </button>
+                                        <button class="btn btn-outline-danger btn-sm btn-action btn-delete" 
+                                                onclick="confirmDelete('<%= file.name %>', '<%= folderType %>')"
+                                                data-filename="<%= file.name %>"
+                                                data-bs-toggle="tooltip" 
+                                                title="Eliminar archivo">
+                                            <i class="fas fa-trash"></i>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        </div>
+                    <% } else { %>
+                        <div class="text-center py-5">
+                            <i class="fas fa-folder-open fa-4x text-muted mb-3"></i>
+                            <h5 class="text-muted">No hay archivos en esta carpeta</h5>
+                            <p class="text-muted">Sube algunos archivos para comenzar</p>
+                            <% if (folderType === 'times') { %>
+                                <a href="/upload-times" class="btn btn-success">
+                                    <i class="fas fa-upload me-2"></i>Subir Archivos de Tiempos
+                                </a>
+                            <% } else { %>
+                                <a href="/upload-data" class="btn btn-primary">
+                                    <i class="fas fa-upload me-2"></i>Subir Archivos de Datos
+                                </a>
+                            <% } %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación para eliminar -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                    Confirmar Eliminación
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar el archivo <strong id="fileToDelete"></strong>?</p>
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Esta acción no se puede deshacer.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+                    <i class="fas fa-trash me-2"></i>Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Función para formatear tamaño de archivo (helper function)
+function formatFileSize(bytes) {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+// Variables globales para el modal
+let fileToDelete = '';
+let folderTypeToDelete = '';
+
+// Función para confirmar eliminación
+function confirmDelete(filename, folderType) {
+    fileToDelete = filename;
+    folderTypeToDelete = folderType;
+    document.getElementById('fileToDelete').textContent = filename;
+    
+    const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+    deleteModal.show();
+}
+
+// Función para ejecutar archivo (placeholder)
+function runFile(filename) {
+    showAlert('info', `Funcionalidad "Run" para "${filename}" estará disponible próximamente`);
+}
+
+// Event listener para el botón de confirmación
+document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+    if (fileToDelete && folderTypeToDelete) {
+        deleteFile(fileToDelete, folderTypeToDelete);
+        bootstrap.Modal.getInstance(document.getElementById('deleteModal')).hide();
+    }
+});
+
+// Función para eliminar archivo
+function deleteFile(filename, folderType) {
+    const deleteBtn = document.querySelector(`[data-filename="${filename}"]`);
+    const originalContent = deleteBtn.innerHTML;
+    
+    // Mostrar estado de carga
+    deleteBtn.disabled = true;
+    deleteBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    
+    fetch(`/api/files/${folderType}/${encodeURIComponent(filename)}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showAlert('success', data.message);
+            // Recargar la página después de un breve delay
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        } else {
+            showAlert('danger', `Error: ${data.message}`);
+            deleteBtn.disabled = false;
+            deleteBtn.innerHTML = originalContent;
+        }
+    })
+    .catch(error => {
+        showAlert('danger', `Error de conexión: ${error.message}`);
+        deleteBtn.disabled = false;
+        deleteBtn.innerHTML = originalContent;
+    });
+}
+
+// Inicializar tooltips
+document.addEventListener('DOMContentLoaded', function() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
+</script>
+
+<%
+// Helper function para formatear tamaño de archivo
+function formatFileSize(bytes) {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+%>
+
+<%- include('partials/footer') %>
