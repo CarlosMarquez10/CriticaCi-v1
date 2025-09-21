@@ -1,0 +1,23 @@
+{
+  "name": "criticaci-v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "empleados": "node scripts/convertir-empleados.js",
+    "emp": "node src/services/crearjsonempleados.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.14.5",
+    "nodemon": "^3.1.10"
+  }
+}
