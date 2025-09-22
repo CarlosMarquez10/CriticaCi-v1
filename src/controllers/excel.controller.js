@@ -85,10 +85,13 @@ export const generateExcel = asyncHandler(async (req, res) => {
       { header: 'OBS_VALIDACION', key: 'obsValidacion', width: 25 }
     ];
 
-    // Estilo para el encabezado
-    worksheet.getRow(1).font = { bold: true, color: { argb: 'FFFFFF' } };
-    worksheet.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: '4472C4' } };
-    worksheet.getRow(1).alignment = { vertical: 'middle', horizontal: 'center' };
+    // Estilo para el encabezado (solo hasta la columna AH - 34)
+    for (let col = 1; col <= 34; col++) {
+      const cell = worksheet.getCell(1, col);
+      cell.font = { bold: true, color: { argb: 'FFFFFF' } };
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: '4472C4' } };
+      cell.alignment = { vertical: 'middle', horizontal: 'center' };
+    }
 
     // Agregar los datos
     registros.forEach(registro => {
@@ -131,17 +134,22 @@ export const generateExcel = asyncHandler(async (req, res) => {
       worksheet.addRow(rowData);
     });
 
-    // Aplicar bordes a todas las celdas con datos
-    worksheet.eachRow((row, rowNumber) => {
-      row.eachCell((cell) => {
+    // Aplicar bordes a todas las celdas hasta la columna AH (34 columnas)
+    const totalColumns = 34; // Hasta la columna AH
+    const totalRows = registros.length + 1; // +1 para incluir la fila de encabezado
+    
+    // Aplicar bordes a todas las celdas en el rango
+    for (let row = 1; row <= totalRows; row++) {
+      for (let col = 1; col <= totalColumns; col++) {
+        const cell = worksheet.getCell(row, col);
         cell.border = {
           top: { style: 'thin' },
           left: { style: 'thin' },
           bottom: { style: 'thin' },
           right: { style: 'thin' }
         };
-      });
-    });
+      }
+    }
 
     // Configurar la respuesta
     const fileName = `Reporte_Critica_${new Date().toISOString().slice(0, 10).replace(/-/g, '')}_${new Date().toTimeString().slice(0, 8).replace(/:/g, '')}.xlsx`;
