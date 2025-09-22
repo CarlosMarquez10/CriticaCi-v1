@@ -10,20 +10,30 @@ import { fetchMedidoresByClientes } from "../src/services/medidor.service.js";
 import { mapearClienteAMedidor } from "../src/utils/medidores.util.js";         // de lecturas (ya lo tenías)
 import { mapearClienteAMedidorDB } from "../src/utils/medidores-db.util.js";    // de BD medidores
 
+// Configuración que solo se ejecutará cuando se llame a main()
+const getConfig = () => {
+  // 1) Carpeta destino absoluta (desde la raíz del proyecto)
+  const outDir = path.resolve(process.cwd(), 'src', 'fileJson'); // O 'fileJson' si así se llama
 
-// 1) Carpeta destino absoluta (desde la raíz del proyecto)
-const outDir = path.resolve(process.cwd(), 'src', 'fileJson'); // O 'fileJson' si así se llama
+  // 2) Crear la carpeta si no existe
+  fs.mkdirSync(outDir, { recursive: true });
 
-// 2) Crear la carpeta si no existe
-fs.mkdirSync(outDir, { recursive: true });
+  // 3) Nombre del archivo (puedes personalizarlo)
+  const outFile = path.join(outDir, 'DatosConsulta.json');
+  
+  const fechas = { desde: 202401, hasta: 202512 };
+  
+  return { outDir, outFile, fechas };
+};
 
-// 3) Nombre del archivo (puedes personalizarlo)
-const outFile = path.join(outDir, 'DatosConsulta.json');
-
-
-const fechas = { desde: 202401, hasta: 202512 };
-
-async function main() {
+/**
+ * Función principal para ejecutar desde línea de comandos o importar desde otro módulo
+ * @returns {Promise<Object>} Resultado del procesamiento
+ */
+export async function main() {
+  // Obtener configuración solo cuando se ejecuta la función
+  const { outDir, outFile, fechas } = getConfig();
+  
   // 1) Leer archivo
   const data = await leerErroresCens();
   if (!Array.isArray(data)) {
@@ -56,6 +66,8 @@ async function main() {
   'utf8'
   );
   console.log('📂 Resultado guardado en salida.json');
+  
+  return result;
 }
 
 async function procesarDatos(

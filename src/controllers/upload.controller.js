@@ -22,24 +22,27 @@ const storage = multer.diskStorage({
         let uploadPath;
         
         if (uploadType === 'times') {
-            uploadPath = path.join(__dirname, '../../filesTiempos');
+            // Usar ruta absoluta para la carpeta filesTiempos en la raíz del proyecto
+            uploadPath = path.join(process.cwd(), '../../filesTiempos');
+            console.log('Ruta de destino para archivos de tiempos:', uploadPath);
         } else {
             uploadPath = path.join(__dirname, '../data');
         }
         
         // Crear directorio si no existe
         fs.mkdir(uploadPath, { recursive: true })
-            .then(() => cb(null, uploadPath))
-            .catch(err => cb(err));
+            .then(() => {
+                console.log('Directorio creado/verificado:', uploadPath);
+                cb(null, uploadPath);
+            })
+            .catch(err => {
+                console.error('Error al crear directorio:', err);
+                cb(err);
+            });
     },
     filename: function (req, file, cb) {
-        // Mantener nombre original con timestamp para evitar duplicados
-        const timestamp = Date.now();
-        const originalName = file.originalname;
-        const extension = path.extname(originalName);
-        const nameWithoutExt = path.basename(originalName, extension);
-        
-        cb(null, `${nameWithoutExt}_${timestamp}${extension}`);
+        // Usar el nombre original del archivo sin modificaciones
+        cb(null, file.originalname);
     }
 });
 
@@ -76,7 +79,7 @@ export const upload = multer({
     storage: storage,
     fileFilter: fileFilter,
     limits: {
-        fileSize: 50 * 1024 * 1024, // 50MB máximo (aumentado desde 10MB)
+        fileSize: 90 * 1024 * 1024, // 90MB máximo (aumentado desde 50MB)
         files: 5 // Máximo 5 archivos por vez
     }
 });

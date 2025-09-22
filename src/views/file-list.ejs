@@ -73,9 +73,16 @@
                                         </div>
                                     </div>
                                     <div class="file-actions">
+                                        <select class="form-select form-select-sm me-2" style="width: auto; display: inline-block;" id="fileType_<%= index %>">
+                                            <option value="" selected disabled>Seleccione una</option>
+                                            <option value="empleados">empleados</option>
+                                            <option value="medidores">medidores</option>
+                                            <option value="tiempos">tiempos</option>
+                                            <option value="reporte">Reporte</option>
+                                        </select>
                                         <button class="btn btn-sm btn-action me-2" 
                         style="background: linear-gradient(135deg, #dc3545 0%, #ff6b35 100%); color: white; border: 1px solid #ff6b35;" 
-                                                onclick="runFile('<%= file.name %>')"
+                                                onclick="runFile('<%= file.name %>', document.getElementById('fileType_<%= index %>').value)"
                                                 data-bs-toggle="tooltip" 
                                                 title="Ejecutar archivo (funcionalidad próximamente)">
                                             <i class="fas fa-play"></i>
@@ -176,10 +183,150 @@ function confirmDelete(filename, folderType) {
     deleteModal.show();
 }
 
-// Función para ejecutar archivo (placeholder)
-function runFile(filename) {
-    showAlert('info', `Funcionalidad "Run" para "${filename}" estará disponible próximamente`);
+// Función para ejecutar archivo
+function runFile(filename, fileType) {
+    // Verificar si se ha seleccionado un tipo
+    if (!fileType) {
+        showAlert('warning', 'Por favor seleccione un tipo antes de ejecutar');
+        return;
+    }
+    
+    // Encontrar el índice del archivo en la lista
+    const fileItems = document.querySelectorAll('.file-item');
+    let fileIndex = -1;
+    
+    for (let i = 0; i < fileItems.length; i++) {
+        const nameElement = fileItems[i].querySelector('.file-name');
+        if (nameElement && nameElement.textContent === filename) {
+            fileIndex = i;
+            break;
+        }
+    }
+    
+    if (fileIndex === -1) {
+        console.error('No se encontró el archivo en la lista:', filename);
+        return;
+    }
+    
+    // Obtener el botón que fue clickeado usando el índice correcto
+    const runBtn = document.querySelector(`button[onclick="runFile('${filename}', document.getElementById('fileType_${fileIndex}').value)"]`);
+    if (!runBtn) {
+        console.error('No se encontró el botón de Run para:', filename);
+        return;
+    }
+    
+    const originalContent = runBtn.innerHTML;
+    
+    // Mostrar estado de carga
+    runBtn.disabled = true;
+    runBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+    
+    if (fileType === 'reporte') {
+        // Ejecutar el endpoint de procesamiento completo
+        window.open('http://localhost:3000/api/process/complete', '_blank');
+        // Restaurar el botón después de abrir la ventana
+        setTimeout(() => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            showAlert('success', 'Procesando reporte completo. Se abrirá una nueva ventana.');
+        }, 1000);
+        return;
+    } else if (fileType === 'empleados') {
+        // Ejecutar el endpoint de empleados
+        fetch('http://localhost:3000/api/empleados/importar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            
+            if (data.success) {
+                showAlert('success', `Archivo "${filename}" procesado correctamente como ${fileType}`);
+            } else {
+                showAlert('danger', `Error al procesar el archivo "${filename}": ${data.message}`);
+            }
+        })
+        .catch(error => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            
+            console.error('Error:', error);
+            showAlert('danger', `Error al procesar el archivo "${filename}": ${error.message}`);
+        });
+    } else if (fileType === 'medidores') {
+        // Ejecutar el endpoint de medidores
+        fetch('http://localhost:3000/api/medidores/load', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            
+            if (data.success) {
+                showAlert('success', `Se insertaron ${data.inserted} registros correctamente`);
+            } else {
+                showAlert('danger', `Error al procesar el archivo: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            
+            console.error('Error:', error);
+            showAlert('danger', `Error al procesar el archivo: ${error.message}`);
+        });
+    } else if (fileType === 'tiempos') {
+        // Ejecutar el endpoint de tiempos
+        fetch('http://localhost:3000/api/load', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros correctamente del archivo ${data.file}`);
+            } else {
+                showAlert('danger', `Error al procesar el archivo: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            
+            console.error('Error:', error);
+            showAlert('danger', `Error al procesar el archivo: ${error.message}`);
+        });
+    } else {
+        // Tipo no reconocido
+        setTimeout(() => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            showAlert('warning', `Tipo de archivo "${fileType}" no soportado`);
+        }, 500);
+    }
 }
+
 
 // Función para descargar archivo
 function downloadFile(filename, folderType) {

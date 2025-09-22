@@ -15,6 +15,7 @@ import medidoresRouter from './routes/medidores.routes.js';
 import medidoresRoutes from './routes/medidor.routes.js';
 import empleadosRoutes from './routes/empleados.routes.js';
 import excelRoutes from './routes/excel.routes.js';
+import processRoutes from './routes/process.routes.js';
 import webRoutes from './routes/web.routes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
@@ -59,6 +60,7 @@ app.use('/api', medidoresRouter); // ruta para insetar los medidores en la tabla
 app.use('/api', medidoresRoutes);// ruta para consultar los medidores de un cliente_medidor
 app.use('/api/empleados', empleadosRoutes); // ruta para importar empleados desde un archivo Excel
 app.use('/api/excel', excelRoutes); // ruta para generar archivos Excel
+app.use('/api/process', processRoutes); // ruta para procesar datos en secuencia y que se genere el excel
 
 // Middleware de manejo de errores (debe ir al final)
 app.use(errorHandler);

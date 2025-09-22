@@ -339,13 +339,46 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
     });
 
     // Configurar la respuesta
-    const fileName = `RegistrosFiltrados_${new Date().toISOString().slice(0, 10)}.xlsx`;
+    const fileName = `RegistrosEnriquecidos_${new Date().toISOString().slice(0, 10).replace(/-/g, '')}_${new Date().toTimeString().slice(0, 8).replace(/:/g, '')}.xlsx`;
     
-    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
-
-    await workbook.xlsx.write(res);
-    res.end();
+    // Verificar si la solicitud viene del proceso completo
+    if (req.query.fromProcess === 'true') {
+      try {
+        // Asegurarse de que la carpeta Reportes existe
+        const reportesDir = path.resolve(process.cwd(), 'src', 'Reportes');
+        if (!fs.existsSync(reportesDir)) {
+          fs.mkdirSync(reportesDir, { recursive: true });
+        }
+        
+        // Guardar el archivo en la carpeta src/Reportes
+        const fileName = `RegistrosEnriquecidos_${new Date().toISOString().slice(0, 10).replace(/-/g, '')}_${new Date().toTimeString().slice(0, 8).replace(/:/g, '')}.xlsx`;
+        const reportPath = path.resolve(process.cwd(), 'src', 'Reportes', fileName);
+        
+        console.log(`Guardando Excel en: ${reportPath}`);
+        await workbook.xlsx.writeFile(reportPath);
+        console.log(`✅ Excel guardado correctamente en: ${reportPath}`);
+        
+        return res.json({
+          ok: true,
+          message: 'Excel generado correctamente',
+          filePath: `/Reportes/${fileName}`
+        });
+      } catch (error) {
+        console.error('Error guardando el archivo Excel:', error);
+        return res.status(500).json({
+          ok: false,
+          message: `Error guardando el archivo Excel: ${error.message}`
+        });
+      }
+    } else {
+      // Configurar para descarga directa
+      const fileName = `RegistrosEnriquecidos_${new Date().toISOString().slice(0, 10).replace(/-/g, '')}_${new Date().toTimeString().slice(0, 8).replace(/:/g, '')}.xlsx`;
+      res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
+      
+      await workbook.xlsx.write(res);
+      res.end();
+    }
 
   } catch (error) {
     console.error('Error generando Excel personalizado:', error);

@@ -4,6 +4,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { pool } from '../connection/db.js';
+import { convertirExcelAJson } from '../../scripts/convertir-empleados.js';
 
 /**
  * @fileoverview Controlador para manejo de empleados y importación desde Excel
@@ -88,7 +89,20 @@ const headerMap = {
  * // | A    | 123456 | Juan   | Dev   |
  */
 export const importarEmpleadosDesdeExcel = async (req, res) => {
-  const excelPath = path.join(process.cwd(), 'src', 'data', 'empleados.xlsx');
+  // Obtener el nombre del archivo desde el body de la petición
+  const { filename } = req.body;
+
+  console.log(filename, 'filename recibido:', filename);
+  
+  if (!filename) {
+    return res.status(400).json({ 
+      ok: false, 
+      message: 'Se requiere especificar el nombre del archivo en el parámetro filename' 
+    });
+  }
+  
+  // Construir la ruta del archivo dinámicamente
+  const excelPath = path.join(process.cwd(), 'src', 'data', filename);
 
   try {
     await fs.access(excelPath);
@@ -190,6 +204,15 @@ export const importarEmpleadosDesdeExcel = async (req, res) => {
       totalAfectados += afectados;
     }
 
+    // Ejecutar el script para convertir a JSON después de insertar
+    let jsonResult = null;
+    try {
+      jsonResult = await convertirExcelAJson();
+      console.log('Script de conversión a JSON ejecutado correctamente');
+    } catch (jsonError) {
+      console.error('Error al ejecutar el script de conversión a JSON:', jsonError);
+    }
+
     return res.json({
       ok: true,
       message: 'Importación finalizada.',
@@ -198,14 +221,17 @@ export const importarEmpleadosDesdeExcel = async (req, res) => {
       insertadosEstimados: totalInsertados,
       filasAfectadas: totalAfectados,
       muestra: registros.slice(0, 5),
+      jsonGenerado: jsonResult ? true : false,
+      jsonError: jsonResult ? null : 'Error al generar el archivo JSON'
     });
     // ====== /INSERT/UPSERT ======
   } catch (err) {
-    console.error('Error importando empleados.xlsx:', err);
+    console.error(`Error importando ${filename}:`, err);
     if (err.code === 'ENOENT') {
       return res.status(404).json({
         ok: false,
-        message: `No se encontró el archivo en: ${path.relative(process.cwd(), excelPath)}`,
+        message: `No se encontró el archivo: ${filename}`,
+        path: excelPath
       });
     }
     return res.status(500).json({
