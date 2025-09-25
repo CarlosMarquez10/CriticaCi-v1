@@ -11,6 +11,7 @@ import {
   validarCamposVerificacion,
   validarCamposNumericos,
   validarLecturasAlfanumerica,
+  validarObservacionesLecturas,
   validarSecuenciaLecturas
 } from '../services/validaciones.service.js';
 
@@ -38,6 +39,7 @@ const validarRegistros = async (req, res) => {
       validarCampoObsValidacion,
       validarCamposVerificacion,
       validarCamposNumericos,
+      validarObservacionesLecturas,
       validarLecturasAlfanumerica,
       validarSecuenciaLecturas
     ];

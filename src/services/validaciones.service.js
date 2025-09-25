@@ -205,11 +205,56 @@ const validarSecuenciaLecturas = (registro) => {
   return registro;
 };
 
+/**
+ * Valida las observaciones de lecturas (Obs_Lectura_1, Obs_Lectura_2, Obs_Lectura_3, Obs_Lectura_4)
+ * Si contienen "lectura real", "lectura confirmada" o "lectura", actualiza Validacion y obsValidacion
+ * @param {Object} registro - Registro a validar
+ * @returns {Object} - Registro con campos Validacion y obsValidacion actualizados
+ */
+const validarObservacionesLecturas = (registro) => {
+  // Solo procesar registros pendientes de validación
+  if (!registro || registro.Validacion !== "PENDIENTE") return registro;
+  
+  // Verificar que existan las observaciones para validar
+  const camposObservacion = ["Obs_Lectura_1", "Obs_Lectura_2", "Obs_Lectura_3", "Obs_Lectura_4"];
+  
+  // Palabras clave que indican confirmación de lectura
+  const palabrasClave = ["lectura real", "lectura confirmada", "lectura"];
+  
+  // Verificar si alguna observación contiene las palabras clave
+  let observacionConfirmada = false;
+  
+  for (const campo of camposObservacion) {
+    if (!registro[campo]) continue;
+    
+    const observacion = registro[campo].toLowerCase();
+    
+    // Verificar si la observación contiene alguna de las palabras clave
+    for (const palabra of palabrasClave) {
+      if (observacion.includes(palabra)) {
+        observacionConfirmada = true;
+        break;
+      }
+    }
+    
+    if (observacionConfirmada) break;
+  }
+  
+  // Si se encontró una observación que confirma la lectura
+  if (observacionConfirmada) {
+    registro.Validacion = "SI";
+    registro.obsValidacion = "Confirma la lectura alfanumérica";
+  }
+  
+  return registro;
+};
+
 export {
   validarCampoValidacion,
   validarCampoObsValidacion,
   validarCamposVerificacion,
   validarCamposNumericos,
   validarLecturasAlfanumerica,
+  validarObservacionesLecturas,
   validarSecuenciaLecturas
 };
