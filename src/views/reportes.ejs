@@ -1,0 +1,228 @@
+<%- include('partials/header', { title: 'Reportes' }) %>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active">Reportes</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">
+                        <i class="fas fa-file-excel me-2 text-success"></i>
+                        Reportes Excel
+                    </h4>
+                    <div>
+                        <a href="/excel/generate" class="btn btn-success">
+                            <i class="fas fa-plus me-2"></i>Generar Nuevo Reporte
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <% if (files && files.length > 0) { %>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Se encontraron <strong><%= files.length %></strong> reporte(s) Excel disponible(s).
+                        </div>
+                        
+                        <div class="file-list">
+                            <% files.forEach(function(file, index) { %>
+                                <div class="file-item d-flex align-items-center justify-content-between fade-in mb-3 p-3 border rounded">
+                                    <div class="d-flex align-items-center flex-grow-1">
+                                        <div class="file-icon me-3">
+                                            <i class="fas fa-file-excel text-success fa-2x"></i>
+                                        </div>
+                                        <div class="file-info flex-grow-1">
+                                            <h6 class="mb-1 file-name"><%= file.name %></h6>
+                                            <small class="text-muted">
+                                                Tamaño: <%= formatFileSize(file.size) %> | 
+                                                Creado: <%= new Date(file.modified).toLocaleDateString('es-ES', {
+                                                    year: 'numeric',
+                                                    month: 'short',
+                                                    day: 'numeric',
+                                                    hour: '2-digit',
+                                                    minute: '2-digit'
+                                                }) %>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="file-actions">
+                                        <button class="btn btn-sm btn-primary me-2" 
+                                                onclick="aplicarValidaciones()"
+                                                data-bs-toggle="tooltip" 
+                                                title="Aplicar validaciones a los registros">
+                                            <i class="fas fa-filter me-1"></i>
+                                            Filtros
+                                        </button>
+                                        <button class="btn btn-sm btn-success me-2" 
+                                                onclick="downloadReportWithValidations('<%= file.name %>')"
+                                                data-bs-toggle="tooltip" 
+                                                title="Descargar reporte con validaciones">
+                                            <i class="fas fa-download me-1"></i>
+                                            Descargar
+                                        </button>
+                                        <button class="btn btn-outline-danger btn-sm btn-action btn-delete" 
+                                                onclick="confirmDeleteReport('<%= file.name %>')"
+                                                data-filename="<%= file.name %>"
+                                                data-bs-toggle="tooltip" 
+                                                title="Eliminar reporte">
+                                            <i class="fas fa-trash me-1"></i>
+                                            Borrar
+                                        </button>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        </div>
+                    <% } else { %>
+                        <div class="text-center py-5">
+                            <i class="fas fa-file-excel fa-4x text-muted mb-3"></i>
+                            <h5 class="text-muted">No hay reportes disponibles</h5>
+                            <p class="text-muted">Genera tu primer reporte Excel para comenzar</p>
+                            <a href="/excel/generate" class="btn btn-success">
+                                <i class="fas fa-plus me-2"></i>Generar Primer Reporte
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación para eliminar -->
+<div class="modal fade" id="deleteReportModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                    Confirmar Eliminación
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar el reporte <strong id="reportToDelete"></strong>?</p>
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Esta acción no se puede deshacer.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteReportBtn">
+                    <i class="fas fa-trash me-2"></i>Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts específicos para reportes -->
+<script>
+    // Función para aplicar validaciones
+    function aplicarValidaciones() {
+        // Mostrar indicador de carga
+        showAlert('info', 'Aplicando validaciones a los registros...');
+        
+        fetch('/api/validaciones/validar')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showAlert('success', `${data.message}. Total registros: ${data.totalRegistros}`);
+                } else {
+                    showAlert('danger', data.message || 'Error al aplicar validaciones');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showAlert('danger', 'Error de conexión al aplicar validaciones');
+            });
+    }
+    
+    // Función para descargar reporte original
+    function downloadReport(fileName) {
+        window.location.href = `/reportes/download/${encodeURIComponent(fileName)}`;
+    }
+    
+    // Función para descargar reporte con validaciones aplicadas
+    function downloadReportWithValidations(fileName) {
+        window.location.href = `/reportes/download-validated/${encodeURIComponent(fileName)}`;
+    }
+
+    // Función para confirmar eliminación
+    function confirmDeleteReport(fileName) {
+        document.getElementById('reportToDelete').textContent = fileName;
+        const modal = new bootstrap.Modal(document.getElementById('deleteReportModal'));
+        modal.show();
+        
+        // Configurar el botón de confirmación
+        document.getElementById('confirmDeleteReportBtn').onclick = function() {
+            deleteReport(fileName);
+            modal.hide();
+        };
+    }
+
+    // Función para eliminar reporte
+    function deleteReport(fileName) {
+        fetch(`/reportes/delete/${encodeURIComponent(fileName)}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                // Mostrar mensaje de éxito
+                showAlert('success', data.message);
+                // Recargar la página después de un breve delay
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            } else {
+                showAlert('danger', data.message || 'Error al eliminar el reporte');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showAlert('danger', 'Error de conexión al eliminar el reporte');
+        });
+    }
+
+    // Función para mostrar alertas
+    function showAlert(type, message) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+        alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+        alertDiv.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        document.body.appendChild(alertDiv);
+        
+        // Auto-remover después de 5 segundos
+        setTimeout(() => {
+            if (alertDiv.parentNode) {
+                alertDiv.remove();
+            }
+        }, 5000);
+    }
+
+    // Inicializar tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+</script>
+
+<%- include('partials/footer') %>
