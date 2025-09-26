@@ -128,6 +128,50 @@ const validarLecturasAlfanumerica = (registro) => {
 
 
 /**
+ * Valida si hay números en los campos de observaciones
+ * Si se encuentra un número, actualiza los campos Validacion y obsValidacion
+ * @param {Object} registro - Registro a validar
+ * @returns {Object} - Registro con campos Validacion y obsValidacion actualizados
+ */
+const validarNumerosEnObservaciones = (registro) => {
+  if (!registro) return registro;
+  
+  // Solo procesar registros pendientes de validación
+  if (registro.Validacion !== "PENDIENTE") return registro;
+  
+  // Campos de observaciones a revisar
+  const camposObservacion = [
+    "Obs_Lectura_1",
+    "Obs_Lectura_2",
+    "Obs_Lectura_3",
+    "Obs_Lectura_4"
+  ];
+  
+  // Expresión regular para encontrar números en el texto
+  const regexNumeros = /\d+/;
+  
+  // Verificar si hay números en alguna observación
+  let numeroEncontrado = false;
+  
+  for (const campo of camposObservacion) {
+    if (registro[campo] && typeof registro[campo] === 'string') {
+      if (regexNumeros.test(registro[campo])) {
+        numeroEncontrado = true;
+        break;
+      }
+    }
+  }
+  
+  // Si se encontró un número en alguna observación, actualizar los campos de validación
+  if (numeroEncontrado) {
+    registro.Validacion = "SI";
+    registro.obsValidacion = "Confirma la lectura alfanumérica";
+  }
+  
+  return registro;
+};
+
+/**
  * Valida la secuencia de lecturas (Lectura_1 > Lectura_2 > Lectura_3 > Lectura_4)
  * Si la secuencia no es correcta, verifica el mes de FECHALECTURA y OBSERVACIONDELECTURA
  * @param {Object} registro - Registro a validar
@@ -256,5 +300,6 @@ export {
   validarCamposNumericos,
   validarLecturasAlfanumerica,
   validarObservacionesLecturas,
-  validarSecuenciaLecturas
+  validarSecuenciaLecturas,
+  validarNumerosEnObservaciones
 };

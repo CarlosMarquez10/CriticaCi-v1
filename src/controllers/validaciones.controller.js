@@ -12,7 +12,8 @@ import {
   validarCamposNumericos,
   validarLecturasAlfanumerica,
   validarObservacionesLecturas,
-  validarSecuenciaLecturas
+  validarSecuenciaLecturas,
+  validarNumerosEnObservaciones
 } from '../services/validaciones.service.js';
 
 // Configuración para ES modules
@@ -41,7 +42,8 @@ const validarRegistros = async (req, res) => {
       validarCamposNumericos,
       validarObservacionesLecturas,
       validarLecturasAlfanumerica,
-      validarSecuenciaLecturas
+      validarSecuenciaLecturas,
+      validarNumerosEnObservaciones
     ];
     
     // Procesar las validaciones
