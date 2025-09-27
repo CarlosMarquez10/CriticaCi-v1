@@ -102,7 +102,9 @@ const validarLecturasAlfanumerica = (registro) => {
     "Obs_Lectura_1",
     "Obs_Lectura_2",
     "Obs_Lectura_3",
-    "Obs_Lectura_4"
+    "Obs_Lectura_4",
+    "Obs_Lectura_5",
+    "Obs_Lectura_6"
   ];
   
   // Verificar si la lectura facturada aparece en alguna observación
@@ -129,7 +131,7 @@ const validarLecturasAlfanumerica = (registro) => {
 
 /**
  * Valida si hay números en los campos de observaciones
- * Si se encuentra un número, actualiza los campos Validacion y obsValidacion
+ * Distingue entre números solos y números acompañados de texto explicativo
  * @param {Object} registro - Registro a validar
  * @returns {Object} - Registro con campos Validacion y obsValidacion actualizados
  */
@@ -150,22 +152,38 @@ const validarNumerosEnObservaciones = (registro) => {
   // Expresión regular para encontrar números en el texto
   const regexNumeros = /\d+/;
   
-  // Verificar si hay números en alguna observación
-  let numeroEncontrado = false;
+  // Expresión regular para verificar si hay texto explicativo junto con el número
+  const regexTextoConNumero = /[a-zA-Z]+.*\d+|\d+.*[a-zA-Z]+/;
+  
+  // Variables para controlar el tipo de observación encontrada
+  let numeroSoloEncontrado = false;
+  let numeroConTextoEncontrado = false;
   
   for (const campo of camposObservacion) {
     if (registro[campo] && typeof registro[campo] === 'string') {
-      if (regexNumeros.test(registro[campo])) {
-        numeroEncontrado = true;
-        break;
+      const observacion = registro[campo];
+      
+      // Verificar si hay números en la observación
+      if (regexNumeros.test(observacion)) {
+        // Verificar si el número está acompañado de texto explicativo
+        if (regexTextoConNumero.test(observacion)) {
+          numeroConTextoEncontrado = true;
+          break;
+        } else {
+          numeroSoloEncontrado = true;
+          // No hacemos break aquí para seguir buscando si hay alguna observación con texto
+        }
       }
     }
   }
   
-  // Si se encontró un número en alguna observación, actualizar los campos de validación
-  if (numeroEncontrado) {
+  // Priorizar la validación con texto explicativo sobre la validación con solo números
+  if (numeroConTextoEncontrado) {
     registro.Validacion = "SI";
     registro.obsValidacion = "Confirma la lectura alfanumérica";
+  } else if (numeroSoloEncontrado) {
+    registro.Validacion = "SI";
+    registro.obsValidacion = "Confirmacion incompleta de la lectura en alfanumérica";
   }
   
   return registro;
@@ -260,7 +278,7 @@ const validarObservacionesLecturas = (registro) => {
   if (!registro || registro.Validacion !== "PENDIENTE") return registro;
   
   // Verificar que existan las observaciones para validar
-  const camposObservacion = ["Obs_Lectura_1", "Obs_Lectura_2", "Obs_Lectura_3", "Obs_Lectura_4"];
+  const camposObservacion = ["Obs_Lectura_1", "Obs_Lectura_2", "Obs_Lectura_3", "Obs_Lectura_4", "Obs_Lectura_5", "Obs_Lectura_6"];
   
   // Palabras clave que indican confirmación de lectura
   const palabrasClave = ["lectura real", "lectura confirmada", "lectura"];

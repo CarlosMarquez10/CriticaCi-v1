@@ -70,10 +70,14 @@ export const generateExcel = asyncHandler(async (req, res) => {
       { header: 'LECTURA_2', key: 'Lectura_2', width: 12 },
       { header: 'LECTURA_3', key: 'Lectura_3', width: 12 },
       { header: 'LECTURA_4', key: 'Lectura_4', width: 12 },
+      { header: 'LECTURA_5', key: 'Lectura_5', width: 12 },
+      { header: 'LECTURA_6', key: 'Lectura_6', width: 12 },
       { header: 'OBS_LECTURA_1', key: 'Obs_Lectura_1', width: 25 },
       { header: 'OBS_LECTURA_2', key: 'Obs_Lectura_2', width: 25 },
       { header: 'OBS_LECTURA_3', key: 'Obs_Lectura_3', width: 25 },
       { header: 'OBS_LECTURA_4', key: 'Obs_Lectura_4', width: 25 },
+      { header: 'OBS_LECTURA_5', key: 'Obs_Lectura_5', width: 25 },
+      { header: 'OBS_LECTURA_6', key: 'Obs_Lectura_6', width: 25 },
       { header: 'OPERARIO', key: 'Operario', width: 30 },
       { header: 'MEDIDOR', key: 'medidor', width: 15 },
       { header: 'MARCA_MEDIDOR', key: 'marcamedidor', width: 15 },
@@ -85,8 +89,8 @@ export const generateExcel = asyncHandler(async (req, res) => {
       { header: 'OBS_VALIDACION', key: 'obsValidacion', width: 25 }
     ];
 
-    // Estilo para el encabezado (solo hasta la columna AH - 34)
-    for (let col = 1; col <= 34; col++) {
+    // Estilo para el encabezado (actualizado para incluir nuevas columnas - 38)
+    for (let col = 1; col <= 38; col++) {
       const cell = worksheet.getCell(1, col);
       cell.font = { bold: true, color: { argb: 'FFFFFF' } };
       cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: '4472C4' } };
@@ -117,10 +121,14 @@ export const generateExcel = asyncHandler(async (req, res) => {
         Lectura_2: registro.Lectura_2,
         Lectura_3: registro.Lectura_3,
         Lectura_4: registro.Lectura_4,
+        Lectura_5: registro.Lectura_5,
+        Lectura_6: registro.Lectura_6,
         Obs_Lectura_1: registro.Obs_Lectura_1,
         Obs_Lectura_2: registro.Obs_Lectura_2,
         Obs_Lectura_3: registro.Obs_Lectura_3,
         Obs_Lectura_4: registro.Obs_Lectura_4,
+        Obs_Lectura_5: registro.Obs_Lectura_5,
+        Obs_Lectura_6: registro.Obs_Lectura_6,
         Operario: registro.Operario,
         medidor: registro.medidor,
         marcamedidor: registro.marcamedidor,
@@ -135,7 +143,7 @@ export const generateExcel = asyncHandler(async (req, res) => {
     });
 
     // Aplicar bordes a todas las celdas hasta la columna AH (34 columnas)
-    const totalColumns = 34; // Hasta la columna AH
+    const totalColumns = 42; // Hasta la columna AH
     const totalRows = registros.length + 1; // +1 para incluir la fila de encabezado
     
     // Aplicar bordes a todas las celdas en el rango
@@ -240,10 +248,14 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
       { header: 'LECTURA_2', key: 'Lectura_2', width: 12 },
       { header: 'LECTURA_3', key: 'Lectura_3', width: 12 },
       { header: 'LECTURA_4', key: 'Lectura_4', width: 12 },
+      { header: 'LECTURA_5', key: 'Lectura_5', width: 12 },
+      { header: 'LECTURA_6', key: 'Lectura_6', width: 12 },
       { header: 'OBS_LECTURA_1', key: 'Obs_Lectura_1', width: 25 },
       { header: 'OBS_LECTURA_2', key: 'Obs_Lectura_2', width: 25 },
       { header: 'OBS_LECTURA_3', key: 'Obs_Lectura_3', width: 25 },
       { header: 'OBS_LECTURA_4', key: 'Obs_Lectura_4', width: 25 },
+      { header: 'OBS_LECTURA_5', key: 'Obs_Lectura_5', width: 25 },
+      { header: 'OBS_LECTURA_6', key: 'Obs_Lectura_6', width: 25 },
       { header: 'OPERARIO', key: 'Operario', width: 30 },
       { header: 'MEDIDOR', key: 'medidor', width: 15 },
       { header: 'MARCA_MEDIDOR', key: 'marcamedidor', width: 15 },
@@ -298,10 +310,14 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
         Lectura_2: registro.Lectura_2,
         Lectura_3: registro.Lectura_3,
         Lectura_4: registro.Lectura_4,
+        Lectura_5: registro.Lectura_5,
+        Lectura_6: registro.Lectura_6,
         Obs_Lectura_1: registro.Obs_Lectura_1,
         Obs_Lectura_2: registro.Obs_Lectura_2,
         Obs_Lectura_3: registro.Obs_Lectura_3,
         Obs_Lectura_4: registro.Obs_Lectura_4,
+        Obs_Lectura_5: registro.Obs_Lectura_5,
+        Obs_Lectura_6: registro.Obs_Lectura_6,
         Operario: registro.Operario,
         medidor: registro.medidor,
         marcamedidor: registro.marcamedidor,

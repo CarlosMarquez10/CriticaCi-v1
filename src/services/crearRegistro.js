@@ -37,10 +37,14 @@ export class CrearRegistro {
    * @param {number} [datosExtras.Lectura_2] - Segunda lectura histórica
    * @param {number} [datosExtras.Lectura_3] - Tercera lectura histórica
    * @param {number} [datosExtras.Lectura_4] - Cuarta lectura histórica
+   * @param {number} [datosExtras.Lectura_5] - Quinta lectura histórica
+   * @param {number} [datosExtras.Lectura_6] - Sexta lectura histórica
    * @param {string} [datosExtras.Obs_Lectura_1] - Observación primera lectura
    * @param {string} [datosExtras.Obs_Lectura_2] - Observación segunda lectura
    * @param {string} [datosExtras.Obs_Lectura_3] - Observación tercera lectura
    * @param {string} [datosExtras.Obs_Lectura_4] - Observación cuarta lectura
+   * @param {string} [datosExtras.Obs_Lectura_5] - Observación quinta lectura
+   * @param {string} [datosExtras.Obs_Lectura_6] - Observación sexta lectura
    * @param {string} [datosExtras.Operario] - Nombre del operario
    * @param {string} [datosExtras.medidor] - Número del medidor
    * @param {string} [datosExtras.marcamedidor] - Marca del medidor
@@ -79,8 +83,8 @@ export class CrearRegistro {
     },
     {
       // extras
-      Lectura_1 = null, Lectura_2 = null, Lectura_3 = null, Lectura_4 = null, Obs_Lectura_1 = null,
-      Obs_Lectura_2 = null, Obs_Lectura_3 = null, Obs_Lectura_4 = null,
+      Lectura_1 = null, Lectura_2 = null, Lectura_3 = null, Lectura_4 = null, Lectura_5 = null, Lectura_6 = null, 
+      Obs_Lectura_1 = null, Obs_Lectura_2 = null, Obs_Lectura_3 = null, Obs_Lectura_4 = null, Obs_Lectura_5 = null, Obs_Lectura_6 = null,
       Operario = null, medidor = null, marcamedidor = null, tipomedidor = null,
       cedula = null, tipo = null, sede = null, Validacion = null, obsValidacion = null,
     } = {},
@@ -110,10 +114,14 @@ export class CrearRegistro {
     this.Lectura_2 = Lectura_2;
     this.Lectura_3 = Lectura_3;
     this.Lectura_4 = Lectura_4;
+    this.Lectura_5 = Lectura_5;
+    this.Lectura_6 = Lectura_6;
     this.Obs_Lectura_1 = Obs_Lectura_1;
     this.Obs_Lectura_2 = Obs_Lectura_2;
     this.Obs_Lectura_3 = Obs_Lectura_3;
     this.Obs_Lectura_4 = Obs_Lectura_4;
+    this.Obs_Lectura_5 = Obs_Lectura_5;
+    this.Obs_Lectura_6 = Obs_Lectura_6;
     this.Operario = Operario;
     this.medidor = medidor;
     this.marcamedidor = marcamedidor;
@@ -172,10 +180,14 @@ export class CrearRegistro {
       Lectura_2: lecturasUsuario.Lectura_2,
       Lectura_3: lecturasUsuario.Lectura_3,
       Lectura_4: lecturasUsuario.Lectura_4,
+      Lectura_5: lecturasUsuario.Lectura_5,
+      Lectura_6: lecturasUsuario.Lectura_6,
       Obs_Lectura_1: lecturasUsuario.Obs_Lectura_1,
       Obs_Lectura_2: lecturasUsuario.Obs_Lectura_2,
       Obs_Lectura_3: lecturasUsuario.Obs_Lectura_3,
       Obs_Lectura_4: lecturasUsuario.Obs_Lectura_4,
+      Obs_Lectura_5: lecturasUsuario.Obs_Lectura_5,
+      Obs_Lectura_6: lecturasUsuario.Obs_Lectura_6,
       Operario: operarioPorCedula?.nombre || nombreOperario || (emp?.nombre ?? null),
       medidor: medidorNum,
       marcamedidor: medidorDbRow?.marca_medidor ?? null,
@@ -214,22 +226,28 @@ export class CrearRegistro {
 
     // Asignar lecturas a los campos correspondientes
     const resultado = {
-      Lectura_1: null, // Mes 8 (mes anterior al actual si estamos en mes 9)
-      Lectura_2: null, // Mes 7
-      Lectura_3: null, // Mes 6
-      Lectura_4: null, // Mes 5
-      Obs_Lectura_1: null, // Observación del mes anterior
-      Obs_Lectura_2: null, // Observación de 2 meses atrás
-      Obs_Lectura_3: null, // Observación de 3 meses atrás
-      Obs_Lectura_4: null  // Observación de 4 meses atrás
+      Lectura_1: null, // Mes actual
+      Lectura_2: null, // Mes anterior
+      Lectura_3: null, // 2 meses atrás
+      Lectura_4: null, // 3 meses atrás
+      Lectura_5: null, // 4 meses atrás
+      Lectura_6: null, // 5 meses atrás
+      Obs_Lectura_1: null, // Observación del mes actual
+      Obs_Lectura_2: null, // Observación del mes anterior
+      Obs_Lectura_3: null, // Observación de 2 meses atrás
+      Obs_Lectura_4: null, // Observación de 3 meses atrás
+      Obs_Lectura_5: null, // Observación de 4 meses atrás
+      Obs_Lectura_6: null  // Observación de 5 meses atrás
     };
 
     // Mapear las lecturas según el mes objetivo
     const mesesObjetivo = [
-      mesActual - 1, // Lectura_1: mes anterior
-      mesActual - 2, // Lectura_2: 2 meses atrás
-      mesActual - 3, // Lectura_3: 3 meses atrás
-      mesActual - 4  // Lectura_4: 4 meses atrás
+      mesActual,     // Lectura_1: mes actual
+      mesActual - 1, // Lectura_2: mes anterior
+      mesActual - 2, // Lectura_3: 2 meses atrás
+      mesActual - 3, // Lectura_4: 3 meses atrás
+      mesActual - 4, // Lectura_5: 4 meses atrás
+      mesActual - 5  // Lectura_6: 5 meses atrás
     ];
 
     mesesObjetivo.forEach((mesObjetivo, index) => {
@@ -276,6 +294,14 @@ export class CrearRegistro {
           case 3: 
             resultado.Lectura_4 = valorLectura; 
             resultado.Obs_Lectura_4 = obsTexto;
+            break;
+          case 4: 
+            resultado.Lectura_5 = valorLectura; 
+            resultado.Obs_Lectura_5 = obsTexto;
+            break;
+          case 5: 
+            resultado.Lectura_6 = valorLectura; 
+            resultado.Obs_Lectura_6 = obsTexto;
             break;
         }
       }
