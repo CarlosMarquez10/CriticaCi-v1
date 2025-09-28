@@ -72,6 +72,12 @@ export const generateExcel = asyncHandler(async (req, res) => {
       { header: 'LECTURA_4', key: 'Lectura_4', width: 12 },
       { header: 'LECTURA_5', key: 'Lectura_5', width: 12 },
       { header: 'LECTURA_6', key: 'Lectura_6', width: 12 },
+      { header: 'CONSUMO_1', key: 'Consumo_1', width: 12 },
+      { header: 'CONSUMO_2', key: 'Consumo_2', width: 12 },
+      { header: 'CONSUMO_3', key: 'Consumo_3', width: 12 },
+      { header: 'CONSUMO_4', key: 'Consumo_4', width: 12 },
+      { header: 'CONSUMO_5', key: 'Consumo_5', width: 12 },
+      { header: 'CONSUMO_6', key: 'Consumo_6', width: 12 },
       { header: 'OBS_LECTURA_1', key: 'Obs_Lectura_1', width: 25 },
       { header: 'OBS_LECTURA_2', key: 'Obs_Lectura_2', width: 25 },
       { header: 'OBS_LECTURA_3', key: 'Obs_Lectura_3', width: 25 },
@@ -123,6 +129,12 @@ export const generateExcel = asyncHandler(async (req, res) => {
         Lectura_4: registro.Lectura_4,
         Lectura_5: registro.Lectura_5,
         Lectura_6: registro.Lectura_6,
+        Consumo_1: registro.Consumo_1,
+        Consumo_2: registro.Consumo_2,
+        Consumo_3: registro.Consumo_3,
+        Consumo_4: registro.Consumo_4,
+        Consumo_5: registro.Consumo_5,
+        Consumo_6: registro.Consumo_6,
         Obs_Lectura_1: registro.Obs_Lectura_1,
         Obs_Lectura_2: registro.Obs_Lectura_2,
         Obs_Lectura_3: registro.Obs_Lectura_3,
@@ -250,6 +262,12 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
       { header: 'LECTURA_4', key: 'Lectura_4', width: 12 },
       { header: 'LECTURA_5', key: 'Lectura_5', width: 12 },
       { header: 'LECTURA_6', key: 'Lectura_6', width: 12 },
+      { header: 'CONSUMO_1', key: 'Consumo_1', width: 12 },
+      { header: 'CONSUMO_2', key: 'Consumo_2', width: 12 },
+      { header: 'CONSUMO_3', key: 'Consumo_3', width: 12 },
+      { header: 'CONSUMO_4', key: 'Consumo_4', width: 12 },
+      { header: 'CONSUMO_5', key: 'Consumo_5', width: 12 },
+      { header: 'CONSUMO_6', key: 'Consumo_6', width: 12 },
       { header: 'OBS_LECTURA_1', key: 'Obs_Lectura_1', width: 25 },
       { header: 'OBS_LECTURA_2', key: 'Obs_Lectura_2', width: 25 },
       { header: 'OBS_LECTURA_3', key: 'Obs_Lectura_3', width: 25 },
@@ -270,13 +288,29 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
     worksheet.columns = columns;
 
     // Estilo para el encabezado
-    worksheet.getRow(1).eachCell((cell) => {
+    worksheet.getRow(1).eachCell((cell, colNumber) => {
+      // Fuente en blanco para todos los encabezados
       cell.font = { bold: true, color: { argb: 'FFFFFF' } };
+      
+      // Aplicar diferentes colores según el rango de columnas
+      let bgColor = '366092'; // Color azul por defecto (columnas 1-23)
+      
+      if (colNumber >= 24 && colNumber <= 29) {
+        bgColor = 'E36C0A'; // Color naranja (columnas 24-29)
+      } else if (colNumber >= 30 && colNumber <= 35) {
+        bgColor = '548235'; // Color verde oscuro (columnas 30-35)
+      } else if (colNumber >= 36 && colNumber <= 42) {
+        bgColor = '404040'; // Color gris oscuro (columnas 36-42)
+      } else if (colNumber === 43 || colNumber === 44) {
+        bgColor = 'C00000'; // Color rojo (columnas 43 y 44)
+      }
+      
       cell.fill = {
         type: 'pattern',
         pattern: 'solid',
-        fgColor: { argb: '366092' }
+        fgColor: { argb: bgColor }
       };
+      
       cell.alignment = { horizontal: 'center', vertical: 'middle' };
       cell.border = {
         top: { style: 'thin' },
@@ -312,6 +346,12 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
         Lectura_4: registro.Lectura_4,
         Lectura_5: registro.Lectura_5,
         Lectura_6: registro.Lectura_6,
+        Consumo_1: registro.Consumo_1,
+        Consumo_2: registro.Consumo_2,
+        Consumo_3: registro.Consumo_3,
+        Consumo_4: registro.Consumo_4,
+        Consumo_5: registro.Consumo_5,
+        Consumo_6: registro.Consumo_6,
         Obs_Lectura_1: registro.Obs_Lectura_1,
         Obs_Lectura_2: registro.Obs_Lectura_2,
         Obs_Lectura_3: registro.Obs_Lectura_3,
@@ -339,6 +379,23 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
         };
       });
     });
+
+    // Aplicar bordes a todas las celdas del rango de datos (incluso las vacías)
+    const totalRows = worksheet.rowCount;
+    const totalCols = worksheet.columnCount;
+    
+    // Aplicar bordes a todas las celdas en el rango utilizado
+    for (let rowIndex = 1; rowIndex <= totalRows; rowIndex++) {
+      for (let colIndex = 1; colIndex <= totalCols; colIndex++) {
+        const cell = worksheet.getCell(rowIndex, colIndex);
+        cell.border = {
+          top: { style: 'thin' },
+          left: { style: 'thin' },
+          bottom: { style: 'thin' },
+          right: { style: 'thin' }
+        };
+      }
+    }
 
     // Configurar la respuesta HTTP para descargar el archivo
     const fileName = `RegistrosEnriquecidos_${new Date().toISOString().slice(0, 10)}.xlsx`;
