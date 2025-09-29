@@ -76,14 +76,19 @@ app.use('/api/validaciones', validacionesRoutes); // ruta para validar registros
 app.use(errorHandler);
 
 /**
- * Puerto del servidor
  * @constant {number} PORT
  * @description Puerto obtenido de variable de entorno PORT o 3000 por defecto
  */
 const PORT = process.env.PORT || 3000;
 
 /**
+ * @constant {string} BASE_URL
+ * @description URL base obtenida de variable de entorno BASE_URL o localhost por defecto
+ */
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+
+/**
  * Inicia el servidor HTTP
  * @description Arranca el servidor Express en el puerto especificado
  */
-app.listen(PORT, () => console.log(`API escuchando en http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`API escuchando en ${BASE_URL}`));

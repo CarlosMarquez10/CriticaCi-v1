@@ -104,7 +104,7 @@ Este proyecto se adhiere a un código de conducta. Al participar, se espera que 
 6. **Verificar instalación**
    ```bash
    npm run dev
-   # El servidor debe iniciarse en http://localhost:3000
+   # El servidor debe iniciarse en la URL configurada en BASE_URL
    ```
 
 ---
