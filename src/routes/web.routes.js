@@ -16,6 +16,7 @@ import {
     downloadFile,
     handleMulterError 
 } from '../controllers/upload.controller.js';
+import { renderOperariosView, getRegistrosOperario } from '../controllers/operarios.controller.js';
 
 const router = Router();
 
@@ -132,5 +133,27 @@ router.get('/api/files/:type', async (req, res) => {
         });
     }
 });
+
+/**
+ * @route GET /operarios
+ * @description Vista principal de consulta de operarios
+ */
+router.get('/operarios', (req, res) => {
+    const { cedula } = req.query;
+    
+    if (cedula) {
+        // Si hay una cédula en la consulta, redirigir a la ruta con parámetro
+        return getRegistrosOperario({ params: { cedula } }, res);
+    }
+    
+    // Si no hay cédula, mostrar la vista principal
+    return renderOperariosView(req, res);
+});
+
+/**
+ * @route GET /operarios/:cedula
+ * @description Vista de detalles de un operario específico
+ */
+router.get('/operarios/:cedula', getRegistrosOperario);
 
 export default router;

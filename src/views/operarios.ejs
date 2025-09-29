@@ -1,0 +1,454 @@
+<%- include('partials/header', { title: 'Consulta de Operarios' }) %>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active">Consulta de Operarios</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-user-hard-hat me-2"></i>
+                        Consulta de Operarios
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form id="formConsulta" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="cedula" class="form-label">Cédula del Operario</label>
+                            <input type="text" class="form-control" id="cedula" name="cedula" value="<%= cedula %>" placeholder="Ingrese la cédula del operario">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search me-2"></i>Consultar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% if (cedula) { %>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Información del Operario</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <% if (fotoUrl) { %>
+                            <img src="<%= fotoUrl %>" alt="Foto del operario" class="img-fluid rounded mb-3" style="max-height: 200px;">
+                        <% } else { %>
+                            <div class="bg-light p-5 rounded mb-3 d-flex align-items-center justify-content-center">
+                                <i class="fas fa-user fa-4x text-secondary"></i>
+                            </div>
+                        <% } %>
+                        <h4><%= cedula %></h4>
+                        <% if (registros.length > 0) { %>
+                            <p class="mb-1"><strong>Nombre:</strong> <%= registros[0].Operario || 'No disponible' %></p>
+                            <p class="mb-1"><strong>Cargo:</strong> <%= registros[0].tipo || 'No disponible' %></p>
+                            <p class="mb-0"><strong>Sede:</strong> <%= registros[0].sede || 'No disponible' %></p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Estadísticas</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="bg-light p-3 rounded">
+                                    <h3><%= registros.length %></h3>
+                                    <p class="mb-0">Total Registros</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="bg-light p-3 rounded">
+                                    <h3>
+                                        <% 
+                                            var errores = 0;
+                                            if (registros.length > 0) {
+                                                registros.forEach(function(reg) {
+                                                    if (reg.TIPODEERROR && reg.TIPODEERROR !== 'Sin error') errores++;
+                                                });
+                                            }
+                                        %>
+                                        <%= errores %>
+                                    </h3>
+                                    <p class="mb-0">Con Errores</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="bg-light p-3 rounded">
+                                    <h3>
+                                        <% 
+                                            var porcentaje = 0;
+                                            if (registros.length > 0) {
+                                                porcentaje = ((registros.length - errores) / registros.length * 100).toFixed(1);
+                                            }
+                                        %>
+                                        <%= porcentaje %>%
+                                    </h3>
+                                    <p class="mb-0">Efectividad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Registros del Operario</h5>
+                        <button id="exportarExcel" class="btn btn-sm btn-light">
+                            <i class="fas fa-file-excel me-2"></i>Exportar a Excel
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <% if (error) { %>
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle me-2"></i><%= error %>
+                            </div>
+                        <% } else { %>
+                            <div class="table-responsive">
+                                <table id="tablaRegistros" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>USUARIO</th>
+                                            <th>ZONA/CICLO</th>
+                                            <th>FECHALECTURA</th>
+                                            <th>LECTURATOMADA</th>
+                                            <th>LECTURAFACTURADA</th>
+                                            <th>KWAJUSTADOS</th>
+                                            <th>TIPODEERROR</th>
+                                            <th>tipomedidor</th>
+                                            <th>Validacion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% registros.forEach(function(reg) { %>
+                                            <tr>
+                                                <td><%= reg.USUARIO || '-' %></td>
+                                                <td><%= reg.ZONA || '-' %></td>
+                                                <td><%= reg.FECHALECTURA || '-' %></td>
+                                                <td><%= reg.LECTURATOMADA || '-' %></td>
+                                                <td><%= reg.LECTURAFACTURADA || '-' %></td>
+                                                <td><%= reg.KWAJUSTADOS || '-' %></td>
+                                                <td><%= reg.TIPODEERROR || '-' %></td>
+                                                <td><%= reg.tipomedidor || '-' %></td>
+                                                <td><%= reg.Validacion || '-' %></td>
+                                            </tr>
+                                        <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">KW Ajustados</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chartKWAjustados"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">Tipos de Errores</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chartTiposErrores"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Tipos de Medidores</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chartTiposMedidores"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar DataTable
+        if (document.getElementById('tablaRegistros')) {
+            new DataTable('#tablaRegistros', {
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json',
+                }
+            });
+        }
+        
+        // Manejar envío del formulario
+        document.getElementById('formConsulta').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cedula = document.getElementById('cedula').value.trim();
+            if (cedula) {
+                window.location.href = `/operarios?cedula=${cedula}`;
+            }
+        });
+    });
+</script>
+
+<% if (registros.length > 0) { %>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gráfico de KW Ajustados
+        var kwRangos = {
+            'Positivos altos (>1000)': 0,
+            'Positivos medios (100-1000)': 0,
+            'Positivos bajos (0-100)': 0,
+            'Sin ajuste (0)': 0,
+            'Negativos bajos (0 a -100)': 0,
+            'Negativos medios (-100 a -1000)': 0,
+            'Negativos altos (< -1000)': 0
+        };
+        
+        <% registros.forEach(function(reg) { %>
+            var kw = parseFloat(<%= reg.KWAJUSTADOS || 0 %>);
+            if (kw > 1000) kwRangos['Positivos altos (>1000)']++;
+            else if (kw > 100) kwRangos['Positivos medios (100-1000)']++;
+            else if (kw > 0) kwRangos['Positivos bajos (0-100)']++;
+            else if (kw === 0) kwRangos['Sin ajuste (0)']++;
+            else if (kw > -100) kwRangos['Negativos bajos (0 a -100)']++;
+            else if (kw > -1000) kwRangos['Negativos medios (-100 a -1000)']++;
+            else kwRangos['Negativos altos (< -1000)']++;
+        <% }); %>
+        
+        var ctx = document.getElementById('chartKWAjustados').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(kwRangos),
+                datasets: [{
+                    label: 'Cantidad de registros',
+                    data: Object.values(kwRangos),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(255, 159, 64, 0.5)',
+                        'rgba(255, 205, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(201, 203, 207, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 159, 64)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(54, 162, 235)',
+                        'rgb(153, 102, 255)',
+                        'rgb(201, 203, 207)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribución de KW Ajustados'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Gráfico de Tipos de Errores
+        var tiposErrores = {};
+        
+        <% registros.forEach(function(reg) { %>
+            var tipoError = "<%= reg.TIPODEERROR || 'No especificado' %>";
+            tiposErrores[tipoError] = (tiposErrores[tipoError] || 0) + 1;
+        <% }); %>
+        
+        var ctxErrores = document.getElementById('chartTiposErrores').getContext('2d');
+        new Chart(ctxErrores, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(tiposErrores),
+                datasets: [{
+                    data: Object.values(tiposErrores),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(255, 159, 64, 0.5)',
+                        'rgba(255, 205, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(201, 203, 207, 0.5)'
+                    ],
+                    borderColor: function(context) {
+                        var index = context.dataIndex;
+                        var colors = [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'
+                        ];
+                        return colors[index % colors.length];
+                    },
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribución de Tipos de Errores'
+                    }
+                }
+            }
+        });
+        
+        // Gráfico de Tipos de Medidores
+        var tiposMedidores = {};
+        
+        <% registros.forEach(function(reg) { %>
+            var tipoMedidor = "<%= reg.tipomedidor || 'No especificado' %>";
+            tiposMedidores[tipoMedidor] = (tiposMedidores[tipoMedidor] || 0) + 1;
+        <% }); %>
+        
+        var ctxMedidores = document.getElementById('chartTiposMedidores').getContext('2d');
+        new Chart(ctxMedidores, {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(tiposMedidores),
+                datasets: [{
+                    data: Object.values(tiposMedidores),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(255, 159, 64, 0.5)',
+                        'rgba(255, 205, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(201, 203, 207, 0.5)'
+                    ],
+                    borderColor: function(context) {
+                        var index = context.dataIndex;
+                        var colors = [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'
+                        ];
+                        return colors[index % colors.length];
+                    },
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribución de Tipos de Medidores'
+                    }
+                }
+            }
+        });
+        
+        // Exportar a Excel
+        document.getElementById('exportarExcel').addEventListener('click', function() {
+            var data = [];
+            var headers = [];
+            
+            // Obtener encabezados
+            var tableHeaders = document.querySelectorAll('#tablaRegistros thead th');
+            tableHeaders.forEach(function(th) {
+                headers.push(th.textContent);
+            });
+            data.push(headers);
+            
+            // Obtener datos
+            var tableRows = document.querySelectorAll('#tablaRegistros tbody tr');
+            tableRows.forEach(function(row) {
+                var rowData = [];
+                row.querySelectorAll('td').forEach(function(cell) {
+                    rowData.push(cell.textContent);
+                });
+                data.push(rowData);
+            });
+            
+            // Crear CSV
+            var csvContent = "data:text/csv;charset=utf-8,";
+            data.forEach(function(rowArray) {
+                var row = rowArray.join(",");
+                csvContent += row + "\r\n";
+            });
+            
+            // Descargar CSV
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "registros_operario_<%= cedula %>.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    });
+</script>
+<% } %>
+
+<%- include('partials/footer') %>

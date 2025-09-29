@@ -1,0 +1,508 @@
+<%- include('partials/header', { title: 'Dashboard' }) %>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-chart-line me-2"></i>
+                        Dashboard de Registros
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form id="filterForm" class="row g-3">
+                        <div class="col-md-3">
+                            <label for="tipoLectura" class="form-label">Tipo Lectura</label>
+                            <select class="form-select" id="tipoLectura" name="tipoLectura">
+                                <option value="">Todos</option>
+                                <% if (tiposLectura && tiposLectura.length > 0) { %>
+                                    <% tiposLectura.forEach(function(tipo) { %>
+                                        <option value="<%= tipo %>" <%= selectedFilters.tipoLectura === tipo ? 'selected' : '' %>><%= tipo %></option>
+                                    <% }); %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="sede" class="form-label">Sede</label>
+                            <select class="form-select" id="sede" name="sede">
+                                <option value="">Todas</option>
+                                <% if (sedes && sedes.length > 0) { %>
+                                    <% sedes.forEach(function(sede) { %>
+                                        <option value="<%= sede %>" <%= selectedFilters.sede === sede ? 'selected' : '' %>><%= sede %></option>
+                                    <% }); %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fechaInicio" class="form-label">Fecha Inicio</label>
+                            <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" value="<%= selectedFilters.fechaInicio || '' %>">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="fechaFin" class="form-label">Fecha Fin</label>
+                            <input type="date" class="form-control" id="fechaFin" name="fechaFin" value="<%= selectedFilters.fechaFin || '' %>">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="operario" class="form-label">Operario</label>
+                            <select class="form-select" id="operario" name="operario">
+                                <option value="">Todos</option>
+                                <% if (operarios && operarios.length > 0) { %>
+                                    <% operarios.forEach(function(operario) { %>
+                                        <option value="<%= operario %>" <%= selectedFilters.operario === operario ? 'selected' : '' %>><%= operario %></option>
+                                    <% }); %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="tipoMedidor" class="form-label">Tipo Medidor</label>
+                            <select class="form-select" id="tipoMedidor" name="tipoMedidor">
+                                <option value="">Todos</option>
+                                <% if (tiposMedidor && tiposMedidor.length > 0) { %>
+                                    <% tiposMedidor.forEach(function(tipo) { %>
+                                        <option value="<%= tipo %>" <%= selectedFilters.tipoMedidor === tipo ? 'selected' : '' %>><%= tipo %></option>
+                                    <% }); %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="marcaMedidor" class="form-label">Marca Medidor</label>
+                            <select class="form-select" id="marcaMedidor" name="marcaMedidor">
+                                <option value="">Todas</option>
+                                <% if (marcasMedidor && marcasMedidor.length > 0) { %>
+                                    <% marcasMedidor.forEach(function(marca) { %>
+                                        <option value="<%= marca %>" <%= selectedFilters.marcaMedidor === marca ? 'selected' : '' %>><%= marca %></option>
+                                    <% }); %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validacion" class="form-label">Validación</label>
+                            <select class="form-select" id="validacion" name="validacion">
+                                <option value="">Todas</option>
+                                <% if (validaciones && validaciones.length > 0) { %>
+                                    <% validaciones.forEach(function(validacion) { %>
+                                        <option value="<%= validacion %>" <%= selectedFilters.validacion === validacion ? 'selected' : '' %>><%= validacion %></option>
+                                    <% }); %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="obsValidacion" class="form-label">Obs. Validación</label>
+                            <input type="text" class="form-control" id="obsValidacion" name="obsValidacion" value="<%= selectedFilters.obsValidacion || '' %>">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="kwAjustados" class="form-label">KW Ajustados</label>
+                            <input type="text" class="form-control" id="kwAjustados" name="kwAjustados" value="<%= selectedFilters.kwAjustados || '' %>">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="tipoError" class="form-label">Tipo Error</label>
+                            <select class="form-select" id="tipoError" name="tipoError">
+                                <option value="">Todos</option>
+                                <% if (tiposError && tiposError.length > 0) { %>
+                                    <% tiposError.forEach(function(tipo) { %>
+                                        <option value="<%= tipo %>" <%= selectedFilters.tipoError === tipo ? 'selected' : '' %>><%= tipo %></option>
+                                    <% }); %>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="usuario" name="usuario" value="<%= selectedFilters.usuario || '' %>">
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-filter me-2"></i>Aplicar Filtros
+                            </button>
+                            <button type="button" id="resetFilters" class="btn btn-secondary ms-2">
+                                <i class="fas fa-undo me-2"></i>Limpiar Filtros
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Distribución por Tipo de Lectura</h5>
+                    <span class="badge bg-light text-dark" id="tipoLecturaCount"></span>
+                </div>
+                <div class="card-body" style="height: 300px;">
+                    <canvas id="tipoLecturaChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Distribución por Sede</h5>
+                    <span class="badge bg-light text-dark" id="sedeCount"></span>
+                </div>
+                <div class="card-body" style="height: 300px;">
+                    <canvas id="sedeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Distribución por Tipo de Error</h5>
+                    <span class="badge bg-light text-dark" id="tipoErrorCount"></span>
+                </div>
+                <div class="card-body" style="height: 300px;">
+                    <canvas id="tipoErrorChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">KW Ajustados por Operario</h5>
+                    <span class="badge bg-light text-dark" id="kwAjustadosCount"></span>
+                </div>
+                <div class="card-body" style="height: 300px;">
+                    <canvas id="kwAjustadosChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Registros Filtrados</h5>
+                    <span class="badge bg-primary"><%= registros ? registros.length : 0 %> de <%= totalRegistros %> registros</span>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Tipo Lectura</th>
+                                    <th>Sede</th>
+                                    <th>Fecha Lectura</th>
+                                    <th>Operario</th>
+                                    <th>Tipo Medidor</th>
+                                    <th>Marca Medidor</th>
+                                    <th>Validación</th>
+                                    <th>KW Ajustados</th>
+                                    <th>Tipo Error</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (registros && registros.length > 0) { %>
+                                    <% registros.forEach(function(registro, index) { %>
+                                        <tr>
+                                            <td><%= registro.USUARIO || '-' %></td>
+                                            <td><%= registro.TIPOLECTURA || '-' %></td>
+                                            <td><%= registro.sede || '-' %></td>
+                                            <td><%= registro.FECHALECTURA ? (registro.FECHALECTURA) : '-' %></td>
+                                            <td><%= registro.Operario || '-' %></td>
+                                            <td><%= registro.tipomedidor || '-' %></td>
+                                            <td><%= registro.marcamedidor || '-' %></td>
+                                            <td><%= registro.Validacion || '-' %></td>
+                                            <td><%= registro.KWAJUSTADOS || '0' %></td>
+                                            <td><%= registro.TIPODEERROR || '-' %></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info view-details" data-id="<%= registro.USUARIO || index %>">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="11" class="text-center">No se encontraron registros</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para ver detalles -->
+<div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="detalleModalLabel">Detalles del Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="detalleModalBody">
+                <!-- El contenido se cargará dinámicamente -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script>
+// Registrar el plugin de datalabels
+    Chart.register(ChartDataLabels);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    // Resetear filtros
+    document.getElementById('resetFilters').addEventListener('click', function() {
+        document.querySelectorAll('#filterForm select, #filterForm input').forEach(function(element) {
+            element.value = '';
+        });
+        document.getElementById('filterForm').submit();
+    });
+
+    // Datos para los gráficos
+    const tipoLecturaData = <%- JSON.stringify(chartData.tipoLectura || {}) %>;
+    const sedeData = <%- JSON.stringify(chartData.sede || {}) %>;
+    const tipoErrorData = <%- JSON.stringify(chartData.tipoError || {}) %>;
+    const kwAjustadosData = <%- JSON.stringify(chartData.kwAjustados || {}) %>;
+    
+    // Actualizar contadores en los cuadros de información
+    const totalRegistros = <%= totalRegistros %>;
+    
+    // Contador para Tipo de Lectura
+    const tipoLecturaTotal = Object.values(tipoLecturaData).reduce((a, b) => a + b, 0);
+    document.getElementById('tipoLecturaCount').textContent = `${tipoLecturaTotal} de ${totalRegistros} registros`;
+    
+    // Contador para Sede
+    const sedeTotal = Object.values(sedeData).reduce((a, b) => a + b, 0);
+    document.getElementById('sedeCount').textContent = `${sedeTotal} de ${totalRegistros} registros`;
+    
+    // Contador para Tipo de Error
+    const tipoErrorTotal = Object.values(tipoErrorData).reduce((a, b) => a + b, 0);
+    document.getElementById('tipoErrorCount').textContent = `${tipoErrorTotal} de ${totalRegistros} registros`;
+    
+    // Contador para KW Ajustados
+    // Contamos el número de operarios con datos en lugar de sumar los valores
+    const kwAjustadosTotal = Object.keys(kwAjustadosData).length;
+    document.getElementById('kwAjustadosCount').textContent = `${kwAjustadosTotal} operarios de ${totalRegistros} registros`;
+
+    // Gráfico de Tipo de Lectura
+    const tipoLecturaCtx = document.getElementById('tipoLecturaChart').getContext('2d');
+    new Chart(tipoLecturaCtx, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(tipoLecturaData),
+            datasets: [{
+                data: Object.values(tipoLecturaData),
+                backgroundColor: [
+                    '#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', '#e74a3b',
+                    '#5a5c69', '#858796', '#6f42c1', '#20c9a6', '#fd7e14'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.label || '';
+                            let value = context.raw || 0;
+                            let total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            let percentage = Math.round((value / total) * 100);
+                            return `${label}: ${value} (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Gráfico de Sede
+    const sedeCtx = document.getElementById('sedeChart').getContext('2d');
+    new Chart(sedeCtx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(sedeData),
+            datasets: [{
+                label: 'Registros por Sede',
+                data: Object.values(sedeData),
+                backgroundColor: '#1cc88a'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            let value = context.raw || 0;
+                            return `${label}: ${value}`;
+                        }
+                    }
+                },
+                datalabels: {
+                    display: true,
+                    align: 'top',
+                    anchor: 'end',
+                    formatter: function(value) {
+                        return value;
+                    },
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // Gráfico de Tipo de Error
+    const tipoErrorCtx = document.getElementById('tipoErrorChart').getContext('2d');
+    new Chart(tipoErrorCtx, {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(tipoErrorData),
+            datasets: [{
+                data: Object.values(tipoErrorData),
+                backgroundColor: [
+                    '#f6c23e', '#e74a3b', '#4e73df', '#1cc88a', '#36b9cc',
+                    '#5a5c69', '#858796', '#6f42c1', '#20c9a6', '#fd7e14'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.label || '';
+                            let value = context.raw || 0;
+                            let total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            let percentage = Math.round((value / total) * 100);
+                            return `${label}: ${value} (${percentage}%)`;
+                        }
+                    }
+                },
+                datalabels: {
+                    display: true,
+                    formatter: function(value, context) {
+                        return value;
+                    },
+                    color: 'white',
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // Gráfico de KW Ajustados por Operario
+    const kwAjustadosCtx = document.getElementById('kwAjustadosChart').getContext('2d');
+    new Chart(kwAjustadosCtx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(kwAjustadosData),
+            datasets: [{
+                label: 'KW Ajustados',
+                data: Object.values(kwAjustadosData),
+                backgroundColor: '#e74a3b'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            let value = context.raw || 0;
+                            return `${label}: ${value}`;
+                        }
+                    }
+                },
+                datalabels: {
+                    display: true,
+                    align: 'top',
+                    anchor: 'end',
+                    formatter: function(value) {
+                        return value;
+                    },
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // Ver detalles
+    document.querySelectorAll('.view-details').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const id = this.getAttribute('data-id');
+            fetch(`/dashboard/detalle/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    let html = '<div class="table-responsive"><table class="table table-bordered">';
+                    for (const [key, value] of Object.entries(data)) {
+                        // Formatear fechas si el campo contiene "FECHA" en su nombre
+                        let displayValue = value;
+                        if (key.includes('FECHA') && value) {
+                            const fecha = new Date(value);
+                            displayValue = fecha.toString() !== 'Invalid Date' ? fecha.toLocaleDateString() : value;
+                        }
+                        html += `<tr><th>${key}</th><td>${displayValue || '-'}</td></tr>`;
+                    }
+                    html += '</table></div>';
+                    document.getElementById('detalleModalBody').innerHTML = html;
+                    new bootstrap.Modal(document.getElementById('detalleModal')).show();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al cargar los detalles');
+                });
+        });
+    });
+});
+</script>
+
+<%- include('partials/footer') %>

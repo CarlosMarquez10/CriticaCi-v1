@@ -16,7 +16,11 @@ import medidoresRoutes from './routes/medidor.routes.js';
 import empleadosRoutes from './routes/empleados.routes.js';
 import excelRoutes from './routes/excel.routes.js';
 import processRoutes from './routes/process.routes.js';
+import reportesRoutes from './routes/reportes.routes.js';
 import webRoutes from './routes/web.routes.js';
+import validacionesRoutes from './routes/validaciones.routes.js';
+import dashboardRoutes from './routes/dashboard.routes.js';
+import operariosRoutes from './routes/operarios.routes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 // Configuración para ES modules
@@ -48,9 +52,13 @@ app.use(morgan('dev'));
 
 // Archivos estáticos
 app.use('/public', express.static(path.join(__dirname, 'public')));
+// Ruta para acceder a las fotos de empleados
+app.use('/fotoEmpleados', express.static(path.join(__dirname, '../fotoEmpleados')));
 
 // Rutas web (vistas EJS)
 app.use('/', webRoutes);
+app.use('/dashboard', dashboardRoutes); // ruta para el dashboard
+app.use('/operarios', operariosRoutes); // ruta para consulta de operarios
 
 // Configuración de rutas API
 app.use('/api', filesRouter); // ruta mostrar los archivos subidos y para cargar los registros a la tabla de clientes
@@ -61,6 +69,8 @@ app.use('/api', medidoresRoutes);// ruta para consultar los medidores de un clie
 app.use('/api/empleados', empleadosRoutes); // ruta para importar empleados desde un archivo Excel
 app.use('/api/excel', excelRoutes); // ruta para generar archivos Excel
 app.use('/api/process', processRoutes); // ruta para procesar datos en secuencia y que se genere el excel
+app.use('/reportes', reportesRoutes); // ruta para gestionar reportes Excel
+app.use('/api/validaciones', validacionesRoutes); // ruta para validar registros JSON
 
 // Middleware de manejo de errores (debe ir al final)
 app.use(errorHandler);

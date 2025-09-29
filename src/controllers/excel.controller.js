@@ -66,6 +66,7 @@ export const generateExcel = asyncHandler(async (req, res) => {
       { header: 'NUE', key: 'NUE', width: 20 },
       { header: 'VERIF_CONSOLIDADO', key: 'VERIFICACIONC/CONSOLIDADO', width: 20 },
       { header: 'VERIF_SEMANA_ANTERIOR', key: 'VERIFICACIONC/SEMANAANTERIOR', width: 25 },
+      { header: 'INTENTOS', key: 'Intentos', width: 10 },
       { header: 'LECTURA_1', key: 'Lectura_1', width: 12 },
       { header: 'LECTURA_2', key: 'Lectura_2', width: 12 },
       { header: 'LECTURA_3', key: 'Lectura_3', width: 12 },
@@ -123,6 +124,7 @@ export const generateExcel = asyncHandler(async (req, res) => {
         NUE: registro.NUE,
         'VERIFICACIONC/CONSOLIDADO': registro['VERIFICACIONC/CONSOLIDADO'],
         'VERIFICACIONC/SEMANAANTERIOR': registro['VERIFICACIONC/SEMANAANTERIOR'],
+        Intentos: registro.intentos,
         Lectura_1: registro.Lectura_1,
         Lectura_2: registro.Lectura_2,
         Lectura_3: registro.Lectura_3,
@@ -256,6 +258,7 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
       { header: 'NUE', key: 'NUE', width: 20 },
       { header: 'VERIF_CONSOLIDADO', key: 'VERIFICACIONC/CONSOLIDADO', width: 20 },
       { header: 'VERIF_SEMANA_ANTERIOR', key: 'VERIFICACIONC/SEMANAANTERIOR', width: 25 },
+      { header: 'INTENTOS', key: 'Intentos', width: 10 },
       { header: 'LECTURA_1', key: 'Lectura_1', width: 12 },
       { header: 'LECTURA_2', key: 'Lectura_2', width: 12 },
       { header: 'LECTURA_3', key: 'Lectura_3', width: 12 },
@@ -294,15 +297,18 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
       
       // Aplicar diferentes colores según el rango de columnas
       let bgColor = '366092'; // Color azul por defecto (columnas 1-23)
-      
-      if (colNumber >= 24 && colNumber <= 29) {
-        bgColor = 'E36C0A'; // Color naranja (columnas 24-29)
-      } else if (colNumber >= 30 && colNumber <= 35) {
-        bgColor = '548235'; // Color verde oscuro (columnas 30-35)
-      } else if (colNumber >= 36 && colNumber <= 42) {
-        bgColor = '404040'; // Color gris oscuro (columnas 36-42)
-      } else if (colNumber === 43 || colNumber === 44) {
-        bgColor = 'C00000'; // Color rojo (columnas 43 y 44)
+      if (colNumber == 18) {
+        bgColor = 'C00000'; // Color morado (columnas 19-25)
+      } else if (colNumber >= 19 && colNumber <= 24) {
+        bgColor = '572364'; // Color morado (columnas 19-25)
+      } else if (colNumber >= 25 && colNumber <= 30) {
+        bgColor = 'E36C0A'; // Color naranja (columnas 25-30)
+      } else if (colNumber >= 31 && colNumber <= 36) {
+        bgColor = '548235'; // Color verde oscuro (columnas 31-36)
+      } else if (colNumber >= 37 && colNumber <= 43) {
+        bgColor = '404040'; // Color gris oscuro (columnas 37-43)
+      } else if (colNumber === 44 || colNumber === 45) {
+        bgColor = 'C00000'; // Color rojo (columnas 44 y 45)
       }
       
       cell.fill = {
@@ -340,6 +346,7 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
         NUE: registro.NUE,
         'VERIFICACIONC/CONSOLIDADO': registro['VERIFICACIONC/CONSOLIDADO'],
         'VERIFICACIONC/SEMANAANTERIOR': registro['VERIFICACIONC/SEMANAANTERIOR'],
+        Intentos: registro.Intentos,
         Lectura_1: registro.Lectura_1,
         Lectura_2: registro.Lectura_2,
         Lectura_3: registro.Lectura_3,

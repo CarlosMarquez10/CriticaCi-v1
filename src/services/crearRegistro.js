@@ -17,6 +17,7 @@ export class CrearRegistro {
    * @param {string} datosBasicos.usuario - ID del usuario/cliente
    * @param {string} datosBasicos.zona - Zona geográfica
    * @param {number} datosBasicos.ciclo - Ciclo de facturación
+   * @param {number} datosBasicos.intento - Intento de lectura
    * @param {string} datosBasicos.solucionConsumo - Solución de consumo aplicada
    * @param {string} datosBasicos.fechaLectura - Fecha de la lectura
    * @param {string} datosBasicos.fechaFactura - Fecha de facturación
@@ -83,10 +84,10 @@ export class CrearRegistro {
     },
     {
       // extras
-      Lectura_1 = null, Lectura_2 = null, Lectura_3 = null, Lectura_4 = null, Lectura_5 = null, Lectura_6 = null, 
+      Lectura_1 = null, Lectura_2 = null, Lectura_3 = null, Lectura_4 = null, Lectura_5 = null, Lectura_6 = null, Consumo_1 = null, Consumo_2 = null, Consumo_3 = null, Consumo_4 = null, Consumo_5 = null, Consumo_6 = null,
       Obs_Lectura_1 = null, Obs_Lectura_2 = null, Obs_Lectura_3 = null, Obs_Lectura_4 = null, Obs_Lectura_5 = null, Obs_Lectura_6 = null,
       Operario = null, medidor = null, marcamedidor = null, tipomedidor = null,
-      cedula = null, tipo = null, sede = null, Validacion = null, obsValidacion = null,
+      cedula = null, tipo = null, sede = null, Validacion = null, obsValidacion = null, intentos = null,
     } = {},
     raw = {}
   ) {
@@ -108,14 +109,22 @@ export class CrearRegistro {
     this.NUE = nue;
     this["VERIFICACIONC/CONSOLIDADO"] = verifConsolidado;
     this["VERIFICACIONC/SEMANAANTERIOR"] = verifSemanaAnterior;
+    
 
     // Campos nuevos
+    this.Intentos = intentos;
     this.Lectura_1 = Lectura_1;
     this.Lectura_2 = Lectura_2;
     this.Lectura_3 = Lectura_3;
     this.Lectura_4 = Lectura_4;
     this.Lectura_5 = Lectura_5;
     this.Lectura_6 = Lectura_6;
+    this.Consumo_1 = Lectura_1 !== null ? Lectura_1 - (Lectura_2 ?? 0) : null;
+    this.Consumo_2 = Lectura_2 !== null ? Lectura_2 - (Lectura_3 ?? 0) : null;
+    this.Consumo_3 = Lectura_3 !== null ? Lectura_3 - (Lectura_4 ?? 0) : null;
+    this.Consumo_4 = Lectura_4 !== null ? Lectura_4 - (Lectura_5 ?? 0) : null;
+    this.Consumo_5 = Lectura_5 !== null ? Lectura_5 - (Lectura_6 ?? 0) : null;
+    this.Consumo_6 = Lectura_6 !== null ? Lectura_6 - (Lectura_1 ?? 0) : null;
     this.Obs_Lectura_1 = Obs_Lectura_1;
     this.Obs_Lectura_2 = Obs_Lectura_2;
     this.Obs_Lectura_3 = Obs_Lectura_3;
@@ -145,6 +154,9 @@ export class CrearRegistro {
 
     // Buscar cédula del lector en lecturas históricas
     const cedulaLector = CrearRegistro._buscarCedulaEnLecturas(usuario, raw.FECHALECTURA, lecturasHistoricas);
+    
+    // Buscar intentos en lecturas históricas
+    const intentosLectura = CrearRegistro._buscarIntentosEnLecturas(usuario, raw.FECHAFACTURA, lecturasHistoricas);
     
     // Buscar operario por cédula en array de empleados
     const operarioPorCedula = CrearRegistro._buscarOperarioPorCedula(cedulaLector, empleadosArray);
@@ -176,12 +188,19 @@ export class CrearRegistro {
       verifSemanaAnterior: raw["VERIFICACIONC/SEMANAANTERIOR"] ?? null,
     }, {
       // Extras (con defaults)
+      intentos: intentosLectura,
       Lectura_1: lecturasUsuario.Lectura_1,
       Lectura_2: lecturasUsuario.Lectura_2,
       Lectura_3: lecturasUsuario.Lectura_3,
       Lectura_4: lecturasUsuario.Lectura_4,
       Lectura_5: lecturasUsuario.Lectura_5,
       Lectura_6: lecturasUsuario.Lectura_6,
+      Consumo_1: lecturasUsuario.Consumo_1,
+      Consumo_2: lecturasUsuario.Consumo_2,
+      Consumo_3: lecturasUsuario.Consumo_3,
+      Consumo_4: lecturasUsuario.Consumo_4,
+      Consumo_5: lecturasUsuario.Consumo_5,
+      Consumo_6: lecturasUsuario.Consumo_6,
       Obs_Lectura_1: lecturasUsuario.Obs_Lectura_1,
       Obs_Lectura_2: lecturasUsuario.Obs_Lectura_2,
       Obs_Lectura_3: lecturasUsuario.Obs_Lectura_3,
@@ -226,12 +245,19 @@ export class CrearRegistro {
 
     // Asignar lecturas a los campos correspondientes
     const resultado = {
+      Intentos: null,
       Lectura_1: null, // Mes actual
       Lectura_2: null, // Mes anterior
       Lectura_3: null, // 2 meses atrás
       Lectura_4: null, // 3 meses atrás
       Lectura_5: null, // 4 meses atrás
       Lectura_6: null, // 5 meses atrás
+      Consumo_1: null, // Consumo del mes actual
+      Consumo_2: null, // Consumo del mes anterior
+      Consumo_3: null, // Consumo de 2 meses atrás
+      Consumo_4: null, // Consumo de 3 meses atrás
+      Consumo_5: null, // Consumo de 4 meses atrás
+      Consumo_6: null, // Consumo de 5 meses atrás
       Obs_Lectura_1: null, // Observación del mes actual
       Obs_Lectura_2: null, // Observación del mes anterior
       Obs_Lectura_3: null, // Observación de 2 meses atrás
@@ -330,7 +356,7 @@ export class CrearRegistro {
     if (!fechaLecturaObj) return null;
 
     const mesLectura = fechaLecturaObj.getMonth() + 1; // Mes 1-12
-    const anoLectura = fechaLecturaObj.getFullYear();
+    const anoLectura = fechaLecturaObj.getFullYear(); // Año completo
 
     // Buscar en lecturas históricas por usuario, mes y año
     const lecturaEncontrada = lecturasHistoricas.find(lectura => {
@@ -345,6 +371,57 @@ export class CrearRegistro {
 
     // Retornar la cédula del lector si se encuentra
     return lecturaEncontrada?.lector || lecturaEncontrada?.LECTOR || null;
+  }
+
+  // ——— Método para buscar intentos en lecturas históricas ———
+  static _buscarIntentosEnLecturas(usuario, fechaLectura, lecturasHistoricas = []) {
+    if (!usuario || !fechaLectura || !lecturasHistoricas.length) {
+      return null;
+    }
+
+    // Función para parsear fecha en formato DD/MM/YYYY
+    const parsearFecha = (fechaStr) => {
+      if (!fechaStr) return null;
+      const partes = fechaStr.split('/');
+      if (partes.length !== 3) return null;
+      // Crear fecha: año, mes-1, día
+      return new Date(parseInt(partes[2]), parseInt(partes[1]) - 1, parseInt(partes[0]));
+    };
+
+    // Parsear la fecha de lectura
+    const fechaLecturaObj = parsearFecha(fechaLectura);
+    if (!fechaLecturaObj) {
+      return null;
+    }
+
+    const mesLectura = fechaLecturaObj.getMonth() + 1; // Mes 1-12
+    const anoLectura = fechaLecturaObj.getFullYear(); // Año completo
+
+    // Buscar en lecturas históricas por usuario, mes y año
+    const lecturaEncontrada = lecturasHistoricas.find(lectura => {
+      const clienteLectura = String(lectura.cliente || lectura.CLIENTE || "").trim();
+      const mesHistorico = parseInt(lectura.mes || lectura.MES || 0);
+      const anoHistorico = parseInt(lectura.ano || lectura.ANO || 0);
+      
+      return clienteLectura === usuario && 
+             mesHistorico === mesLectura && 
+             anoHistorico === anoLectura;
+    });
+
+    // Retornar los intentos si se encuentra la lectura
+    if (lecturaEncontrada) {
+      const intentos = lecturaEncontrada.intentos || 
+                      lecturaEncontrada.INTENTOS || 
+                      null;
+      
+      // Intentar convertir a número si es string
+      if (intentos !== null && intentos !== undefined) {
+        const intentosNum = parseInt(intentos);
+        return isNaN(intentosNum) ? null : intentosNum;
+      }
+    }
+    
+    return null;
   }
 
   // ——— Método para buscar operario por cédula en array de empleados ———
