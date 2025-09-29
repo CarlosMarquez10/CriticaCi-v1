@@ -46,6 +46,38 @@ export const getRegistrosOperario = (req, res) => {
             registro.cedula && registro.cedula.toString() === cedula
         );
         
+        // Ordenar registros por FECHALECTURA de más reciente a más antigua
+        registrosOperario.sort((a, b) => {
+            // Convertir formato dd/mm/yyyy a yyyy-mm-dd para Date()
+            const convertirFecha = (fechaStr) => {
+                if (!fechaStr) return new Date(0);
+                const [dia, mes, año] = fechaStr.split('/');
+                return new Date(`${año}-${mes}-${dia}`);
+            };
+            
+            const fechaA = convertirFecha(a.FECHALECTURA);
+            const fechaB = convertirFecha(b.FECHALECTURA);
+            return fechaB - fechaA; // Orden descendente (más reciente primero)
+        });
+        
+        // Contar valores de Validacion
+        const validacionStats = {
+            'SI': 0,
+            'NO': 0,
+            'Pendiente': 0
+        };
+        
+        registrosOperario.forEach(registro => {
+            const validacion = registro.Validacion;
+            if (validacion === 'SI') {
+                validacionStats['SI']++;
+            } else if (validacion === 'NO') {
+                validacionStats['NO']++;
+            } else {
+                validacionStats['Pendiente']++;
+            }
+        });
+
         // Buscar la foto del operario
         let fotoUrl = '';
         const extensiones = ['.jpg', '.jpeg', '.png'];
@@ -64,6 +96,7 @@ export const getRegistrosOperario = (req, res) => {
             cedula,
             registros: registrosOperario,
             fotoUrl,
+            validacionStats,
             error: registrosOperario.length === 0 ? 'No se encontraron registros para este operario' : null
         });
     } catch (error) {

@@ -108,6 +108,9 @@ dist
 *.xls
 *.csv
 
+# Carpeta de fotos de empleados (información privada)
+fotoEmpleados/
+
 # Archivos temporales
 temp/
 tmp/
