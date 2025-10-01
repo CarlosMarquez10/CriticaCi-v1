@@ -3,6 +3,56 @@
  */
 
 /**
+ * Valida la fecha de factura para verificar si está dentro del rango de 4 meses permitidos
+ * Esta validación debe ejecutarse PRIMERA antes que cualquier otra
+ * @param {Object} registro - Registro a validar
+ * @returns {Object} - Registro con campos Validacion y obsValidacion actualizados si la fecha está fuera del rango
+ */
+const validarFechaFactura = (registro) => {
+  if (!registro || !registro.FECHAFACTURA) return registro;
+  
+  try {
+    // Parsear la fecha de factura (formato DD/MM/YYYY)
+    const fechaFacturaParts = registro.FECHAFACTURA.split('/');
+    if (fechaFacturaParts.length !== 3) return registro;
+    
+    const dia = parseInt(fechaFacturaParts[0]);
+    const mes = parseInt(fechaFacturaParts[1]);
+    const año = parseInt(fechaFacturaParts[2]);
+    
+    // Crear objeto Date con la fecha de factura
+    const fechaFactura = new Date(año, mes - 1, dia); // mes - 1 porque Date usa 0-11 para meses
+    
+    // Obtener fecha actual
+    const fechaActual = new Date();
+    
+    // Calcular el mes de referencia (mes actual - 1)
+    const mesReferencia = new Date(fechaActual.getFullYear(), fechaActual.getMonth() - 1, 1);
+    
+    // Calcular la fecha límite (4 meses atrás desde el mes de referencia)
+    const fechaLimite = new Date(mesReferencia.getFullYear(), mesReferencia.getMonth() - 4, 1);
+    
+    // Si la fecha de factura es anterior a la fecha límite, marcar como "No"
+    if (fechaFactura < fechaLimite) {
+      registro.Validacion = "No";
+      registro.obsValidacion = "error fuera de los meses 4 meses establecidos";
+      return registro;
+    }
+    
+    // Si la fecha está dentro del rango, inicializar como PENDIENTE si no tiene valor
+    if (registro.Validacion === null || registro.Validacion === undefined) {
+      registro.Validacion = "PENDIENTE";
+    }
+    
+  } catch (error) {
+    console.error('Error al validar fecha de factura:', error);
+    // En caso de error, no modificar el registro
+  }
+  
+  return registro;
+};
+
+/**
  * Valida y corrige el campo Validacion
  * @param {Object} registro - Registro a validar
  * @returns {Object} - Registro con campo Validacion validado
@@ -312,6 +362,7 @@ const validarObservacionesLecturas = (registro) => {
 };
 
 export {
+  validarFechaFactura,
   validarCampoValidacion,
   validarCampoObsValidacion,
   validarCamposVerificacion,

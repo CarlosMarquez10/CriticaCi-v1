@@ -6,6 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { procesarValidaciones } from '../utils/validaciones.util.js';
 import {
+  validarFechaFactura,
   validarCampoValidacion,
   validarCampoObsValidacion,
   validarCamposVerificacion,
@@ -34,8 +35,9 @@ const validarRegistros = async (req, res) => {
     const data = await fs.readFile(rutaRegistros, 'utf8');
     const registros = JSON.parse(data);
     
-    // Definir las validaciones a aplicar
+    // Definir las validaciones a aplicar (validarFechaFactura DEBE ser la primera)
     const validaciones = [
+      validarFechaFactura,
       validarCampoValidacion,
       validarCampoObsValidacion,
       validarCamposVerificacion,
