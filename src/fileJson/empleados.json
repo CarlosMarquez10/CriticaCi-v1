@@ -1006,5 +1006,78 @@
     "cedula": "88178152",
     "nombre": "NELSON PORFIDIO GARCIA TORRES",
     "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "AGUACHICA",
+    "cedula": "1064841699",
+    "nombre": "CRISTIAN LEONARDO NORIEGA DUARTE",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "PAMPLONA",
+    "cedula": "5415702",
+    "nombre": "JORGE ELIECER ESLAVA CARVAJAL",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "88272487",
+    "nombre": "JUAN CARLOS CRUZ DUARTE",
+    "cargo": "OPERATIVO 2"
+  }
+  ,
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090396114",
+    "nombre": "CARLOS LEONARDO CRUZ PEREZ",
+    "cargo": "OPERATIVO 2"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090480593",
+    "nombre": "EDGAR VEGA CASTRO",
+    "cargo": "OPERATIVO 2"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "1094265680",
+    "nombre": "YECID ENRIQUE CASADIEGOS DURAN",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "OCAÑA",
+    "cedula": "1090990999",
+    "nombre": "ANDRES PACHECO GARCIA",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090514582",
+    "nombre": "EDGAR FARID CARREÑO FLOREZ",
+    "cargo": "GESTOR DE INFORMACION"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "88176238",
+    "nombre": "IDULFO  CARDONA AREVALO",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "1090385811",
+    "nombre": "ALEXANDER JULIO HERNANDEZ",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "PAMPLONA",
+    "cedula": "1031173032",
+    "nombre": "DANILO BOHORQUEZ GONZALEZ",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1018483295",
+    "nombre": "MIGUEL DAVID GAITÁN LÁZARO",
+    "cargo": "OPERATIVO 3"
   }
 ]
