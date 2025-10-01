@@ -199,6 +199,146 @@ export const getDetalleRegistro = async (req, res) => {
 };
 
 /**
+ * Obtiene la distribución de marcas de medidores para gráficas
+ */
+export const getMarcasMedidores = async (req, res) => {
+    try {
+        const rawData = await readFileAsync(dataFilePath, 'utf8');
+        const registros = JSON.parse(rawData);
+        
+        // Obtener los filtros de la consulta (mismos que en renderDashboard)
+        const {
+            tipoLectura,
+            sede,
+            fechaInicio,
+            fechaFin,
+            operario,
+            tipoMedidor,
+            marcaMedidor,
+            validacion,
+            obsValidacion,
+            kwAjustados,
+            tipoError,
+            usuario
+        } = req.query;
+
+        // Aplicar filtros si existen
+        let registrosFiltrados = [...registros];
+        
+        if (tipoLectura) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.TIPOLECTURA && r.TIPOLECTURA.toString().toLowerCase().includes(tipoLectura.toLowerCase())
+            );
+        }
+        
+        if (sede) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.sede && r.sede.toString().toLowerCase().includes(sede.toLowerCase())
+            );
+        }
+        
+        if (fechaInicio || fechaFin) {
+            registrosFiltrados = registrosFiltrados.filter(r => {
+                if (!r.FECHALECTURA) return false;
+                
+                const fechaRegistro = new Date(r.FECHALECTURA);
+                
+                if (fechaInicio && fechaFin) {
+                    const inicio = new Date(fechaInicio);
+                    const fin = new Date(fechaFin);
+                    return fechaRegistro >= inicio && fechaRegistro <= fin;
+                } else if (fechaInicio) {
+                    const inicio = new Date(fechaInicio);
+                    return fechaRegistro >= inicio;
+                } else if (fechaFin) {
+                    const fin = new Date(fechaFin);
+                    return fechaRegistro <= fin;
+                }
+                
+                return true;
+            });
+        }
+        
+        if (operario) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.Operario && r.Operario.toString().toLowerCase().includes(operario.toLowerCase())
+            );
+        }
+        
+        if (tipoMedidor) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.tipomedidor && r.tipomedidor.toString().toLowerCase().includes(tipoMedidor.toLowerCase())
+            );
+        }
+        
+        if (marcaMedidor) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.marcamedidor && r.marcamedidor.toString().toLowerCase().includes(marcaMedidor.toLowerCase())
+            );
+        }
+        
+        if (validacion) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.Validacion && r.Validacion.toString().toLowerCase().includes(validacion.toLowerCase())
+            );
+        }
+        
+        if (obsValidacion) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.obsValidacion && r.obsValidacion.toString().toLowerCase().includes(obsValidacion.toLowerCase())
+            );
+        }
+        
+        if (kwAjustados) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.KWAJUSTADOS && r.KWAJUSTADOS.toString().includes(kwAjustados)
+            );
+        }
+        
+        if (tipoError) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.TIPODEERROR && r.TIPODEERROR.toString().toLowerCase().includes(tipoError.toLowerCase())
+            );
+        }
+        
+        if (usuario) {
+            registrosFiltrados = registrosFiltrados.filter(r => 
+                r.USUARIO && r.USUARIO.toString().toLowerCase().includes(usuario.toLowerCase())
+            );
+        }
+        
+        // Contar la distribución de marcas en los registros filtrados
+        const marcasCount = {};
+        
+        registrosFiltrados.forEach(registro => {
+            const marca = registro.marcamedidor;
+            if (marca) {
+                marcasCount[marca] = (marcasCount[marca] || 0) + 1;
+            }
+        });
+        
+        // Ordenar por cantidad (descendente) y tomar las top 10
+        const marcasOrdenadas = Object.entries(marcasCount)
+            .sort(([,a], [,b]) => b - a)
+            .slice(0, 10) // Solo las top 10 marcas
+            .map(([marca, count]) => ({
+                marca,
+                count,
+                percentage: registrosFiltrados.length > 0 ? ((count / registrosFiltrados.length) * 100).toFixed(1) : '0'
+            }));
+        
+        res.json({
+            marcas: marcasOrdenadas,
+            total: registrosFiltrados.length,
+            totalMarcas: Object.keys(marcasCount).length
+        });
+    } catch (error) {
+        console.error('Error al obtener distribución de marcas:', error);
+        res.status(500).json({ error: 'Error al obtener distribución de marcas' });
+    }
+};
+
+/**
  * Función auxiliar para contar registros por una propiedad específica
  */
 function contarPorPropiedad(registros, propiedad) {

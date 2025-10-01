@@ -32,6 +32,69 @@ export const renderOperariosView = (req, res) => {
 };
 
 /**
+ * Obtiene las marcas de medidores de un operario específico
+ */
+export const getMarcasMedidoresOperario = (req, res) => {
+    try {
+        const { cedula } = req.params;
+        
+        // Leer el archivo JSON
+        const registrosData = JSON.parse(fs.readFileSync(registrosPath, 'utf8'));
+        
+        // Filtrar registros por cédula del operario
+        const registrosOperario = registrosData.filter(registro => 
+            registro.cedula && registro.cedula.toString() === cedula
+        );
+        
+        if (registrosOperario.length === 0) {
+            return res.json({
+                marcas: [],
+                total: 0,
+                totalMarcas: 0
+            });
+        }
+        
+        // Función auxiliar para contar por propiedad
+        const contarPorPropiedad = (registros, propiedad) => {
+            const conteo = {};
+            registros.forEach(registro => {
+                const valor = registro[propiedad] || 'No especificado';
+                conteo[valor] = (conteo[valor] || 0) + 1;
+            });
+            return conteo;
+        };
+        
+        // Contar marcas de medidores
+        const marcasConteo = contarPorPropiedad(registrosOperario, 'marcamedidor');
+        
+        // Convertir a array y ordenar por cantidad (descendente)
+        const marcasArray = Object.entries(marcasConteo)
+            .map(([marca, count]) => ({
+                marca,
+                count,
+                percentage: ((count / registrosOperario.length) * 100).toFixed(1)
+            }))
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 10); // Top 10
+        
+        res.json({
+            marcas: marcasArray,
+            total: registrosOperario.length,
+            totalMarcas: Object.keys(marcasConteo).length
+        });
+        
+    } catch (error) {
+        console.error('Error al obtener marcas de medidores del operario:', error);
+        res.status(500).json({ 
+            error: 'Error al procesar la consulta de marcas',
+            marcas: [],
+            total: 0,
+            totalMarcas: 0
+        });
+    }
+};
+
+/**
  * Obtiene los registros de un operario específico por cédula
  */
 export const getRegistrosOperario = (req, res) => {

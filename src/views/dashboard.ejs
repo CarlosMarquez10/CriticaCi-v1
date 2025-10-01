@@ -184,6 +184,56 @@
         </div>
     </div>
 
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-white d-flex justify-content-between align-items-center" style="background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);">
+                    <h5 class="mb-0">
+                        <i class="fas fa-tachometer-alt me-2"></i>
+                        Top 10 Marcas de Medidores
+                    </h5>
+                    <span class="badge bg-light text-dark" id="marcasMedidoresCount"></span>
+                </div>
+                <div class="card-body" style="height: 400px; padding: 15px;">
+                    <canvas id="marcasMedidoresChart" style="max-height: 370px; width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header text-white" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                    <h6 class="mb-0">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Estadísticas de Marcas
+                    </h6>
+                </div>
+                <div class="card-body" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                    <div id="marcasStats">
+                        <div class="d-flex justify-content-between mb-3 p-2 rounded" style="background: rgba(255, 255, 255, 0.8);">
+                            <span><i class="fas fa-calculator me-2 text-primary"></i>Total de medidores:</span>
+                            <strong id="totalMedidores" class="text-primary">-</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 p-2 rounded" style="background: rgba(255, 255, 255, 0.8);">
+                            <span><i class="fas fa-tags me-2 text-success"></i>Marcas diferentes:</span>
+                            <strong id="totalMarcas" class="text-success">-</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 p-2 rounded" style="background: rgba(255, 255, 255, 0.8);">
+                            <span><i class="fas fa-trophy me-2 text-warning"></i>Marca más común:</span>
+                            <strong id="marcaMasComun" class="text-warning">-</strong>
+                        </div>
+                        <hr style="border-color: #00b894;">
+                        <div class="text-center p-2 rounded" style="background: rgba(0, 184, 148, 0.1);">
+                            <small class="text-muted">
+                                <i class="fas fa-chart-bar me-1"></i>
+                                Mostrando las 10 marcas más frecuentes
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -269,14 +319,6 @@
     Chart.register(ChartDataLabels);
     
     document.addEventListener('DOMContentLoaded', function() {
-    // Resetear filtros
-    document.getElementById('resetFilters').addEventListener('click', function() {
-        document.querySelectorAll('#filterForm select, #filterForm input').forEach(function(element) {
-            element.value = '';
-        });
-        document.getElementById('filterForm').submit();
-    });
-
     // Datos para los gráficos
     const tipoLecturaData = <%- JSON.stringify(chartData.tipoLectura || {}) %>;
     const sedeData = <%- JSON.stringify(chartData.sede || {}) %>;
@@ -473,6 +515,135 @@
                 }
             }
         }
+    });
+
+    // Variable global para la gráfica de marcas
+    let marcasMedidoresChart = null;
+
+    // Función para cargar y mostrar gráfica de marcas de medidores
+    function cargarGraficaMarcas() {
+        // Obtener parámetros de filtro actuales de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filtros = {};
+        
+        // Recopilar todos los filtros
+        ['tipoLectura', 'sede', 'fechaInicio', 'fechaFin', 'operario', 'tipoMedidor', 'marcaMedidor', 'validacion', 'obsValidacion', 'kwAjustados', 'tipoError', 'usuario'].forEach(param => {
+            const value = urlParams.get(param);
+            if (value && value !== '') {
+                filtros[param] = value;
+            }
+        });
+
+        // Construir URL con filtros
+        const queryString = new URLSearchParams(filtros).toString();
+        const url = `/dashboard/marcas-medidores${queryString ? '?' + queryString : ''}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                // Actualizar estadísticas
+                document.getElementById('totalMedidores').textContent = data.total;
+                document.getElementById('totalMarcas').textContent = data.totalMarcas;
+                document.getElementById('marcaMasComun').textContent = data.marcas[0]?.marca || '-';
+                document.getElementById('marcasMedidoresCount').textContent = `${data.marcas.length} marcas`;
+
+                // Destruir gráfica anterior si existe
+                if (marcasMedidoresChart) {
+                    marcasMedidoresChart.destroy();
+                }
+
+                // Crear nueva gráfica de barras
+                const marcasMedidoresCtx = document.getElementById('marcasMedidoresChart').getContext('2d');
+                marcasMedidoresChart = new Chart(marcasMedidoresCtx, {
+                type: 'bar',
+                data: {
+                    labels: data.marcas.map(m => m.marca),
+                    datasets: [{
+                        label: 'Cantidad de Medidores',
+                        data: data.marcas.map(m => m.count),
+                        backgroundColor: [
+                            '#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6',
+                            '#1abc9c', '#34495e', '#e67e22', '#95a5a6', '#f1c40f'
+                        ],
+                        borderColor: [
+                            '#2980b9', '#c0392b', '#27ae60', '#d68910', '#8e44ad',
+                            '#16a085', '#2c3e50', '#d35400', '#7f8c8d', '#f39c12'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Barras horizontales
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                display: true
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const marca = context.label;
+                                    const count = context.raw;
+                                    const percentage = data.marcas.find(m => m.marca === marca)?.percentage || '0';
+                                    return `${marca}: ${count} medidores (${percentage}%)`;
+                                }
+                            }
+                        },
+                        datalabels: {
+                            display: true,
+                            anchor: 'end',
+                            align: 'right',
+                            formatter: function(value, context) {
+                                const marca = context.chart.data.labels[context.dataIndex];
+                                const percentage = data.marcas.find(m => m.marca === marca)?.percentage || '0';
+                                return `${value} (${percentage}%)`;
+                            },
+                            color: '#2c3e50',
+                            font: {
+                                weight: 'bold',
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error al cargar datos de marcas:', error);
+            document.getElementById('marcasMedidoresCount').textContent = 'Error al cargar';
+        });
+    }
+
+    // Cargar gráfica de marcas al inicializar la página
+    cargarGraficaMarcas();
+
+    // Interceptar el envío del formulario de filtros para recargar la gráfica
+    document.getElementById('filterForm').addEventListener('submit', function(e) {
+        // Permitir que el formulario se envíe normalmente
+        // Después de que la página se recargue, la gráfica se actualizará automáticamente
+    });
+
+    // También recargar cuando se resetean los filtros
+    document.getElementById('resetFilters').addEventListener('click', function() {
+        document.querySelectorAll('#filterForm select, #filterForm input').forEach(function(element) {
+            element.value = '';
+        });
+        // Después del reset, el formulario se envía y la página se recarga
+        document.getElementById('filterForm').submit();
     });
 
     // Ver detalles

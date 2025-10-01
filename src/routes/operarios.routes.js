@@ -15,4 +15,10 @@ router.get('/', operariosController.renderOperariosView);
  */
 router.get('/consulta/:cedula', operariosController.getRegistrosOperario);
 
+/**
+ * @route GET /operarios/marcas-medidores/:cedula
+ * @description Obtiene las marcas de medidores de un operario específico
+ */
+router.get('/marcas-medidores/:cedula', operariosController.getMarcasMedidoresOperario);
+
 export default router;

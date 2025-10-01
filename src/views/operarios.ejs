@@ -275,9 +275,9 @@
         </div>
       </div>
 
-      <!-- Segunda fila con 1 gráfica centrada -->
+      <!-- Segunda fila con 2 gráficas -->
       <div class="row">
-        <div class="col-md-6 mx-auto mb-3">
+        <div class="col-md-6 mb-3">
           <div class="card h-100">
             <div class="card-header bg-success text-white py-2">
               <h6 class="mb-0">
@@ -286,6 +286,44 @@
             </div>
             <div class="card-body p-3 d-flex align-items-center justify-content-center" style="height: 300px;">
               <canvas id="chartTiposMedidores" style="max-height: 250px; width: 100%;"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-header bg-purple text-white py-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;">
+              <h6 class="mb-0">
+                <i class="fas fa-chart-bar me-2"></i>Top 10 Marcas de Medidores
+                <span id="marcasMedidoresCount" class="badge bg-light text-dark ms-2">0 marcas</span>
+              </h6>
+            </div>
+            <div class="card-body p-3">
+              <!-- Estadísticas de marcas -->
+              <div class="row mb-3">
+                <div class="col-4 text-center">
+                  <div class="bg-light p-2 rounded">
+                    <small class="text-muted d-block">Total Medidores</small>
+                    <strong id="totalMedidoresOperario">0</strong>
+                  </div>
+                </div>
+                <div class="col-4 text-center">
+                  <div class="bg-light p-2 rounded">
+                    <small class="text-muted d-block">Total Marcas</small>
+                    <strong id="totalMarcasOperario">0</strong>
+                  </div>
+                </div>
+                <div class="col-4 text-center">
+                  <div class="bg-light p-2 rounded">
+                    <small class="text-muted d-block">Marca Principal</small>
+                    <strong id="marcaPrincipalOperario">-</strong>
+                  </div>
+                </div>
+              </div>
+              <!-- Canvas para la gráfica -->
+              <div style="height: 200px;">
+                <canvas id="marcasMedidoresOperarioChart" style="max-height: 200px; width: 100%;"></canvas>
+              </div>
             </div>
           </div>
         </div>
@@ -504,6 +542,79 @@
               }
           }
       });
+
+      // Gráfico de Marcas de Medidores del Operario
+      const cedula = '<%= cedula %>';
+      if (cedula) {
+          fetch(`/operarios/marcas-medidores/${cedula}`)
+              .then(response => response.json())
+              .then(data => {
+                  // Actualizar estadísticas
+                  document.getElementById('totalMedidoresOperario').textContent = data.total;
+                  document.getElementById('totalMarcasOperario').textContent = data.totalMarcas;
+                  document.getElementById('marcaPrincipalOperario').textContent = data.marcas[0]?.marca || '-';
+                  document.getElementById('marcasMedidoresCount').textContent = `${data.marcas.length} marcas`;
+
+                  // Crear gráfica de barras horizontales
+                  const marcasCtx = document.getElementById('marcasMedidoresOperarioChart').getContext('2d');
+                  new Chart(marcasCtx, {
+                      type: 'bar',
+                      data: {
+                          labels: data.marcas.map(m => m.marca),
+                          datasets: [{
+                              label: 'Cantidad de Medidores',
+                              data: data.marcas.map(m => m.count),
+                              backgroundColor: [
+                                  '#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe',
+                                  '#43e97b', '#fa709a', '#fee140', '#a8edea', '#d299c2'
+                              ],
+                              borderColor: [
+                                  '#5a67d8', '#6b46c1', '#e879f9', '#ef4444', '#3b82f6',
+                                  '#10b981', '#ec4899', '#f59e0b', '#06b6d4', '#a855f7'
+                              ],
+                              borderWidth: 2
+                          }]
+                      },
+                      options: {
+                          responsive: true,
+                          maintainAspectRatio: false,
+                          indexAxis: 'y', // Barras horizontales
+                          scales: {
+                              x: {
+                                  beginAtZero: true,
+                                  grid: {
+                                      display: true
+                                  }
+                              },
+                              y: {
+                                  grid: {
+                                      display: false
+                                  }
+                              }
+                          },
+                          plugins: {
+                              legend: {
+                                  display: false
+                              },
+                              tooltip: {
+                                  callbacks: {
+                                      label: function(context) {
+                                          const marca = context.label;
+                                          const count = context.raw;
+                                          const percentage = data.marcas.find(m => m.marca === marca)?.percentage || '0';
+                                          return `${marca}: ${count} medidores (${percentage}%)`;
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  });
+              })
+              .catch(error => {
+                  console.error('Error al cargar marcas de medidores del operario:', error);
+                  document.getElementById('marcasMedidoresCount').textContent = 'Error al cargar';
+              });
+      }
 
       // Exportar a Excel
       document.getElementById('exportarExcel').addEventListener('click', function() {
