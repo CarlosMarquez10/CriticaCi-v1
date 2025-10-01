@@ -44,14 +44,13 @@ Sistema de gestión de lecturas de medidores con generación de reportes Excel p
    MYSQL_CONN_LIMIT=1000
    
    # Configuración del servidor
-   PORT=3000
+   PORT=3001
    NODE_ENV=development
    
    # URL base de la aplicación (cambiar según el entorno)
-   # Para desarrollo local: http://localhost:3000
-   # Para túnel de desarrollo: https://vms41rr2-3000.use2.devtunnels.ms
+   # Para túnel de desarrollo: https://vms41rr2-3001.use2.devtunnels.ms
    # Para producción: https://tu-dominio.com
-   BASE_URL=https://vms41rr2-3000.use2.devtunnels.ms
+   BASE_URL=https://vms41rr2-3001.use2.devtunnels.ms
    
    # Configuración de procesamiento
    BATCH_SIZE=500

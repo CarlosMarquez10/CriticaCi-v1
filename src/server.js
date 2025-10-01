@@ -77,9 +77,9 @@ app.use(errorHandler);
 
 /**
  * @constant {number} PORT
- * @description Puerto obtenido de variable de entorno PORT o 3000 por defecto
+ * @description Puerto obtenido de variable de entorno PORT o 3001 por defecto
  */
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 /**
  * @constant {string} BASE_URL

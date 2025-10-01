@@ -151,6 +151,7 @@ export const renderDashboard = async (req, res) => {
             validaciones,
             tiposError,
             chartData,
+            baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`,
             selectedFilters: {
                 tipoLectura,
                 sede,

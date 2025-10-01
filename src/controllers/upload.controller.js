@@ -93,7 +93,8 @@ export const showUploadDataView = (req, res) => {
     res.render('upload-data', {
         title: 'Subir Archivos de Datos',
         uploadType: 'data',
-        targetFolder: 'src/data'
+        targetFolder: 'src/data',
+        baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`
     });
 };
 
@@ -106,7 +107,8 @@ export const showUploadTimesView = (req, res) => {
     res.render('upload-times', {
         title: 'Subir Archivos de Tiempos',
         uploadType: 'times',
-        targetFolder: 'filesTiempos'
+        targetFolder: 'filesTiempos',
+        baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`
     });
 };
 
@@ -249,7 +251,7 @@ export const listFiles = async (req, res) => {
             files: validFiles,
             folderType: type,
             folderName: folderName,
-            baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`
+            baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`
         });
 
     } catch (error) {

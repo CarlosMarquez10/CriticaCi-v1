@@ -20,7 +20,8 @@ export const renderOperariosView = (req, res) => {
             cedula: '',
             registros: [],
             fotoUrl: '',
-            error: null
+            error: null,
+            baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`
         });
     } catch (error) {
         console.error('Error al renderizar vista de operarios:', error);
@@ -160,7 +161,8 @@ export const getRegistrosOperario = (req, res) => {
             registros: registrosOperario,
             fotoUrl,
             validacionStats,
-            error: registrosOperario.length === 0 ? 'No se encontraron registros para este operario' : null
+            error: registrosOperario.length === 0 ? 'No se encontraron registros para este operario' : null,
+            baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`
         });
     } catch (error) {
         console.error('Error al obtener registros del operario:', error);

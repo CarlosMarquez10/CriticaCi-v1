@@ -536,7 +536,7 @@
 
         // Construir URL con filtros
         const queryString = new URLSearchParams(filtros).toString();
-        const url = `/dashboard/marcas-medidores${queryString ? '?' + queryString : ''}`;
+        const url = `<%= baseUrl %>/dashboard/marcas-medidores${queryString ? '?' + queryString : ''}`;
 
         fetch(url)
             .then(response => response.json())
@@ -650,7 +650,7 @@
     document.querySelectorAll('.view-details').forEach(function(button) {
         button.addEventListener('click', function() {
             const id = this.getAttribute('data-id');
-            fetch(`/dashboard/detalle/${id}`)
+            fetch(`<%= baseUrl %>/dashboard/detalle/${id}`)
                 .then(response => response.json())
                 .then(data => {
                     let html = '<div class="table-responsive"><table class="table table-bordered">';

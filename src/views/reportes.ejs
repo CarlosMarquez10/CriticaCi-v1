@@ -132,7 +132,7 @@
         // Mostrar indicador de carga
         showAlert('info', 'Aplicando validaciones a los registros...');
         
-        fetch('/api/validaciones/validar')
+        fetch('<%= baseUrl %>/api/validaciones/validar')
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -172,7 +172,7 @@
 
     // Función para eliminar reporte
     function deleteReport(fileName) {
-        fetch(`/reportes/delete/${encodeURIComponent(fileName)}`, {
+        fetch(`<%= baseUrl %>/reportes/delete/${encodeURIComponent(fileName)}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

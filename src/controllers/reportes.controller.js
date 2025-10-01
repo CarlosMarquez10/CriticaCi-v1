@@ -62,7 +62,8 @@ const listReportes = async (req, res) => {
         res.render('reportes', {
             title: 'Reportes Excel',
             files: excelFiles,
-            formatFileSize: formatFileSize
+            formatFileSize: formatFileSize,
+            baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`
         });
 
     } catch (error) {

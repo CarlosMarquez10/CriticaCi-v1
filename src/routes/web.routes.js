@@ -26,7 +26,8 @@ const router = Router();
  */
 router.get('/', (req, res) => {
     res.render('index', {
-        title: 'CriticaCi - Dashboard'
+        title: 'CriticaCi - Dashboard',
+        baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3001}`
     });
 });
 

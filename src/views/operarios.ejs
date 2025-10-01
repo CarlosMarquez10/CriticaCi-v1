@@ -546,7 +546,7 @@
       // Gráfico de Marcas de Medidores del Operario
       const cedula = '<%= cedula %>';
       if (cedula) {
-          fetch(`/operarios/marcas-medidores/${cedula}`)
+          fetch(`<%= baseUrl %>/operarios/marcas-medidores/${cedula}`)
               .then(response => response.json())
               .then(data => {
                   // Actualizar estadísticas
