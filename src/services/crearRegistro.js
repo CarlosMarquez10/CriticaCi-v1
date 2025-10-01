@@ -165,6 +165,18 @@ export class CrearRegistro {
     const nombreOperario = (raw.ACLARACIONES || "").toString().trim();
     const emp = empleadosIndexByNombre[CrearRegistro._normalizeName(nombreOperario)] || null;
 
+    // Fallback adicional: si no encontramos operario por cédula ni por nombre,
+    // intentar buscar por cédula directamente en el array (en caso de que cedulaLector sea null)
+    let operarioFinal = operarioPorCedula || emp;
+    if (!operarioFinal && nombreOperario) {
+      // Buscar por nombre parcial si el nombre exacto no funciona
+      operarioFinal = empleadosArray.find(empleado => {
+        const nombreEmpleado = CrearRegistro._normalizeName(empleado.nombre || "");
+        const nombreBuscado = CrearRegistro._normalizeName(nombreOperario);
+        return nombreEmpleado.includes(nombreBuscado) || nombreBuscado.includes(nombreEmpleado);
+      });
+    }
+
     // Procesar lecturas históricas para este usuario
     const lecturasUsuario = CrearRegistro._procesarLecturasHistoricas(usuario, raw.TIPOLECTURA, lecturasHistoricas);
 
@@ -207,13 +219,13 @@ export class CrearRegistro {
       Obs_Lectura_4: lecturasUsuario.Obs_Lectura_4,
       Obs_Lectura_5: lecturasUsuario.Obs_Lectura_5,
       Obs_Lectura_6: lecturasUsuario.Obs_Lectura_6,
-      Operario: operarioPorCedula?.nombre || nombreOperario || (emp?.nombre ?? null),
+      Operario: operarioFinal?.nombre || nombreOperario || null,
       medidor: medidorNum,
       marcamedidor: medidorDbRow?.marca_medidor ?? null,
       tipomedidor: medidorDbRow?.tipo_medidor ?? null,
-      cedula: cedulaLector || (emp?.cedula ?? null),
-      tipo: operarioPorCedula?.cargo ?? (emp?.cargo ?? null),
-      sede: operarioPorCedula?.sede ?? (emp?.sede ?? null),
+      cedula: cedulaLector || (operarioFinal?.cedula ?? null),
+      tipo: operarioFinal?.cargo ?? null,
+      sede: operarioFinal?.sede ?? null,
       Validacion: null,
       obsValidacion: null,
     }, raw);
@@ -358,19 +370,77 @@ export class CrearRegistro {
     const mesLectura = fechaLecturaObj.getMonth() + 1; // Mes 1-12
     const anoLectura = fechaLecturaObj.getFullYear(); // Año completo
 
-    // Buscar en lecturas históricas por usuario, mes y año
-    const lecturaEncontrada = lecturasHistoricas.find(lectura => {
+    // Buscar lecturas para este usuario
+    const lecturasUsuario = lecturasHistoricas.filter(lectura => {
       const clienteLectura = String(lectura.cliente || lectura.CLIENTE || "").trim();
+      return clienteLectura === usuario;
+    });
+
+    // Si no hay lecturas para este usuario, intentar buscar la más reciente
+    if (lecturasUsuario.length === 0) {
+      console.log(`⚠️  No se encontraron lecturas históricas para usuario ${usuario}`);
+      return null;
+    }
+
+    // Buscar por mes y año exactos primero
+    let lecturaEncontrada = lecturasUsuario.find(lectura => {
       const mesHistorico = parseInt(lectura.mes || lectura.MES || 0);
       const anoHistorico = parseInt(lectura.ano || lectura.ANO || 0);
       
-      return clienteLectura === usuario && 
-             mesHistorico === mesLectura && 
-             anoHistorico === anoLectura;
+      return mesHistorico === mesLectura && anoHistorico === anoLectura;
     });
 
+    // Si no encuentra por fecha exacta, buscar la lectura más reciente del usuario
+    if (!lecturaEncontrada) {
+      console.log(`⚠️  No se encontró lectura exacta para usuario ${usuario} en ${mesLectura}/${anoLectura}`);
+      console.log(`📊 Lecturas disponibles para usuario ${usuario}:`, 
+        lecturasUsuario.map(l => `${l.mes || l.MES}/${l.ano || l.ANO}`).slice(0, 5)
+      );
+      
+      // Ordenar por año y mes descendente para obtener la más reciente
+      lecturasUsuario.sort((a, b) => {
+        const anoA = parseInt(a.ano || a.ANO || 0);
+        const anoB = parseInt(b.ano || b.ANO || 0);
+        const mesA = parseInt(a.mes || a.MES || 0);
+        const mesB = parseInt(b.mes || b.MES || 0);
+        
+        if (anoA !== anoB) return anoB - anoA; // Año más reciente primero
+        return mesB - mesA; // Mes más reciente primero
+      });
+      
+      lecturaEncontrada = lecturasUsuario[0]; // Tomar la más reciente
+      
+      if (lecturaEncontrada) {
+        console.log(`✅ Usando lectura más reciente para usuario ${usuario}: ${lecturaEncontrada.mes || lecturaEncontrada.MES}/${lecturaEncontrada.ano || lecturaEncontrada.ANO}`);
+      }
+    }
+
+    // Si la lectura encontrada tiene lector null, buscar la más reciente con lector válido
+    if (lecturaEncontrada && !lecturaEncontrada.lector) {
+      console.log(`⚠️  Lectura encontrada para usuario ${usuario} tiene lector null, buscando alternativa...`);
+      
+      // Buscar la lectura más reciente que tenga un lector válido
+      const lecturaConLector = lecturasUsuario.find(lectura => {
+        const lector = lectura.lector || lectura.LECTOR;
+        return lector && lector.trim() !== '';
+      });
+      
+      if (lecturaConLector) {
+        lecturaEncontrada = lecturaConLector;
+        console.log(`✅ Usando lectura con lector válido para usuario ${usuario}: ${lecturaEncontrada.mes || lecturaEncontrada.MES}/${lecturaEncontrada.ano || lecturaEncontrada.ANO}, lector: ${lecturaEncontrada.lector}`);
+      }
+    }
+
     // Retornar la cédula del lector si se encuentra
-    return lecturaEncontrada?.lector || lecturaEncontrada?.LECTOR || null;
+    const cedula = lecturaEncontrada?.lector || lecturaEncontrada?.LECTOR || null;
+    
+    if (cedula) {
+      console.log(`✅ Cédula encontrada para usuario ${usuario}: ${cedula}`);
+    } else {
+      console.log(`❌ No se pudo obtener cédula para usuario ${usuario}`);
+    }
+    
+    return cedula;
   }
 
   // ——— Método para buscar intentos en lecturas históricas ———
