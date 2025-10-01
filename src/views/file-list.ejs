@@ -159,6 +159,9 @@
 </div>
 
 <script>
+// Variable de configuración para la URL base
+const BASE_URL = '<%= baseUrl %>';
+
 // Función para formatear tamaño de archivo (helper function)
 function formatFileSize(bytes) {
     if (bytes === 0) return '0 Bytes';
@@ -223,7 +226,7 @@ function runFile(filename, fileType) {
     
     if (fileType === 'reporte') {
         // Ejecutar el endpoint de procesamiento completo
-        window.open('http://localhost:3000/api/process/complete', '_blank');
+        window.open(`${BASE_URL}/api/process/complete`, '_blank');
         // Restaurar el botón después de abrir la ventana
         setTimeout(() => {
             runBtn.disabled = false;
@@ -233,7 +236,7 @@ function runFile(filename, fileType) {
         return;
     } else if (fileType === 'empleados') {
         // Ejecutar el endpoint de empleados
-        fetch('http://localhost:3000/api/empleados/importar', {
+        fetch(`${BASE_URL}/api/empleados/importar`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -262,7 +265,7 @@ function runFile(filename, fileType) {
         });
     } else if (fileType === 'medidores') {
         // Ejecutar el endpoint de medidores
-        fetch('http://localhost:3000/api/medidores/load', {
+        fetch(`${BASE_URL}/api/medidores/load`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -290,7 +293,7 @@ function runFile(filename, fileType) {
         });
     } else if (fileType === 'tiempos') {
         // Ejecutar el endpoint de tiempos
-        fetch('http://localhost:3000/api/load', {
+        fetch(`${BASE_URL}/api/load`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

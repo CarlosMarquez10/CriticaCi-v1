@@ -4,7 +4,7 @@ Esta documentación describe todos los endpoints disponibles en la API de Critic
 
 ## Base URL
 ```
-http://localhost:3000/api
+https://vms41rr2-3000.use2.devtunnels.ms/api
 ```
 
 ## Índice
@@ -327,32 +327,32 @@ Genera un archivo Excel personalizado con filtros específicos.
 
 ### Consultar un medidor específico
 ```bash
-curl -X GET "http://localhost:3000/api/medidores/202957"
+curl -X GET "https://vms41rr2-3000.use2.devtunnels.ms/api/medidores/202957"
 ```
 
 ### Buscar múltiples medidores
 ```bash
-curl -X POST "http://localhost:3000/api/medidores/search" \
+curl -X POST "https://vms41rr2-3000.use2.devtunnels.ms/api/medidores/search" \
   -H "Content-Type: application/json" \
   -d '{"clientes": ["202957", "123456"]}'
 ```
 
 ### Obtener registros de un cliente
 ```bash
-curl -X POST "http://localhost:3000/api/cliente/records" \
+curl -X POST "https://vms41rr2-3000.use2.devtunnels.ms/api/cliente/records" \
   -H "Content-Type: application/json" \
   -d '{"cliente": "1170143751", "desde": 202401, "hasta": 202412}'
 ```
 
 ### Generar reporte Excel
 ```bash
-curl -X GET "http://localhost:3000/api/excel/generate" \
+curl -X GET "https://vms41rr2-3000.use2.devtunnels.ms/api/excel/generate" \
   --output "reporte.xlsx"
 ```
 
 ### Generar reporte Excel personalizado
 ```bash
-curl -X POST "http://localhost:3000/api/excel/custom" \
+curl -X POST "https://vms41rr2-3000.use2.devtunnels.ms/api/excel/custom" \
   -H "Content-Type: application/json" \
   -d '{"zona": "A1", "incluirLecturasHistoricas": true}' \
   --output "reporte_personalizado.xlsx"

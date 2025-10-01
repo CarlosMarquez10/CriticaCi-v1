@@ -36,11 +36,26 @@ Sistema de gestión de lecturas de medidores con generación de reportes Excel p
    
    Editar el archivo `.env` con tus credenciales:
    ```env
-   DB_HOST=localhost
-   DB_USER=tu_usuario
-   DB_PASSWORD=tu_contraseña
-   DB_NAME=criticaci_db
+   # Configuración de la base de datos MySQL
+   MYSQL_HOST=localhost
+   MYSQL_USER=tu_usuario
+   MYSQL_PASSWORD=tu_contraseña
+   MYSQL_DB=criticaci_db
+   MYSQL_CONN_LIMIT=1000
+   
+   # Configuración del servidor
    PORT=3000
+   NODE_ENV=development
+   
+   # URL base de la aplicación (cambiar según el entorno)
+   # Para desarrollo local: http://localhost:3000
+   # Para túnel de desarrollo: https://vms41rr2-3000.use2.devtunnels.ms
+   # Para producción: https://tu-dominio.com
+   BASE_URL=https://vms41rr2-3000.use2.devtunnels.ms
+   
+   # Configuración de procesamiento
+   BATCH_SIZE=500
+   TXN_ROWS=20000
    ```
 
 4. **Configurar la base de datos**
@@ -57,7 +72,7 @@ Sistema de gestión de lecturas de medidores con generación de reportes Excel p
 ```bash
 npm run dev
 ```
-El servidor se ejecutará en `http://localhost:3000`
+El servidor se ejecutará en la URL configurada en `BASE_URL` (por defecto: `https://vms41rr2-3000.use2.devtunnels.ms`)
 
 ### Scripts Disponibles
 - `npm run dev` - Inicia el servidor en modo desarrollo

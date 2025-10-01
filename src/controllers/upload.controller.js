@@ -248,7 +248,8 @@ export const listFiles = async (req, res) => {
             title: `${folderName}`,
             files: validFiles,
             folderType: type,
-            folderName: folderName
+            folderName: folderName,
+            baseUrl: process.env.BASE_URL || `http://localhost:${process.env.PORT || 3000}`
         });
 
     } catch (error) {
