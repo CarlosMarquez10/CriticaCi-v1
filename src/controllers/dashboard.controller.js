@@ -368,3 +368,136 @@ function calcularKWPorOperario(registros) {
     
     return kwPorOperario;
 }
+
+/**
+ * Obtiene el top 5 de empleados con menos errores
+ */
+export const getTop5EmpleadosMenosErrores = async (req, res) => {
+    try {
+        const rawData = await readFileAsync(dataFilePath, 'utf8');
+        const registros = JSON.parse(rawData);
+        
+        // Obtener filtro de sede desde query parameters
+        const { sede } = req.query;
+        
+        // Filtrar registros por sede si se especifica
+        const registrosFiltrados = sede ? 
+            registros.filter(registro => registro.sede === sede) : 
+            registros;
+        
+        // Calcular estadísticas de errores por empleado
+        const estadisticasEmpleados = {};
+        
+        registrosFiltrados.forEach(registro => {
+            const operario = registro.Operario || 'No especificado';
+            const tieneError = registro.TIPODEERROR && registro.TIPODEERROR !== 'Sin error' && registro.TIPODEERROR.trim() !== '';
+            
+            if (!estadisticasEmpleados[operario]) {
+                estadisticasEmpleados[operario] = {
+                    nombre: operario,
+                    totalRegistros: 0,
+                    totalErrores: 0,
+                    cedula: registro.cedula || 'N/A',
+                    sede: registro.sede || 'N/A'
+                };
+            }
+            
+            estadisticasEmpleados[operario].totalRegistros++;
+            if (tieneError) {
+                estadisticasEmpleados[operario].totalErrores++;
+            }
+        });
+        
+        // Calcular porcentaje de errores (sin filtro mínimo para mostrar empleados con pocos registros)
+        const empleadosConStats = Object.values(estadisticasEmpleados)
+            .map(emp => ({
+                ...emp,
+                porcentajeErrores: ((emp.totalErrores / emp.totalRegistros) * 100).toFixed(2),
+                efectividad: (((emp.totalRegistros - emp.totalErrores) / emp.totalRegistros) * 100).toFixed(2)
+            }));
+        
+        // Ordenar por menor cantidad de registros (menos activos)
+        const top5MenosErrores = empleadosConStats
+            .sort((a, b) => a.totalRegistros - b.totalRegistros)
+            .slice(0, 5);
+        
+        res.json({
+            success: true,
+            data: top5MenosErrores
+        });
+        
+    } catch (error) {
+        console.error('Error al obtener top 5 empleados con menos errores:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error al obtener estadísticas de empleados'
+        });
+    }
+};
+
+/**
+ * Obtiene el top 5 de empleados con más errores
+ */
+export const getTop5EmpleadosMasErrores = async (req, res) => {
+    try {
+        const rawData = await readFileAsync(dataFilePath, 'utf8');
+        const registros = JSON.parse(rawData);
+        
+        // Obtener filtro de sede desde query parameters
+        const { sede } = req.query;
+        
+        // Filtrar registros por sede si se especifica
+        const registrosFiltrados = sede ? 
+            registros.filter(registro => registro.sede === sede) : 
+            registros;
+        
+        // Calcular estadísticas de errores por empleado
+        const estadisticasEmpleados = {};
+        
+        registrosFiltrados.forEach(registro => {
+            const operario = registro.Operario || 'No especificado';
+            const tieneError = registro.TIPODEERROR && registro.TIPODEERROR !== 'Sin error' && registro.TIPODEERROR.trim() !== '';
+            
+            if (!estadisticasEmpleados[operario]) {
+                estadisticasEmpleados[operario] = {
+                    nombre: operario,
+                    totalRegistros: 0,
+                    totalErrores: 0,
+                    cedula: registro.cedula || 'N/A',
+                    sede: registro.sede || 'N/A'
+                };
+            }
+            
+            estadisticasEmpleados[operario].totalRegistros++;
+            if (tieneError) {
+                estadisticasEmpleados[operario].totalErrores++;
+            }
+        });
+        
+        // Calcular porcentaje de errores y filtrar empleados con al menos 10 registros
+        const empleadosConStats = Object.values(estadisticasEmpleados)
+            .filter(emp => emp.totalRegistros >= 10) // Solo empleados con suficientes registros
+            .map(emp => ({
+                ...emp,
+                porcentajeErrores: ((emp.totalErrores / emp.totalRegistros) * 100).toFixed(2),
+                efectividad: (((emp.totalRegistros - emp.totalErrores) / emp.totalRegistros) * 100).toFixed(2)
+            }));
+        
+        // Ordenar por mayor cantidad de registros (más activos) - mantener descendente
+        const top5MasErrores = empleadosConStats
+            .sort((a, b) => b.totalRegistros - a.totalRegistros)
+            .slice(0, 5);
+        
+        res.json({
+            success: true,
+            data: top5MasErrores
+        });
+        
+    } catch (error) {
+        console.error('Error al obtener top 5 empleados con más errores:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error al obtener estadísticas de empleados'
+        });
+    }
+};

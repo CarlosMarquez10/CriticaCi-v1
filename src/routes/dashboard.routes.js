@@ -21,4 +21,16 @@ router.get('/detalle/:id', dashboardController.getDetalleRegistro);
  */
 router.get('/marcas-medidores', dashboardController.getMarcasMedidores);
 
+/**
+ * @route GET /dashboard/top5-empleados-menos-errores
+ * @description Obtiene el top 5 de empleados con menos errores
+ */
+router.get('/top5-empleados-menos-errores', dashboardController.getTop5EmpleadosMenosErrores);
+
+/**
+ * @route GET /dashboard/top5-empleados-mas-errores
+ * @description Obtiene el top 5 de empleados con más errores
+ */
+router.get('/top5-empleados-mas-errores', dashboardController.getTop5EmpleadosMasErrores);
+
 export default router;

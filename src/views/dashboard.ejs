@@ -234,6 +234,38 @@
         </div>
     </div>
 
+    <!-- Nuevas gráficas de empleados -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-white d-flex justify-content-between align-items-center" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                    <h5 class="mb-0">
+                        <i class="fas fa-star me-2"></i>
+                        Top 5 Empleados Más Activos
+                    </h5>
+                    <span class="badge bg-light text-dark" id="menosErroresCount"></span>
+                </div>
+                <div class="card-body" style="height: 400px; padding: 15px;">
+                    <canvas id="empleadosMenosErroresChart" style="max-height: 370px; width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-white d-flex justify-content-between align-items-center" style="background: linear-gradient(135deg, #e17055 0%, #fd79a8 100%);">
+                    <h5 class="mb-0">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        Top 5 Empleados por Cantidad de Registros
+                    </h5>
+                    <span class="badge bg-light text-dark" id="masErroresCount"></span>
+                </div>
+                <div class="card-body" style="height: 400px; padding: 15px;">
+                    <canvas id="empleadosMasErroresChart" style="max-height: 370px; width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -631,10 +663,228 @@
     // Cargar gráfica de marcas al inicializar la página
     cargarGraficaMarcas();
 
-    // Interceptar el envío del formulario de filtros para recargar la gráfica
+    // Variables globales para las gráficas de empleados
+    let empleadosMenosErroresChart = null;
+    let empleadosMasErroresChart = null;
+
+    // Función para cargar y mostrar gráfica de empleados con menos errores
+    function cargarGraficaEmpleadosMenosErrores() {
+        // Obtener parámetros de filtro actuales de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filtros = {};
+        
+        // Recopilar todos los filtros
+        ['tipoLectura', 'sede', 'fechaInicio', 'fechaFin', 'operario', 'tipoMedidor', 'marcaMedidor', 'validacion', 'obsValidacion', 'kwAjustados', 'tipoError', 'usuario'].forEach(param => {
+            const value = urlParams.get(param);
+            if (value && value !== '') {
+                filtros[param] = value;
+            }
+        });
+
+        // Construir URL con filtros
+        const queryString = new URLSearchParams(filtros).toString();
+        const url = `<%= baseUrl %>/dashboard/top5-empleados-menos-errores${queryString ? '?' + queryString : ''}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(result => {
+                console.log('Datos empleados menos errores:', result);
+                
+                // Verificar si la respuesta tiene la estructura esperada
+                const data = result.success ? result.data : result;
+                
+                // Actualizar contador
+                document.getElementById('menosErroresCount').textContent = `${data.length} empleados`;
+
+                // Destruir gráfica anterior si existe
+                if (empleadosMenosErroresChart) {
+                    empleadosMenosErroresChart.destroy();
+                }
+
+                // Crear nueva gráfica de barras
+                const empleadosMenosErroresCtx = document.getElementById('empleadosMenosErroresChart').getContext('2d');
+                empleadosMenosErroresChart = new Chart(empleadosMenosErroresCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(emp => emp.nombre),
+                        datasets: [{
+                            label: 'Total Registros',
+                            data: data.map(emp => emp.totalRegistros),
+                            backgroundColor: [
+                                '#00b894', '#00cec9', '#55a3ff', '#6c5ce7', '#a29bfe'
+                            ],
+                            borderColor: [
+                                '#00a085', '#00b7b8', '#4834d4', '#5f3dc4', '#8c7ae6'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const empleado = data[context.dataIndex];
+                                        return [
+                                            `Total registros: ${empleado.totalRegistros}`,
+                                            `Errores: ${empleado.totalErrores}`,
+                                            `Efectividad: ${empleado.efectividad}%`,
+                                            `% Errores: ${empleado.porcentajeErrores}%`
+                                        ];
+                                    }
+                                }
+                            },
+                            datalabels: {
+                                display: true,
+                                anchor: 'end',
+                                align: 'top',
+                                formatter: function(value) {
+                                    return value + ' reg';
+                                },
+                                color: '#2c3e50',
+                                font: {
+                                    weight: 'bold',
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error al cargar datos de empleados con menos errores:', error);
+                document.getElementById('menosErroresCount').textContent = 'Error al cargar';
+            });
+    }
+
+    // Función para cargar y mostrar gráfica de empleados con más errores
+    function cargarGraficaEmpleadosMasErrores() {
+        // Obtener parámetros de filtro actuales de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const filtros = {};
+        
+        // Recopilar todos los filtros
+        ['tipoLectura', 'sede', 'fechaInicio', 'fechaFin', 'operario', 'tipoMedidor', 'marcaMedidor', 'validacion', 'obsValidacion', 'kwAjustados', 'tipoError', 'usuario'].forEach(param => {
+            const value = urlParams.get(param);
+            if (value && value !== '') {
+                filtros[param] = value;
+            }
+        });
+
+        // Construir URL con filtros
+        const queryString = new URLSearchParams(filtros).toString();
+        const url = `<%= baseUrl %>/dashboard/top5-empleados-mas-errores${queryString ? '?' + queryString : ''}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(result => {
+                console.log('Datos empleados más errores:', result);
+                
+                // Verificar si la respuesta tiene la estructura esperada
+                const data = result.success ? result.data : result;
+                
+                // Actualizar contador
+                document.getElementById('masErroresCount').textContent = `${data.length} empleados`;
+
+                // Destruir gráfica anterior si existe
+                if (empleadosMasErroresChart) {
+                    empleadosMasErroresChart.destroy();
+                }
+
+                // Crear nueva gráfica de barras
+                const empleadosMasErroresCtx = document.getElementById('empleadosMasErroresChart').getContext('2d');
+                empleadosMasErroresChart = new Chart(empleadosMasErroresCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(emp => emp.nombre),
+                        datasets: [{
+                            label: 'Total Registros',
+                            data: data.map(emp => emp.totalRegistros),
+                            backgroundColor: [
+                                '#e17055', '#fd79a8', '#fdcb6e', '#e84393', '#ff7675'
+                            ],
+                            borderColor: [
+                                '#d63031', '#e84393', '#f39c12', '#d63031', '#e17055'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const empleado = data[context.dataIndex];
+                                        return [
+                                            `Total registros: ${empleado.totalRegistros}`,
+                                            `Errores: ${empleado.totalErrores}`,
+                                            `% Errores: ${empleado.porcentajeErrores}%`,
+                                            `Efectividad: ${empleado.efectividad}%`
+                                        ];
+                                    }
+                                }
+                            },
+                            datalabels: {
+                                display: true,
+                                anchor: 'end',
+                                align: 'top',
+                                formatter: function(value) {
+                                    return value + ' reg';
+                                },
+                                color: '#2c3e50',
+                                font: {
+                                    weight: 'bold',
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error al cargar datos de empleados con más errores:', error);
+                document.getElementById('masErroresCount').textContent = 'Error al cargar';
+            });
+    }
+
+    // Cargar gráficas de empleados al inicializar la página
+    cargarGraficaEmpleadosMenosErrores();
+    cargarGraficaEmpleadosMasErrores();
+
+    // Interceptar el envío del formulario de filtros para recargar las gráficas
     document.getElementById('filterForm').addEventListener('submit', function(e) {
         // Permitir que el formulario se envíe normalmente
-        // Después de que la página se recargue, la gráfica se actualizará automáticamente
+        // Después de que la página se recargue, las gráficas se actualizarán automáticamente
     });
 
     // También recargar cuando se resetean los filtros
