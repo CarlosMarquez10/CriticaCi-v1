@@ -120,7 +120,9 @@ const validarCamposNumericos = (registro) => {
     "Lectura_1",
     "Lectura_2",
     "Lectura_3",
-    "Lectura_4"
+    "Lectura_4",
+    "Lectura_5",
+    "Lectura_6"
   ];
   
   // Convertir strings a números donde corresponda
@@ -196,7 +198,9 @@ const validarNumerosEnObservaciones = (registro) => {
     "Obs_Lectura_1",
     "Obs_Lectura_2",
     "Obs_Lectura_3",
-    "Obs_Lectura_4"
+    "Obs_Lectura_4",
+    "Obs_Lectura_5",
+    "Obs_Lectura_6"
   ];
   
   // Expresión regular para encontrar números en el texto
@@ -251,7 +255,8 @@ const validarSecuenciaLecturas = (registro) => {
   
   // Verificar que existan las lecturas para validar
   if (registro.Lectura_1 === undefined || registro.Lectura_2 === undefined || 
-      registro.Lectura_3 === undefined || registro.Lectura_4 === undefined) {
+      registro.Lectura_3 === undefined || registro.Lectura_4 === undefined || registro.Lectura_5 === undefined || registro.Lectura_6 === undefined
+    ) {
     return registro;
   }
   
@@ -260,12 +265,16 @@ const validarSecuenciaLecturas = (registro) => {
   const lectura2 = Number(registro.Lectura_2);
   const lectura3 = Number(registro.Lectura_3);
   const lectura4 = Number(registro.Lectura_4);
+  const lectura5 = Number(registro.Lectura_5);
+  const lectura6 = Number(registro.Lectura_6);
   
   // Verificar si la secuencia es correcta (Lectura_1 > Lectura_2 > Lectura_3 > Lectura_4)
   const secuenciaCorrecta = 
     (!isNaN(lectura1) && !isNaN(lectura2) && lectura1 > lectura2) &&
     (!isNaN(lectura2) && !isNaN(lectura3) && lectura2 > lectura3) &&
-    (!isNaN(lectura3) && !isNaN(lectura4) && lectura3 > lectura4);
+    (!isNaN(lectura3) && !isNaN(lectura4) && lectura3 > lectura4 ) &&
+    (!isNaN(lectura4) && !isNaN(lectura5) && lectura4 > lectura5) &&
+    (!isNaN(lectura5) && !isNaN(lectura6) && lectura5 > lectura6);
   
   // Si la secuencia es correcta, no necesitamos hacer más validaciones
   if (secuenciaCorrecta) {
@@ -300,6 +309,10 @@ const validarSecuenciaLecturas = (registro) => {
     lecturaProblematica = "Lectura_3";
   } else if (!isNaN(lectura3) && !isNaN(lectura4) && lectura3 <= lectura4) {
     lecturaProblematica = "Lectura_4";
+  } else if (!isNaN(lectura4) && !isNaN(lectura5) && lectura4 <= lectura5) {
+    lecturaProblematica = "Lectura_5";
+  } else if (!isNaN(lectura5) && !isNaN(lectura6) && lectura5 <= lectura6) {
+    lecturaProblematica = "Lectura_6";
   }
   
   // Si encontramos una lectura problemática y el código de observación es 39,
@@ -324,6 +337,7 @@ const validarSecuenciaLecturas = (registro) => {
  * @returns {Object} - Registro con campos Validacion y obsValidacion actualizados
  */
 const validarObservacionesLecturas = (registro) => {
+
   // Solo procesar registros pendientes de validación
   if (!registro || registro.Validacion !== "PENDIENTE") return registro;
   
@@ -331,7 +345,7 @@ const validarObservacionesLecturas = (registro) => {
   const camposObservacion = ["Obs_Lectura_1", "Obs_Lectura_2", "Obs_Lectura_3", "Obs_Lectura_4", "Obs_Lectura_5", "Obs_Lectura_6"];
   
   // Palabras clave que indican confirmación de lectura
-  const palabrasClave = ["lectura real", "lectura confirmada", "lectura"];
+  const palabrasClave = ["lectura real", "lectura confirmada", "lectura", "real", "confirmada", "error", "correcta" ];
   
   // Verificar si alguna observación contiene las palabras clave
   let observacionConfirmada = false;
@@ -361,6 +375,121 @@ const validarObservacionesLecturas = (registro) => {
   return registro;
 };
 
+
+// Function que valide que haga lo mismo de validar la secuencia de la lectura, 
+// pero para las lecturas numéricas (Lectura_1, Lectura_2, Lectura_3, Lectura_4, Lectura_5, Lectura_6)
+// y si la secuencia es correcta, sumar solo las lecturas numericas que sea diferentes a cero y a null, por que necesito hacer un promedio solo con las lectura que si tiene valor, el nuemro por el que tiene que dividir el promedio es la cantidad de lecturas que si tiene valor, por ejemplo si tiene 3 lecturas con valor, el promedio es la suma de las 3 lecturas dividido por 3, si tiene 2 lecturas con valor, el promedio es la suma de las 2 lecturas dividido por 2, etc.
+// sacar el consumo de la lectura que se tomada, tenemos un campo en el json que se llama  "LECTURATOMADA" esta lectura tenemos que ver donde se encuentra en las lectura numericas  "Lectura_1", "Lectura_2",  "Lectura_3",  "Lectura_4",  "Lectura_5",  "Lectura_6", si la lectura tomada, ejemplo esta en la lectura_4 ha que hacer la resta con la lectura_5. ejemplo : lectura_4 - lectura_5, esto  nos data el consumo actual.
+//devemos validar con el promedio de las lecturas nuemericas, con el consumo que se calculo con la resta de  lectura tomada. el promedio del consumo calculado debe mantenerse dentro de un rango de +- 20% del promedio de las lecturas nuemericas. si se mantiene, ahora si actualizamos el campo de "Validacion" con el valor "No", y el campo "obsValidacion" con el valor, "Consumo dentro del mas o menos el 20%"
+
+function validarConsumoPromedio(registro) {
+    if (!registro) return registro;
+    
+    try {
+        // Verificar LECTURATOMADA
+        const lecturaTomada = parseFloat(registro.LECTURATOMADA);
+        if (isNaN(lecturaTomada) || registro.LECTURATOMADA === null || registro.LECTURATOMADA === undefined || registro.LECTURATOMADA === '') {
+            // No modificar los campos, dejar como están
+            return registro;
+        }
+        
+        // Recopilar lecturas válidas en orden
+        const lecturas = [];
+        const lecturasConIndice = [];
+        
+        for (let i = 1; i <= 6; i++) {
+            const lectura = registro[`Lectura_${i}`];
+            if (lectura !== null && lectura !== undefined && lectura !== '') {
+                const lecturaNum = parseFloat(lectura);
+                if (!isNaN(lecturaNum)) {
+                    lecturas.push(lecturaNum);
+                    lecturasConIndice.push({ valor: lecturaNum, indice: i });
+                }
+            }
+        }
+        
+        // Verificar que tengamos al menos 2 lecturas válidas
+        if (lecturas.length < 2) {
+            // No modificar los campos, dejar como están
+            return registro;
+        }
+        
+        // Verificar secuencia descendente (Lectura_1 > Lectura_2 > ... > Lectura_6)
+        for (let i = 0; i < lecturasConIndice.length - 1; i++) {
+            if (lecturasConIndice[i].valor <= lecturasConIndice[i + 1].valor) {
+                // No modificar los campos, dejar como están
+                return registro;
+            }
+        }
+        
+        // Calcular promedio de las lecturas válidas
+        const promedioLecturas = lecturas.reduce((sum, lectura) => sum + lectura, 0) / lecturas.length;
+        
+        // Encontrar la posición de LECTURATOMADA en las lecturas
+        let posicionLecturaTomada = -1;
+        let lecturaAnterior = null;
+        
+        for (let i = 0; i < lecturasConIndice.length; i++) {
+            if (lecturasConIndice[i].valor === lecturaTomada) {
+                posicionLecturaTomada = i;
+                // La lectura anterior sería la siguiente en el array (porque están en orden descendente)
+                if (i + 1 < lecturasConIndice.length) {
+                    lecturaAnterior = lecturasConIndice[i + 1].valor;
+                }
+                break;
+            }
+        }
+        
+        // Si no encontramos LECTURATOMADA exactamente, buscar la más cercana
+        if (posicionLecturaTomada === -1) {
+            // Buscar entre qué lecturas está LECTURATOMADA
+            for (let i = 0; i < lecturasConIndice.length - 1; i++) {
+                if (lecturaTomada <= lecturasConIndice[i].valor && lecturaTomada >= lecturasConIndice[i + 1].valor) {
+                    lecturaAnterior = lecturasConIndice[i + 1].valor;
+                    break;
+                }
+            }
+            
+            // Si LECTURATOMADA es menor que todas las lecturas, usar la última
+            if (lecturaAnterior === null && lecturaTomada < lecturasConIndice[lecturasConIndice.length - 1].valor) {
+                lecturaAnterior = lecturasConIndice[lecturasConIndice.length - 1].valor;
+            }
+        }
+        
+        // Verificar que tengamos una lectura anterior para calcular el consumo
+        if (lecturaAnterior === null) {
+            // No modificar los campos, dejar como están
+            return registro;
+        }
+        
+        // Calcular consumo actual
+        const consumoActual = lecturaTomada - lecturaAnterior;
+        
+        // Verificar que el consumo sea positivo
+        if (consumoActual < 0) {
+            // No modificar los campos, dejar como están
+            return registro;
+        }
+        
+        // Calcular límites del ±20% del promedio de lecturas
+        const limiteInferior = promedioLecturas * 0.8;
+        const limiteSuperior = promedioLecturas * 1.2;
+        
+        // Comparar consumo actual con el ±20% del promedio de lecturas
+        // SOLO modificar los campos cuando el consumo esté dentro del rango
+        if (consumoActual >= limiteInferior && consumoActual <= limiteSuperior) {
+            registro.Validacion = 'NO';
+            registro.obsValidacion = 'Consumo dentro del rango del 20%';
+        }
+        // Para todos los demás casos (fuera del rango), no modificar los campos
+        
+    } catch (error) {
+        console.error('Error en validación de consumo promedio:', error);
+        // No modificar los campos en caso de error, dejar como están
+    }
+    
+    return registro;
+}
 export {
   validarFechaFactura,
   validarCampoValidacion,
@@ -370,5 +499,6 @@ export {
   validarLecturasAlfanumerica,
   validarObservacionesLecturas,
   validarSecuenciaLecturas,
-  validarNumerosEnObservaciones
+  validarNumerosEnObservaciones,
+  validarConsumoPromedio
 };

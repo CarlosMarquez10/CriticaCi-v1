@@ -836,7 +836,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "12632",
       "ZONA": "1",
@@ -1100,7 +1100,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "13057",
       "ZONA": "1",
@@ -4730,7 +4730,7 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "61419",
       "ZONA": "1",
@@ -4796,7 +4796,7 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "61803",
       "ZONA": "1",
@@ -4928,7 +4928,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "62666",
       "ZONA": "1",
@@ -9614,7 +9614,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "105330",
       "ZONA": "1",
@@ -14762,7 +14762,7 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "213733",
       "ZONA": "1",
@@ -15686,7 +15686,7 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "Validacion": "SI",
-    "obsValidacion": "El operario fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "253694",
       "ZONA": "3",
@@ -17336,7 +17336,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "284376",
       "ZONA": "4",
@@ -17930,7 +17930,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "301161",
       "ZONA": "1",
@@ -18458,7 +18458,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "309809",
       "ZONA": "1",
@@ -30536,7 +30536,7 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "568009",
       "ZONA": "1",
@@ -33572,7 +33572,7 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "Validacion": "SI",
-    "obsValidacion": "El operario fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "600068",
       "ZONA": "3",
@@ -34760,7 +34760,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "613447",
       "ZONA": "1",
@@ -38984,7 +38984,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "673694",
       "ZONA": "1",
@@ -42218,7 +42218,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "1040827",
       "ZONA": "1",
@@ -45056,7 +45056,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "1082228",
       "ZONA": "1",
@@ -46706,7 +46706,7 @@
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "1108094",
       "ZONA": "2",
@@ -49544,7 +49544,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "1140971",
       "ZONA": "1",
@@ -50138,7 +50138,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "1144629",
       "ZONA": "1",
@@ -52118,7 +52118,7 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "1158166",
       "ZONA": "1",
@@ -52579,8 +52579,8 @@
     "cedula": "1090397246",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "NO",
+    "obsValidacion": "Consumo dentro del rango del 20%",
     "_raw": {
       "USUARIO": "1162794",
       "ZONA": "1",
