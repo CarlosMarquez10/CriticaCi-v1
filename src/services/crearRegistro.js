@@ -87,7 +87,7 @@ export class CrearRegistro {
       Lectura_1 = null, Lectura_2 = null, Lectura_3 = null, Lectura_4 = null, Lectura_5 = null, Lectura_6 = null, Consumo_1 = null, Consumo_2 = null, Consumo_3 = null, Consumo_4 = null, Consumo_5 = null, Consumo_6 = null,
       Obs_Lectura_1 = null, Obs_Lectura_2 = null, Obs_Lectura_3 = null, Obs_Lectura_4 = null, Obs_Lectura_5 = null, Obs_Lectura_6 = null,
       Operario = null, medidor = null, marcamedidor = null, tipomedidor = null,
-      cedula = null, tipo = null, sede = null, Validacion = null, obsValidacion = null, intentos = null,
+      cedula = null, tipo = null, sede = null, Validacion = null, obsValidacion = null, intentos = null, UbicacionError = null
     } = {},
     raw = {}
   ) {
@@ -138,6 +138,7 @@ export class CrearRegistro {
     this.cedula = cedula;
     this.tipo = tipo; // p.ej. cargo
     this.sede = sede;
+    this.UbicacionError = UbicacionError;
     this.Validacion = Validacion;
     this.obsValidacion = obsValidacion;
 
@@ -226,8 +227,10 @@ export class CrearRegistro {
       cedula: cedulaLector || (operarioFinal?.cedula ?? null),
       tipo: operarioFinal?.cargo ?? null,
       sede: operarioFinal?.sede ?? null,
+      UbicacionError: null,
       Validacion: null,
       obsValidacion: null,
+  
     }, raw);
   }
 

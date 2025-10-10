@@ -345,7 +345,7 @@ const validarObservacionesLecturas = (registro) => {
   const camposObservacion = ["Obs_Lectura_1", "Obs_Lectura_2", "Obs_Lectura_3", "Obs_Lectura_4", "Obs_Lectura_5", "Obs_Lectura_6"];
   
   // Palabras clave que indican confirmación de lectura
-  const palabrasClave = ["lectura real", "lectura confirmada", "lectura", "real", "confirmada", "error", "correcta" ];
+  const palabrasClave = ["lectura real", "lectura confirmada", "lectura", "real", "confirmada", "error", "correcta", "corrige", "periodos anteriores", "genera", "desviacion" ];
   
   // Verificar si alguna observación contiene las palabras clave
   let observacionConfirmada = false;
@@ -490,6 +490,16 @@ function validarConsumoPromedio(registro) {
     
     return registro;
 }
+
+function conocerUbicacionError(registro){
+
+  
+  return registro;
+}
+
+
+
+
 export {
   validarFechaFactura,
   validarCampoValidacion,

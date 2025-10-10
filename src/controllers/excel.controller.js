@@ -92,6 +92,7 @@ export const generateExcel = asyncHandler(async (req, res) => {
       { header: 'CEDULA', key: 'cedula', width: 15 },
       { header: 'TIPO_EMPLEADO', key: 'tipo', width: 20 },
       { header: 'SEDE', key: 'sede', width: 20 },
+      { header: 'UBICACION_ERROR', key: 'UbicacionError', width: 20 },
       { header: 'VALIDACION', key: 'Validacion', width: 15 },
       { header: 'OBS_VALIDACION', key: 'obsValidacion', width: 25 }
     ];
@@ -150,6 +151,7 @@ export const generateExcel = asyncHandler(async (req, res) => {
         cedula: registro.cedula,
         tipo: registro.tipo,
         sede: registro.sede,
+        UbicacionError: registro.UbicacionError,
         Validacion: registro.Validacion,
         obsValidacion: registro.obsValidacion
       };
@@ -284,6 +286,7 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
       { header: 'CEDULA', key: 'cedula', width: 15 },
       { header: 'TIPO_EMPLEADO', key: 'tipo', width: 20 },
       { header: 'SEDE', key: 'sede', width: 20 },
+      { header: 'UBICACION_ERROR', key: 'UbicacionError', width: 20 },
       { header: 'VALIDACION', key: 'Validacion', width: 15 },
       { header: 'OBS_VALIDACION', key: 'obsValidacion', width: 25 }
     ];
@@ -307,7 +310,7 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
         bgColor = '548235'; // Color verde oscuro (columnas 31-36)
       } else if (colNumber >= 37 && colNumber <= 43) {
         bgColor = '404040'; // Color gris oscuro (columnas 37-43)
-      } else if (colNumber === 44 || colNumber === 45) {
+      } else if (colNumber === 44 || colNumber === 46) {
         bgColor = 'C00000'; // Color rojo (columnas 44 y 45)
       }
       
@@ -372,6 +375,7 @@ export const generateCustomExcel = asyncHandler(async (req, res) => {
         cedula: registro.cedula,
         tipo: registro.tipo,
         sede: registro.sede,
+        UbicacionError: registro.UbicacionError,
         Validacion: registro.Validacion,
         obsValidacion: registro.obsValidacion
       });
