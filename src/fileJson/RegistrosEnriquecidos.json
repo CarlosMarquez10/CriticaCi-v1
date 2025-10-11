@@ -311,7 +311,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -332,6 +332,13 @@
       "NUE": "622418/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "9",
+      "referencia": "8"
     }
   },
   {
@@ -445,7 +452,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -466,6 +473,13 @@
       "NUE": "712418/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -713,7 +727,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -734,6 +748,13 @@
       "NUE": "967712/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "4",
+      "referencia": "3"
     }
   },
   {
@@ -780,7 +801,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -801,6 +822,13 @@
       "NUE": "970112/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "5",
+      "referencia": "3"
     }
   },
   {
@@ -847,7 +875,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -868,6 +896,13 @@
       "NUE": "1263212/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "3",
+      "referencia": "0"
     }
   },
   {
@@ -914,7 +949,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1115,7 +1150,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1136,6 +1171,13 @@
       "NUE": "1305712/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -1182,7 +1224,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1203,6 +1245,13 @@
       "NUE": "1338612/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -1249,7 +1298,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1270,6 +1319,13 @@
       "NUE": "1525115/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "0",
+      "referencia": "1"
     }
   },
   {
@@ -1517,7 +1573,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -1538,6 +1594,13 @@
       "NUE": "1895515/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "7"
     }
   },
   {
@@ -1651,7 +1714,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -1672,6 +1735,13 @@
       "NUE": "1974814/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "8",
+      "referencia": "2"
     }
   },
   {
@@ -1785,7 +1855,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -1806,6 +1876,13 @@
       "NUE": "2168807/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -1852,7 +1929,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -1873,6 +1950,13 @@
       "NUE": "2690814/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "7",
+      "referencia": "4"
     }
   },
   {
@@ -1986,7 +2070,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2007,6 +2091,13 @@
       "NUE": "2949919/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -2723,7 +2814,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2744,6 +2835,13 @@
       "NUE": "4187021/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "6",
+      "referencia": "5"
     }
   },
   {
@@ -2857,7 +2955,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -2878,6 +2976,13 @@
       "NUE": "4395822/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "6",
+      "referencia": "1"
     }
   },
   {
@@ -2924,7 +3029,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3594,7 +3699,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -3615,6 +3720,13 @@
       "NUE": "4854622/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "4",
+      "referencia": "1"
     }
   },
   {
@@ -4197,7 +4309,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario fue consciente del error",
     "_raw": {
@@ -4218,6 +4330,13 @@
       "NUE": "5684015/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -4331,7 +4450,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4352,6 +4471,13 @@
       "NUE": "5691515/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -4599,7 +4725,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4620,6 +4746,13 @@
       "NUE": "5984513/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "8",
+      "referencia": "7"
     }
   },
   {
@@ -4733,7 +4866,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4754,6 +4887,13 @@
       "NUE": "6014208/08/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 6,
+      "orden": "centena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -4800,7 +4940,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4821,6 +4961,13 @@
       "NUE": "6141907/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "4"
     }
   },
   {
@@ -5336,7 +5483,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -5357,6 +5504,13 @@
       "NUE": "6909913/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "5"
     }
   },
   {
@@ -5403,7 +5557,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5424,6 +5578,13 @@
       "NUE": "7263206/06/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -5604,7 +5765,7 @@
     "cedula": "1090393296",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -5625,6 +5786,13 @@
       "NUE": "7442424/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "5",
+      "referencia": "3"
     }
   },
   {
@@ -5939,7 +6107,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5960,6 +6128,13 @@
       "NUE": "7692807/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "9",
+      "referencia": "3"
     }
   },
   {
@@ -6073,7 +6248,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -6094,6 +6269,13 @@
       "NUE": "7726124/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -6207,7 +6389,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -6228,6 +6410,13 @@
       "NUE": "7837605/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -6408,7 +6597,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -6429,6 +6618,13 @@
       "NUE": "8001824/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "4",
+      "referencia": "1"
     }
   },
   {
@@ -6609,7 +6805,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -6630,6 +6826,13 @@
       "NUE": "8070619/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "6",
+      "referencia": "3"
     }
   },
   {
@@ -6676,7 +6879,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -6697,6 +6900,13 @@
       "NUE": "8240324/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "0",
+      "referencia": "4"
     }
   },
   {
@@ -7078,7 +7288,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7413,7 +7623,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7434,6 +7644,13 @@
       "NUE": "8744811/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -7547,7 +7764,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -8217,7 +8434,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8238,6 +8455,13 @@
       "NUE": "9457509/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "3",
+      "referencia": "6"
     }
   },
   {
@@ -8284,7 +8508,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8305,6 +8529,13 @@
       "NUE": "9457609/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "9",
+      "referencia": "n"
     }
   },
   {
@@ -8954,7 +9185,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario fue consciente del error",
     "_raw": {
@@ -8975,6 +9206,13 @@
       "NUE": "9930311/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "7",
+      "referencia": "0"
     }
   },
   {
@@ -9155,7 +9393,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -9176,6 +9414,13 @@
       "NUE": "10044815/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -9423,7 +9668,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -9490,7 +9735,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -9511,6 +9756,13 @@
       "NUE": "10164115/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "8"
     }
   },
   {
@@ -10093,7 +10345,7 @@
     "cedula": "1090447659",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10114,6 +10366,13 @@
       "NUE": "10753205/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "9",
+      "referencia": "4"
     }
   },
   {
@@ -10428,7 +10687,7 @@
     "cedula": "5417331",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10449,6 +10708,13 @@
       "NUE": "11408824/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "2",
+      "referencia": "7"
     }
   },
   {
@@ -10562,7 +10828,7 @@
     "cedula": "1094507049",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10583,6 +10849,13 @@
       "NUE": "12213818/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "7",
+      "referencia": "2"
     }
   },
   {
@@ -10897,7 +11170,7 @@
     "cedula": "88235263",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -10918,6 +11191,13 @@
       "NUE": "12884517/02/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "n"
     }
   },
   {
@@ -10964,7 +11244,7 @@
     "cedula": "5529428",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -10985,6 +11265,13 @@
       "NUE": "13018117/05/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "8",
+      "referencia": "n"
     }
   },
   {
@@ -11031,7 +11318,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11052,6 +11339,13 @@
       "NUE": "13121025/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "9",
+      "referencia": "0"
     }
   },
   {
@@ -11074,13 +11368,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 5,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 258,
     "Lectura_3": 56358,
     "Lectura_4": 79751,
     "Lectura_5": 55976,
     "Lectura_6": 55792,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": -56100,
     "Consumo_3": -23393,
     "Consumo_4": 23775,
     "Consumo_5": 184,
@@ -11232,7 +11526,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11299,7 +11593,7 @@
     "cedula": "88176238",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11320,6 +11614,13 @@
       "NUE": "13277022/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "0",
+      "referencia": "6"
     }
   },
   {
@@ -11366,7 +11667,7 @@
     "cedula": "1090385811",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -11387,6 +11688,13 @@
       "NUE": "13283221/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "3",
+      "referencia": "2"
     }
   },
   {
@@ -11433,7 +11741,7 @@
     "cedula": "1090174318",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11454,6 +11762,13 @@
       "NUE": "13431209/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "5",
+      "referencia": "n"
     }
   },
   {
@@ -11701,7 +12016,7 @@
     "cedula": "1094369225",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11722,6 +12037,13 @@
       "NUE": "14063814/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "0",
+      "referencia": "8"
     }
   },
   {
@@ -11902,7 +12224,7 @@
     "cedula": "88305819",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11923,6 +12245,13 @@
       "NUE": "14376624/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "0",
+      "referencia": "8"
     }
   },
   {
@@ -12170,7 +12499,7 @@
     "cedula": "1090461699",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -12191,6 +12520,13 @@
       "NUE": "15021608/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -12304,7 +12640,7 @@
     "cedula": "1091654744",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -12325,6 +12661,13 @@
       "NUE": "15460921/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -12438,7 +12781,7 @@
     "cedula": "1065917709",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -12459,6 +12802,13 @@
       "NUE": "15709923/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "2",
+      "referencia": "5"
     }
   },
   {
@@ -12706,7 +13056,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -12773,7 +13123,7 @@
     "cedula": "1091669647",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -12794,6 +13144,13 @@
       "NUE": "16777609/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "0",
+      "referencia": "4"
     }
   },
   {
@@ -12840,7 +13197,7 @@
     "cedula": "5427116",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -12861,6 +13218,13 @@
       "NUE": "17599003/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "2",
+      "referencia": "1"
     }
   },
   {
@@ -12974,7 +13338,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -13175,7 +13539,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13196,6 +13560,13 @@
       "NUE": "18365104/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -13376,7 +13747,7 @@
     "cedula": "1090397246",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13397,6 +13768,13 @@
       "NUE": "18517409/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "5",
+      "referencia": "0"
     }
   },
   {
@@ -13912,7 +14290,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13933,6 +14311,13 @@
       "NUE": "19015311/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "6",
+      "referencia": "4"
     }
   },
   {
@@ -14113,7 +14498,7 @@
     "cedula": "5529428",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -14134,6 +14519,13 @@
       "NUE": "19330316/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "8",
+      "referencia": "n"
     }
   },
   {
@@ -14180,7 +14572,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14201,6 +14593,13 @@
       "NUE": "19461526/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "6"
     }
   },
   {
@@ -14247,7 +14646,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14268,6 +14667,13 @@
       "NUE": "19489706/05/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "2"
     }
   },
   {
@@ -14314,7 +14720,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14335,6 +14741,13 @@
       "NUE": "19568524/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -14582,7 +14995,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14603,6 +15016,13 @@
       "NUE": "20204024/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "3",
+      "referencia": "2"
     }
   },
   {
@@ -14649,7 +15069,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14917,7 +15337,7 @@
     "cedula": "88178152",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14938,6 +15358,13 @@
       "NUE": "21237816/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "4",
+      "referencia": "n"
     }
   },
   {
@@ -15295,13 +15722,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 5,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 80241,
     "Lectura_3": 79897,
     "Lectura_4": 79840,
     "Lectura_5": 79136,
     "Lectura_6": 78799,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 344,
     "Consumo_3": 57,
     "Consumo_4": 704,
     "Consumo_5": 337,
@@ -15453,7 +15880,7 @@
     "cedula": "1094576161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -15520,7 +15947,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -15587,7 +16014,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15608,6 +16035,13 @@
       "NUE": "24958924/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "n"
     }
   },
   {
@@ -15654,7 +16088,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15675,6 +16109,13 @@
       "NUE": "25182224/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "n"
     }
   },
   {
@@ -15721,7 +16162,7 @@
     "cedula": "1094322716",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15742,6 +16183,13 @@
       "NUE": "25279515/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "6",
+      "referencia": "n"
     }
   },
   {
@@ -15788,7 +16236,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -15809,6 +16257,13 @@
       "NUE": "25282702/12/202410",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -15855,7 +16310,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -15876,6 +16331,13 @@
       "NUE": "25282702/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -15922,7 +16384,7 @@
     "cedula": "13168455",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15943,6 +16405,13 @@
       "NUE": "25369403/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "8",
+      "referencia": "n"
     }
   },
   {
@@ -16123,7 +16592,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -16144,6 +16613,13 @@
       "NUE": "26385821/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "2"
     }
   },
   {
@@ -16190,7 +16666,7 @@
     "cedula": "1090525371",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -16211,6 +16687,13 @@
       "NUE": "26405619/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -16860,7 +17343,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -17597,7 +18080,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17618,6 +18101,13 @@
       "NUE": "28437623/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "3",
+      "referencia": "2"
     }
   },
   {
@@ -17774,19 +18264,19 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 1,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 5144,
     "Lectura_3": 5144,
     "Lectura_4": 5144,
     "Lectura_5": 5444,
     "Lectura_6": 5144,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 0,
     "Consumo_3": 0,
     "Consumo_4": -300,
     "Consumo_5": 300,
     "Consumo_6": 5144,
     "Obs_Lectura_1": null,
-    "Obs_Lectura_2": null,
+    "Obs_Lectura_2": "inspección visual casa desocupada ",
     "Obs_Lectura_3": "medidor sin consumo casa desahabitada ",
     "Obs_Lectura_4": null,
     "Obs_Lectura_5": null,
@@ -17798,7 +18288,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -17819,6 +18309,13 @@
       "NUE": "28612426/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "4",
+      "referencia": "1"
     }
   },
   {
@@ -18401,7 +18898,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -18468,7 +18965,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18736,7 +19233,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18757,6 +19254,13 @@
       "NUE": "30980914/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "6",
+      "referencia": "4"
     }
   },
   {
@@ -18803,7 +19307,7 @@
     "cedula": "1090492296",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18824,6 +19328,13 @@
       "NUE": "31100606/08/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "7",
+      "referencia": "0"
     }
   },
   {
@@ -19004,7 +19515,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19025,6 +19536,13 @@
       "NUE": "31404515/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "3",
+      "referencia": "0"
     }
   },
   {
@@ -19272,7 +19790,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19293,6 +19811,13 @@
       "NUE": "31706521/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "5",
+      "referencia": "6"
     }
   },
   {
@@ -19406,7 +19931,7 @@
     "cedula": "13140927",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19427,6 +19952,13 @@
       "NUE": "31869321/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "n"
     }
   },
   {
@@ -19741,7 +20273,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19762,6 +20294,13 @@
       "NUE": "40162207/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "6",
+      "referencia": "2"
     }
   },
   {
@@ -19942,7 +20481,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19963,6 +20502,13 @@
       "NUE": "40518611/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "6",
+      "referencia": "8"
     }
   },
   {
@@ -20143,7 +20689,7 @@
     "cedula": "13271434",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20164,6 +20710,13 @@
       "NUE": "40922512/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -20612,7 +21165,7 @@
     "cedula": "1005047655",
     "tipo": "OPERATIVO 2",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21191,13 +21744,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 5,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 15319,
     "Lectura_3": 15156,
     "Lectura_4": null,
     "Lectura_5": 14856,
     "Lectura_6": 14741,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 163,
     "Consumo_3": 15156,
     "Consumo_4": null,
     "Consumo_5": 115,
@@ -21215,7 +21768,7 @@
     "cedula": "88176931",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21617,7 +22170,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21638,6 +22191,13 @@
       "NUE": "43121223/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -21684,7 +22244,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21705,6 +22265,13 @@
       "NUE": "43121423/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -21751,7 +22318,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21952,7 +22519,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -22019,7 +22586,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22040,6 +22607,13 @@
       "NUE": "44144406/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "6",
+      "referencia": "0"
     }
   },
   {
@@ -22555,7 +23129,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22823,7 +23397,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -22844,6 +23418,13 @@
       "NUE": "46702407/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "4"
     }
   },
   {
@@ -22890,7 +23471,7 @@
     "cedula": "1064841850",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -22911,6 +23492,13 @@
       "NUE": "46742504/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "3",
+      "referencia": "2"
     }
   },
   {
@@ -22957,7 +23545,7 @@
     "cedula": "1094322716",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22978,6 +23566,13 @@
       "NUE": "46895012/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -23091,7 +23686,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -23112,6 +23707,13 @@
       "NUE": "47099616/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -23158,7 +23760,7 @@
     "cedula": "1090986337",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -23179,6 +23781,13 @@
       "NUE": "47125706/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "8",
+      "referencia": "n"
     }
   },
   {
@@ -23201,13 +23810,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 1,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 46,
     "Lectura_3": 39,
     "Lectura_4": 2,
     "Lectura_5": 24,
     "Lectura_6": 18,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 7,
     "Consumo_3": 37,
     "Consumo_4": -22,
     "Consumo_5": 6,
@@ -23560,7 +24169,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -23581,6 +24190,13 @@
       "NUE": "47945528/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "2",
+      "referencia": "1"
     }
   },
   {
@@ -23627,7 +24243,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23648,6 +24264,13 @@
       "NUE": "47967304/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "4"
     }
   },
   {
@@ -23694,7 +24317,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23715,6 +24338,13 @@
       "NUE": "48004624/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "9",
+      "referencia": "8"
     }
   },
   {
@@ -23828,7 +24458,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23849,6 +24479,13 @@
       "NUE": "48127612/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "5",
+      "referencia": "3"
     }
   },
   {
@@ -23895,7 +24532,7 @@
     "cedula": "1065890127",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23916,6 +24553,13 @@
       "NUE": "48182509/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -24029,7 +24673,7 @@
     "cedula": "5469445",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -24050,6 +24694,13 @@
       "NUE": "48298505/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -24163,7 +24814,7 @@
     "cedula": "5417131",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24184,6 +24835,13 @@
       "NUE": "48421904/03/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "n"
     }
   },
   {
@@ -24632,7 +25290,7 @@
     "cedula": "1090462276",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24653,6 +25311,13 @@
       "NUE": "49192826/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "n"
     }
   },
   {
@@ -24833,7 +25498,7 @@
     "cedula": "1065892861",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24854,6 +25519,13 @@
       "NUE": "49513302/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "6",
+      "referencia": "n"
     }
   },
   {
@@ -25101,7 +25773,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25122,6 +25794,13 @@
       "NUE": "50102008/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "5",
+      "referencia": "0"
     }
   },
   {
@@ -25168,7 +25847,7 @@
     "cedula": "1005065863",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25302,7 +25981,7 @@
     "cedula": "1090525371",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25323,6 +26002,13 @@
       "NUE": "50198515/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -25369,7 +26055,7 @@
     "cedula": "1090174318",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25390,6 +26076,13 @@
       "NUE": "50656924/05/202576",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -25570,7 +26263,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25591,6 +26284,13 @@
       "NUE": "50831629/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -25637,7 +26337,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -25658,6 +26358,13 @@
       "NUE": "50837411/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -25704,7 +26411,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -25725,6 +26432,13 @@
       "NUE": "50926215/04/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "8",
+      "referencia": "n"
     }
   },
   {
@@ -25771,7 +26485,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -25792,6 +26506,13 @@
       "NUE": "50926216/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "8",
+      "referencia": "n"
     }
   },
   {
@@ -25838,7 +26559,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25905,7 +26626,7 @@
     "cedula": "1093784091",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -25972,7 +26693,7 @@
     "cedula": "1093784091",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25993,6 +26714,13 @@
       "NUE": "50962803/05/202577",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -26039,7 +26767,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -26060,6 +26788,13 @@
       "NUE": "50975824/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "9",
+      "referencia": "5"
     }
   },
   {
@@ -26307,7 +27042,7 @@
     "cedula": "1064841850",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -26328,6 +27063,13 @@
       "NUE": "51301213/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "6",
+      "referencia": "5"
     }
   },
   {
@@ -26441,7 +27183,7 @@
     "cedula": "1091654268",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -26462,6 +27204,13 @@
       "NUE": "51596024/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "4",
+      "referencia": "n"
     }
   },
   {
@@ -26508,7 +27257,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -26529,6 +27278,13 @@
       "NUE": "51608526/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -26575,7 +27331,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -26596,6 +27352,13 @@
       "NUE": "51621126/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -26642,7 +27405,7 @@
     "cedula": "13140927",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -27111,7 +27874,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -27132,6 +27895,13 @@
       "NUE": "52288620/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -27178,7 +27948,7 @@
     "cedula": "1004795107",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27199,6 +27969,13 @@
       "NUE": "52297620/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -27245,7 +28022,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27266,6 +28043,13 @@
       "NUE": "52393224/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "5",
+      "referencia": "n"
     }
   },
   {
@@ -27379,7 +28163,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27400,6 +28184,13 @@
       "NUE": "52409617/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "5",
+      "referencia": "n"
     }
   },
   {
@@ -27446,7 +28237,7 @@
     "cedula": "1093918036",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27467,6 +28258,13 @@
       "NUE": "52652225/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "9",
+      "referencia": "6"
     }
   },
   {
@@ -27647,7 +28445,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27668,6 +28466,13 @@
       "NUE": "52755215/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "4",
+      "referencia": "7"
     }
   },
   {
@@ -27848,7 +28653,7 @@
     "cedula": "13511002",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27869,6 +28674,13 @@
       "NUE": "52840020/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "n"
     }
   },
   {
@@ -27915,7 +28727,7 @@
     "cedula": "1065868668",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27936,6 +28748,13 @@
       "NUE": "53082814/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "2"
     }
   },
   {
@@ -28116,7 +28935,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -28137,6 +28956,13 @@
       "NUE": "53386018/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -28183,7 +29009,7 @@
     "cedula": "1091654268",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28204,6 +29030,13 @@
       "NUE": "53525416/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "4",
+      "referencia": "n"
     }
   },
   {
@@ -28384,7 +29217,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28405,6 +29238,13 @@
       "NUE": "53857104/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "6",
+      "referencia": "5"
     }
   },
   {
@@ -28451,7 +29291,7 @@
     "cedula": "13511002",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -28472,6 +29312,13 @@
       "NUE": "53885525/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -28652,7 +29499,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -28673,6 +29520,13 @@
       "NUE": "54201213/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "6"
     }
   },
   {
@@ -28786,7 +29640,7 @@
     "cedula": "1090986337",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28807,6 +29661,13 @@
       "NUE": "54250315/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -29054,7 +29915,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -29075,6 +29936,13 @@
       "NUE": "54524118/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -29322,7 +30190,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29343,6 +30211,13 @@
       "NUE": "55062023/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -29858,7 +30733,7 @@
     "cedula": "1090525371",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29879,6 +30754,13 @@
       "NUE": "55357012/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -29992,7 +30874,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -30013,6 +30895,13 @@
       "NUE": "55375804/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "4",
+      "referencia": "2"
     }
   },
   {
@@ -30193,7 +31082,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30214,6 +31103,13 @@
       "NUE": "55760504/08/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "n"
     }
   },
   {
@@ -30260,7 +31156,7 @@
     "cedula": "1090393296",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30281,6 +31177,13 @@
       "NUE": "55774720/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -30394,7 +31297,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30415,6 +31318,13 @@
       "NUE": "55858221/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "3"
     }
   },
   {
@@ -30528,7 +31438,7 @@
     "cedula": "88176238",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30549,6 +31459,13 @@
       "NUE": "56170423/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -30662,7 +31579,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30683,6 +31600,13 @@
       "NUE": "56234602/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "0",
+      "referencia": "7"
     }
   },
   {
@@ -30863,7 +31787,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -30930,7 +31854,7 @@
     "cedula": "1090426589",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -30951,6 +31875,13 @@
       "NUE": "56681206/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "4",
+      "referencia": "n"
     }
   },
   {
@@ -31131,7 +32062,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -31198,7 +32129,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -31265,7 +32196,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31286,6 +32217,13 @@
       "NUE": "56922321/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "3"
     }
   },
   {
@@ -31399,7 +32337,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31420,6 +32358,13 @@
       "NUE": "56934021/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -31466,7 +32411,7 @@
     "cedula": "5531760",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -31487,6 +32432,13 @@
       "NUE": "57392223/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -31533,7 +32485,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -31554,6 +32506,13 @@
       "NUE": "57426722/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "6",
+      "referencia": "3"
     }
   },
   {
@@ -31667,7 +32626,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31688,6 +32647,13 @@
       "NUE": "57523318/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "6",
+      "referencia": "5"
     }
   },
   {
@@ -31734,7 +32700,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31755,6 +32721,13 @@
       "NUE": "57533705/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "9",
+      "referencia": "4"
     }
   },
   {
@@ -31801,7 +32774,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -31822,6 +32795,13 @@
       "NUE": "57754411/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "3"
     }
   },
   {
@@ -31935,7 +32915,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31956,6 +32936,13 @@
       "NUE": "57914206/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "6",
+      "referencia": "3"
     }
   },
   {
@@ -32203,7 +33190,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32224,6 +33211,13 @@
       "NUE": "58002008/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -32270,7 +33264,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -32291,6 +33285,13 @@
       "NUE": "58033204/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -32337,7 +33338,7 @@
     "cedula": "1091654268",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32358,6 +33359,13 @@
       "NUE": "58206606/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "n"
     }
   },
   {
@@ -32404,7 +33412,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32425,6 +33433,13 @@
       "NUE": "58251503/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -32471,7 +33486,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32492,6 +33507,13 @@
       "NUE": "58457324/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -32538,7 +33560,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -32559,6 +33581,13 @@
       "NUE": "58491008/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "9",
+      "referencia": "n"
     }
   },
   {
@@ -32672,7 +33701,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32693,6 +33722,13 @@
       "NUE": "58556906/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -32739,7 +33775,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -32760,6 +33796,13 @@
       "NUE": "58780812/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "3",
+      "referencia": "n"
     }
   },
   {
@@ -32873,7 +33916,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -32894,6 +33937,13 @@
       "NUE": "58833426/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "5",
+      "referencia": "n"
     }
   },
   {
@@ -33007,7 +34057,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -33028,6 +34078,13 @@
       "NUE": "58901529/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "3",
+      "referencia": "1"
     }
   },
   {
@@ -33141,7 +34198,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33162,6 +34219,13 @@
       "NUE": "58938906/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -33208,7 +34272,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -33229,6 +34293,13 @@
       "NUE": "58944606/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -33275,7 +34346,7 @@
     "cedula": "1093906629",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -33296,6 +34367,13 @@
       "NUE": "58961230/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "4",
+      "referencia": "2"
     }
   },
   {
@@ -33409,7 +34487,7 @@
     "cedula": "1090986337",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -33430,6 +34508,13 @@
       "NUE": "59006521/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "9",
+      "referencia": "n"
     }
   },
   {
@@ -33610,7 +34695,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -33677,7 +34762,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33698,6 +34783,13 @@
       "NUE": "59265312/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -33744,7 +34836,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33765,6 +34857,13 @@
       "NUE": "59283824/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -33811,7 +34910,7 @@
     "cedula": "1065904005",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -33945,7 +35044,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33966,6 +35065,13 @@
       "NUE": "59967911/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -34079,7 +35185,7 @@
     "cedula": "1094576161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -34100,6 +35206,13 @@
       "NUE": "60006804/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "8",
+      "referencia": "n"
     }
   },
   {
@@ -34213,7 +35326,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -34347,7 +35460,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario fue consciente del error",
     "_raw": {
@@ -34368,6 +35481,13 @@
       "NUE": "60371922/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -34481,7 +35601,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -34502,6 +35622,13 @@
       "NUE": "60669305/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -34615,7 +35742,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -34636,6 +35763,13 @@
       "NUE": "60832713/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "n"
     }
   },
   {
@@ -34950,7 +36084,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -34971,6 +36105,13 @@
       "NUE": "60996221/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -35151,7 +36292,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario fue consciente del error",
     "_raw": {
@@ -35172,6 +36313,13 @@
       "NUE": "61244421/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "n"
     }
   },
   {
@@ -35486,7 +36634,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35507,6 +36655,13 @@
       "NUE": "61467521/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -35821,7 +36976,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -35842,6 +36997,13 @@
       "NUE": "61835518/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "0",
+      "referencia": "1"
     }
   },
   {
@@ -35888,7 +37050,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35955,7 +37117,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -35976,6 +37138,13 @@
       "NUE": "62163606/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "7",
+      "referencia": "6"
     }
   },
   {
@@ -36022,7 +37191,7 @@
     "cedula": "1093784091",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36043,6 +37212,13 @@
       "NUE": "62391504/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "4",
+      "referencia": "0"
     }
   },
   {
@@ -36290,7 +37466,7 @@
     "cedula": "1094370347",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36311,6 +37487,13 @@
       "NUE": "63445016/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -36357,7 +37540,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36378,6 +37561,13 @@
       "NUE": "63658806/06/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 5,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -36625,7 +37815,7 @@
     "cedula": "88254921",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -36646,6 +37836,13 @@
       "NUE": "63825304/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "5"
     }
   },
   {
@@ -36826,7 +38023,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36847,6 +38044,13 @@
       "NUE": "64150024/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "7"
     }
   },
   {
@@ -37228,7 +38432,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -37249,6 +38453,13 @@
       "NUE": "64670110/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "6",
+      "referencia": "8"
     }
   },
   {
@@ -37362,7 +38573,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -37429,7 +38640,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -38233,7 +39444,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -38254,6 +39465,13 @@
       "NUE": "65813408/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -38367,7 +39585,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -38388,6 +39606,13 @@
       "NUE": "65944823/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "8",
+      "referencia": "7"
     }
   },
   {
@@ -38745,19 +39970,19 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 1,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 267,
     "Lectura_3": 267,
     "Lectura_4": 774,
     "Lectura_5": 267,
     "Lectura_6": 267,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 0,
     "Consumo_3": -507,
     "Consumo_4": 507,
     "Consumo_5": 0,
     "Consumo_6": 267,
     "Obs_Lectura_1": null,
-    "Obs_Lectura_2": null,
+    "Obs_Lectura_2": "por inspección visual desocupado ",
     "Obs_Lectura_3": "por inspección visual casa desocupada ",
     "Obs_Lectura_4": null,
     "Obs_Lectura_5": "por inspección visual casa desocupada",
@@ -38769,7 +39994,7 @@
     "cedula": "88176931",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -38790,6 +40015,13 @@
       "NUE": "66289425/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "7",
+      "referencia": "2"
     }
   },
   {
@@ -38970,7 +40202,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39037,7 +40269,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39058,6 +40290,13 @@
       "NUE": "66685015/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "5"
     }
   },
   {
@@ -39080,13 +40319,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 2,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 2824,
     "Lectura_3": 2824,
     "Lectura_4": 10011,
     "Lectura_5": 2656,
     "Lectura_6": 2614,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 0,
     "Consumo_3": -7187,
     "Consumo_4": 7355,
     "Consumo_5": 42,
@@ -39104,7 +40343,7 @@
     "cedula": "13374132",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -39125,6 +40364,13 @@
       "NUE": "66805326/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -39372,7 +40618,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39393,6 +40639,13 @@
       "NUE": "67006515/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "6",
+      "referencia": "0"
     }
   },
   {
@@ -39482,13 +40735,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 1,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 82,
     "Lectura_3": 69,
     "Lectura_4": 546,
     "Lectura_5": 43,
     "Lectura_6": 32,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 13,
     "Consumo_3": -477,
     "Consumo_4": 503,
     "Consumo_5": 11,
@@ -39640,7 +40893,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39661,6 +40914,13 @@
       "NUE": "67646323/04/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -39774,7 +41034,7 @@
     "cedula": "1098766085",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39795,6 +41055,13 @@
       "NUE": "67845516/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "3",
+      "referencia": "0"
     }
   },
   {
@@ -39884,13 +41151,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 5,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 6375,
     "Lectura_3": 6375,
     "Lectura_4": 4612,
     "Lectura_5": 6463,
     "Lectura_6": 6354,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 0,
     "Consumo_3": 1763,
     "Consumo_4": -1851,
     "Consumo_5": 109,
@@ -39908,7 +41175,7 @@
     "cedula": "1091654744",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39929,6 +41196,13 @@
       "NUE": "68011525/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "4",
+      "referencia": "6"
     }
   },
   {
@@ -39975,7 +41249,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -40042,7 +41316,7 @@
     "cedula": "1004862354",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -40063,6 +41337,13 @@
       "NUE": "68285521/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -40109,7 +41390,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -40130,6 +41411,13 @@
       "NUE": "68352205/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "4",
+      "referencia": "1"
     }
   },
   {
@@ -40444,7 +41732,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -40465,6 +41753,13 @@
       "NUE": "80009416/07/202576",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "3",
+      "referencia": "0"
     }
   },
   {
@@ -40578,7 +41873,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -40846,7 +42141,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -40913,7 +42208,7 @@
     "cedula": "1094576161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -40934,6 +42229,13 @@
       "NUE": "80337118/07/202577",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -41315,7 +42617,7 @@
     "cedula": "88235263",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41336,6 +42638,13 @@
       "NUE": "100561722/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "3",
+      "referencia": "0"
     }
   },
   {
@@ -41382,7 +42691,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41516,7 +42825,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41537,6 +42846,13 @@
       "NUE": "100791121/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "5",
+      "referencia": "0"
     }
   },
   {
@@ -41650,7 +42966,7 @@
     "cedula": "1091666397",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41671,6 +42987,13 @@
       "NUE": "101787611/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -41784,7 +43107,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41805,6 +43128,13 @@
       "NUE": "101853721/07/202577",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -41985,7 +43315,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42006,6 +43336,13 @@
       "NUE": "102102924/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -42052,7 +43389,7 @@
     "cedula": "13271434",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42073,6 +43410,13 @@
       "NUE": "102153114/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "9",
+      "referencia": "6"
     }
   },
   {
@@ -42119,7 +43463,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42140,6 +43484,13 @@
       "NUE": "102156206/05/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "6",
+      "referencia": "3"
     }
   },
   {
@@ -42186,7 +43537,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42856,7 +44207,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42877,6 +44228,13 @@
       "NUE": "104082722/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "2",
+      "referencia": "1"
     }
   },
   {
@@ -42990,7 +44348,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43011,6 +44369,13 @@
       "NUE": "104155724/06/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "3"
     }
   },
   {
@@ -43057,7 +44422,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -43078,6 +44443,13 @@
       "NUE": "104156224/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "1",
+      "referencia": "4"
     }
   },
   {
@@ -43124,7 +44496,7 @@
     "cedula": "88254921",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -43191,7 +44563,7 @@
     "cedula": "88254365",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -43258,7 +44630,7 @@
     "cedula": "1065917709",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43279,6 +44651,13 @@
       "NUE": "104401708/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -43435,13 +44814,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 2,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 2138,
     "Lectura_3": 2138,
     "Lectura_4": 2138,
     "Lectura_5": 2784,
     "Lectura_6": 2138,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 0,
     "Consumo_3": 0,
     "Consumo_4": -646,
     "Consumo_5": 646,
@@ -43459,7 +44838,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -43480,6 +44859,13 @@
       "NUE": "104572125/06/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -43727,7 +45113,7 @@
     "cedula": "1094369070",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43748,6 +45134,13 @@
       "NUE": "105220213/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "6",
+      "referencia": "3"
     }
   },
   {
@@ -43794,7 +45187,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44397,7 +45790,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -44418,6 +45811,13 @@
       "NUE": "106737628/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "4",
+      "referencia": "0"
     }
   },
   {
@@ -44464,7 +45864,7 @@
     "cedula": "77178452",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44485,6 +45885,13 @@
       "NUE": "106871921/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -44909,13 +46316,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 1,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 768,
     "Lectura_3": 753,
     "Lectura_4": 742,
     "Lectura_5": 752,
     "Lectura_6": null,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 15,
     "Consumo_3": 11,
     "Consumo_4": -10,
     "Consumo_5": 752,
@@ -45000,7 +46407,7 @@
     "cedula": "1004862354",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -45021,6 +46428,13 @@
       "NUE": "107307618/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "5",
+      "referencia": "6"
     }
   },
   {
@@ -45067,7 +46481,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45088,6 +46502,13 @@
       "NUE": "107586504/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -45134,7 +46555,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -45402,7 +46823,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45423,6 +46844,13 @@
       "NUE": "107884109/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -45603,7 +47031,7 @@
     "cedula": "1091654267",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45624,6 +47052,13 @@
       "NUE": "108103708/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "5"
     }
   },
   {
@@ -45737,7 +47172,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45758,6 +47193,13 @@
       "NUE": "108222811/06/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "3",
+      "referencia": "2"
     }
   },
   {
@@ -45938,7 +47380,7 @@
     "cedula": "1091658436",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45959,6 +47401,13 @@
       "NUE": "108580229/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "0"
     }
   },
   {
@@ -46273,7 +47722,7 @@
     "cedula": "1093784091",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46474,7 +47923,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -46675,7 +48124,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46696,6 +48145,13 @@
       "NUE": "109909010/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "8",
+      "referencia": "7"
     }
   },
   {
@@ -46742,7 +48198,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46763,6 +48219,13 @@
       "NUE": "109915110/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "8",
+      "referencia": "6"
     }
   },
   {
@@ -46809,7 +48272,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -46830,6 +48293,13 @@
       "NUE": "110055202/06/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "n"
     }
   },
   {
@@ -46876,7 +48346,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -46897,6 +48367,13 @@
       "NUE": "110101405/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "1",
+      "referencia": "2"
     }
   },
   {
@@ -46943,7 +48420,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -46964,6 +48441,13 @@
       "NUE": "110197604/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -47010,7 +48494,7 @@
     "cedula": "1094576161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -47031,6 +48515,13 @@
       "NUE": "110217219/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -47077,7 +48568,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47345,7 +48836,7 @@
     "cedula": "1091662247",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47366,6 +48857,13 @@
       "NUE": "110712908/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "7",
+      "referencia": "n"
     }
   },
   {
@@ -47479,7 +48977,7 @@
     "cedula": "1091658436",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47500,6 +48998,13 @@
       "NUE": "110902529/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "n"
     }
   },
   {
@@ -47613,7 +49118,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47634,6 +49139,13 @@
       "NUE": "111113729/04/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "9",
+      "referencia": "6"
     }
   },
   {
@@ -47881,7 +49393,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -47902,6 +49414,13 @@
       "NUE": "111206316/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -48082,7 +49601,7 @@
     "cedula": "1091662161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -48103,6 +49622,13 @@
       "NUE": "111399405/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -48216,7 +49742,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -48283,7 +49809,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -48304,6 +49830,13 @@
       "NUE": "111733004/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "7",
+      "referencia": "3"
     }
   },
   {
@@ -48350,7 +49883,7 @@
     "cedula": "77178452",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario fue consciente del error",
     "_raw": {
@@ -48371,6 +49904,13 @@
       "NUE": "111744529/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -48417,7 +49957,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -48438,6 +49978,13 @@
       "NUE": "111796309/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "6",
+      "referencia": "5"
     }
   },
   {
@@ -48484,7 +50031,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -49154,7 +50701,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49175,6 +50722,13 @@
       "NUE": "112691924/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "3",
+      "referencia": "0"
     }
   },
   {
@@ -49288,7 +50842,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49309,6 +50863,13 @@
       "NUE": "112718111/07/202576",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "7",
+      "referencia": "0"
     }
   },
   {
@@ -49757,7 +51318,7 @@
     "cedula": "1091662161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49778,6 +51339,13 @@
       "NUE": "113787005/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -49824,7 +51392,7 @@
     "cedula": "1003175012",
     "tipo": "OPERATIVO 3",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "falta lectura anterior",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49958,7 +51526,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49979,6 +51547,13 @@
       "NUE": "113830905/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "2",
+      "referencia": "0"
     }
   },
   {
@@ -50092,7 +51667,7 @@
     "cedula": "1116797758",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50113,6 +51688,13 @@
       "NUE": "113995605/07/202576",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "0",
+      "referencia": "n"
     }
   },
   {
@@ -50135,13 +51717,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 5,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 100,
     "Lectura_3": 100,
     "Lectura_4": 22,
     "Lectura_5": 100,
     "Lectura_6": 100,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 0,
     "Consumo_3": 78,
     "Consumo_4": -78,
     "Consumo_5": 0,
@@ -50159,7 +51741,7 @@
     "cedula": "1004862354",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50180,6 +51762,13 @@
       "NUE": "114015328/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "0",
+      "referencia": "1"
     }
   },
   {
@@ -50360,7 +51949,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50381,6 +51970,13 @@
       "NUE": "114169706/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -50561,7 +52157,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50582,6 +52178,13 @@
       "NUE": "114290005/07/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -50628,7 +52231,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -50649,6 +52252,13 @@
       "NUE": "114333011/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "4",
+      "referencia": "0"
     }
   },
   {
@@ -51164,7 +52774,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -51185,6 +52795,13 @@
       "NUE": "114674726/05/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 1,
+      "orden": "unidad",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -51298,7 +52915,7 @@
     "cedula": "1090525371",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -51319,6 +52936,13 @@
       "NUE": "114859011/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "4",
+      "referencia": "0"
     }
   },
   {
@@ -51365,7 +52989,7 @@
     "cedula": "1090990999",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -51566,7 +53190,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -51587,6 +53211,13 @@
       "NUE": "114980919/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "8",
+      "referencia": "0"
     }
   },
   {
@@ -51700,7 +53331,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -51721,6 +53352,13 @@
       "NUE": "115181205/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -51968,7 +53606,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -52078,13 +53716,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 5,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 3767,
     "Lectura_3": 3147,
     "Lectura_4": 160,
     "Lectura_5": 136,
     "Lectura_6": 683,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 620,
     "Consumo_3": 2987,
     "Consumo_4": 24,
     "Consumo_5": -547,
@@ -52169,7 +53807,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -52370,7 +54008,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -52504,7 +54142,7 @@
     "cedula": "1065910419",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -52525,6 +54163,13 @@
       "NUE": "115603416/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "2",
+      "referencia": "1"
     }
   },
   {
@@ -53217,13 +54862,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 5,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 836,
     "Lectura_3": 483,
     "Lectura_4": 213,
     "Lectura_5": null,
     "Lectura_6": null,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 353,
     "Consumo_3": 270,
     "Consumo_4": 213,
     "Consumo_5": null,
@@ -53308,7 +54953,7 @@
     "cedula": "1091658436",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53329,6 +54974,13 @@
       "NUE": "116238830/06/202542",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "4",
+      "referencia": "0"
     }
   },
   {
@@ -53710,7 +55362,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -53731,6 +55383,13 @@
       "NUE": "10051514/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 4,
+      "desdeDerecha": 2,
+      "orden": "decena",
+      "tomada": "7",
+      "referencia": "1"
     }
   },
   {
@@ -53777,7 +55436,7 @@
     "cedula": "1090174318",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -53798,6 +55457,13 @@
       "NUE": "12031022/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "4",
+      "referencia": "n"
     }
   },
   {
@@ -53954,13 +55620,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 1,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 29709,
     "Lectura_3": 29965,
     "Lectura_4": 29399,
     "Lectura_5": 29209,
     "Lectura_6": 28992,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": -256,
     "Consumo_3": 566,
     "Consumo_4": 190,
     "Consumo_5": 217,
@@ -54045,7 +55711,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -54066,6 +55732,13 @@
       "NUE": "13328624/07/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 3,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "5",
+      "referencia": "2"
     }
   },
   {
@@ -54179,7 +55852,7 @@
     "cedula": "1094322716",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -54200,6 +55873,13 @@
       "NUE": "24722911/06/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -54380,7 +56060,7 @@
     "cedula": "5531760",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "Lectura no encontrada",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -54447,7 +56127,7 @@
     "cedula": "5531760",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -54468,6 +56148,13 @@
       "NUE": "49542627/04/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 5,
+      "orden": "decena de mil",
+      "tomada": "1",
+      "referencia": "0"
     }
   },
   {
@@ -54758,13 +56445,13 @@
     "VERIFICACIONC/SEMANAANTERIOR": {},
     "Intentos": 1,
     "Lectura_1": null,
-    "Lectura_2": null,
+    "Lectura_2": 533,
     "Lectura_3": 312,
     "Lectura_4": 305,
     "Lectura_5": 248,
     "Lectura_6": 211,
     "Consumo_1": null,
-    "Consumo_2": null,
+    "Consumo_2": 221,
     "Consumo_3": 7,
     "Consumo_4": 57,
     "Consumo_5": 37,
@@ -54849,7 +56536,7 @@
     "cedula": "1090426589",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -54870,6 +56557,13 @@
       "NUE": "65146813/05/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 1,
+      "desdeDerecha": 4,
+      "orden": "unidad de mil",
+      "tomada": "1",
+      "referencia": "n"
     }
   },
   {
@@ -55050,7 +56744,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55071,6 +56765,13 @@
       "NUE": "101436006/08/202510",
       "VERIFICACIONC/CONSOLIDADO": "[object Object]",
       "VERIFICACIONC/SEMANAANTERIOR": "[object Object]"
+    },
+    "DigitoError": {
+      "posicion": 2,
+      "desdeDerecha": 3,
+      "orden": "centena",
+      "tomada": "6",
+      "referencia": "4"
     }
   }
 ]

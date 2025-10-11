@@ -15,7 +15,8 @@ import {
   validarObservacionesLecturas,
   validarSecuenciaLecturas,
   validarNumerosEnObservaciones,
-  validarConsumoPromedio
+  validarConsumoPromedio,
+  conocerUbicacionError
 } from '../services/validaciones.service.js';
 
 // Configuración para ES modules
@@ -47,7 +48,8 @@ const validarRegistros = async (req, res) => {
       validarObservacionesLecturas,
       validarLecturasAlfanumerica,
       validarSecuenciaLecturas,
-      validarNumerosEnObservaciones
+      validarNumerosEnObservaciones,
+      conocerUbicacionError
     ];
     
     // Procesar las validaciones

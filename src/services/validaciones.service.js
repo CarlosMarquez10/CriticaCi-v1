@@ -491,9 +491,89 @@ function validarConsumoPromedio(registro) {
     return registro;
 }
 
-function conocerUbicacionError(registro){
+// Utilidad para comparar dígito a dígito y anotar UbicacionError/DigitoError
+function anotarDiferenciaDigitos(registro, valorTomada, valorReferencia){
+  const sTomada = String(valorTomada);
+  const sRef = String(valorReferencia);
+  const maxLen = Math.max(sTomada.length, sRef.length);
+  const a = sTomada.padStart(maxLen, '0');
+  const b = sRef.padStart(maxLen, '0');
 
-  
+  for (let i = 0; i < maxLen; i++) {
+    if (a[i] !== b[i]) {
+      const posicion = i + 1;
+      const desdeDerecha = maxLen - i;
+      const ordenMap = {
+        1: 'unidad',
+        2: 'decena',
+        3: 'centena',
+        4: 'unidad de mil',
+        5: 'decena de mil',
+        6: 'centena de mil',
+        7: 'unidad de millón',
+        8: 'decena de millón'
+      };
+      const orden = ordenMap[desdeDerecha] || `${desdeDerecha}º lugar`;
+      registro.UbicacionError = `${orden}`;
+      registro.DigitoError = {
+        posicion,
+        desdeDerecha,
+        orden,
+        tomada: a[i],
+        referencia: b[i]
+      };
+      break;
+    }
+  }
+}
+
+function conocerUbicacionError(registro){
+  // validar si la lectura tomada se encuentra en la lecutra 1, 2, 3, 4, 5, 6
+
+  if(registro.LECTURATOMADA === registro.Lectura_1){
+    registro.UbicacionError = 'falta lectura posterior';
+  } else if(registro.LECTURATOMADA === registro.Lectura_2){
+    // Si el patrón 1 == 3 se cumple, comparar contra Lectura_3
+    if(registro.Lectura_1 === registro.Lectura_3){
+      anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_3);
+    }
+  } else if(registro.LECTURATOMADA === registro.Lectura_3){
+    // Si el patrón 2 == 4 se cumple, comparar contra Lectura_4
+    if(registro.Lectura_2 === registro.Lectura_4){
+      anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_4);
+    }else{
+      if(registro.Lectura_1 === registro.Lectura_2){
+        anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_2);
+      }
+    }
+  } else if(registro.LECTURATOMADA === registro.Lectura_4){
+    // Si el patrón 3 == 5 se cumple, comparar contra Lectura_5
+    if(registro.Lectura_3 === registro.Lectura_5){
+      anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_5);
+    }else{
+      if(registro.Lectura_2 === registro.Lectura_3){
+        anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_3);
+      }
+    }
+  } else if(registro.LECTURATOMADA === registro.Lectura_5){
+    // Si el patrón 4 == 6 se cumple, comparar contra Lectura_6
+    if(registro.Lectura_4 === registro.Lectura_6){
+      anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_6);
+    }else{
+      if(registro.Lectura_3 === registro.Lectura_4){
+        anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_4);
+      }
+    }
+  } else if(registro.LECTURATOMADA === registro.Lectura_6){
+      if(registro.Lectura_4 === registro.Lectura_5){
+      anotarDiferenciaDigitos(registro, registro.LECTURATOMADA, registro.Lectura_5);
+    }else{
+      registro.UbicacionError = 'falta lectura anterior';
+    }
+  } else {
+    registro.UbicacionError = 'Lectura no encontrada';
+  }
+
   return registro;
 }
 
@@ -510,5 +590,6 @@ export {
   validarObservacionesLecturas,
   validarSecuenciaLecturas,
   validarNumerosEnObservaciones,
-  validarConsumoPromedio
+  validarConsumoPromedio,
+  conocerUbicacionError
 };
