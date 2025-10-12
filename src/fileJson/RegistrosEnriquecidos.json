@@ -110,7 +110,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -177,7 +177,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -244,7 +244,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -311,7 +311,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "decena",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -385,7 +385,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -526,7 +526,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -593,7 +593,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -949,7 +949,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "falta lectura anterior",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1016,7 +1016,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1083,7 +1083,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1372,7 +1372,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -1439,7 +1439,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -1506,7 +1506,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -1647,7 +1647,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -2003,7 +2003,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2144,7 +2144,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -2211,7 +2211,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2278,7 +2278,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -2345,7 +2345,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2412,7 +2412,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2479,7 +2479,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2546,7 +2546,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2613,7 +2613,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2680,7 +2680,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2747,7 +2747,7 @@
     "cedula": "88223103",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -2888,7 +2888,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3029,7 +3029,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3096,7 +3096,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -3163,7 +3163,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3230,7 +3230,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3297,7 +3297,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3364,7 +3364,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3431,7 +3431,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -3498,7 +3498,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3565,7 +3565,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3632,7 +3632,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3773,7 +3773,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3840,7 +3840,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -3974,7 +3974,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4041,7 +4041,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4108,7 +4108,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -4175,7 +4175,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -4383,7 +4383,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4524,7 +4524,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -4591,7 +4591,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4658,7 +4658,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -4799,7 +4799,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5081,7 +5081,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5148,7 +5148,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5282,7 +5282,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5349,7 +5349,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5631,7 +5631,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5698,7 +5698,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5839,7 +5839,7 @@
     "cedula": "1090393296",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5906,7 +5906,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -5973,7 +5973,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -6181,7 +6181,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -6463,7 +6463,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -6671,7 +6671,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -6738,7 +6738,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -6953,7 +6953,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7020,7 +7020,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -7087,7 +7087,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7154,7 +7154,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7221,7 +7221,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7355,7 +7355,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -7422,7 +7422,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7556,7 +7556,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -7697,7 +7697,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7831,7 +7831,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7898,7 +7898,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -7965,7 +7965,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8032,7 +8032,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -8099,7 +8099,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8166,7 +8166,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8233,7 +8233,7 @@
     "cedula": "1116797758",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8300,7 +8300,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -8367,7 +8367,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -8582,7 +8582,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8649,7 +8649,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -8783,7 +8783,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8850,7 +8850,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8917,7 +8917,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -8984,7 +8984,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -9051,7 +9051,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -9118,7 +9118,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -9259,7 +9259,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -9326,7 +9326,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -9534,7 +9534,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -9601,7 +9601,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -9809,7 +9809,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -9876,7 +9876,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -9943,7 +9943,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10010,7 +10010,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10144,7 +10144,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10211,7 +10211,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -10419,7 +10419,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10486,7 +10486,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -10553,7 +10553,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10761,7 +10761,7 @@
     "cedula": "13473944",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -10969,7 +10969,7 @@
     "cedula": "1090426589",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11036,7 +11036,7 @@
     "cedula": "1090426589",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11103,7 +11103,7 @@
     "cedula": "1031173032",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11170,7 +11170,7 @@
     "cedula": "88235263",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -11392,7 +11392,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11459,7 +11459,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11741,7 +11741,7 @@
     "cedula": "1090174318",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11882,7 +11882,7 @@
     "cedula": "1093918036",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -11949,7 +11949,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -12090,7 +12090,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -12157,7 +12157,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -12298,7 +12298,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -12365,7 +12365,7 @@
     "cedula": "13271434",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -12432,7 +12432,7 @@
     "cedula": "1031173032",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -12573,7 +12573,7 @@
     "cedula": "1090492296",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -12855,7 +12855,7 @@
     "cedula": "1091666397",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -12922,7 +12922,7 @@
     "cedula": "1091654744",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -12989,7 +12989,7 @@
     "cedula": "1091662247",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13056,7 +13056,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -13123,7 +13123,7 @@
     "cedula": "1091669647",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "centena",
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -13271,7 +13271,7 @@
     "cedula": "1091669647",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13338,7 +13338,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "unidad",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -13405,7 +13405,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13472,7 +13472,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13613,7 +13613,7 @@
     "cedula": "88223103",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13680,7 +13680,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario fue consciente del error",
     "_raw": {
@@ -13888,7 +13888,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -13955,7 +13955,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14022,7 +14022,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14089,7 +14089,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14156,7 +14156,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14223,7 +14223,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14364,7 +14364,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14431,7 +14431,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14794,7 +14794,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -14861,7 +14861,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14928,7 +14928,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -14995,7 +14995,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15069,7 +15069,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15136,7 +15136,7 @@
     "cedula": "1193030869",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15203,7 +15203,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -15478,7 +15478,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -15545,7 +15545,7 @@
     "cedula": "1094370346",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15679,7 +15679,7 @@
     "cedula": "5469445",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -15746,7 +15746,7 @@
     "cedula": "1004862354",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -15813,7 +15813,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -15880,7 +15880,7 @@
     "cedula": "1094576161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -15947,7 +15947,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "centena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -16236,7 +16236,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -16310,7 +16310,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -16384,7 +16384,7 @@
     "cedula": "13168455",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -16525,7 +16525,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -16740,7 +16740,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -16807,7 +16807,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -16941,7 +16941,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17008,7 +17008,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17075,7 +17075,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17142,7 +17142,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -17276,7 +17276,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17343,7 +17343,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "falta lectura anterior",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -17477,7 +17477,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17544,7 +17544,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17611,7 +17611,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17678,7 +17678,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -17745,7 +17745,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -17812,7 +17812,7 @@
     "cedula": "1091658436",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17879,7 +17879,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -17946,7 +17946,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18013,7 +18013,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -18080,7 +18080,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": "decena",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18154,7 +18154,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -18221,7 +18221,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18362,7 +18362,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18429,7 +18429,7 @@
     "cedula": "1116797758",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18496,7 +18496,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18563,7 +18563,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18630,7 +18630,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -18697,7 +18697,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -18831,7 +18831,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19032,7 +19032,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19166,7 +19166,7 @@
     "cedula": "1193030869",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -19381,7 +19381,7 @@
     "cedula": "1064841850",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19448,7 +19448,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19589,7 +19589,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -19656,7 +19656,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -19723,7 +19723,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19864,7 +19864,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -19931,7 +19931,7 @@
     "cedula": "13140927",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20005,7 +20005,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20072,7 +20072,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20139,7 +20139,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20206,7 +20206,7 @@
     "cedula": "1116797758",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20347,7 +20347,7 @@
     "cedula": "1091654744",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20414,7 +20414,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20555,7 +20555,7 @@
     "cedula": "1064838015",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20763,7 +20763,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20830,7 +20830,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20897,7 +20897,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -20964,7 +20964,7 @@
     "cedula": "1005065863",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -21031,7 +21031,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21098,7 +21098,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21165,7 +21165,7 @@
     "cedula": "1005047655",
     "tipo": "OPERATIVO 2",
     "sede": "OCAÑA",
-    "UbicacionError": "falta lectura anterior",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21232,7 +21232,7 @@
     "cedula": "88223103",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -21299,7 +21299,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21366,7 +21366,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21500,7 +21500,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21567,7 +21567,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21634,7 +21634,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21701,7 +21701,7 @@
     "cedula": "1003202945",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -21835,7 +21835,7 @@
     "cedula": "1090397246",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -21969,7 +21969,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22036,7 +22036,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22103,7 +22103,7 @@
     "cedula": "1003175012",
     "tipo": "OPERATIVO 3",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22385,7 +22385,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22452,7 +22452,7 @@
     "cedula": "1094370346",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22660,7 +22660,7 @@
     "cedula": "1091654744",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -22861,7 +22861,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22928,7 +22928,7 @@
     "cedula": "1090525371",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -22995,7 +22995,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23062,7 +23062,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23129,7 +23129,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23196,7 +23196,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23330,7 +23330,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23471,7 +23471,7 @@
     "cedula": "1064841850",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -23619,7 +23619,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -23686,7 +23686,7 @@
     "cedula": "1091660738",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -23760,7 +23760,7 @@
     "cedula": "1090986337",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -23901,7 +23901,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -23968,7 +23968,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24035,7 +24035,7 @@
     "cedula": "1116797758",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24102,7 +24102,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -24391,7 +24391,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24532,7 +24532,7 @@
     "cedula": "1065890127",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": "unidad",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24606,7 +24606,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24673,7 +24673,7 @@
     "cedula": "5469445",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -24747,7 +24747,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24814,7 +24814,7 @@
     "cedula": "5417131",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24888,7 +24888,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -24955,7 +24955,7 @@
     "cedula": "1090447659",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25022,7 +25022,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -25089,7 +25089,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25156,7 +25156,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25223,7 +25223,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25290,7 +25290,7 @@
     "cedula": "1090462276",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25364,7 +25364,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25431,7 +25431,7 @@
     "cedula": "1090525371",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25572,7 +25572,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -25639,7 +25639,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25706,7 +25706,7 @@
     "cedula": "1005065863",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25847,7 +25847,7 @@
     "cedula": "1005065863",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -25914,7 +25914,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -26411,7 +26411,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -26485,7 +26485,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -26841,7 +26841,7 @@
     "cedula": "1090447659",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -26908,7 +26908,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27116,7 +27116,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27183,7 +27183,7 @@
     "cedula": "1091654268",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27257,7 +27257,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27331,7 +27331,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27472,7 +27472,7 @@
     "cedula": "5417331",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27539,7 +27539,7 @@
     "cedula": "88223103",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27606,7 +27606,7 @@
     "cedula": "1090397246",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27673,7 +27673,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27740,7 +27740,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -27874,7 +27874,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -27948,7 +27948,7 @@
     "cedula": "1004795107",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28022,7 +28022,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28096,7 +28096,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -28311,7 +28311,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -28378,7 +28378,7 @@
     "cedula": "1065889225",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28519,7 +28519,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28586,7 +28586,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28653,7 +28653,7 @@
     "cedula": "13511002",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28801,7 +28801,7 @@
     "cedula": "88178152",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -28868,7 +28868,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29009,7 +29009,7 @@
     "cedula": "1091654268",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29083,7 +29083,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29150,7 +29150,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29291,7 +29291,7 @@
     "cedula": "13511002",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -29365,7 +29365,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -29432,7 +29432,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -29573,7 +29573,7 @@
     "cedula": "1065917709",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29714,7 +29714,7 @@
     "cedula": "1116797758",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -29781,7 +29781,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -29915,7 +29915,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -30264,7 +30264,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -30331,7 +30331,7 @@
     "cedula": "5469445",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30398,7 +30398,7 @@
     "cedula": "1005065863",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30465,7 +30465,7 @@
     "cedula": "1090393296",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -30599,7 +30599,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30666,7 +30666,7 @@
     "cedula": "1090393296",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -30807,7 +30807,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -30948,7 +30948,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31015,7 +31015,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31230,7 +31230,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31512,7 +31512,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31653,7 +31653,7 @@
     "cedula": "1064841850",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31720,7 +31720,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31854,7 +31854,7 @@
     "cedula": "1090426589",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -31928,7 +31928,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -31995,7 +31995,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32129,7 +32129,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "unidad",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -32270,7 +32270,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -32411,7 +32411,7 @@
     "cedula": "5531760",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -32559,7 +32559,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32700,7 +32700,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "decena",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32848,7 +32848,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -32989,7 +32989,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33056,7 +33056,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33123,7 +33123,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33190,7 +33190,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33264,7 +33264,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -33338,7 +33338,7 @@
     "cedula": "1091654268",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33412,7 +33412,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33634,7 +33634,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -33775,7 +33775,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -33916,7 +33916,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -34131,7 +34131,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -34198,7 +34198,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -34272,7 +34272,7 @@
     "cedula": "1091162200",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -34420,7 +34420,7 @@
     "cedula": "5427116",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -34487,7 +34487,7 @@
     "cedula": "1090986337",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -34561,7 +34561,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -34628,7 +34628,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -34910,7 +34910,7 @@
     "cedula": "1065904005",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -34977,7 +34977,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35118,7 +35118,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35185,7 +35185,7 @@
     "cedula": "1094576161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35259,7 +35259,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35393,7 +35393,7 @@
     "cedula": "1090416720",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35460,7 +35460,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario fue consciente del error",
     "_raw": {
@@ -35534,7 +35534,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35675,7 +35675,7 @@
     "cedula": "9692127",
     "tipo": "OPERATIVO 2",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35742,7 +35742,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -35816,7 +35816,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35883,7 +35883,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -35950,7 +35950,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36017,7 +36017,7 @@
     "cedula": "1090525371",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36158,7 +36158,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36225,7 +36225,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36366,7 +36366,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36500,7 +36500,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36708,7 +36708,7 @@
     "cedula": "1065890127",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36775,7 +36775,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36842,7 +36842,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -36909,7 +36909,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -36976,7 +36976,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -37117,7 +37117,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "centena",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -37265,7 +37265,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -37399,7 +37399,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -37466,7 +37466,7 @@
     "cedula": "1094370347",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -37614,7 +37614,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -37681,7 +37681,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -37748,7 +37748,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -38365,7 +38365,7 @@
     "cedula": "1094369225",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -38506,7 +38506,7 @@
     "cedula": "1090499239",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -38573,7 +38573,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -38640,7 +38640,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -38707,7 +38707,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -38774,7 +38774,7 @@
     "cedula": "1003175012",
     "tipo": "OPERATIVO 3",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -38841,7 +38841,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -38975,7 +38975,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39042,7 +39042,7 @@
     "cedula": "1065868668",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -39109,7 +39109,7 @@
     "cedula": "1090393296",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39176,7 +39176,7 @@
     "cedula": "1065868668",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -39243,7 +39243,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39310,7 +39310,7 @@
     "cedula": "5469445",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39377,7 +39377,7 @@
     "cedula": "5417331",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39444,7 +39444,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -39518,7 +39518,7 @@
     "cedula": "1064841850",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -39585,7 +39585,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "decena",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39659,7 +39659,7 @@
     "cedula": "1094370347",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39726,7 +39726,7 @@
     "cedula": "88254921",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39793,7 +39793,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -39860,7 +39860,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -39927,7 +39927,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -40068,7 +40068,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -40135,7 +40135,7 @@
     "cedula": "88178152",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -40202,7 +40202,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "falta lectura anterior",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -40343,7 +40343,7 @@
     "cedula": "13374132",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -40417,7 +40417,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -40484,7 +40484,7 @@
     "cedula": "1116797758",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -40692,7 +40692,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41108,7 +41108,7 @@
     "cedula": "5417331",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -41316,7 +41316,7 @@
     "cedula": "1004862354",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41464,7 +41464,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41531,7 +41531,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -41598,7 +41598,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -41940,7 +41940,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -42007,7 +42007,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42074,7 +42074,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42282,7 +42282,7 @@
     "cedula": "1090397246",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -42349,7 +42349,7 @@
     "cedula": "1093918036",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42416,7 +42416,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -42550,7 +42550,7 @@
     "cedula": "1091662247",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42691,7 +42691,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42758,7 +42758,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42899,7 +42899,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -42966,7 +42966,7 @@
     "cedula": "1091666397",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43040,7 +43040,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43181,7 +43181,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43248,7 +43248,7 @@
     "cedula": "1091654744",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43604,7 +43604,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43671,7 +43671,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43738,7 +43738,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43805,7 +43805,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -43872,7 +43872,7 @@
     "cedula": "1193030869",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -43939,7 +43939,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44006,7 +44006,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -44073,7 +44073,7 @@
     "cedula": "1004877517",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44207,7 +44207,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "centena",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44496,7 +44496,7 @@
     "cedula": "88254921",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena de mil",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -44563,7 +44563,7 @@
     "cedula": "88254365",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "decena de mil",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -44704,7 +44704,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44771,7 +44771,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44912,7 +44912,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -44979,7 +44979,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45046,7 +45046,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -45113,7 +45113,7 @@
     "cedula": "1094369070",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": "unidad",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45187,7 +45187,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "falta lectura anterior",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45321,7 +45321,7 @@
     "cedula": "1093782124",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -45455,7 +45455,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -45522,7 +45522,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45589,7 +45589,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -45656,7 +45656,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -45938,7 +45938,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46005,7 +46005,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46072,7 +46072,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46139,7 +46139,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46206,7 +46206,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46273,7 +46273,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46555,7 +46555,7 @@
     "cedula": "1092344042",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "centena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -46622,7 +46622,7 @@
     "cedula": "1094165347",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -46689,7 +46689,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46756,7 +46756,7 @@
     "cedula": "1094322716",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -46897,7 +46897,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -47031,7 +47031,7 @@
     "cedula": "1091654267",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47105,7 +47105,7 @@
     "cedula": "1090405955",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -47246,7 +47246,7 @@
     "cedula": "1064841850",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47313,7 +47313,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47454,7 +47454,7 @@
     "cedula": "1004805635",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47521,7 +47521,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -47655,7 +47655,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47722,7 +47722,7 @@
     "cedula": "1093784091",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -47789,7 +47789,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -47856,7 +47856,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -48057,7 +48057,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -48124,7 +48124,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "decena",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -48420,7 +48420,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -48494,7 +48494,7 @@
     "cedula": "1094576161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -48568,7 +48568,7 @@
     "cedula": "5459919",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "falta lectura anterior",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -48635,7 +48635,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -48769,7 +48769,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -48910,7 +48910,7 @@
     "cedula": "1090174318",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49051,7 +49051,7 @@
     "cedula": "5469445",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49192,7 +49192,7 @@
     "cedula": "1090497377",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -49259,7 +49259,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -49326,7 +49326,7 @@
     "cedula": "1094427423",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49393,7 +49393,7 @@
     "cedula": "13379489",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -49467,7 +49467,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49601,7 +49601,7 @@
     "cedula": "1091662161",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49675,7 +49675,7 @@
     "cedula": "1093918036",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -49742,7 +49742,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "falta lectura anterior",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -50098,7 +50098,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50165,7 +50165,7 @@
     "cedula": "1003175012",
     "tipo": "OPERATIVO 3",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50299,7 +50299,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50366,7 +50366,7 @@
     "cedula": "88176238",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50433,7 +50433,7 @@
     "cedula": "1093918036",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -50500,7 +50500,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50567,7 +50567,7 @@
     "cedula": "1091683487",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -50634,7 +50634,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -50775,7 +50775,7 @@
     "cedula": "1090433730",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -50916,7 +50916,7 @@
     "cedula": "1093918036",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -51117,7 +51117,7 @@
     "cedula": "1092644146",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -51741,7 +51741,7 @@
     "cedula": "1004862354",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": "centena",
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -51815,7 +51815,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -52090,7 +52090,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -52372,7 +52372,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -52439,7 +52439,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -52506,7 +52506,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -52573,7 +52573,7 @@
     "cedula": "88216098",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53123,7 +53123,7 @@
     "cedula": "1090441745",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53264,7 +53264,7 @@
     "cedula": "1091965236",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53405,7 +53405,7 @@
     "cedula": "1091662247",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53472,7 +53472,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53539,7 +53539,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -53606,7 +53606,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -53740,7 +53740,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53807,7 +53807,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "unidad",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53874,7 +53874,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -53941,7 +53941,7 @@
     "cedula": "13490693",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -54008,7 +54008,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "unidad",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -54075,7 +54075,7 @@
     "cedula": "1004912652",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -54216,7 +54216,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -54417,7 +54417,7 @@
     "cedula": "1018483295",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -54484,7 +54484,7 @@
     "cedula": "1090472131",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -54551,7 +54551,7 @@
     "cedula": "1114308792",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -54685,7 +54685,7 @@
     "cedula": "1090454145",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -54752,7 +54752,7 @@
     "cedula": "1090437748",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -55027,7 +55027,7 @@
     "cedula": "1090397246",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "NO",
     "obsValidacion": "Consumo dentro del rango del 20%",
     "_raw": {
@@ -55094,7 +55094,7 @@
     "cedula": "1005030165",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "unidad de mil",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -55161,7 +55161,7 @@
     "cedula": "1090387181",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55228,7 +55228,7 @@
     "cedula": "1007305865",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -55295,7 +55295,7 @@
     "cedula": "88230363",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55436,7 +55436,7 @@
     "cedula": "1090174318",
     "tipo": "OPERATIVO 1",
     "sede": "PAMPLONA",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55510,7 +55510,7 @@
     "cedula": "1090475267",
     "tipo": "OPERATIVO 3",
     "sede": "PAMPLONA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55577,7 +55577,7 @@
     "cedula": "1093918036",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55644,7 +55644,7 @@
     "cedula": "1093905817",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55785,7 +55785,7 @@
     "cedula": "88136925",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55852,7 +55852,7 @@
     "cedula": "1094322716",
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -55926,7 +55926,7 @@
     "cedula": "1010078696",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
@@ -55993,7 +55993,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56060,7 +56060,7 @@
     "cedula": "5531760",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "Lectura no encontrada",
+    "UbicacionError": "centena",
     "Validacion": "No",
     "obsValidacion": "error fuera de los meses 4 meses establecidos",
     "_raw": {
@@ -56127,7 +56127,7 @@
     "cedula": "5531760",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "decena de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56201,7 +56201,7 @@
     "cedula": "1004862354",
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56268,7 +56268,7 @@
     "cedula": "1127655598",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56335,7 +56335,7 @@
     "cedula": "88207441",
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56402,7 +56402,7 @@
     "cedula": "88251797",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56469,7 +56469,7 @@
     "cedula": "1093919885",
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
-    "UbicacionError": null,
+    "UbicacionError": "decena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56536,7 +56536,7 @@
     "cedula": "1090426589",
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
-    "UbicacionError": "unidad de mil",
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56610,7 +56610,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
@@ -56677,7 +56677,7 @@
     "cedula": "37344489",
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
-    "UbicacionError": null,
+    "UbicacionError": "centena",
     "Validacion": "SI",
     "obsValidacion": "El operario no fue consciente del error",
     "_raw": {
