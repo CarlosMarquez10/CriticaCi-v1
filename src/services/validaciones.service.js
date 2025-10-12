@@ -425,114 +425,111 @@ function validarConsumoPromedio(registro) {
   if (!registro) return registro;
 
   try {
-    // Verificar LECTURATOMADA
-    const lecturaTomada = parseFloat(registro.LECTURATOMADA);
-    if (
-      isNaN(lecturaTomada) ||
-      registro.LECTURATOMADA === null ||
-      registro.LECTURATOMADA === undefined ||
-      registro.LECTURATOMADA === ""
-    ) {
-      // No modificar los campos, dejar como están
+    // Primera validación: Solo procesar registros con Validacion null o "PENDIENTE"
+    if (registro.Validacion !== null && registro.Validacion !== "PENDIENTE") {
       return registro;
     }
 
-    // Recopilar lecturas válidas en orden
+    // Segunda validación: Verificar secuencia descendente Lectura_1 > Lectura_2 > ... > Lectura_6
     const lecturas = [];
-    const lecturasConIndice = [];
-
     for (let i = 1; i <= 6; i++) {
       const lectura = registro[`Lectura_${i}`];
       if (lectura !== null && lectura !== undefined && lectura !== "") {
         const lecturaNum = parseFloat(lectura);
         if (!isNaN(lecturaNum)) {
           lecturas.push(lecturaNum);
-          lecturasConIndice.push({ valor: lecturaNum, indice: i });
         }
       }
     }
 
-    // Verificar que tengamos al menos 2 lecturas válidas
+    // Verificar que tengamos al menos 2 lecturas para validar secuencia
     if (lecturas.length < 2) {
-      // No modificar los campos, dejar como están
       return registro;
     }
 
-    // Verificar secuencia descendente (Lectura_1 > Lectura_2 > ... > Lectura_6)
-    for (let i = 0; i < lecturasConIndice.length - 1; i++) {
-      if (lecturasConIndice[i].valor <= lecturasConIndice[i + 1].valor) {
-        // No modificar los campos, dejar como están
+    // Verificar secuencia descendente
+    for (let i = 0; i < lecturas.length - 1; i++) {
+      if (lecturas[i] <= lecturas[i + 1]) {
+        // Si la secuencia no es descendente, no continuar
         return registro;
       }
     }
 
-    // Calcular promedio de las lecturas válidas
-    const promedioLecturas =
-      lecturas.reduce((sum, lectura) => sum + lectura, 0) / lecturas.length;
-
-    // Encontrar la posición de LECTURATOMADA en las lecturas
-    let posicionLecturaTomada = -1;
-    let lecturaAnterior = null;
-
-    for (let i = 0; i < lecturasConIndice.length; i++) {
-      if (lecturasConIndice[i].valor === lecturaTomada) {
-        posicionLecturaTomada = i;
-        // La lectura anterior sería la siguiente en el array (porque están en orden descendente)
-        if (i + 1 < lecturasConIndice.length) {
-          lecturaAnterior = lecturasConIndice[i + 1].valor;
-        }
-        break;
-      }
-    }
-
-    // Si no encontramos LECTURATOMADA exactamente, buscar la más cercana
-    if (posicionLecturaTomada === -1) {
-      // Buscar entre qué lecturas está LECTURATOMADA
-      for (let i = 0; i < lecturasConIndice.length - 1; i++) {
-        if (
-          lecturaTomada <= lecturasConIndice[i].valor &&
-          lecturaTomada >= lecturasConIndice[i + 1].valor
-        ) {
-          lecturaAnterior = lecturasConIndice[i + 1].valor;
-          break;
-        }
-      }
-
-      // Si LECTURATOMADA es menor que todas las lecturas, usar la última
-      if (
-        lecturaAnterior === null &&
-        lecturaTomada < lecturasConIndice[lecturasConIndice.length - 1].valor
-      ) {
-        lecturaAnterior = lecturasConIndice[lecturasConIndice.length - 1].valor;
-      }
-    }
-
-    // Verificar que tengamos una lectura anterior para calcular el consumo
-    if (lecturaAnterior === null) {
-      // No modificar los campos, dejar como están
+    // Verificar LECTURATOMADA y LECTURAFACTURADA
+    const lecturaTomada = parseFloat(registro.LECTURATOMADA);
+    const lecturaFacturada = parseFloat(registro.LECTURAFACTURADA);
+    
+    if (isNaN(lecturaTomada) || registro.LECTURATOMADA === null || 
+        registro.LECTURATOMADA === undefined || registro.LECTURATOMADA === "") {
       return registro;
     }
 
-    // Calcular consumo actual
-    const consumoActual = lecturaTomada - lecturaAnterior;
-
-    // Verificar que el consumo sea positivo
-    if (consumoActual < 0) {
-      // No modificar los campos, dejar como están
+    // Obtener fecha de lectura para determinar posición
+    const fechaLectura = registro.FECHALECTURA;
+    if (!fechaLectura) {
       return registro;
     }
 
-    // Calcular límites del ±20% del promedio de lecturas
-    const limiteInferior = promedioLecturas * 0.8;
-    const limiteSuperior = promedioLecturas * 1.2;
+    // Extraer mes de la fecha (formato DD/MM/YYYY)
+    const mesActual = parseInt(fechaLectura.split('/')[1]);
+    
+    // Recopilar consumos válidos excluyendo null, cero, undefined y Consumo_6
+    const consumosValidos = [];
+    let consumoActual = null;
+    let posicionConsumoActual = -1;
 
-    // Comparar consumo actual con el ±20% del promedio de lecturas
-    // SOLO modificar los campos cuando el consumo esté dentro del rango
-    if (consumoActual >= limiteInferior && consumoActual <= limiteSuperior) {
+    for (let i = 1; i <= 5; i++) { // Solo Consumo_1 a Consumo_5 (excluir Consumo_6)
+      const consumo = registro[`Consumo_${i}`];
+      
+      // Excluir null, undefined, cero
+      if (consumo !== null && consumo !== undefined && consumo !== 0) {
+        const consumoNum = parseFloat(consumo);
+        if (!isNaN(consumoNum) && consumoNum > 0) {
+          // Verificar si este consumo corresponde a LECTURATOMADA
+          const lecturaCorrespondiente = registro[`Lectura_${i}`];
+          if (lecturaCorrespondiente !== null && lecturaCorrespondiente !== undefined) {
+            const lecturaNum = parseFloat(lecturaCorrespondiente);
+            
+            // Si la lectura corresponde a LECTURATOMADA o LECTURAFACTURADA, identificar el consumo actual
+            if (lecturaNum === lecturaTomada || (!isNaN(lecturaFacturada) && lecturaNum === lecturaFacturada)) {
+              consumoActual = consumoNum;
+              posicionConsumoActual = i;
+            } else {
+              // Agregar a consumos válidos para el promedio
+              consumosValidos.push(Math.abs(consumoNum)); // Valor absoluto
+            }
+          }
+        }
+      }
+    }
+
+    // Verificar que tengamos consumos válidos para calcular promedio
+    if (consumosValidos.length === 0) {
+      return registro;
+    }
+
+    // Verificar que tengamos el consumo actual identificado
+    if (consumoActual === null) {
+      return registro;
+    }
+
+    // Calcular promedio absoluto de consumos válidos
+    const promedioAbsoluto = consumosValidos.reduce((sum, consumo) => sum + consumo, 0) / consumosValidos.length;
+
+    // Calcular límites del ±20% del promedio
+    const limiteInferior = promedioAbsoluto * 0.8;
+    const limiteSuperior = promedioAbsoluto * 1.2;
+
+    // Usar valor absoluto del consumo actual para la comparación
+    const consumoActualAbsoluto = Math.abs(consumoActual);
+
+    // Comparar consumo actual contra el promedio ± 20%
+    if (consumoActualAbsoluto >= limiteInferior && consumoActualAbsoluto <= limiteSuperior) {
       registro.Validacion = "NO";
-      registro.obsValidacion = "Consumo dentro del rango del 20%";
+      registro.obsValidacion = `Consumo dentro del rango del 20% (${consumoActualAbsoluto} vs promedio ${promedioAbsoluto.toFixed(2)})`;
     }
-    // Para todos los demás casos (fuera del rango), no modificar los campos
+    // Para consumos fuera del rango, no modificar los campos
+
   } catch (error) {
     console.error("Error en validación de consumo promedio:", error);
     // No modificar los campos en caso de error, dejar como están
@@ -663,14 +660,13 @@ function validarNumerosLecturas(registro) {
   // Validar que las lecturas sean números
   const { TIPOLECTURA, KWAJUSTADOS } = registro;
 
-  // Validar que KWAJUSTADOS sea 10
+  // Validar que TIPOLECTURA sea 10
   if (TIPOLECTURA === "10") {
     // Analizar KWAJUSTADOS para determinar la posición del dígito con error
     if (
       KWAJUSTADOS !== null &&
       KWAJUSTADOS !== undefined &&
-      KWAJUSTADOS !== "" &&
-      KWAJUSTADOS !== 0
+      KWAJUSTADOS !== ""
     ) {
       // Convertir a número y quitar decimales usando Math.trunc para mantener el signo
       const kwValueWithoutDecimals = Math.trunc(Number(KWAJUSTADOS));
@@ -708,53 +704,60 @@ function validarNumerosLecturas(registro) {
 }
 
 function lecturaFueraDeRango(registro) {
-  const {
-    Lectura_1,
-    Lectura_2,
-    Lectura_3,
-    Lectura_4,
-    Lectura_5,
-    Lectura_6,
-    LECTURATOMADA,
-    UbicacionError,
-  } = registro;
+  // Solo aplicar si UbicacionError está vacío, es null o undefined
+  if (registro.UbicacionError === null || registro.UbicacionError === '' || registro.UbicacionError === undefined) {
+    const {
+      Lectura_1,
+      Lectura_2,
+      Lectura_3,
+      Lectura_4,
+      Lectura_5,
+      Lectura_6,
+      LECTURATOMADA,
+      LECTURAFACTURADA,
+    } = registro;
 
-  // Recopilar todas las lecturas válidas (no null, no undefined, números válidos)
-  const lecturas = [
-    Lectura_1,
-    Lectura_2,
-    Lectura_3,
-    Lectura_4,
-    Lectura_5,
-    Lectura_6,
-  ]
-    .filter(
-      (lectura) =>
-        lectura !== null && lectura !== undefined && !isNaN(Number(lectura))
-    )
-    .map((lectura) => Number(lectura));
+    // Convertir LECTURATOMADA y LECTURAFACTURADA a números para comparación
+    const lecturaTomadasNum = Number(LECTURATOMADA);
+    const lecturaFacturadaNum = Number(LECTURAFACTURADA);
 
-  // Si no hay lecturas válidas o menos de 2, no se puede determinar el rango
-  if (lecturas.length < 2) {
-    return registro;
-  }
+    // Recopilar todas las lecturas válidas excluyendo LECTURATOMADA y LECTURAFACTURADA
+    const lecturas = [
+      Lectura_1,
+      Lectura_2,
+      Lectura_3,
+      Lectura_4,
+      Lectura_5,
+      Lectura_6,
+    ]
+      .filter(
+        (lectura) =>
+          lectura !== null && 
+          lectura !== undefined && 
+          !isNaN(Number(lectura)) &&
+          Number(lectura) !== lecturaTomadasNum &&
+          Number(lectura) !== lecturaFacturadaNum
+      )
+      .map((lectura) => Number(lectura));
 
-  // Determinar el rango mínimo y máximo de las lecturas válidas
-  const minLectura = Math.min(...lecturas);
-  const maxLectura = Math.max(...lecturas);
+    // Si no hay lecturas válidas o menos de 2, no se puede determinar el rango
+    if (lecturas.length < 2) {
+      return registro;
+    }
 
-  // Validar que LECTURATOMADA sea un número válido
-  if (
-    LECTURATOMADA === null ||
-    LECTURATOMADA === undefined ||
-    isNaN(Number(LECTURATOMADA))
-  ) {
-    return registro;
-  }
+    // Determinar el rango mínimo y máximo de las lecturas válidas (excluyendo LECTURATOMADA y LECTURAFACTURADA)
+    const minLectura = Math.min(...lecturas);
+    const maxLectura = Math.max(...lecturas);
 
-  const lecturaTomadasNum = Number(LECTURATOMADA);
+    // Validar que LECTURATOMADA sea un número válido
+    if (
+      LECTURATOMADA === null ||
+      LECTURATOMADA === undefined ||
+      isNaN(Number(LECTURATOMADA))
+    ) {
+      return registro;
+    }
 
-  if (UbicacionError == "") {
     // Verificar si LECTURATOMADA está fuera del rango de las lecturas válidas
     if (lecturaTomadasNum < minLectura || lecturaTomadasNum > maxLectura) {
       registro.UbicacionError = "Lectura Diferente";
