@@ -903,6 +903,7 @@ const validarLecturasRepetidas = (registro) => {
   return registro;
 }
 
+// lectura para 
 const validarLecturasDistintas = (registro) => {
    if (!registro) return registro;
 
@@ -911,13 +912,16 @@ const validarLecturasDistintas = (registro) => {
     return registro;
   }
 
-  // 2. Verificar que OBSERVACIONDELECTURA tenga valores específicos
+  // 2. Verificar que OBSERVACIONDELECTURA NO tenga valores específicos
   if (registro.OBSERVACIONDELECTURA && registro.OBSERVACIONDELECTURA.trim()) {
     const obsValue = registro.OBSERVACIONDELECTURA.trim();
     const valoresPermitidos = ["21", "34", "35", "88", "91", "92", "93", "94", "98"];
-    if (valoresPermitidos.includes(obsValue)) {
+    if (!valoresPermitidos.includes(obsValue)) {
       return registro;
     }
+  } else {
+    // Si OBSERVACIONDELECTURA está vacío o null, no procesar
+    return registro;
   }
 
   // 3. Verificar que todas las Obs_Lectura_* sean null
