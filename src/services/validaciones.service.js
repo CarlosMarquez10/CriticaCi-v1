@@ -241,12 +241,12 @@ const validarNumerosEnObservaciones = (registro) => {
   if (numeroConTextoEncontrado) {
     registro.Validacion = "SI";
     registro.obsValidacion = "Confirma la lectura alfanumérica";
-  } else if (numeroSoloEncontrado) {
-    registro.Validacion = "SI";
-    registro.obsValidacion =
-      "Confirmacion incompleta de la lectura en alfanumérica";
-  }
-
+   } //else if (numeroSoloEncontrado) {
+  //   registro.Validacion = "SI";
+  //   registro.obsValidacion =
+  //     "Confirmacion incompleta de la lectura en alfanumérica";
+  // }
+ 
   return registro;
 };
 
@@ -344,10 +344,10 @@ const validarSecuenciaLecturas = (registro) => {
     registro.obsValidacion = "El operario fue consciente del error";
   }
   // Si el código de observación no es 39, el operario no fue consciente
-  else if (lecturaProblematica) {
-    registro.Validacion = "SI";
-    registro.obsValidacion = "El operario no fue consciente del error";
-  }
+  // else if (lecturaProblematica) {
+  //   registro.Validacion = "SI";
+  //   registro.obsValidacion = "El operario no fue consciente del error";
+  // }
 
   return registro;
 };
@@ -430,31 +430,6 @@ function validarConsumoPromedio(registro) {
       return registro;
     }
 
-    // Segunda validación: Verificar secuencia descendente Lectura_1 > Lectura_2 > ... > Lectura_6
-    const lecturas = [];
-    for (let i = 1; i <= 6; i++) {
-      const lectura = registro[`Lectura_${i}`];
-      if (lectura !== null && lectura !== undefined && lectura !== "") {
-        const lecturaNum = parseFloat(lectura);
-        if (!isNaN(lecturaNum)) {
-          lecturas.push(lecturaNum);
-        }
-      }
-    }
-
-    // Verificar que tengamos al menos 2 lecturas para validar secuencia
-    if (lecturas.length < 2) {
-      return registro;
-    }
-
-    // Verificar secuencia descendente
-    for (let i = 0; i < lecturas.length - 1; i++) {
-      if (lecturas[i] <= lecturas[i + 1]) {
-        // Si la secuencia no es descendente, no continuar
-        return registro;
-      }
-    }
-
     // Verificar LECTURATOMADA y LECTURAFACTURADA
     const lecturaTomada = parseFloat(registro.LECTURATOMADA);
     const lecturaFacturada = parseFloat(registro.LECTURAFACTURADA);
@@ -462,6 +437,35 @@ function validarConsumoPromedio(registro) {
     if (isNaN(lecturaTomada) || registro.LECTURATOMADA === null || 
         registro.LECTURATOMADA === undefined || registro.LECTURATOMADA === "") {
       return registro;
+    }
+
+    // Segunda validación: Verificar secuencia descendente excluyendo LECTURATOMADA y valores null
+    const lecturasParaSecuencia = [];
+    
+    for (let i = 1; i <= 6; i++) {
+      const lectura = registro[`Lectura_${i}`];
+      if (lectura !== null && lectura !== undefined && lectura !== "") {
+        const lecturaNum = parseFloat(lectura);
+        if (!isNaN(lecturaNum)) {
+          // Excluir LECTURATOMADA y LECTURAFACTURADA de la validación de secuencia
+          if (lecturaNum !== lecturaTomada && (isNaN(lecturaFacturada) || lecturaNum !== lecturaFacturada)) {
+            lecturasParaSecuencia.push(lecturaNum);
+          }
+        }
+      }
+    }
+
+    // Verificar que tengamos al menos 2 lecturas para validar secuencia
+    if (lecturasParaSecuencia.length < 2) {
+      return registro;
+    }
+
+    // Verificar secuencia descendente
+    for (let i = 0; i < lecturasParaSecuencia.length - 1; i++) {
+      if (lecturasParaSecuencia[i] <= lecturasParaSecuencia[i + 1]) {
+        // Si la secuencia no es descendente, no continuar
+        return registro;
+      }
     }
 
     // Obtener fecha de lectura para determinar posición
@@ -473,32 +477,47 @@ function validarConsumoPromedio(registro) {
     // Extraer mes de la fecha (formato DD/MM/YYYY)
     const mesActual = parseInt(fechaLectura.split('/')[1]);
     
-    // Recopilar consumos válidos excluyendo null, cero, undefined y Consumo_6
+    // Identificar qué posición corresponde a LECTURATOMADA
+    let posicionLecturaTomada = -1;
+    for (let i = 1; i <= 6; i++) {
+      const lectura = registro[`Lectura_${i}`];
+      if (lectura !== null && lectura !== undefined) {
+        const lecturaNum = parseFloat(lectura);
+        if (!isNaN(lecturaNum) && lecturaNum === lecturaTomada) {
+          posicionLecturaTomada = i;
+          break;
+        }
+      }
+    }
+
+    // Si no encontramos la posición de LECTURATOMADA, no podemos continuar
+    if (posicionLecturaTomada === -1) {
+      return registro;
+    }
+
+    // Recopilar consumos válidos excluyendo null, cero, undefined, Consumo_6 y el consumo de LECTURATOMADA
     const consumosValidos = [];
     let consumoActual = null;
-    let posicionConsumoActual = -1;
 
     for (let i = 1; i <= 5; i++) { // Solo Consumo_1 a Consumo_5 (excluir Consumo_6)
       const consumo = registro[`Consumo_${i}`];
       
-      // Excluir null, undefined, cero
+      // Si esta posición corresponde a LECTURATOMADA, guardar como consumo actual
+      if (i === posicionLecturaTomada) {
+        if (consumo !== null && consumo !== undefined) {
+          const consumoNum = parseFloat(consumo);
+          if (!isNaN(consumoNum)) {
+            consumoActual = consumoNum;
+          }
+        }
+        continue; // No incluir en consumos válidos para el promedio
+      }
+      
+      // Para las demás posiciones, incluir en consumos válidos si cumplen criterios
       if (consumo !== null && consumo !== undefined && consumo !== 0) {
         const consumoNum = parseFloat(consumo);
         if (!isNaN(consumoNum) && consumoNum > 0) {
-          // Verificar si este consumo corresponde a LECTURATOMADA
-          const lecturaCorrespondiente = registro[`Lectura_${i}`];
-          if (lecturaCorrespondiente !== null && lecturaCorrespondiente !== undefined) {
-            const lecturaNum = parseFloat(lecturaCorrespondiente);
-            
-            // Si la lectura corresponde a LECTURATOMADA o LECTURAFACTURADA, identificar el consumo actual
-            if (lecturaNum === lecturaTomada || (!isNaN(lecturaFacturada) && lecturaNum === lecturaFacturada)) {
-              consumoActual = consumoNum;
-              posicionConsumoActual = i;
-            } else {
-              // Agregar a consumos válidos para el promedio
-              consumosValidos.push(Math.abs(consumoNum)); // Valor absoluto
-            }
-          }
+          consumosValidos.push(Math.abs(consumoNum)); // Valor absoluto
         }
       }
     }
@@ -527,6 +546,9 @@ function validarConsumoPromedio(registro) {
     if (consumoActualAbsoluto >= limiteInferior && consumoActualAbsoluto <= limiteSuperior) {
       registro.Validacion = "NO";
       registro.obsValidacion = `Consumo dentro del rango del 20% (${consumoActualAbsoluto} vs promedio ${promedioAbsoluto.toFixed(2)})`;
+    }else {
+      registro.Validacion = "SI";
+      registro.obsValidacion = `Consumo fuera del rango del 20% (${consumoActualAbsoluto} vs promedio ${promedioAbsoluto.toFixed(2)})`;
     }
     // Para consumos fuera del rango, no modificar los campos
 
@@ -767,6 +789,232 @@ function lecturaFueraDeRango(registro) {
   return registro;
 }
 
+/**
+ * Valida si la LECTURATOMADA es igual a las lecturas de meses adyacentes
+ * Detecta cuando el operario no es consciente del error y no critica
+ * @param {Object} registro - Registro a validar
+ * @returns {Object} - Registro con campos Validacion y obsValidacion actualizados si se detecta error
+ */
+const validarLecturasRepetidas = (registro) => {
+  if (!registro) return registro;
+
+  // 1. Verificar que Validacion esté en PENDIENTE
+  if (registro.Validacion !== "PENDIENTE") {
+    return registro;
+  }
+
+  // 2. Verificar que OBSERVACIONDELECTURA esté vacío o null
+  if (registro.OBSERVACIONDELECTURA && registro.OBSERVACIONDELECTURA.trim() !== "") {
+    return registro;
+  }
+
+  // 3. Verificar que todas las Obs_Lectura_* sean null
+  for (let i = 1; i <= 6; i++) {
+    if (registro[`Obs_Lectura_${i}`] !== null) {
+      return registro;
+    }
+  }
+
+  // 4. Obtener LECTURATOMADA y FECHALECTURA
+  const lecturaTomada = registro.LECTURATOMADA;
+  const fechaLectura = registro.FECHALECTURA;
+
+  if (!lecturaTomada || !fechaLectura) {
+    return registro;
+  }
+
+  // 5. Determinar el mes actual basado en FECHALECTURA
+  const fechaParts = fechaLectura.split("/");
+  if (fechaParts.length !== 3) {
+    return registro;
+  }
+
+  const mesActual = parseInt(fechaParts[1]); // Mes de la fecha de lectura
+  const añoActual = parseInt(fechaParts[2]);
+
+  // 6. Buscar LECTURATOMADA en las posiciones de lecturas
+  let posicionEncontrada = -1;
+  for (let i = 1; i <= 6; i++) {
+    const lectura = registro[`Lectura_${i}`];
+    if (lectura !== null && lectura !== undefined) {
+      const lecturaNum = parseFloat(lectura);
+      if (!isNaN(lecturaNum) && lecturaNum === parseFloat(lecturaTomada)) {
+        posicionEncontrada = i;
+        break;
+      }
+    }
+  }
+
+  if (posicionEncontrada === -1) {
+    return registro; // No se encontró LECTURATOMADA en las lecturas
+  }
+
+  // 7. Calcular qué mes corresponde a la posición encontrada
+  // Lectura_1 = mes actual, Lectura_2 = mes anterior, Lectura_3 = 2 meses atrás, etc.
+  const mesLecturaTomada = mesActual - (posicionEncontrada - 1);
+  
+  // 8. Identificar las lecturas del mes anterior y posterior a LECTURATOMADA
+  const mesAnterior = mesLecturaTomada - 1;
+  const mesPosterior = mesLecturaTomada + 1;
+  
+  // Calcular las posiciones correspondientes a esos meses
+  const posicionAnterior = (mesActual - mesAnterior) + 1;
+  const posicionPosterior = (mesActual - mesPosterior) + 1;
+
+  let lecturaAnterior = null;
+  let lecturaPosterior = null;
+
+  // Obtener lectura del mes anterior (si existe)
+  if (posicionAnterior >= 1 && posicionAnterior <= 6) {
+    const lectura = registro[`Lectura_${posicionAnterior}`];
+    if (lectura !== null && lectura !== undefined) {
+      lecturaAnterior = parseFloat(lectura);
+    }
+  }
+
+  // Obtener lectura del mes posterior (si existe)
+  if (posicionPosterior >= 1 && posicionPosterior <= 6) {
+    const lectura = registro[`Lectura_${posicionPosterior}`];
+    if (lectura !== null && lectura !== undefined) {
+      lecturaPosterior = parseFloat(lectura);
+    }
+  }
+
+  // 9. Comparar LECTURATOMADA con las lecturas adyacentes
+  const lecturaTomadasNum = parseFloat(lecturaTomada);
+  let errorDetectado = false;
+
+  // Verificar si es igual a la lectura anterior
+  if (lecturaAnterior !== null && !isNaN(lecturaAnterior) && lecturaTomadasNum === lecturaAnterior) {
+    errorDetectado = true;
+  }
+
+  // Verificar si es igual a la lectura posterior
+  if (lecturaPosterior !== null && !isNaN(lecturaPosterior) && lecturaTomadasNum !== lecturaPosterior) {
+    errorDetectado = true;
+  }
+
+  // 10. Si se detectó error, actualizar los campos de validación
+  if (errorDetectado) {
+    registro.Validacion = "SI";
+    registro.obsValidacion = "El Operario no es conciente del error, no critica";
+  }
+
+  return registro;
+}
+
+const validarLecturasDistintas = (registro) => {
+   if (!registro) return registro;
+
+  // 1. Verificar que Validacion esté en PENDIENTE
+  if (registro.Validacion !== "PENDIENTE") {
+    return registro;
+  }
+
+  // 2. Verificar que OBSERVACIONDELECTURA tenga valores específicos
+  if (registro.OBSERVACIONDELECTURA && registro.OBSERVACIONDELECTURA.trim()) {
+    const obsValue = registro.OBSERVACIONDELECTURA.trim();
+    const valoresPermitidos = ["21", "34", "35", "88", "91", "92", "93", "94", "98"];
+    if (valoresPermitidos.includes(obsValue)) {
+      return registro;
+    }
+  }
+
+  // 3. Verificar que todas las Obs_Lectura_* sean null
+  for (let i = 1; i <= 6; i++) {
+    if (registro[`Obs_Lectura_${i}`] !== null) {
+      return registro;
+    }
+  }
+
+  // 4. Obtener LECTURATOMADA y FECHALECTURA
+  const lecturaTomada = registro.LECTURATOMADA;
+  const fechaLectura = registro.FECHALECTURA;
+
+  if (!lecturaTomada || !fechaLectura) {
+    return registro;
+  }
+
+  // 5. Determinar el mes actual basado en FECHALECTURA
+  const fechaParts = fechaLectura.split("/");
+  if (fechaParts.length !== 3) {
+    return registro;
+  }
+
+  const mesActual = parseInt(fechaParts[1]); // Mes de la fecha de lectura
+  const añoActual = parseInt(fechaParts[2]);
+
+  // 6. Buscar LECTURATOMADA en las posiciones de lecturas
+  let posicionEncontrada = -1;
+  for (let i = 1; i <= 6; i++) {
+    const lectura = registro[`Lectura_${i}`];
+    if (lectura !== null && lectura !== undefined) {
+      const lecturaNum = parseFloat(lectura);
+      if (!isNaN(lecturaNum) && lecturaNum === parseFloat(lecturaTomada)) {
+        posicionEncontrada = i;
+        break;
+      }
+    }
+  }
+
+  if (posicionEncontrada === -1) {
+    return registro; // No se encontró LECTURATOMADA en las lecturas
+  }
+
+  // 7. Calcular qué mes corresponde a la posición encontrada
+  // Lectura_1 = mes actual, Lectura_2 = mes anterior, Lectura_3 = 2 meses atrás, etc.
+  const mesLecturaTomada = mesActual - (posicionEncontrada - 1);
+  
+  // 8. Identificar las lecturas del mes anterior y posterior a LECTURATOMADA
+  const mesAnterior = mesLecturaTomada - 1;
+  const mesPosterior = mesLecturaTomada + 1;
+  
+  // Calcular las posiciones correspondientes a esos meses
+  const posicionAnterior = (mesActual - mesAnterior) + 1;
+  const posicionPosterior = (mesActual - mesPosterior) + 1;
+
+  let lecturaAnterior = null;
+  let lecturaPosterior = null;
+
+  // Obtener lectura del mes anterior (si existe)
+  if (posicionAnterior >= 1 && posicionAnterior <= 6) {
+    const lectura = registro[`Lectura_${posicionAnterior}`];
+    if (lectura !== null && lectura !== undefined) {
+      lecturaAnterior = parseFloat(lectura);
+    }
+  }
+
+  // Obtener lectura del mes posterior (si existe)
+  if (posicionPosterior >= 1 && posicionPosterior <= 6) {
+    const lectura = registro[`Lectura_${posicionPosterior}`];
+    if (lectura !== null && lectura !== undefined) {
+      lecturaPosterior = parseFloat(lectura);
+    }
+  }
+
+  // 9. Comparar LECTURATOMADA con las lecturas adyacentes
+  const lecturaTomadasNum = parseFloat(lecturaTomada);
+  let errorDetectado = false;
+
+  // Verificar si es igual a la lectura anterior
+  if (lecturaAnterior !== null && !isNaN(lecturaAnterior) && lecturaTomadasNum === lecturaAnterior) {
+    errorDetectado = true;
+  }
+
+  // Verificar si es igual a la lectura posterior
+  if (lecturaPosterior !== null && !isNaN(lecturaPosterior) && lecturaTomadasNum !== lecturaPosterior) {
+    errorDetectado = true;
+  }
+
+  // 10. Si se detectó error, actualizar los campos de validación
+  if (errorDetectado) {
+    registro.Validacion = "SI";
+    registro.obsValidacion = "El Operario no es conciente del error, no critica";
+  }
+
+  return registro;
+}
+
 export {
   validarFechaFactura,
   validarCampoValidacion,
@@ -781,4 +1029,6 @@ export {
   conocerUbicacionError,
   validarNumerosLecturas,
   lecturaFueraDeRango,
+  validarLecturasRepetidas,
+  validarLecturasDistintas,
 };

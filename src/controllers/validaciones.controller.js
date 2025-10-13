@@ -18,7 +18,9 @@ import {
   validarConsumoPromedio,
   conocerUbicacionError,
   validarNumerosLecturas,
-  lecturaFueraDeRango
+  lecturaFueraDeRango,
+  validarLecturasRepetidas,
+  validarLecturasDistintas
 } from '../services/validaciones.service.js';
 
 // Configuración para ES modules
@@ -45,15 +47,17 @@ const validarRegistros = async (req, res) => {
       validarCampoValidacion,
       validarCampoObsValidacion,
       validarCamposVerificacion,
-      validarConsumoPromedio,
       validarCamposNumericos,
       validarObservacionesLecturas,
       validarLecturasAlfanumerica,
       validarSecuenciaLecturas,
       validarNumerosEnObservaciones,
+      validarConsumoPromedio,
       conocerUbicacionError,
       validarNumerosLecturas,
-      lecturaFueraDeRango
+      lecturaFueraDeRango,
+      validarLecturasRepetidas,
+      validarLecturasDistintas
     ];
     
     // Procesar las validaciones

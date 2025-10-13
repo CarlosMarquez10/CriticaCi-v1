@@ -112,7 +112,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (776 vs promedio 630.33)",
     "_raw": {
       "USUARIO": "3906",
       "ZONA": "1",
@@ -179,7 +179,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (945 vs promedio 462.00)",
     "_raw": {
       "USUARIO": "5074",
       "ZONA": "1",
@@ -454,7 +454,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "7124",
       "ZONA": "1",
@@ -595,7 +595,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (602 vs promedio 131.00)",
     "_raw": {
       "USUARIO": "7941",
       "ZONA": "1",
@@ -662,7 +662,7 @@
     "sede": "CUCUTA",
     "UbicacionError": null,
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (92 vs promedio 34.50)",
     "_raw": {
       "USUARIO": "8639",
       "ZONA": "1",
@@ -729,7 +729,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "9677",
       "ZONA": "1",
@@ -803,7 +803,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "9701",
       "ZONA": "1",
@@ -1374,7 +1374,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (4867 vs promedio 104.00)",
     "_raw": {
       "USUARIO": "18907",
       "ZONA": "1",
@@ -1441,7 +1441,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (30378 vs promedio 415.00)",
     "_raw": {
       "USUARIO": "18915",
       "ZONA": "1",
@@ -1574,8 +1574,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "18955",
       "ZONA": "1",
@@ -1649,7 +1649,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (69223 vs promedio 34896.50)",
     "_raw": {
       "USUARIO": "19088",
       "ZONA": "1",
@@ -1716,7 +1716,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "19748",
       "ZONA": "1",
@@ -1790,7 +1790,7 @@
     "sede": "CUCUTA",
     "UbicacionError": null,
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (1389 vs promedio 591.50)",
     "_raw": {
       "USUARIO": "20844",
       "ZONA": "1",
@@ -1857,7 +1857,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (20 vs promedio 1.00)",
     "_raw": {
       "USUARIO": "21688",
       "ZONA": "1",
@@ -1931,7 +1931,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "26908",
       "ZONA": "1",
@@ -2146,7 +2146,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (277 vs promedio 81.50)",
     "_raw": {
       "USUARIO": "29901",
       "ZONA": "1",
@@ -2280,7 +2280,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2792 vs promedio 1207.33)",
     "_raw": {
       "USUARIO": "32166",
       "ZONA": "1",
@@ -2956,8 +2956,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "43958",
       "ZONA": "1",
@@ -3098,7 +3098,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (9388 vs promedio 282.00)",
     "_raw": {
       "USUARIO": "44148",
       "ZONA": "1",
@@ -3433,7 +3433,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "45110",
       "ZONA": "1",
@@ -3700,8 +3700,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "48546",
       "ZONA": "1",
@@ -4110,7 +4110,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (213017 vs promedio 71410.00)",
     "_raw": {
       "USUARIO": "54044",
       "ZONA": "1",
@@ -4177,7 +4177,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (171 vs promedio 65.33)",
     "_raw": {
       "USUARIO": "55665",
       "ZONA": "1",
@@ -4526,7 +4526,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (746 vs promedio 312.50)",
     "_raw": {
       "USUARIO": "56941",
       "ZONA": "1",
@@ -5418,7 +5418,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (516 vs promedio 22.00)",
     "_raw": {
       "USUARIO": "66413",
       "ZONA": "1",
@@ -5484,8 +5484,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "69099",
       "ZONA": "1",
@@ -5767,7 +5767,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "74424",
       "ZONA": "1",
@@ -6598,8 +6598,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "80018",
       "ZONA": "1",
@@ -6807,7 +6807,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "80706",
       "ZONA": "1",
@@ -6880,8 +6880,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "82403",
       "ZONA": "1",
@@ -7022,7 +7022,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (28942 vs promedio 10034.33)",
     "_raw": {
       "USUARIO": "82499",
       "ZONA": "1",
@@ -7357,7 +7357,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (87 vs promedio 260.00)",
     "_raw": {
       "USUARIO": "85418",
       "ZONA": "1",
@@ -7558,7 +7558,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (18218 vs promedio 152.50)",
     "_raw": {
       "USUARIO": "87429",
       "ZONA": "1",
@@ -7765,8 +7765,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "Lectura no encontrada",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "88113",
       "ZONA": "1",
@@ -8034,7 +8034,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (9623 vs promedio 3674.67)",
     "_raw": {
       "USUARIO": "88926",
       "ZONA": "1",
@@ -8302,7 +8302,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2830 vs promedio 1125.33)",
     "_raw": {
       "USUARIO": "93327",
       "ZONA": "1",
@@ -8369,7 +8369,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (232 vs promedio 10708.00)",
     "_raw": {
       "USUARIO": "93757",
       "ZONA": "1",
@@ -8509,8 +8509,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "NO",
-    "obsValidacion": "Consumo dentro del rango del 20% (201 vs promedio 224.00)",
+    "Validacion": "SI",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "94576",
       "ZONA": "1",
@@ -8651,7 +8651,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (61468 vs promedio 20669.67)",
     "_raw": {
       "USUARIO": "94713",
       "ZONA": "1",
@@ -9120,7 +9120,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (822 vs promedio 264.50)",
     "_raw": {
       "USUARIO": "98661",
       "ZONA": "1",
@@ -9328,7 +9328,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (236660 vs promedio 79211.67)",
     "_raw": {
       "USUARIO": "100437",
       "ZONA": "1",
@@ -9394,8 +9394,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "100448",
       "ZONA": "1",
@@ -9536,7 +9536,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (237101 vs promedio 80018.67)",
     "_raw": {
       "USUARIO": "101355",
       "ZONA": "1",
@@ -9669,8 +9669,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "falta lectura anterior",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "101451",
       "ZONA": "1",
@@ -10213,7 +10213,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (422 vs promedio 140.67)",
     "_raw": {
       "USUARIO": "106803",
       "ZONA": "1",
@@ -10488,7 +10488,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (94 vs promedio 50.00)",
     "_raw": {
       "USUARIO": "109190",
       "ZONA": "1",
@@ -11171,8 +11171,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "128845",
       "ZONA": "4",
@@ -11245,8 +11245,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "130181",
       "ZONA": "4",
@@ -11669,7 +11669,7 @@
     "sede": "TIBU",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "132832",
       "ZONA": "4",
@@ -11950,8 +11950,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "138141",
       "ZONA": "4",
@@ -12300,7 +12300,7 @@
     "sede": "PAMPLONA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (94712 vs promedio 31747.33)",
     "_raw": {
       "USUARIO": "145329",
       "ZONA": "2",
@@ -12500,8 +12500,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "150216",
       "ZONA": "4",
@@ -12575,7 +12575,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "150582",
       "ZONA": "4",
@@ -12642,7 +12642,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "154609",
       "ZONA": "3",
@@ -13124,8 +13124,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "decena de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "167776",
       "ZONA": "3",
@@ -13199,7 +13199,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "175990",
       "ZONA": "3",
@@ -14499,8 +14499,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "193303",
       "ZONA": "4",
@@ -14796,7 +14796,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (121 vs promedio 271.33)",
     "_raw": {
       "USUARIO": "196134",
       "ZONA": "1",
@@ -15205,7 +15205,7 @@
     "sede": "PAMPLONA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (19288 vs promedio 45.50)",
     "_raw": {
       "USUARIO": "209533",
       "ZONA": "2",
@@ -15479,8 +15479,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "NO",
+    "obsValidacion": "Consumo dentro del rango del 20% (413 vs promedio 364.00)",
     "_raw": {
       "USUARIO": "214055",
       "ZONA": "1",
@@ -15681,7 +15681,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (83 vs promedio 36.50)",
     "_raw": {
       "USUARIO": "217417",
       "ZONA": "3",
@@ -15815,7 +15815,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (5124 vs promedio 78.50)",
     "_raw": {
       "USUARIO": "240547",
       "ZONA": "3",
@@ -16311,8 +16311,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "252827",
       "ZONA": "3",
@@ -16385,8 +16385,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "NO",
-    "obsValidacion": "Consumo dentro del rango del 20% (8093 vs promedio 8106.00)",
+    "Validacion": "SI",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "253694",
       "ZONA": "3",
@@ -16876,7 +16876,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (8438 vs promedio 101.00)",
     "_raw": {
       "USUARIO": "266823",
       "ZONA": "1",
@@ -17144,7 +17144,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (7505 vs promedio 250.50)",
     "_raw": {
       "USUARIO": "268518",
       "ZONA": "1",
@@ -17344,8 +17344,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "269882",
       "ZONA": "3",
@@ -17411,8 +17411,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "Lectura Diferente",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "NO",
+    "obsValidacion": "Consumo dentro del rango del 20% (238 vs promedio 222.33)",
     "_raw": {
       "USUARIO": "273497",
       "ZONA": "3",
@@ -17680,7 +17680,7 @@
     "sede": "TIBU",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (17088 vs promedio 5952.00)",
     "_raw": {
       "USUARIO": "277758",
       "ZONA": "4",
@@ -17746,8 +17746,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
     "UbicacionError": "decena de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "277770",
       "ZONA": "4",
@@ -18015,7 +18015,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (10255 vs promedio 244.50)",
     "_raw": {
       "USUARIO": "283880",
       "ZONA": "1",
@@ -18156,7 +18156,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (47868 vs promedio 16140.00)",
     "_raw": {
       "USUARIO": "285085",
       "ZONA": "1",
@@ -18289,8 +18289,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "286124",
       "ZONA": "4",
@@ -18632,7 +18632,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (214 vs promedio 75.00)",
     "_raw": {
       "USUARIO": "297929",
       "ZONA": "1",
@@ -19168,7 +19168,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (41 vs promedio 145.33)",
     "_raw": {
       "USUARIO": "309217",
       "ZONA": "4",
@@ -19591,7 +19591,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (252 vs promedio 133.33)",
     "_raw": {
       "USUARIO": "314866",
       "ZONA": "1",
@@ -19658,7 +19658,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (1 vs promedio 4.50)",
     "_raw": {
       "USUARIO": "315114",
       "ZONA": "3",
@@ -20966,7 +20966,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (523 vs promedio 297.00)",
     "_raw": {
       "USUARIO": "411826",
       "ZONA": "1",
@@ -21234,7 +21234,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (89 vs promedio 236.33)",
     "_raw": {
       "USUARIO": "416462",
       "ZONA": "1",
@@ -21702,8 +21702,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "422093",
       "ZONA": "1",
@@ -22662,7 +22662,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "441677",
       "ZONA": "3",
@@ -23399,7 +23399,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "467024",
       "ZONA": "1",
@@ -23473,7 +23473,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "467425",
       "ZONA": "3",
@@ -23621,7 +23621,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (760 vs promedio 586.33)",
     "_raw": {
       "USUARIO": "469256",
       "ZONA": "1",
@@ -23687,8 +23687,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "470996",
       "ZONA": "3",
@@ -23761,8 +23761,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "471257",
       "ZONA": "3",
@@ -24104,7 +24104,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2346 vs promedio 1654.67)",
     "_raw": {
       "USUARIO": "479288",
       "ZONA": "1",
@@ -24171,7 +24171,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "479455",
       "ZONA": "3",
@@ -24675,7 +24675,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "482985",
       "ZONA": "3",
@@ -25024,7 +25024,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (882 vs promedio 669.00)",
     "_raw": {
       "USUARIO": "488164",
       "ZONA": "1",
@@ -25574,7 +25574,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (301 vs promedio 81.50)",
     "_raw": {
       "USUARIO": "495949",
       "ZONA": "1",
@@ -26198,7 +26198,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (277 vs promedio 124.00)",
     "_raw": {
       "USUARIO": "507031",
       "ZONA": "4",
@@ -26338,8 +26338,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "508374",
       "ZONA": "1",
@@ -26412,8 +26412,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "509262",
       "ZONA": "3",
@@ -26486,8 +26486,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "509262",
       "ZONA": "3",
@@ -26769,7 +26769,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "509758",
       "ZONA": "1",
@@ -27875,8 +27875,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "522886",
       "ZONA": "3",
@@ -28098,7 +28098,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (256 vs promedio 133.50)",
     "_raw": {
       "USUARIO": "523975",
       "ZONA": "1",
@@ -28313,7 +28313,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2915 vs promedio 1098.67)",
     "_raw": {
       "USUARIO": "526657",
       "ZONA": "1",
@@ -28937,7 +28937,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "533860",
       "ZONA": "1",
@@ -29292,8 +29292,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "538855",
       "ZONA": "5",
@@ -29367,7 +29367,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (27731 vs promedio 242.00)",
     "_raw": {
       "USUARIO": "539187",
       "ZONA": "1",
@@ -29434,7 +29434,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (113 vs promedio 18.00)",
     "_raw": {
       "USUARIO": "539647",
       "ZONA": "1",
@@ -29501,7 +29501,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "542012",
       "ZONA": "1",
@@ -29783,7 +29783,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2200 vs promedio 7518.50)",
     "_raw": {
       "USUARIO": "544198",
       "ZONA": "1",
@@ -29916,8 +29916,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "545241",
       "ZONA": "3",
@@ -30266,7 +30266,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (82 vs promedio 27.50)",
     "_raw": {
       "USUARIO": "550769",
       "ZONA": "1",
@@ -30467,7 +30467,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (724 vs promedio 184.50)",
     "_raw": {
       "USUARIO": "552357",
       "ZONA": "1",
@@ -30809,7 +30809,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (4839 vs promedio 1742.67)",
     "_raw": {
       "USUARIO": "553745",
       "ZONA": "1",
@@ -30876,7 +30876,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "553758",
       "ZONA": "1",
@@ -31788,8 +31788,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "Lectura no encontrada",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "564742",
       "ZONA": "1",
@@ -31856,7 +31856,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "566812",
       "ZONA": "4",
@@ -32063,8 +32063,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "Lectura no encontrada",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "569050",
       "ZONA": "1",
@@ -32272,7 +32272,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2308 vs promedio 19.00)",
     "_raw": {
       "USUARIO": "569300",
       "ZONA": "1",
@@ -32412,8 +32412,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "573922",
       "ZONA": "4",
@@ -32486,8 +32486,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "574267",
       "ZONA": "1",
@@ -32775,8 +32775,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "577544",
       "ZONA": "1",
@@ -33191,8 +33191,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "NO",
-    "obsValidacion": "Consumo dentro del rango del 20% (135 vs promedio 133.00)",
+    "Validacion": "SI",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "580020",
       "ZONA": "1",
@@ -33265,8 +33265,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "580332",
       "ZONA": "3",
@@ -33561,8 +33561,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "584910",
       "ZONA": "3",
@@ -33776,8 +33776,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "587808",
       "ZONA": "3",
@@ -33850,8 +33850,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "NO",
-    "obsValidacion": "Consumo dentro del rango del 20% (643 vs promedio 576.67)",
+    "Validacion": "SI",
+    "obsValidacion": "El operario fue consciente del error",
     "_raw": {
       "USUARIO": "588294",
       "ZONA": "1",
@@ -33917,8 +33917,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "588334",
       "ZONA": "3",
@@ -34058,8 +34058,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "589015",
       "ZONA": "4",
@@ -34273,8 +34273,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "decena",
-    "Validacion": "NO",
-    "obsValidacion": "Consumo dentro del rango del 20% (1565 vs promedio 1568.00)",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "589446",
       "ZONA": "3",
@@ -34348,7 +34348,7 @@
     "sede": "TIBU",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "589612",
       "ZONA": "4",
@@ -34488,8 +34488,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "590065",
       "ZONA": "3",
@@ -34563,7 +34563,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (448 vs promedio 173.00)",
     "_raw": {
       "USUARIO": "590528",
       "ZONA": "1",
@@ -34629,8 +34629,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "590654",
       "ZONA": "1",
@@ -34696,8 +34696,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "Lectura no encontrada",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "591692",
       "ZONA": "1",
@@ -35603,7 +35603,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "606693",
       "ZONA": "1",
@@ -35743,8 +35743,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "TIBU",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "608327",
       "ZONA": "4",
@@ -36911,7 +36911,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2 vs promedio 26.00)",
     "_raw": {
       "USUARIO": "617448",
       "ZONA": "1",
@@ -36978,7 +36978,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (3945 vs promedio 2022.00)",
     "_raw": {
       "USUARIO": "618355",
       "ZONA": "1",
@@ -37119,7 +37119,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (41 vs promedio 58.50)",
     "_raw": {
       "USUARIO": "621636",
       "ZONA": "1",
@@ -37817,7 +37817,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (5 vs promedio 3.00)",
     "_raw": {
       "USUARIO": "638253",
       "ZONA": "1",
@@ -38300,7 +38300,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "645012",
       "ZONA": "3",
@@ -38709,7 +38709,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (3223 vs promedio 237.50)",
     "_raw": {
       "USUARIO": "647981",
       "ZONA": "1",
@@ -38910,7 +38910,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (4 vs promedio 3.00)",
     "_raw": {
       "USUARIO": "651031",
       "ZONA": "3",
@@ -39044,7 +39044,7 @@
     "sede": "AGUACHICA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (13113 vs promedio 79.00)",
     "_raw": {
       "USUARIO": "651729",
       "ZONA": "5",
@@ -39178,7 +39178,7 @@
     "sede": "AGUACHICA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (54 vs promedio 74.00)",
     "_raw": {
       "USUARIO": "651836",
       "ZONA": "5",
@@ -39446,7 +39446,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (377 vs promedio 215.00)",
     "_raw": {
       "USUARIO": "658134",
       "ZONA": "1",
@@ -39520,7 +39520,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "659429",
       "ZONA": "3",
@@ -39862,7 +39862,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "661218",
       "ZONA": "1",
@@ -39995,8 +39995,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "662894",
       "ZONA": "4",
@@ -40137,7 +40137,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "665449",
       "ZONA": "4",
@@ -40344,8 +40344,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "668053",
       "ZONA": "3",
@@ -40418,8 +40418,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "NO",
+    "obsValidacion": "Consumo dentro del rango del 20% (912 vs promedio 779.00)",
     "_raw": {
       "USUARIO": "668443",
       "ZONA": "1",
@@ -40553,7 +40553,7 @@
     "sede": "CUCUTA",
     "UbicacionError": null,
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (15 vs promedio 6.00)",
     "_raw": {
       "USUARIO": "669403",
       "ZONA": "1",
@@ -41110,7 +41110,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (261 vs promedio 85.00)",
     "_raw": {
       "USUARIO": "679434",
       "ZONA": "4",
@@ -41250,8 +41250,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "falta lectura anterior",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "682082",
       "ZONA": "1",
@@ -41391,8 +41391,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "683522",
       "ZONA": "1",
@@ -41600,7 +41600,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (4521 vs promedio 169.00)",
     "_raw": {
       "USUARIO": "684940",
       "ZONA": "1",
@@ -41874,8 +41874,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "falta lectura anterior",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "800748",
       "ZONA": "1",
@@ -41942,7 +41942,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (3525 vs promedio 289.00)",
     "_raw": {
       "USUARIO": "800788",
       "ZONA": "1",
@@ -42284,7 +42284,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (7854 vs promedio 33.00)",
     "_raw": {
       "USUARIO": "1001398",
       "ZONA": "1",
@@ -42418,7 +42418,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (60 vs promedio 5.50)",
     "_raw": {
       "USUARIO": "1003740",
       "ZONA": "1",
@@ -43874,7 +43874,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (7209 vs promedio 170.00)",
     "_raw": {
       "USUARIO": "1033125",
       "ZONA": "4",
@@ -44008,7 +44008,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (349 vs promedio 106.50)",
     "_raw": {
       "USUARIO": "1036322",
       "ZONA": "1",
@@ -44283,7 +44283,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (263 vs promedio 21.00)",
     "_raw": {
       "USUARIO": "1041357",
       "ZONA": "1",
@@ -44423,8 +44423,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1041562",
       "ZONA": "1",
@@ -44840,7 +44840,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1045721",
       "ZONA": "3",
@@ -45048,7 +45048,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (33 vs promedio 54.00)",
     "_raw": {
       "USUARIO": "1051440",
       "ZONA": "1",
@@ -45256,7 +45256,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (25307 vs promedio 66.00)",
     "_raw": {
       "USUARIO": "1057588",
       "ZONA": "1",
@@ -45323,7 +45323,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (5 vs promedio 106.00)",
     "_raw": {
       "USUARIO": "1057815",
       "ZONA": "1",
@@ -45390,7 +45390,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (814 vs promedio 327.67)",
     "_raw": {
       "USUARIO": "1058907",
       "ZONA": "1",
@@ -45457,7 +45457,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (36000 vs promedio 9.00)",
     "_raw": {
       "USUARIO": "1059925",
       "ZONA": "1",
@@ -45591,7 +45591,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (909 vs promedio 626.00)",
     "_raw": {
       "USUARIO": "1061379",
       "ZONA": "1",
@@ -45791,8 +45791,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "NO",
+    "obsValidacion": "Consumo dentro del rango del 20% (400 vs promedio 401.50)",
     "_raw": {
       "USUARIO": "1067376",
       "ZONA": "3",
@@ -46408,8 +46408,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "AGUACHICA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1073076",
       "ZONA": "5",
@@ -46624,7 +46624,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (746 vs promedio 199.50)",
     "_raw": {
       "USUARIO": "1077728",
       "ZONA": "1",
@@ -46899,7 +46899,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (437 vs promedio 139.00)",
     "_raw": {
       "USUARIO": "1079628",
       "ZONA": "1",
@@ -47107,7 +47107,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (809 vs promedio 514.00)",
     "_raw": {
       "USUARIO": "1082169",
       "ZONA": "1",
@@ -47523,7 +47523,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (40784 vs promedio 28.00)",
     "_raw": {
       "USUARIO": "1088881",
       "ZONA": "1",
@@ -47791,7 +47791,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (944 vs promedio 214.33)",
     "_raw": {
       "USUARIO": "1093472",
       "ZONA": "1",
@@ -48273,8 +48273,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1100552",
       "ZONA": "3",
@@ -48347,8 +48347,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1101014",
       "ZONA": "1",
@@ -48421,8 +48421,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1101976",
       "ZONA": "3",
@@ -48496,7 +48496,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1102172",
       "ZONA": "3",
@@ -48637,7 +48637,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (15842 vs promedio 130.50)",
     "_raw": {
       "USUARIO": "1102380",
       "ZONA": "1",
@@ -49193,8 +49193,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1111917",
       "ZONA": "1",
@@ -49260,8 +49260,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1111917",
       "ZONA": "1",
@@ -49394,8 +49394,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1112063",
       "ZONA": "3",
@@ -49536,7 +49536,7 @@
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (44 vs promedio 217.33)",
     "_raw": {
       "USUARIO": "1113130",
       "ZONA": "4",
@@ -49744,7 +49744,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1116569",
       "ZONA": "1",
@@ -49811,7 +49811,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1117330",
       "ZONA": "1",
@@ -49959,7 +49959,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1117963",
       "ZONA": "1",
@@ -50434,8 +50434,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU",
     "UbicacionError": "decena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "NO",
+    "obsValidacion": "Consumo dentro del rango del 20% (49 vs promedio 57.00)",
     "_raw": {
       "USUARIO": "1122168",
       "ZONA": "4",
@@ -50569,7 +50569,7 @@
     "sede": "TIBU",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (270 vs promedio 14.50)",
     "_raw": {
       "USUARIO": "1124834",
       "ZONA": "4",
@@ -50777,7 +50777,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (292 vs promedio 82.50)",
     "_raw": {
       "USUARIO": "1127132",
       "ZONA": "1",
@@ -50918,7 +50918,7 @@
     "sede": "TIBU",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Confirma la lectura alfanumérica",
     "_raw": {
       "USUARIO": "1128620",
       "ZONA": "4",
@@ -51119,7 +51119,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (6 vs promedio 141.33)",
     "_raw": {
       "USUARIO": "1132815",
       "ZONA": "1",
@@ -51602,7 +51602,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "Lectura Diferente",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (2483 vs promedio 1244.50)",
     "_raw": {
       "USUARIO": "1138929",
       "ZONA": "1",
@@ -51817,7 +51817,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (1697 vs promedio 610.00)",
     "_raw": {
       "USUARIO": "1140965",
       "ZONA": "1",
@@ -52091,8 +52091,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "decena de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1142278",
       "ZONA": "1",
@@ -52233,7 +52233,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1143330",
       "ZONA": "1",
@@ -53332,8 +53332,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1151812",
       "ZONA": "1",
@@ -53540,8 +53540,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1153566",
       "ZONA": "1",
@@ -53607,8 +53607,8 @@
     "tipo": "OPERATIVO 3",
     "sede": "CUCUTA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1153702",
       "ZONA": "1",
@@ -53943,7 +53943,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (6216 vs promedio 228.00)",
     "_raw": {
       "USUARIO": "1155365",
       "ZONA": "1",
@@ -54620,7 +54620,7 @@
     "sede": "CUCUTA",
     "UbicacionError": null,
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (7 vs promedio 21.00)",
     "_raw": {
       "USUARIO": "1159050",
       "ZONA": "1",
@@ -55028,8 +55028,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "CUCUTA",
     "UbicacionError": "unidad de mil",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "1162794",
       "ZONA": "1",
@@ -55297,7 +55297,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (519 vs promedio 210.50)",
     "_raw": {
       "USUARIO": "93358",
       "ZONA": "1",
@@ -55364,7 +55364,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "100515",
       "ZONA": "1",
@@ -55512,7 +55512,7 @@
     "sede": "PAMPLONA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (706 vs promedio 65.50)",
     "_raw": {
       "USUARIO": "127970",
       "ZONA": "2",
@@ -55579,7 +55579,7 @@
     "sede": "TIBU",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (504 vs promedio 185.67)",
     "_raw": {
       "USUARIO": "131843",
       "ZONA": "4",
@@ -55646,7 +55646,7 @@
     "sede": "TIBU",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (566 vs promedio 203.50)",
     "_raw": {
       "USUARIO": "131891",
       "ZONA": "4",
@@ -55713,7 +55713,7 @@
     "sede": "TIBU",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "133286",
       "ZONA": "4",
@@ -55787,7 +55787,7 @@
     "sede": "OCAÑA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (0 vs promedio 33.67)",
     "_raw": {
       "USUARIO": "238100",
       "ZONA": "3",
@@ -55853,8 +55853,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "OCAÑA",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "NO",
+    "obsValidacion": "Consumo dentro del rango del 20% (15099 vs promedio 14400.00)",
     "_raw": {
       "USUARIO": "247229",
       "ZONA": "3",
@@ -55995,7 +55995,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (289 vs promedio 166.00)",
     "_raw": {
       "USUARIO": "444800",
       "ZONA": "1",
@@ -56128,8 +56128,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "495426",
       "ZONA": "1",
@@ -56203,7 +56203,7 @@
     "sede": "AGUACHICA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (210 vs promedio 115.00)",
     "_raw": {
       "USUARIO": "581165",
       "ZONA": "5",
@@ -56270,7 +56270,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (110 vs promedio 161.33)",
     "_raw": {
       "USUARIO": "600690",
       "ZONA": "1",
@@ -56337,7 +56337,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "617182",
       "ZONA": "1",
@@ -56404,7 +56404,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (383 vs promedio 94.50)",
     "_raw": {
       "USUARIO": "620765",
       "ZONA": "1",
@@ -56471,7 +56471,7 @@
     "sede": "TIBU",
     "UbicacionError": "decena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (7 vs promedio 105.00)",
     "_raw": {
       "USUARIO": "627022",
       "ZONA": "4",
@@ -56537,8 +56537,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "centena",
-    "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "Validacion": "PENDIENTE",
+    "obsValidacion": "",
     "_raw": {
       "USUARIO": "651468",
       "ZONA": "4",
@@ -56612,7 +56612,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1003755",
       "ZONA": "1",
@@ -56679,7 +56679,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "El Operario no es conciente del error, no critica",
     "_raw": {
       "USUARIO": "1003755",
       "ZONA": "1",
@@ -56746,7 +56746,7 @@
     "sede": "CUCUTA",
     "UbicacionError": "centena",
     "Validacion": "SI",
-    "obsValidacion": "El operario no fue consciente del error",
+    "obsValidacion": "Consumo fuera del rango del 20% (131 vs promedio 165.00)",
     "_raw": {
       "USUARIO": "1014360",
       "ZONA": "1",
