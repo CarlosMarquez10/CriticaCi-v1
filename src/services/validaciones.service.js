@@ -1198,7 +1198,84 @@ function lecturaPosterioresIguales(registro){
 }
 
 function lecturaAnteriroresIguales(registro){
-  return registro
+  if (!registro) return registro;
+
+  // 1. Verificar que Validacion esté en PENDIENTE
+  if (registro.Validacion !== "PENDIENTE") {
+    return registro;
+  }
+
+  // 2. Verificar que OBSERVACIONDELECTURA sea null o vacío
+  if (registro.OBSERVACIONDELECTURA && registro.OBSERVACIONDELECTURA.trim() !== "") {
+    return registro;
+  }
+
+  // 3. Obtener LECTURATOMADA y FECHALECTURA
+  const lecturaTomada = registro.LECTURATOMADA;
+  const fechaLectura = registro.FECHALECTURA;
+
+  if (!lecturaTomada || !fechaLectura) {
+    return registro;
+  }
+
+  // 4. Determinar el mes actual basado en FECHALECTURA
+  const fechaParts = fechaLectura.split("/");
+  if (fechaParts.length !== 3) {
+    return registro;
+  }
+
+  const mesActual = parseInt(fechaParts[1]); // Mes de la fecha de lectura
+
+  // 5. Buscar LECTURATOMADA en las posiciones de lecturas
+  let posicionLecturaTomada = -1;
+  for (let i = 1; i <= 6; i++) {
+    const lectura = registro[`Lectura_${i}`];
+    if (lectura !== null && lectura !== undefined) {
+      const lecturaNum = parseFloat(lectura);
+      if (!isNaN(lecturaNum) && lecturaNum === parseFloat(lecturaTomada)) {
+        posicionLecturaTomada = i;
+        break;
+      }
+    }
+  }
+
+  if (posicionLecturaTomada === -1) {
+    return registro; // No se encontró LECTURATOMADA en las lecturas
+  }
+
+  // 6. Verificar que la observación correspondiente a LECTURATOMADA NO esté vacía (debe tener datos)
+  const obsCorrespondiente = registro[`Obs_Lectura_${posicionLecturaTomada}`];
+  if (!obsCorrespondiente || obsCorrespondiente.trim() === "") {
+    return registro; // La observación está vacía, no procesar
+  }
+
+  // 7. Identificar las lecturas anteriores a LECTURATOMADA (posiciones mayores)
+  let lecturasAnteriores = [];
+  
+  for (let i = posicionLecturaTomada + 1; i <= 6; i++) {
+    const lectura = registro[`Lectura_${i}`];
+    if (lectura !== null && lectura !== undefined) {
+      const lecturaNum = parseFloat(lectura);
+      if (!isNaN(lecturaNum)) {
+        lecturasAnteriores.push(lecturaNum);
+      }
+    }
+  }
+
+  // 8. Verificar si hay al menos 2 lecturas anteriores y si son iguales entre sí
+  if (lecturasAnteriores.length >= 2) {
+    // Verificar si todas las lecturas anteriores son iguales entre sí
+    const primeraLectura = lecturasAnteriores[0];
+    const todasIguales = lecturasAnteriores.every(lectura => lectura === primeraLectura);
+    
+    if (todasIguales) {
+      // 9. Actualizar campos de validación
+      registro.Validacion = "SI";
+      registro.obsValidacion = "Las lecturas anteriores al error son iguales, operario consciente del error";
+    }
+  }
+
+  return registro;
 }
 
 

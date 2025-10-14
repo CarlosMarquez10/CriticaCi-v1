@@ -12486,8 +12486,8 @@
     "tipo": "OPERATIVO 1",
     "sede": "TIBU-PUEBLOS",
     "UbicacionError": "unidad de mil",
-    "Validacion": "PENDIENTE",
-    "obsValidacion": "",
+    "Validacion": "SI",
+    "obsValidacion": "Las lecturas anteriores al error son iguales, operario consciente del error",
     "_raw": {
       "USUARIO": "150216",
       "ZONA": "4",
