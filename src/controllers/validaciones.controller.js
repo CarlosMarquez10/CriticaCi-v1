@@ -20,7 +20,10 @@ import {
   validarNumerosLecturas,
   lecturaFueraDeRango,
   validarLecturasRepetidas,
-  validarLecturasDistintas
+  validarLecturasDistintas,
+  validarLecturasConObservacion,
+  lecturaPosterioresIguales,
+  lecturaAnteriroresIguales
 } from '../services/validaciones.service.js';
 
 // Configuración para ES modules
@@ -57,7 +60,10 @@ const validarRegistros = async (req, res) => {
       validarNumerosLecturas,
       lecturaFueraDeRango,
       validarLecturasRepetidas,
-      validarLecturasDistintas
+      validarLecturasDistintas,
+      validarLecturasConObservacion,
+      lecturaPosterioresIguales,
+      lecturaAnteriroresIguales
     ];
     
     // Procesar las validaciones
