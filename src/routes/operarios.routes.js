@@ -21,4 +21,10 @@ router.get('/consulta/:cedula', operariosController.getRegistrosOperario);
  */
 router.get('/marcas-medidores/:cedula', operariosController.getMarcasMedidoresOperario);
 
+/**
+ * @route GET /operarios/ubicacion-error/:cedula
+ * @description Obtiene la distribución de ubicación de errores de un operario específico
+ */
+router.get('/ubicacion-error/:cedula', operariosController.getUbicacionErrorOperario);
+
 export default router;

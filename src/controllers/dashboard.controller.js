@@ -136,6 +136,7 @@ export const renderDashboard = async (req, res) => {
             tipoLectura: contarPorPropiedad(registrosFiltrados.length > 0 ? registrosFiltrados : registros, 'TIPOLECTURA'),
             sede: contarPorPropiedad(registrosFiltrados.length > 0 ? registrosFiltrados : registros, 'sede'),
             tipoError: contarPorPropiedad(registrosFiltrados.length > 0 ? registrosFiltrados : registros, 'TIPODEERROR'),
+            ubicacionError: contarPorPropiedad(registrosFiltrados.length > 0 ? registrosFiltrados : registros, 'UbicacionError'),
             kwAjustados: calcularKWPorOperario(registrosFiltrados.length > 0 ? registrosFiltrados : registros)
         };
 

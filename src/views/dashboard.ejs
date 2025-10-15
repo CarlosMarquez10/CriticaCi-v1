@@ -266,6 +266,24 @@
         </div>
     </div>
 
+    <!-- Nueva gráfica de Ubicación de Error -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Distribución por Ubicación de Error
+                    </h5>
+                    <span class="badge bg-light text-dark" id="ubicacionErrorCount"></span>
+                </div>
+                <div class="card-body" style="height: 400px;">
+                    <canvas id="ubicacionErrorChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -355,6 +373,7 @@
     const tipoLecturaData = <%- JSON.stringify(chartData.tipoLectura || {}) %>;
     const sedeData = <%- JSON.stringify(chartData.sede || {}) %>;
     const tipoErrorData = <%- JSON.stringify(chartData.tipoError || {}) %>;
+    const ubicacionErrorData = <%- JSON.stringify(chartData.ubicacionError || {}) %>;
     const kwAjustadosData = <%- JSON.stringify(chartData.kwAjustados || {}) %>;
     
     // Actualizar contadores en los cuadros de información
@@ -371,6 +390,10 @@
     // Contador para Tipo de Error
     const tipoErrorTotal = Object.values(tipoErrorData).reduce((a, b) => a + b, 0);
     document.getElementById('tipoErrorCount').textContent = `${tipoErrorTotal} de ${totalRegistros} registros`;
+    
+    // Contador para Ubicación de Error
+    const ubicacionErrorTotal = Object.values(ubicacionErrorData).reduce((a, b) => a + b, 0);
+    document.getElementById('ubicacionErrorCount').textContent = `${ubicacionErrorTotal} de ${totalRegistros} registros`;
     
     // Contador para KW Ajustados
     // Contamos el número de operarios con datos en lugar de sumar los valores
@@ -531,6 +554,91 @@
                             let label = context.dataset.label || '';
                             let value = context.raw || 0;
                             return `${label}: ${value}`;
+                        }
+                    }
+                },
+                datalabels: {
+                    display: true,
+                    align: 'top',
+                    anchor: 'end',
+                    formatter: function(value) {
+                        return value;
+                    },
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // Gráfico de Ubicación de Error
+    const ubicacionErrorCtx = document.getElementById('ubicacionErrorChart').getContext('2d');
+    
+    // Función para ordenar las ubicaciones de error
+    function ordenarUbicacionesError(data) {
+        const ordenPrioridad = [
+            'unidad',
+            'decena', 
+            'centena',
+            'unidad de mil',
+            'decena de mil',
+            'centena de mil'
+        ];
+        
+        const ordenado = {};
+        const otros = {};
+        
+        // Primero agregar las ubicaciones en orden de prioridad
+        ordenPrioridad.forEach(ubicacion => {
+            if (data[ubicacion]) {
+                ordenado[ubicacion] = data[ubicacion];
+            }
+        });
+        
+        // Luego agregar las demás ubicaciones
+        Object.keys(data).forEach(ubicacion => {
+            if (!ordenPrioridad.includes(ubicacion)) {
+                otros[ubicacion] = data[ubicacion];
+            }
+        });
+        
+        // Combinar ordenado + otros
+        return { ...ordenado, ...otros };
+    }
+    
+    const ubicacionErrorOrdenada = ordenarUbicacionesError(ubicacionErrorData);
+    
+    new Chart(ubicacionErrorCtx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(ubicacionErrorOrdenada),
+            datasets: [{
+                label: 'Registros por Ubicación de Error',
+                data: Object.values(ubicacionErrorOrdenada),
+                backgroundColor: [
+                    '#17a2b8', '#20c997', '#6f42c1', '#fd7e14', '#dc3545',
+                    '#ffc107', '#28a745', '#007bff', '#6c757d', '#e83e8c'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            let value = context.raw || 0;
+                            let total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            let percentage = Math.round((value / total) * 100);
+                            return `${label}: ${value} (${percentage}%)`;
                         }
                     }
                 },

@@ -96,6 +96,109 @@ export const getMarcasMedidoresOperario = (req, res) => {
 };
 
 /**
+ * Obtiene la distribución de ubicación de errores de un operario específico
+ */
+export const getUbicacionErrorOperario = (req, res) => {
+    try {
+        const { cedula } = req.params;
+        
+        // Leer el archivo JSON
+        const registrosData = JSON.parse(fs.readFileSync(registrosPath, 'utf8'));
+        
+        // Filtrar registros por cédula del operario
+        const registrosOperario = registrosData.filter(registro => 
+            registro.cedula && registro.cedula.toString() === cedula
+        );
+        
+        if (registrosOperario.length === 0) {
+            return res.json({
+                ubicaciones: [],
+                total: 0,
+                totalUbicaciones: 0,
+                conUbicacion: 0,
+                sinUbicacion: 0
+            });
+        }
+        
+        // Función auxiliar para contar por propiedad
+        const contarPorPropiedad = (registros, propiedad) => {
+            const conteo = {};
+            registros.forEach(registro => {
+                const valor = registro[propiedad] || 'No especificado';
+                conteo[valor] = (conteo[valor] || 0) + 1;
+            });
+            return conteo;
+        };
+        
+        // Contar ubicaciones de error
+        const ubicacionesConteo = contarPorPropiedad(registrosOperario, 'UbicacionError');
+        
+        // Calcular estadísticas
+        const sinUbicacion = ubicacionesConteo['No especificado'] || 0;
+        const conUbicacion = registrosOperario.length - sinUbicacion;
+        
+        // Convertir a array y ordenar
+        const ubicacionesArray = Object.entries(ubicacionesConteo)
+            .map(([ubicacion, count]) => ({
+                ubicacion,
+                count,
+                percentage: ((count / registrosOperario.length) * 100).toFixed(1)
+            }))
+            .sort((a, b) => {
+                // Función para ordenar ubicaciones de error
+                const ordenarUbicaciones = (ubicacion) => {
+                    const ubicacionLower = ubicacion.toLowerCase();
+                    
+                    // Orden de prioridad para ubicaciones numéricas
+                    const ordenPrioridad = [
+                        'unidad', 'decena', 'centena', 'unidad de mil', 'decena de mil', 
+                        'centena de mil', 'unidad de millon', 'decena de millon'
+                    ];
+                    
+                    // Buscar si la ubicación está en el orden de prioridad
+                    const indice = ordenPrioridad.findIndex(orden => ubicacionLower.includes(orden));
+                    
+                    if (indice !== -1) {
+                        return indice; // Retorna el índice de prioridad
+                    }
+                    
+                    // Si no está en la lista de prioridad, va al final
+                    return 999;
+                };
+                
+                const ordenA = ordenarUbicaciones(a.ubicacion);
+                const ordenB = ordenarUbicaciones(b.ubicacion);
+                
+                if (ordenA !== ordenB) {
+                    return ordenA - ordenB;
+                }
+                
+                // Si tienen el mismo orden de prioridad, ordenar por cantidad (descendente)
+                return b.count - a.count;
+            });
+        
+        res.json({
+            ubicaciones: ubicacionesArray,
+            total: registrosOperario.length,
+            totalUbicaciones: Object.keys(ubicacionesConteo).length,
+            conUbicacion,
+            sinUbicacion
+        });
+        
+    } catch (error) {
+        console.error('Error al obtener ubicación de errores del operario:', error);
+        res.status(500).json({ 
+            error: 'Error al procesar la consulta de ubicación de errores',
+            ubicaciones: [],
+            total: 0,
+            totalUbicaciones: 0,
+            conUbicacion: 0,
+            sinUbicacion: 0
+        });
+    }
+};
+
+/**
  * Obtiene los registros de un operario específico por cédula
  */
 export const getRegistrosOperario = (req, res) => {
