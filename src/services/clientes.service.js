@@ -86,6 +86,9 @@ export async function fetchRecordsByClientes(clientes, opts = {}) {
   const chunks = chunk(ids, 1000);
   const rows = [];
 
+  console.log(`🔍 fetchRecordsByClientes: Buscando ${ids.length} clientes`);
+  console.log(`📅 Filtros: desde=${opts.desde}, hasta=${opts.hasta}`);
+
   for (const part of chunks) {
     const sql = `
       SELECT ${COLUMNS}
@@ -93,8 +96,20 @@ export async function fetchRecordsByClientes(clientes, opts = {}) {
       WHERE cliente IN (${part.map(() => "?").join(",")})${whereSql}
       ORDER BY cliente, periodo, fechaultlabor, horaultlabor, id
     `;
-    const [r] = await pool.query(sql, [...part, ...params]);
-    rows.push(...r);
+    
+    console.log(`🔍 Ejecutando consulta SQL para ${part.length} clientes`);
+    console.log(`📝 SQL: ${sql.substring(0, 200)}...`);
+    
+    try {
+      const [r] = await pool.query(sql, [...part, ...params]);
+      console.log(`✅ Consulta exitosa: ${r.length} registros encontrados`);
+      rows.push(...r);
+    } catch (error) {
+      console.error(`❌ Error en consulta SQL:`, error.message);
+      console.error(`📝 SQL completo:`, sql);
+      console.error(`🔧 Parámetros:`, [...part, ...params]);
+      throw error;
+    }
   }
 
   // Agrupar por cliente
@@ -105,5 +120,6 @@ export async function fetchRecordsByClientes(clientes, opts = {}) {
     grouped[key].push(r);
   }
 
+  console.log(`📊 Resultado final: ${rows.length} registros, ${Object.keys(grouped).length} clientes agrupados`);
   return { total: rows.length, rows, grouped };
 }

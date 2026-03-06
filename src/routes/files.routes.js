@@ -4,7 +4,7 @@
  */
 
 import { Router } from 'express';
-import { getFiles, postLoad } from '../controllers/files.controller.js';
+import { getFiles, postLoad, getDataFiles, postLoadData } from '../controllers/files.controller.js';
 
 const router = Router();
 
@@ -25,6 +25,9 @@ const router = Router();
  * // }
  */
 router.get('/files', getFiles);
+
+// Archivos Excel en src/data
+router.get('/data/files', getDataFiles);
 
 /**
  * @route POST /api/load
@@ -48,5 +51,8 @@ router.get('/files', getFiles);
  * // }
  */
 router.post('/load', postLoad);
+
+// Cargar clientes o tipo de facturación desde src/data
+router.post('/data/load', postLoadData);
 
 export default router;

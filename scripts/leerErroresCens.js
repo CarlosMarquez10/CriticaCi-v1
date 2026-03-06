@@ -5,7 +5,9 @@ import path from 'node:path';
 
 
 import { leerErroresCens } from './leer-errores-cens.js';
+// Usar servicio adaptado para Ubuntu si es necesario
 import { fetchRecordsByClientes } from '../src/services/clientes.service.js';
+import { fetchRecordsByClientesUbuntu } from '../src/services/clientes-ubuntu.service.js';
 import { fetchMedidoresByClientes } from "../src/services/medidor.service.js";
 import { mapearClienteAMedidor } from "../src/utils/medidores.util.js";         // de lecturas (ya lo tenías)
 import { mapearClienteAMedidorDB } from "../src/utils/medidores-db.util.js";    // de BD medidores
@@ -75,9 +77,37 @@ async function procesarDatos(
   fechas,
   { incluirRegistros = false, soloPlano = false } = {}
 ) {
-  // 1) Trae lecturas (tu servicio existente)
-  const { total = 0, rows = [], grouped = {} } =
-    await fetchRecordsByClientes(clientesError, fechas);
+  // 1) Trae lecturas - intentar servicio normal primero, luego Ubuntu
+  console.log('🔍 Intentando con servicio normal...');
+  let result = await fetchRecordsByClientes(clientesError, fechas);
+  
+  // Debug: mostrar el resultado del servicio normal
+  console.log('🔍 Resultado servicio normal:', { 
+    total: result.total, 
+    tipo: typeof result.total,
+    rows: result.rows?.length || 0,
+    grouped: Object.keys(result.grouped || {}).length 
+  });
+  
+  // Si no encuentra datos, usar servicio adaptado para Ubuntu
+  // Verificar múltiples condiciones para asegurar que realmente no hay datos
+  const noHayDatos = !result.total || 
+                     result.total === 0 || 
+                     result.total === '0' ||
+                     (result.rows && result.rows.length === 0) ||
+                     (result.grouped && Object.keys(result.grouped).length === 0);
+  
+  if (noHayDatos) {
+    console.log('⚠️ Servicio normal no encontró datos, usando servicio Ubuntu...');
+    result = await fetchRecordsByClientesUbuntu(clientesError, fechas);
+    console.log('✅ Resultado servicio Ubuntu:', { 
+      total: result.total, 
+      rows: result.rows?.length || 0,
+      grouped: Object.keys(result.grouped || {}).length 
+    });
+  }
+  
+  const { total = 0, rows = [], grouped = {} } = result;
 
   // 2) Mapa { cliente: medidor } según lecturas (periodo más reciente)
   const medidoresPorCliente = mapearClienteAMedidor(grouped);
@@ -124,3 +154,4 @@ main().catch((err) => {
   console.error('❌ Error en main:', err);
   process.exit(1);
 });
+

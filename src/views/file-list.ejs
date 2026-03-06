@@ -78,7 +78,14 @@
                                             <option value="empleados">empleados</option>
                                             <option value="medidores">medidores</option>
                                             <option value="tiempos">tiempos</option>
+                                            <option value="clientes">Clientes</option>
+                                            <option value="clientesSac">ClientesSac</option>
+                                            <option value="tipofactura">TipoFactura</option>
                                             <option value="reporte">Reporte</option>
+                                            <option value="revisiones">Revisiones</option>
+                                            <option value="correria">Correria</option>
+                                            <option value="revisionesSac">Revisiones_Sac</option>
+                                            <option value="revisionesSirius">Revisiones_Sirius</option>
                                         </select>
                                         <button class="btn btn-sm btn-action me-2" 
                         style="background: linear-gradient(135deg, #dc3545 0%, #ff6b35 100%); color: white; border: 1px solid #ff6b35;" 
@@ -320,6 +327,194 @@ function runFile(filename, fileType) {
             console.error('Error:', error);
             showAlert('danger', `Error al procesar el archivo: ${error.message}`);
         });
+    } else if (fileType === 'clientes') {
+        // Ejecutar carga de Clientes desde src/data
+        fetch(`${BASE_URL}/api/data/load`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename, target: 'clientes' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros en la tabla ${data.table}. Archivo: ${data.file}`);
+            } else {
+                showAlert('danger', `Error al cargar clientes: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.error('Error:', error);
+            showAlert('danger', `Error al cargar clientes: ${error.message}`);
+        });
+    } else if (fileType === 'tipofactura') {
+        // Ejecutar carga de TipoFacturacion desde src/data
+        fetch(`${BASE_URL}/api/data/load`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename, target: 'tipofacturacion' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros en la tabla ${data.table}. Archivo: ${data.file}`);
+            } else {
+                showAlert('danger', `Error al cargar TipoFacturación: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.error('Error:', error);
+            showAlert('danger', `Error al cargar TipoFacturación: ${error.message}`);
+        });
+    } else if (fileType === 'clientesSac') {
+        // Ejecutar carga de Clientes SAC desde src/data
+        const url = `${BASE_URL}/api/data/load`;
+        console.log('[UI] Ejecutando carga ClientesSAC:', { filename, target: 'clientessac', url });
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename, target: 'clientessac' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Restaurar el botón
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.log('[UI] Resultado ClientesSAC:', data);
+
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros en la tabla ${data.table}. Archivo: ${data.file}`);
+            } else {
+                showAlert('danger', `Error al cargar ClientesSAC: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.error('Error:', error);
+            showAlert('danger', `Error al cargar ClientesSAC: ${error.message}`);
+        });
+    } else if (fileType === 'revisiones') {
+        // Ejecutar carga de Revisiones desde src/data
+        fetch(`${BASE_URL}/api/data/load`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename, target: 'revisiones' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros en la tabla ${data.table}. Archivo: ${data.file}`);
+            } else {
+                showAlert('danger', `Error al cargar Revisiones: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.error('Error:', error);
+            showAlert('danger', `Error al cargar Revisiones: ${error.message}`);
+        });
+    } else if (fileType === 'correria') {
+        // Ejecutar carga de Correrias desde src/data
+        fetch(`${BASE_URL}/api/data/load`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename, target: 'correria' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros en la tabla ${data.table}. Archivo: ${data.file}`);
+            } else {
+                showAlert('danger', `Error al cargar Correrias: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.error('Error:', error);
+            showAlert('danger', `Error al cargar Correrias: ${error.message}`);
+        });
+    } else if (fileType === 'revisionesSac') {
+        // Ejecutar carga de Revisiones SAC desde src/data
+        fetch(`${BASE_URL}/api/data/load`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename, target: 'revisionessac' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros en la tabla ${data.table}. Archivo: ${data.file}`);
+            } else {
+                showAlert('danger', `Error al cargar Revisiones SAC: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.error('Error:', error);
+            showAlert('danger', `Error al cargar Revisiones SAC: ${error.message}`);
+        });
+    } else if (fileType === 'revisionesSirius') {
+        // Ejecutar carga de Revisiones Sirius desde src/data
+        fetch(`${BASE_URL}/api/data/load`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ filename: filename, target: 'revisionessirius' })
+        })
+        .then(response => response.json())
+        .then(data => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+
+            if (data.ok) {
+                showAlert('success', `Se insertaron ${data.inserted} registros en la tabla ${data.table}. Archivo: ${data.file}`);
+            } else {
+                showAlert('danger', `Error al cargar Revisiones Sirius: ${data.message || 'Error desconocido'}`);
+            }
+        })
+        .catch(error => {
+            runBtn.disabled = false;
+            runBtn.innerHTML = originalContent;
+            console.error('Error:', error);
+            showAlert('danger', `Error al cargar Revisiones Sirius: ${error.message}`);
+        });
     } else {
         // Tipo no reconocido
         setTimeout(() => {
@@ -423,6 +618,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+
 <%
 // Helper function para formatear tamaño de archivo
 function formatFileSize(bytes) {
@@ -433,5 +629,6 @@ function formatFileSize(bytes) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 %>
+
 
 <%- include('partials/footer') %>

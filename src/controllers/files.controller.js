@@ -1,6 +1,13 @@
 import fs from 'fs';
 import { asyncHandler } from '../middleware/asyncHandler.js';
-import { listXlsxFiles, resolveXlsx } from '../services/files.service.js';
+import { listXlsxFiles, resolveXlsx, listDataXlsxFiles, resolveDataXlsx } from '../services/files.service.js';
+import { loadClientesFile } from '../services/loaderClientes.service.js';
+import { loadClientesSacFile } from '../services/loaderClientesSac.service.js';
+import { loadTipoFacturacionFile } from '../services/loaderTipoFacturacion.service.js';
+import { loadRevisionesFile } from '../services/loaderRevisiones.service.js';
+import { loadCorreriasFile } from '../services/loaderCorrerias.service.js';
+import { loadRevisionesSacFile } from '../services/loaderRevisionesSac.service.js';
+import { loadRevisionesSiriusFile } from '../services/loaderRevisionesSirius.service.js';
 import { loadOneFile } from '../services/loader.service.js';
 
 /**
@@ -28,6 +35,14 @@ import { loadOneFile } from '../services/loader.service.js';
 export const getFiles = asyncHandler(async (req, res) => {
 const info = listXlsxFiles();
 res.json({ ok: true, ...info });
+});
+
+/**
+ * Lista archivos Excel de `src/data`
+ */
+export const getDataFiles = asyncHandler(async (req, res) => {
+  const info = listDataXlsxFiles();
+  res.json({ ok: true, ...info });
 });
 
 /**
@@ -63,8 +78,58 @@ const full = resolveXlsx(filename);
 if (!fs.existsSync(full)) {
 return res.status(404).json({ ok: false, message: 'Archivo no encontrado' });
 }
+  // Extiende el timeout de la respuesta para cargas masivas
+  res.setTimeout(Number(process.env.REQ_TIMEOUT_MS || process.env.SERVER_TIMEOUT_MS || 600000));
 
+  const result = await loadOneFile(full);
+  res.json(result);
+});
 
-const result = await loadOneFile(full);
-res.json(result);
+/**
+ * Carga archivos Excel desde `src/data` en tablas `clientes` o `TipoFacturacion`
+ * Body: { filename: string, target: 'clientes' | 'tipofacturacion' }
+ */
+export const postLoadData = asyncHandler(async (req, res) => {
+  const { filename, target } = req.body || {};
+  console.log('[postLoadData] Solicitud recibida:', { filename, target });
+  if (!filename) return res.status(400).json({ ok: false, message: 'Falta filename' });
+  const full = resolveDataXlsx(filename);
+  console.log('[postLoadData] Ruta resuelta:', full);
+  if (!fs.existsSync(full)) return res.status(404).json({ ok: false, message: 'Archivo no encontrado' });
+
+  res.setTimeout(Number(process.env.REQ_TIMEOUT_MS || process.env.SERVER_TIMEOUT_MS || 600000));
+
+  try {
+    let result;
+    const tgt = (target || '').toLowerCase();
+    if (tgt === 'tipofacturacion' || tgt === 'tipo') {
+      console.log('[postLoadData] Cargando TipoFacturacion...');
+      result = await loadTipoFacturacionFile(full);
+    } else if (tgt === 'clientessac' || tgt === 'clientes_sac') {
+      console.log('[postLoadData] Cargando ClientesSAC...');
+      result = await loadClientesSacFile(full);
+    } else if (tgt === 'revisiones') {
+      console.log('[postLoadData] Cargando Revisiones...');
+      result = await loadRevisionesFile(full);
+    } else if (tgt === 'correria' || tgt === 'correrias') {
+      console.log('[postLoadData] Cargando Correrias...');
+      result = await loadCorreriasFile(full);
+    } else if (tgt === 'revisionessac' || tgt === 'revisiones_sac') {
+      console.log('[postLoadData] Cargando Revisiones SAC...');
+      result = await loadRevisionesSacFile(full);
+    } else if (tgt === 'revisionessirius' || tgt === 'revisiones_sirius') {
+      console.log('[postLoadData] Cargando Revisiones Sirius...');
+      result = await loadRevisionesSiriusFile(full);
+    } else {
+      // por defecto clientes
+      console.log('[postLoadData] Cargando Clientes...');
+      result = await loadClientesFile(full);
+    }
+
+    console.log('[postLoadData] Resultado:', { ok: result?.ok, inserted: result?.inserted, table: result?.table, failedRows: result?.failedRows?.length });
+    res.json(result);
+  } catch (err) {
+    console.error('[postLoadData] Error procesando carga:', err && (err.stack || err.message || err));
+    res.status(500).json({ ok: false, message: String(err?.message || err) });
+  }
 });

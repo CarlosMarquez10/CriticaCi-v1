@@ -56,7 +56,7 @@ export const postClientesRecords = asyncHandler(async (req, res) => {
     return res.status(413).json({ ok: false, message: "Máximo 10,000 clientes por solicitud." });
   }
 
-  const { total, rows, grouped } = await fetchRecordsByClientes(clientes, { "desde":202401, "hasta":202512 });
+  const { total, rows, grouped } = await fetchRecordsByClientes(clientes, { "desde":202501, "hasta":202612 });
 
   res.json({
     ok: true,

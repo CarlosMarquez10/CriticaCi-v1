@@ -4,18 +4,46 @@
  */
 
 /**
- * Normaliza encabezados de Excel removiendo acentos y espacios
+ * Decodifica entidades HTML que pueden venir en archivos XLS
+ * exportados desde sistemas legacy como SAP, Oracle, etc.
+ * Ejemplo: &ntilde; → ñ, &iacute; → í, &oacute; → ó
+ * Esto ocurre porque algunos sistemas exportan XLS con caracteres
+ * especiales codificados como HTML en lugar de Unicode real.
+ */
+const HTML_ENTITIES = {
+  '&aacute;': 'á', '&eacute;': 'é', '&iacute;': 'í', '&oacute;': 'ó', '&uacute;': 'ú',
+  '&Aacute;': 'Á', '&Eacute;': 'É', '&Iacute;': 'Í', '&Oacute;': 'Ó', '&Uacute;': 'Ú',
+  '&ntilde;': 'ñ', '&Ntilde;': 'Ñ',
+  '&uuml;':   'ü', '&Uuml;':   'Ü',
+  '&amp;':    '&', '&lt;':     '<', '&gt;':     '>',
+};
+
+function decodeHtmlEntities(str) {
+  return String(str || '').replace(
+    /&[a-zA-Z]+;/g,
+    (entity) => HTML_ENTITIES[entity] ?? entity
+  );
+}
+
+/**
+ * Normaliza encabezados de Excel removiendo acentos, puntos y entidades HTML
  * @function normalizeHeader
  * @param {any} header - Encabezado a normalizar
- * @returns {string} Encabezado normalizado en mayúsculas sin acentos
+ * @returns {string} Encabezado normalizado en mayúsculas sin acentos ni puntos
  * @example
- * normalizeHeader("Número de Medidor"); // "NUMERO DE MEDIDOR"
- * normalizeHeader("  Cédula  "); // "CEDULA"
+ * normalizeHeader("Número de Medidor");   // "NUMERO DE MEDIDOR"
+ * normalizeHeader("  Cédula  ");          // "CEDULA"
+ * normalizeHeader("Correría");            // "CORRERIA"
+ * normalizeHeader("Año");                 // "ANO"
+ * normalizeHeader("A&ntilde;o");          // "ANO"  ← entidad HTML decodificada
+ * normalizeHeader("Cód. Rango");          // "COD RANGO"
  */
-export const normalizeHeader = (header) => String(header || '')
-.trim()
-.toUpperCase()
-.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+export const normalizeHeader = (header) => decodeHtmlEntities(header)
+  .trim()
+  .toUpperCase()
+  .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // elimina tildes y diacríticos
+  .replace(/\./g, '')                                  // elimina puntos
+  .replace(/N\u0303/g, 'N');                           // ñ residual → N por si acaso
 
 /**
  * Convierte valores vacíos o indefinidos a null
@@ -42,8 +70,8 @@ export const toNull = (v) => (v === undefined || v === null || String(v).trim() 
  * toInt(""); // null
  */
 export const toInt = (v) => {
-const n = Number(String(v).replace(/[^0-9-]/g, ''));
-return Number.isFinite(n) ? n : null;
+  const n = Number(String(v).replace(/[^0-9-]/g, ''));
+  return Number.isFinite(n) ? n : null;
 };
 
 /**
@@ -58,24 +86,24 @@ return Number.isFinite(n) ? n : null;
  * toDate("invalid"); // null
  */
 export const toDate = (v) => {
-if (!v) return null;
-// v puede venir como Excel date serial, Date, o string dd/mm/yyyy
-if (v instanceof Date) return new Date(Date.UTC(v.getFullYear(), v.getMonth(), v.getDate()));
-if (typeof v === 'number') {
-// Excel serial (desde 1900-01-01)
-const excelEpoch = new Date(Date.UTC(1899, 11, 30));
-const ms = v * 86400000; // días a ms
-return new Date(excelEpoch.getTime() + ms);
-}
-const s = String(v).trim();
-const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-if (m) {
-const [_, d, mo, y] = m.map(Number);
-return new Date(Date.UTC(y, mo - 1, d));
-}
-// ISO
-const d = new Date(s);
-return isNaN(d) ? null : new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  if (!v) return null;
+  // v puede venir como Excel date serial, Date, o string dd/mm/yyyy
+  if (v instanceof Date) return new Date(Date.UTC(v.getFullYear(), v.getMonth(), v.getDate()));
+  if (typeof v === 'number') {
+    // Excel serial (desde 1900-01-01)
+    const excelEpoch = new Date(Date.UTC(1899, 11, 30));
+    const ms = v * 86400000; // días a ms
+    return new Date(excelEpoch.getTime() + ms);
+  }
+  const s = String(v).trim();
+  const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (m) {
+    const [_, d, mo, y] = m.map(Number);
+    return new Date(Date.UTC(y, mo - 1, d));
+  }
+  // ISO
+  const d = new Date(s);
+  return isNaN(d) ? null : new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
 };
 
 /**
@@ -97,7 +125,7 @@ export const toTime = (v) => {
   if (typeof v === 'number' && v > 0 && v < 1.5) {
     const total = Math.round(v * 24 * 60 * 60);
     const hh = String(Math.floor(total / 3600)).padStart(2, '0');
-    const mm = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+    const mm = String(Math.floor((total % 3600) / 60)).padStart(2, '00');
     const ss = String(total % 60).padStart(2, '0');
     return `${hh}:${mm}:${ss}`;
   }
