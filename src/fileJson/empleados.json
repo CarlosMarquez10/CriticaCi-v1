@@ -1,6 +1,24 @@
 [
   {
     "sede": "AGUACHICA",
+    "cedula": "1065901983",
+    "nombre": "ALVARO   LOPEZ TRILLOS",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "AGUACHICA",
+    "cedula": "1098666898",
+    "nombre": "WILMER ALONSO CORTES PABON",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "AGUACHICA",
+    "cedula": "1003205368",
+    "nombre": "ALEXIS JAIMES CASTILLO",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "AGUACHICA",
     "cedula": "1065893182",
     "nombre": "JESUS ALBERTO PEÑA ASCANIO",
     "cargo": "OPERATIVO 1"
@@ -111,6 +129,102 @@
     "sede": "AGUACHICA",
     "cedula": "77178452",
     "nombre": "JUAN CARLOS VILLEGAS OROZCO",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "AGUACHICA",
+    "cedula": "1064841699",
+    "nombre": "CRISTIAN LEONARDO  NORIEGA DUARTE",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090396114",
+    "nombre": "CARLOS LEONARDO CRUZ PEREZ",
+    "cargo": "OPERATIVO 2"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090482291",
+    "nombre": "MIGUEL ANGEL  TOLOZA TELLO",
+    "cargo": "OPERATIVO 2"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090480593",
+    "nombre": "EDGAR VEGA CASTRO",
+    "cargo": "OPERATIVO 2"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090514582",
+    "nombre": "EDGAR FARID CARREÑO FLOREZ",
+    "cargo": "GESTOR DE INFORMACION"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1018483295",
+    "nombre": "MIGUEL DAVID GAITÁN LÁZARO",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1010118848",
+    "nombre": "HENRY DAVID BONZA NOVA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1004927095",
+    "nombre": "PABLO EDUARDO GARCIA TORRES",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1093779680",
+    "nombre": "NESTOR VILLAMIZAR BECERRA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1093296127",
+    "nombre": "KEYNER ALEXIS RODRIGUEZ MOLINA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1092338466",
+    "nombre": "ALVARO ENMANUEL FUENTES TARAZONA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1091969113",
+    "nombre": "KEVIN ESNEYDER LASCARRO CORREA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1092352725",
+    "nombre": "ROMAN OCTAVIO MURILLO VILLARREAL",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1093765354",
+    "nombre": "YONATHAN RAUL PINZON LOPEZ",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1093800530",
+    "nombre": "GABRIEL LEANDRO SANDOVAL PINEDA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "CUCUTA",
+    "cedula": "1090443840",
+    "nombre": "GERMAN IVAN SOLANO QUINTERO",
     "cargo": "OPERATIVO 1"
   },
   {
@@ -266,7 +380,7 @@
   {
     "sede": "CUCUTA",
     "cedula": "1010078696",
-    "nombre": "FREIMAN CLAVIJO PEREZ",
+    "nombre": "FREIMAN  CLAVIJO PEREZ",
     "cargo": "OPERATIVO 3"
   },
   {
@@ -564,6 +678,24 @@
     "cargo": "OPERATIVO 2"
   },
   {
+    "sede": "CUCUTA",
+    "cedula": "88272487",
+    "nombre": "JUAN CARLOS CRUZ DUARTE",
+    "cargo": "OPERATIVO 2"
+  },
+  {
+    "sede": "OCAÑA",
+    "cedula": "1090990999",
+    "nombre": "ANDRES PACHECO GARCIA",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "OCAÑA",
+    "cedula": "1092175457",
+    "nombre": "GLEIDER EMIRO PALLARES TORRES",
+    "cargo": "OPERATIVO 1"
+  },
+  {
     "sede": "OCAÑA",
     "cedula": "1007912626",
     "nombre": "JOSE ALFREDO ORTIZ PAEZ",
@@ -727,6 +859,30 @@
   },
   {
     "sede": "PAMPLONA",
+    "cedula": "5415702",
+    "nombre": "JORGE ELIECER ESLAVA CARVAJAL",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "PAMPLONA",
+    "cedula": "1031173032",
+    "nombre": "DANILO BOHORQUEZ GONZALEZ",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "PAMPLONA",
+    "cedula": "1094275642",
+    "nombre": "LONARDI STIVEL ALBARRACIN CARVAJAL",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "PAMPLONA",
+    "cedula": "1094271487",
+    "nombre": "JANKLEY EDUARDO GOMEZ ANGARITA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "PAMPLONA",
     "cedula": "1094427156",
     "nombre": "LUIS MIGUEL CONTRERAS NIÑO",
     "cargo": "OPERATIVO 3"
@@ -835,6 +991,48 @@
   },
   {
     "sede": "TIBU",
+    "cedula": "1094265680",
+    "nombre": "YECID ENRIQUE CASADIEGOS DURAN",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "88176238",
+    "nombre": "IDULFO  CARDONA AREVALO",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "1090385811",
+    "nombre": "ALEXANDER JULIO HERNANDEZ",
+    "cargo": "OPERATIVO 1"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "1093909710",
+    "nombre": "YONATAN FAVIAN BARRIENTOS ACEVEDO",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "1093591277",
+    "nombre": "DUGLAS JAFET SUESCUN CEPEDA",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "1004810140",
+    "nombre": "CARLOS DAVID QUINTERO PACHECO",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "TIBU",
+    "cedula": "1093908375",
+    "nombre": "LUIS ÁNGEL VILLAMIZAR RINCON",
+    "cargo": "OPERATIVO 3"
+  },
+  {
+    "sede": "TIBU",
     "cedula": "1093919885",
     "nombre": "EDGAR DAVID ASCENCIO ORELLANOS",
     "cargo": "OPERATIVO 3"
@@ -874,6 +1072,12 @@
     "cedula": "1090404495",
     "nombre": "EUDIN GIOVANNI TRUJILLO CONTRERAS",
     "cargo": "TECNÓLOGO (Supervisor)"
+  },
+  {
+    "sede": "TIBU-PUEBLOS",
+    "cedula": "1005011785",
+    "nombre": "ISIDRO LIZCANO CAICEDO",
+    "cargo": "OPERATIVO 3"
   },
   {
     "sede": "TIBU-PUEBLOS",
@@ -1006,78 +1210,5 @@
     "cedula": "88178152",
     "nombre": "NELSON PORFIDIO GARCIA TORRES",
     "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "AGUACHICA",
-    "cedula": "1064841699",
-    "nombre": "CRISTIAN LEONARDO NORIEGA DUARTE",
-    "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "PAMPLONA",
-    "cedula": "5415702",
-    "nombre": "JORGE ELIECER ESLAVA CARVAJAL",
-    "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "CUCUTA",
-    "cedula": "88272487",
-    "nombre": "JUAN CARLOS CRUZ DUARTE",
-    "cargo": "OPERATIVO 2"
-  }
-  ,
-  {
-    "sede": "CUCUTA",
-    "cedula": "1090396114",
-    "nombre": "CARLOS LEONARDO CRUZ PEREZ",
-    "cargo": "OPERATIVO 2"
-  },
-  {
-    "sede": "CUCUTA",
-    "cedula": "1090480593",
-    "nombre": "EDGAR VEGA CASTRO",
-    "cargo": "OPERATIVO 2"
-  },
-  {
-    "sede": "TIBU",
-    "cedula": "1094265680",
-    "nombre": "YECID ENRIQUE CASADIEGOS DURAN",
-    "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "OCAÑA",
-    "cedula": "1090990999",
-    "nombre": "ANDRES PACHECO GARCIA",
-    "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "CUCUTA",
-    "cedula": "1090514582",
-    "nombre": "EDGAR FARID CARREÑO FLOREZ",
-    "cargo": "GESTOR DE INFORMACION"
-  },
-  {
-    "sede": "TIBU",
-    "cedula": "88176238",
-    "nombre": "IDULFO  CARDONA AREVALO",
-    "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "TIBU",
-    "cedula": "1090385811",
-    "nombre": "ALEXANDER JULIO HERNANDEZ",
-    "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "PAMPLONA",
-    "cedula": "1031173032",
-    "nombre": "DANILO BOHORQUEZ GONZALEZ",
-    "cargo": "OPERATIVO 1"
-  },
-  {
-    "sede": "CUCUTA",
-    "cedula": "1018483295",
-    "nombre": "MIGUEL DAVID GAITÁN LÁZARO",
-    "cargo": "OPERATIVO 3"
   }
 ]

@@ -15,16 +15,11 @@ import clienteRouter from './routes/cliente.routes.js';
 import medidoresRouter from './routes/medidores.routes.js';
 import medidoresRoutes from './routes/medidor.routes.js';
 import empleadosRoutes from './routes/empleados.routes.js';
-import excelRoutes from './routes/excel.routes.js';
-import processRoutes from './routes/process.routes.js';
-import reportesRoutes from './routes/reportes.routes.js';
 import webRoutes from './routes/web.routes.js';
-import validacionesRoutes from './routes/validaciones.routes.js';
-import dashboardRoutes from './routes/dashboard.routes.js';
-import operariosRoutes from './routes/operarios.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import consultaRoutes from './routes/consulta.routes.js';
 import revisionesRoutes from './routes/revisiones.routes.js';
+import validacionesRoutes from './routes/validaciones.routes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import registrarConsulta from './routes/registrarConsulta.routes.js';
 
@@ -77,6 +72,41 @@ const corsOptions = {
   optionsSuccessStatus: 200 // Para navegadores legacy
 };
 
+// Middleware CORS manual — garantiza headers incluso cuando Cloudflare devuelve respuestas de error
+const ALLOWED_ORIGINS = [
+  'https://viernesci.web.app',
+  'https://viernesci.firebaseapp.com',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:3000',
+  'http://localhost:4173',
+];
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  const allowed =
+    origin &&
+    (ALLOWED_ORIGINS.includes(origin) ||
+      /^https:\/\/.*\.web\.app$/.test(origin) ||
+      /^https:\/\/.*\.firebaseapp\.com$/.test(origin) ||
+      (process.env.FRONTEND_URL && origin === process.env.FRONTEND_URL));
+
+  if (allowed) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Requested-With,Accept,Origin');
+    res.setHeader('Vary', 'Origin');
+  }
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
+app.options(/(.*)/, cors(corsOptions));
 app.use(cors(corsOptions));
 
 // Middleware
@@ -91,24 +121,18 @@ app.use('/fotoEmpleados', express.static(path.join(__dirname, '../fotoEmpleados'
 
 // Rutas web (vistas EJS)
 app.use('/', webRoutes);
-app.use('/dashboard', dashboardRoutes); // ruta para el dashboard
-app.use('/operarios', operariosRoutes); // ruta para consulta de operarios
-
 // Configuración de rutas API
 app.use('/api/auth', authRoutes); // rutas de autenticación
-app.use('/api', filesRouter); // ruta mostrar los archivos subidos y para cargar los registros a la tabla de clientes
-app.use('/api', clientesRouter); // ruta para consultar clientes a traves de un array de clientes que se les pasa por el body
-app.use('/api', clienteRouter); // ruta para consultar un cliente por su id
-app.use('/api', medidoresRouter); // ruta para insetar los medidores en la tabla medidores
-app.use('/api', medidoresRoutes);// ruta para consultar los medidores de un cliente_medidor
-app.use('/api/consulta', consultaRoutes); // ruta para consultas sobre la tabla tiempos
-app.use('/api/empleados', empleadosRoutes); // ruta para importar empleados desde un archivo Excel
-app.use('/api/excel', excelRoutes); // ruta para generar archivos Excel
-app.use('/api/process', processRoutes); // ruta para procesar datos en secuencia y que se genere el excel
-app.use('/reportes', reportesRoutes); // ruta para gestionar reportes Excel
-app.use('/api/validacione', validacionesRoutes); // ruta para validar registros JSON
-app.use('/api/logConsultas', registrarConsulta); // ruta para registrar consultas realizadas por los usuarios
-app.use('/api/revisiones', revisionesRoutes); // ruta para consultar revisiones de clientes en clientes_servicios
+app.use('/api', filesRouter); // archivos subidos y carga a la tabla de clientes
+app.use('/api', clientesRouter); // consultar clientes por array
+app.use('/api', clienteRouter); // consultar un cliente por id
+app.use('/api', medidoresRouter); // insertar medidores
+app.use('/api', medidoresRoutes); // consultar medidores por cliente_medidor
+app.use('/api/empleados', empleadosRoutes); // importar empleados desde Excel
+app.use('/api/consulta', consultaRoutes); // consultas sobre la tabla tiempos
+app.use('/api/logConsultas', registrarConsulta); // registrar consultas
+app.use('/api/revisiones', revisionesRoutes); // consultar revisiones
+app.use('/api/validacione', validacionesRoutes); // validar registros JSON
 
 // Middleware de manejo de errores (debe ir al final)
 app.use(errorHandler);

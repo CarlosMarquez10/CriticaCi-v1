@@ -1,6 +1,6 @@
 CREATE TABLE log_consultas (
     LogId INT PRIMARY KEY AUTO_INCREMENT,
-    ClienteId INT,
+    ClienteId VARCHAR(20),
     FechaConsulta DATETIME DEFAULT CURRENT_TIMESTAMP,
     Usuario VARCHAR(100),
     TipoConsulta VARCHAR(50),

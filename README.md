@@ -48,9 +48,9 @@ Sistema de gestión de lecturas de medidores con generación de reportes Excel p
    NODE_ENV=development
    
    # URL base de la aplicación (cambiar según el entorno)
-   # Para túnel de desarrollo: https://vms41rr2-3001.use2.devtunnels.ms
+  ms
    # Para producción: https://tu-dominio.com
-   BASE_URL=https://vms41rr2-3001.use2.devtunnels.ms
+ 
    
    # Configuración de procesamiento
    BATCH_SIZE=500
@@ -71,7 +71,7 @@ Sistema de gestión de lecturas de medidores con generación de reportes Excel p
 ```bash
 npm run dev
 ```
-El servidor se ejecutará en la URL configurada en `BASE_URL` (por defecto: `https://vms41rr2-3000.use2.devtunnels.ms`)
+
 
 ### Scripts Disponibles
 - `npm run dev` - Inicia el servidor en modo desarrollo

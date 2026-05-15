@@ -150,7 +150,7 @@ export async function findRevisionesByCliente(clienteId, usuario, tipoConsulta, 
 // Versión operativa con menos campos
   const dataRevisionesPerfilOperativo = cleanedRows.map(revision => ({
   //id: revision.id,
-  //CLIENTE_ID : revision.CLIENTE_ID,
+  CLIENTE_ID: revision.CLIENTE_ID,
   NOMBRE: revision.NOMBRE,
   DIRECCION: revision.DIRECCION,
   //MUNICIPIO: revision.MUNICIPIO,

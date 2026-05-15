@@ -90,23 +90,21 @@ export async function registrarLogConsulta(clienteId, usuario, tipoConsulta, det
  */
 
 export async function registrarLogConsultaExterna(req, res) {
+  const { clienteId, usuario, tipoConsulta, detalles = '' } = req.body;
 
-  const {clienteId, usuario, tipoConsulta, detalles = ''} = req.body
-
-  // Evitar insertar si faltan datos críticos
   if (!clienteId || !tipoConsulta) {
-    console.warn('Log de consulta omitido: faltan datos requeridos');
-    return;
+    return res.status(400).json({ ok: false, message: 'Faltan datos requeridos: clienteId y tipoConsulta' });
   }
-
 
   try {
     await pool.execute(
       'INSERT INTO log_consultas (ClienteId, Usuario, TipoConsulta, Detalles) VALUES (?, ?, ?, ?)',
-      [clienteId, usuario || 'Anónimo', tipoConsulta, detalles]
+      [String(clienteId), usuario || 'Anónimo', tipoConsulta, detalles]
     );
+    return res.status(201).json({ ok: true });
   } catch (error) {
     console.error('Error al registrar log de consulta:', error);
+    return res.status(500).json({ ok: false, message: 'Error interno al registrar consulta' });
   }
 }
 
@@ -417,7 +415,7 @@ export async function findTiemposByMedidorWithMonthFallback(
       );
 
       if (rows.length > 0) {
-        clienteId = rows[0].cliente;
+        clienteId = rows[0].CLIENTE ?? rows[0].cliente ?? null;
 
         // Enriquecer datos
         const nombreLector = await findNombreEmpleadoByCedula(rows[0].lector);

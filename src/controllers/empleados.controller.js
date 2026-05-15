@@ -167,62 +167,63 @@ export const importarEmpleadosDesdeExcel = async (req, res) => {
     });
 
     if (!registros.length) {
-      return res.status(400).json({ ok: false, message: 'No se encontraron filas válidas en el Excel.' });
+      return res.status(400).json({ ok: false, success: false, message: 'No se encontraron filas válidas en el Excel.' });
     }
     // ====== /LECTURA DE FILAS ======
 
-    // ====== INSERT/UPSERT POR LOTES ======
+    // ====== VALIDAR DUPLICADOS ======
+    const cedulasExcel = registros.map(r => r.cedula);
+    const placeholdersDup = cedulasExcel.map(() => '?').join(',');
+    const [existentesRows] = await pool.query(
+      `SELECT cedula FROM empleados WHERE cedula IN (${placeholdersDup})`,
+      cedulasExcel
+    );
+    const cedulasExistentes = new Set(existentesRows.map(r => String(r.cedula)));
+
+    const registrosNuevos     = registros.filter(r => !cedulasExistentes.has(String(r.cedula)));
+    const registrosDuplicados = registros.filter(r =>  cedulasExistentes.has(String(r.cedula)));
+
+    console.log(`📋 Total Excel: ${registros.length} | Nuevos: ${registrosNuevos.length} | Ya existentes: ${registrosDuplicados.length}`);
+    // ====== /VALIDAR DUPLICADOS ======
+
+    // ====== INSERT SOLO NUEVOS ======
     const BATCH_SIZE = 500;
     let totalInsertados = 0;
-    let totalAfectados = 0;
 
-    for (let i = 0; i < registros.length; i += BATCH_SIZE) {
-      const slice = registros.slice(i, i + BATCH_SIZE);
+    if (registrosNuevos.length > 0) {
+      for (let i = 0; i < registrosNuevos.length; i += BATCH_SIZE) {
+        const slice = registrosNuevos.slice(i, i + BATCH_SIZE);
 
-      const cols = ['sede', 'cedula', 'nombre', 'cargo'];
-      const placeholders = slice.map(() => '(?,?,?,?)').join(',');
-      const flat = [];
-      slice.forEach((r) => flat.push(r.sede, r.cedula, r.nombre, r.cargo));
+        const placeholders = slice.map(() => '(?,?,?,?)').join(',');
+        const flat = [];
+        slice.forEach((r) => flat.push(r.sede, r.cedula, r.nombre, r.cargo));
 
-      const sql = `
-        INSERT INTO empleados (${cols.join(',')})
-        VALUES ${placeholders}
-        ON DUPLICATE KEY UPDATE
-          sede = VALUES(sede),
-          nombre = VALUES(nombre),
-          cargo = VALUES(cargo)
-      `;
-
-      const [result] = await pool.query(sql, flat);
-      // En MySQL: affectedRows = insertados + (actualizados * 2)
-      // insertId no sirve para contar aquí. Calculamos una estimación:
-      const afectados = result.affectedRows ?? 0;
-      const estimActualizados = Math.max(0, afectados - slice.length);
-      const estimInsertados = slice.length - estimActualizados;
-
-      totalInsertados += estimInsertados;
-      totalAfectados += afectados;
+        const sql = `INSERT INTO empleados (sede, cedula, nombre, cargo) VALUES ${placeholders}`;
+        const [result] = await pool.query(sql, flat);
+        totalInsertados += result.affectedRows ?? 0;
+      }
     }
+    // ====== /INSERT SOLO NUEVOS ======
 
-    // Ejecutar el script para convertir a JSON después de insertar
+    // Regenerar JSON de empleados
     let jsonResult = null;
     try {
       jsonResult = await convertirExcelAJson();
-      console.log('Script de conversión a JSON ejecutado correctamente');
+      console.log('✅ JSON de empleados regenerado correctamente');
     } catch (jsonError) {
-      console.error('Error al ejecutar el script de conversión a JSON:', jsonError);
+      console.error('Error al regenerar JSON de empleados:', jsonError);
     }
 
     return res.json({
       ok: true,
-      message: 'Importación finalizada.',
-      archivo: path.relative(process.cwd(), excelPath),
+      success: true,
+      message: registrosNuevos.length > 0
+        ? `Se insertaron ${totalInsertados} empleados nuevos.`
+        : 'No hay empleados nuevos para insertar.',
       totalLeidas: registros.length,
-      insertadosEstimados: totalInsertados,
-      filasAfectadas: totalAfectados,
-      muestra: registros.slice(0, 5),
-      jsonGenerado: jsonResult ? true : false,
-      jsonError: jsonResult ? null : 'Error al generar el archivo JSON'
+      insertados: totalInsertados,
+      duplicados: registrosDuplicados.length,
+      jsonGenerado: !!jsonResult,
     });
     // ====== /INSERT/UPSERT ======
   } catch (err) {

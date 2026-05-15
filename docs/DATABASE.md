@@ -1,323 +1,320 @@
-# Documentación de Base de Datos - CriticaCi-v1 🗄️
+# Base de Datos — CriticaCi-v2
 
-Esta documentación describe la estructura de la base de datos MySQL utilizada en el sistema CriticaCi-v1.
+- **Motor:** MySQL 8.0+
+- **Base de datos:** `clientesCI`
+- **Charset:** utf8mb4 / utf8mb4_unicode_ci
 
-## Configuración de Base de Datos
+---
 
-### Información General
-- **Motor**: MySQL 8.0+
-- **Charset**: utf8mb4
-- **Collation**: utf8mb4_unicode_ci
-- **Nombre de BD**: `clientesCI`
+## Índice
 
-### Configuración de Conexión
-```javascript
-// Configuración típica en .env
-DB_HOST=localhost
-DB_USER=tu_usuario
-DB_PASSWORD=tu_contraseña
-DB_NAME=clientesCI
-DB_PORT=3306
+- [Diagrama de tablas](#diagrama-de-tablas)
+- [Tabla: tiempos](#tabla-tiempos)
+- [Tabla: empleados](#tabla-empleados)
+- [Tabla: medidores](#tabla-medidores)
+- [Tabla: clientes](#tabla-clientes)
+- [Tabla: clientessac](#tabla-clientessac)
+- [Tabla: clientes_servicios](#tabla-clientes_servicios)
+- [Tabla: revisiones_sac](#tabla-revisiones_sac)
+- [Tabla: revisiones_sirius](#tabla-revisiones_sirius)
+- [Tabla: TipoFacturacion](#tabla-tipofacturacion)
+- [Tabla: Correria](#tabla-correria)
+- [Tabla: log_consultas](#tabla-log_consultas)
+
+---
+
+## Diagrama de tablas
+
+```
+┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
+│   tiempos   │     │   empleados  │     │    medidores    │
+├─────────────┤     ├──────────────┤     ├─────────────────┤
+│ CLIENTE  ───┼──┐  │ id (PK)      │     │ id (PK)         │
+│ MEDIDOR     │  │  │ cedula (UK)  │     │ cliente_medidor  │
+│ LECTOR   ───┼──┼──┤ nombre       │     │ num_medidor      │
+│ ANO         │  │  │ cargo        │     │ marca_medidor    │
+│ MES         │  │  │ sede         │     │ tecnologia       │
+│ CICLO       │  │  │ authToken    │     │ tipo_medidor     │
+│ ZONA        │  │  │ definitiveP. │     └─────────────────┘
+└─────────────┘  │  └──────────────┘
+                 │
+        ┌────────┴──────────┐
+        │                   │
+┌───────▼──────┐   ┌────────▼──────────┐
+│   clientes   │   │    clientessac     │
+├──────────────┤   ├───────────────────┤
+│ CLIENTE_ID   │   │ ClienteId         │
+│ NOMBRE       │   │ Nombre            │
+│ DIRECCION    │   │ Direccion         │
+│ BARRIO       │   │ Medidor           │
+│ CICLO        │   │ Ciclo             │
+└──────────────┘   └───────────────────┘
 ```
 
 ---
 
-## Esquema de Tablas
+## Tabla: tiempos
 
-### 📊 Tabla: `tiempos`
-Tabla principal que almacena las lecturas y registros de medidores.
+Tabla principal. Almacena las lecturas de medidores por operario.
 
 ```sql
-CREATE TABLE IF NOT EXISTS tiempos (
-    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    CORRERIA VARCHAR(50) NULL,
-    INSTALACION VARCHAR(100) NULL,
-    CLIENTE VARCHAR(150) NULL,
-    MEDIDOR VARCHAR(50) NULL,
-    LECTOR VARCHAR(100) NULL,
-    ANO SMALLINT NULL,
-    MES TINYINT NULL,
-    CICLO INT NULL,
-    ZONA VARCHAR(50) NULL,
-    FECHAULTLABOR DATE NULL,
-    HORAULTLABOR TIME NULL,
-    CODTAREA VARCHAR(50) NULL,
-    LECTURA_ACT INT NULL,
-    PRIMARY KEY (id),
-    KEY idx_anomes (ANO, MES),
+CREATE TABLE tiempos (
+    id          BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    CORRERIA    VARCHAR(50),
+    INSTALACION VARCHAR(100),
+    CLIENTE     VARCHAR(150),
+    MEDIDOR     VARCHAR(50),
+    LECTOR      VARCHAR(100),    -- cédula del operario
+    ANO         SMALLINT,
+    MES         TINYINT,
+    CICLO       INT,
+    ZONA        VARCHAR(50),
+    FECHAULTLABOR DATE,
+    HORAULTLABOR  TIME,
+    CODTAREA    VARCHAR(50),
+    LECTURA_ACT INT,
+
+    KEY idx_anomes  (ANO, MES),
     KEY idx_cliente (CLIENTE(50)),
     KEY idx_medidor (MEDIDOR)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+)
 ```
 
-**Descripción de Campos:**
-| Campo | Tipo | Descripción |
-|-------|------|-------------|
-| `id` | BIGINT UNSIGNED | Identificador único autoincremental |
-| `CORRERIA` | VARCHAR(50) | Identificador de correría |
-| `INSTALACION` | VARCHAR(100) | Código de instalación |
-| `CLIENTE` | VARCHAR(150) | Identificador del cliente |
-| `MEDIDOR` | VARCHAR(50) | Número del medidor |
-| `LECTOR` | VARCHAR(100) | Nombre del lector/operario |
-| `ANO` | SMALLINT | Año de la lectura |
-| `MES` | TINYINT | Mes de la lectura (1-12) |
-| `CICLO` | INT | Ciclo de facturación |
-| `ZONA` | VARCHAR(50) | Zona geográfica |
-| `FECHAULTLABOR` | DATE | Fecha de última labor |
-| `HORAULTLABOR` | TIME | Hora de última labor |
-| `CODTAREA` | VARCHAR(50) | Código de tarea realizada |
-| `LECTURA_ACT` | INT | Lectura actual del medidor |
-
-**Índices:**
-- `PRIMARY KEY (id)`: Clave primaria
-- `idx_anomes (ANO, MES)`: Optimiza consultas por período
-- `idx_cliente (CLIENTE(50))`: Optimiza búsquedas por cliente
-- `idx_medidor (MEDIDOR)`: Optimiza búsquedas por medidor
+**Notas:**
+- `LECTOR` almacena la cédula del operario (se resuelve a nombre en la API via `empleados.cedula`).
+- La API busca con fallback multi-año/mes: desde el año más reciente, mes 12 hacia atrás.
+- Índice compuesto `(ANO, MES)` optimiza las consultas de período.
 
 ---
 
-### 👥 Tabla: `empleados`
-Almacena información de empleados/operarios del sistema.
+## Tabla: empleados
+
+Almacena operarios y usuarios del sistema. Sirve tanto para autenticación como para enriquecer lecturas.
 
 ```sql
 CREATE TABLE empleados (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    sede VARCHAR(100) NOT NULL,
-    cedula BIGINT NOT NULL UNIQUE,
-    nombre VARCHAR(200) NOT NULL,
-    cargo VARCHAR(100) NOT NULL
-);
+    id                 INT AUTO_INCREMENT PRIMARY KEY,
+    sede               VARCHAR(100) NOT NULL,
+    cedula             BIGINT NOT NULL UNIQUE,
+    nombre             VARCHAR(200) NOT NULL,
+    cargo              VARCHAR(100) NOT NULL,
+    -- Campos de autenticación (agregados post-creación)
+    temporaryPassword  VARCHAR(255),
+    definitivePassword VARCHAR(255),
+    passwordChanged    TINYINT(1) DEFAULT 0,
+    isFirstLogin       TINYINT(1) DEFAULT 0,
+    authToken          TEXT,
+    lastLogin          DATETIME,
+    passwordCreatedAt  DATETIME
+)
 ```
 
-**Descripción de Campos:**
-| Campo | Tipo | Descripción |
-|-------|------|-------------|
-| `id` | INT | Identificador único autoincremental |
-| `sede` | VARCHAR(100) | Sede de trabajo del empleado |
-| `cedula` | BIGINT | Número de cédula (único) |
-| `nombre` | VARCHAR(200) | Nombre completo del empleado |
-| `cargo` | VARCHAR(100) | Cargo o posición del empleado |
+**Cargos y roles:**
 
-**Restricciones:**
-- `cedula` debe ser único (UNIQUE constraint)
-- Todos los campos son NOT NULL excepto `id`
+| Cargo | Rol en API |
+|-------|-----------|
+| `TECNOLOGO CGO` | `ADMIN` |
+| `TECNÓLOGO(Supervísor)` | `SUPERVISOR` |
+| `PROFESIONAL 3 CALIDAD` | `PRO_CALIDAD` |
+| `PROFESIONAL` | `PROFESIONAL` |
+| `OPERATIVO 1 / 2 / 3` | `BASICO` |
+
+**Carga:** `POST /api/empleados/importar` — solo inserta nuevos (no actualiza existentes). Después genera `src/fileJson/empleados.json`.
 
 ---
 
-### 🔌 Tabla: `medidores`
-Almacena información técnica de los medidores.
+## Tabla: medidores
+
+Información técnica de los medidores.
 
 ```sql
-CREATE TABLE IF NOT EXISTS medidores (
-    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    cliente_medidor BIGINT UNSIGNED NULL,
-    num_medidor VARCHAR(32) NULL,
-    marca_medidor VARCHAR(50) NULL,
-    tecnologia_medidor VARCHAR(50) NULL,
-    tipo_medidor VARCHAR(50) NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id),
+CREATE TABLE medidores (
+    id                  BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    cliente_medidor     BIGINT UNSIGNED,
+    num_medidor         VARCHAR(32),
+    marca_medidor       VARCHAR(50),
+    tecnologia_medidor  VARCHAR(50),
+    tipo_medidor        VARCHAR(50),
+    created_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
     KEY idx_cliente_medidor (cliente_medidor),
-    KEY idx_num_medidor (num_medidor)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+    KEY idx_num_medidor     (num_medidor)
+)
 ```
 
-**Descripción de Campos:**
-| Campo | Tipo | Descripción |
-|-------|------|-------------|
-| `id` | BIGINT UNSIGNED | Identificador único autoincremental |
-| `cliente_medidor` | BIGINT UNSIGNED | ID del cliente propietario |
-| `num_medidor` | VARCHAR(32) | Número de serie del medidor |
-| `marca_medidor` | VARCHAR(50) | Marca del medidor (ej: ELSTER, LANDIS) |
-| `tecnologia_medidor` | VARCHAR(50) | Tecnología (ej: ELECTRONICO, MECANICO) |
-| `tipo_medidor` | VARCHAR(50) | Tipo (ej: MONOFASICO, TRIFASICO) |
-| `created_at` | TIMESTAMP | Fecha de creación del registro |
-
-**Índices:**
-- `PRIMARY KEY (id)`: Clave primaria
-- `idx_cliente_medidor (cliente_medidor)`: Optimiza búsquedas por cliente
-- `idx_num_medidor (num_medidor)`: Optimiza búsquedas por número de medidor
+**Carga:** `POST /api/medidores/load` — upsert desde `src/data/medidores.xlsx`.
 
 ---
 
-## Relaciones entre Tablas
+## Tabla: clientes
 
-### Diagrama de Relaciones
-```
-┌─────────────┐       ┌─────────────┐       ┌─────────────┐
-│   tiempos   │       │  medidores  │       │  empleados  │
-├─────────────┤       ├─────────────┤       ├─────────────┤
-│ id (PK)     │       │ id (PK)     │       │ id (PK)     │
-│ CLIENTE     │◄─────►│cliente_med..│       │ cedula (UK) │
-│ MEDIDOR     │◄─────►│ num_medidor │       │ nombre      │
-│ LECTOR      │◄─────►│             │       │ sede        │
-│ ANO         │       │             │       │ cargo       │
-│ MES         │       │             │       │             │
-│ ...         │       │             │       │             │
-└─────────────┘       └─────────────┘       └─────────────┘
+Catálogo principal de clientes de CENS.
+
+```sql
+-- Campos principales
+CLIENTE_ID, NOMBRE, DIRECCION, BARRIO, CICLO,
+MARCA_MEDIDOR, TRANSFORMADOR, ALIMENTADOR,
+D_TIPO_REGISTRADOR, RUTA_REPARTO, RUTA_LECTURA
 ```
 
-### Relaciones Lógicas
-
-1. **tiempos ↔ medidores**
-   - `tiempos.CLIENTE` se relaciona con `medidores.cliente_medidor`
-   - `tiempos.MEDIDOR` se relaciona con `medidores.num_medidor`
-   - Relación: Un cliente puede tener múltiples medidores, un medidor puede tener múltiples lecturas
-
-2. **tiempos ↔ empleados**
-   - `tiempos.LECTOR` se relaciona con `empleados.nombre`
-   - Relación: Un empleado puede realizar múltiples lecturas
+**Carga:** `POST /api/data/load` con `target: "clientes"`.
 
 ---
 
-## Consultas Comunes
+## Tabla: clientessac
 
-### 📊 Consultas de Lecturas
-
-```sql
--- Obtener lecturas de un cliente específico
-SELECT * FROM tiempos 
-WHERE CLIENTE = '1170143751' 
-ORDER BY ANO DESC, MES DESC;
-
--- Lecturas por período
-SELECT * FROM tiempos 
-WHERE ANO = 2024 AND MES BETWEEN 1 AND 6
-ORDER BY CLIENTE, ANO, MES;
-
--- Lecturas por zona y ciclo
-SELECT * FROM tiempos 
-WHERE ZONA = 'A1' AND CICLO = 1
-ORDER BY FECHAULTLABOR DESC;
-```
-
-### 🔌 Consultas de Medidores
+Clientes desde el sistema SAC. Complementa la tabla `clientes`.
 
 ```sql
--- Medidores de un cliente
-SELECT * FROM medidores 
-WHERE cliente_medidor = 202957;
-
--- Medidores por marca
-SELECT marca_medidor, COUNT(*) as total
-FROM medidores 
-GROUP BY marca_medidor;
-
--- Información completa cliente-medidor
-SELECT t.CLIENTE, t.MEDIDOR, m.marca_medidor, m.tecnologia_medidor
-FROM tiempos t
-LEFT JOIN medidores m ON t.CLIENTE = m.cliente_medidor 
-    AND t.MEDIDOR = m.num_medidor
-WHERE t.CLIENTE = '202957';
+-- Campos principales
+ClienteId, Nombre, Direccion, DBarrioVereda,
+Medidor, Ciclo, RutaLectura,
+DEstadoCliente, Telefono, TelefonoCelular, TelefonoContacto,
+CodigoUbicTransformador
 ```
 
-### 👥 Consultas de Empleados
-
-```sql
--- Empleados por sede
-SELECT sede, COUNT(*) as total_empleados
-FROM empleados 
-GROUP BY sede;
-
--- Lecturas por empleado
-SELECT e.nombre, e.sede, COUNT(t.id) as total_lecturas
-FROM empleados e
-LEFT JOIN tiempos t ON e.nombre = t.LECTOR
-GROUP BY e.id, e.nombre, e.sede;
-```
+**Carga:** `POST /api/data/load` con `target: "clientessac"`.
 
 ---
 
-## Optimización y Performance
+## Tabla: clientes_servicios
 
-### Índices Recomendados
-
-```sql
--- Índices adicionales para optimización
-CREATE INDEX idx_tiempos_fecha ON tiempos(FECHAULTLABOR);
-CREATE INDEX idx_tiempos_zona_ciclo ON tiempos(ZONA, CICLO);
-CREATE INDEX idx_tiempos_lector ON tiempos(LECTOR);
-
--- Índice compuesto para consultas frecuentes
-CREATE INDEX idx_tiempos_cliente_periodo ON tiempos(CLIENTE, ANO, MES);
-```
-
-### Consultas Optimizadas
+Revisiones de servicio de clientes (origen: sistema de gestión interno).
 
 ```sql
--- Usar LIMIT para grandes datasets
-SELECT * FROM tiempos 
-WHERE CLIENTE = '1170143751' 
-ORDER BY ANO DESC, MES DESC 
-LIMIT 100;
-
--- Usar EXISTS para verificar relaciones
-SELECT t.* FROM tiempos t
-WHERE EXISTS (
-    SELECT 1 FROM medidores m 
-    WHERE m.cliente_medidor = t.CLIENTE
-);
+-- Campos principales (selección usada en API)
+CLIENTE_ID, NOMBRE, DIRECCION, MUNICIPIO, CICLO,
+CLASE_SERVICIO, RUTA_LECTURA,
+SERIE_I, MARCA_I, UBICACION_I, PROPIEDAD_I, ACCION_MEDIDOR_I, LECTURA_I,
+NUMERO_REVISION, ESTADO_REVISION, D_TIPO,
+FECHA_SOLICITUD, FECHA_REVISION, FECHA_SISTEMA,
+REVISOR, D_REVISOR, IDESTADO,
+TERMINALDESCARGA, FECHAULTLABOR, CORRERIA,
+OBSERVACION, D_OBSERVACION, OBSREVISION,
+TRANSFORMADOR, FECHAHORAINICIAL
 ```
+
+**Acceso:** `POST /api/revisiones/consultar`. Los campos devueltos varían según el cargo del usuario.
 
 ---
 
-## Mantenimiento
+## Tabla: revisiones_sac
 
-### Backup Recomendado
+Revisiones desde el sistema SAC.
+
+```sql
+CREATE TABLE revisiones_sac (
+    NumeroRevision     INT UNSIGNED PRIMARY KEY,
+    ClienteId          INT UNSIGNED NOT NULL,
+    Nombre             VARCHAR(100),
+    Direccion          VARCHAR(150),
+    Zona               TINYINT UNSIGNED,
+    Ciclo              SMALLINT UNSIGNED,
+    SerieMedidor       VARCHAR(20),
+    MarcaMedidor       VARCHAR(10),
+    Estado             CHAR(1),
+    DEstado            VARCHAR(30),
+    FechaSolicitud     DATE,
+    FechaProgramacion  DATE,
+    Comentario         TEXT,
+    Revisor            SMALLINT UNSIGNED,
+    DRevisor           VARCHAR(100),
+    RutaLectura        BIGINT UNSIGNED,
+    -- ...más campos de auditoría y proceso
+    INDEX idx_cliente (ClienteId),
+    INDEX idx_estado  (Estado)
+)
+```
+
+**Carga:** `POST /api/data/load` con `target: "revisionessac"`.
+
+---
+
+## Tabla: revisiones_sirius
+
+Revisiones desde el sistema Sirius.
+
+```sql
+CREATE TABLE revisiones_sirius (
+    id                     BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    IdCliente              INT UNSIGNED NOT NULL,
+    Nombre                 VARCHAR(100),
+    Direccion              VARCHAR(150),
+    Correria               VARCHAR(20),
+    Anio                   YEAR,
+    Mes                    TINYINT UNSIGNED,
+    IdOrdenTrabajo         INT UNSIGNED,
+    DescripcionTarea       VARCHAR(100),
+    EstadoOrden            TINYINT UNSIGNED,
+    DescripcionEstadoOrden VARCHAR(50),
+    FechaProg              DATE,
+    RutaLectura            BIGINT UNSIGNED,
+    Ciclo                  SMALLINT UNSIGNED,
+    -- ...más campos de estado y observaciones
+    INDEX idx_cliente (IdCliente),
+    INDEX idx_correria (Correria)
+)
+```
+
+**Carga:** `POST /api/data/load` con `target: "revisionessirius"`.
+
+---
+
+## Tabla: TipoFacturacion
+
+Tipo de facturación y correo por cliente.
+
+```sql
+-- Campos principales
+CLIENTE_ID, TIPO_RECIBO, CORREO_ELECTRONICO
+```
+
+**Carga:** `POST /api/data/load` con `target: "tipofacturacion"`.
+
+---
+
+## Tabla: Correria
+
+Correrias de lectura.
+
+**Carga:** `POST /api/data/load` con `target: "correria"`.
+
+---
+
+## Tabla: log_consultas
+
+Auditoría de todas las consultas realizadas por los usuarios.
+
+```sql
+CREATE TABLE log_consultas (
+    LogId          INT AUTO_INCREMENT PRIMARY KEY,
+    ClienteId      VARCHAR(20),          -- cédula o ID del cliente consultado
+    FechaConsulta  DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Usuario        VARCHAR(100),
+    TipoConsulta   VARCHAR(50),          -- 'cliente', 'medidor', 'revisiones'
+    Detalles       TEXT
+)
+```
+
+**Escritura:** automática al consumir los endpoints de consulta (`/api/consulta/tiempos`, `/api/revisiones/consultar`). También manual via `POST /api/logConsultas/registrar-consulta`.
+
+---
+
+## Orden de carga inicial
+
+Para una instalación desde cero ejecutar los scripts SQL en este orden:
 
 ```bash
-# Backup completo
-mysqldump -u usuario -p clientesCI > backup_clientesCI_$(date +%Y%m%d).sql
-
-# Backup solo estructura
-mysqldump -u usuario -p --no-data clientesCI > estructura_clientesCI.sql
-
-# Backup solo datos
-mysqldump -u usuario -p --no-create-info clientesCI > datos_clientesCI.sql
+mysql -u usuario -p clientesCI < src/schemas/01_clientesCI_tiempos.sql
+mysql -u usuario -p clientesCI < src/schemas/tablaEmpleados.sql
+mysql -u usuario -p clientesCI < src/schemas/tabla_medidores.sql
+mysql -u usuario -p clientesCI < src/schemas/tabla_clientesSac.sql
+mysql -u usuario -p clientesCI < src/schemas/tablas\ marcopolo_tipoFaccc.sql
+mysql -u usuario -p clientesCI < src/schemas/Correria.sql
+mysql -u usuario -p clientesCI < src/schemas/log_consultas.sql
+mysql -u usuario -p clientesCI < src/schemas/Obs_Lectura.sql
+mysql -u usuario -p clientesCI < src/schemas/Revisiones_sac.sql
+mysql -u usuario -p clientesCI < src/schemas/Revisiones_sirius.sql
+mysql -u usuario -p clientesCI < src/schemas/Revisiones_sirius_master.sql
+mysql -u usuario -p clientesCI < src/schemas/Revisiones_sac.sql
 ```
-
-### Limpieza de Datos
-
-```sql
--- Eliminar registros antiguos (más de 2 años)
-DELETE FROM tiempos 
-WHERE ANO < YEAR(CURDATE()) - 2;
-
--- Limpiar registros huérfanos
-DELETE t FROM tiempos t
-LEFT JOIN medidores m ON t.CLIENTE = m.cliente_medidor
-WHERE m.cliente_medidor IS NULL;
-```
-
----
-
-## Migración y Versionado
-
-### Scripts de Migración
-
-Los scripts SQL están organizados en:
-- `01_clientesCI_tiempos.sql` - Tabla principal y base de datos
-- `tablaEmpleados.sql` - Tabla de empleados
-- `tabla_medidores.sql` - Tabla de medidores
-
-### Orden de Ejecución
-
-1. Ejecutar `01_clientesCI_tiempos.sql` (crea BD y tabla principal)
-2. Ejecutar `tablaEmpleados.sql` (crea tabla empleados)
-3. Ejecutar `tabla_medidores.sql` (crea tabla medidores)
-
-```bash
-mysql -u usuario -p < src/schemas/01_clientesCI_tiempos.sql
-mysql -u usuario -p < src/schemas/tablaEmpleados.sql
-mysql -u usuario -p < src/schemas/tabla_medidores.sql
-```
-
----
-
-## Notas Importantes
-
-1. **Charset UTF8MB4**: Soporta emojis y caracteres especiales
-2. **Collation Unicode**: Ordenamiento correcto para caracteres latinos
-3. **InnoDB Engine**: Soporte para transacciones y claves foráneas
-4. **Timestamps**: Automáticos para auditoría de cambios
-5. **Índices**: Optimizados para consultas frecuentes por cliente, período y medidor

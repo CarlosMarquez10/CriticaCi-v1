@@ -1,191 +1,339 @@
-# API Documentation - CriticaCi-v1 📚
+# API Reference — CriticaCi-v2
 
-Esta documentación describe todos los endpoints disponibles en la API de CriticaCi-v1.
+Base URL: `https://server.asolounbit.com`
 
-## Base URL
+Los endpoints marcados con 🔒 requieren header:
 ```
-https://vms41rr2-3000.use2.devtunnels.ms/api
+Authorization: Bearer <authToken>
 ```
-
-## Índice
-- [Medidores](#medidores)
-- [Clientes](#clientes)
-- [Empleados](#empleados)
-- [Archivos](#archivos)
-- [Excel/Reportes](#excelreportes)
-- [Códigos de Respuesta](#códigos-de-respuesta)
-- [Ejemplos de Uso](#ejemplos-de-uso)
 
 ---
 
-## Medidores
+## Índice
 
-### 🔍 Consultar Medidor por Cliente
-**GET** `/api/medidores/:cliente_medidor`  
-**GET** `/api/medidores?cliente_medidor=:cliente_medidor`
+- [Autenticación](#autenticación)
+- [Consultas (tiempos)](#consultas-tiempos)
+- [Revisiones](#revisiones)
+- [Empleados](#empleados)
+- [Archivos y carga de datos](#archivos-y-carga-de-datos)
+- [Medidores](#medidores)
+- [Clientes](#clientes)
+- [Log de consultas](#log-de-consultas)
+- [Panel de información](#panel-de-información)
+- [Códigos de respuesta](#códigos-de-respuesta)
 
-Obtiene información de medidores para un cliente específico.
+---
 
-**Parámetros:**
-- `cliente_medidor` (string): ID del cliente medidor
+## Autenticación
+
+### Validar cédula
+`POST /api/auth/validate-cedula`
+
+Verifica si la cédula existe y qué tipo de login requiere.
+
+**Body:**
+```json
+{ "cedula": "1004862354" }
+```
 
 **Respuesta exitosa:**
 ```json
 {
-  "ok": true,
-  "cliente_medidor": "202957",
-  "total": 1,
-  "rows": [
-    {
-      "id": 1,
-      "cliente_medidor": "202957",
-      "num_medidor": "12345678",
-      "marca_medidor": "ELSTER",
-      "tecnologia_medidor": "ELECTRONICO",
-      "tipo_medidor": "MONOFASICO"
-    }
-  ]
+  "success": true,
+  "data": {
+    "cedula": "1004862354",
+    "name": "Juan Pérez",
+    "cargo": "OPERATIVO 1",
+    "role": "BASICO",
+    "passwordChanged": false,
+    "requiresPasswordChange": true,
+    "nextStep": "temp-password"
+  }
 }
 ```
 
-**Respuesta de error:**
-```json
-{
-  "ok": false,
-  "message": "No se encontraron registros para cliente_medidor='202957'.",
-  "cliente_medidor": "202957",
-  "rows": [],
-  "total": 0
-}
-```
+`nextStep` puede ser `"temp-password"` (primer login) o `"normal-login"`.
 
-### 🔍 Buscar Múltiples Medidores
-**POST** `/api/medidores/search`
+---
 
-Busca medidores para uno o múltiples clientes.
+### Validar contraseña temporal
+`POST /api/auth/validate-temp-password`
 
 **Body:**
 ```json
-{
-  "cliente_medidor": "202957"
-}
-```
-o
-```json
-{
-  "clientes": ["202957", "123456", "789012"]
-}
+{ "cedula": "1004862354", "temporaryPassword": "Abc12345" }
 ```
 
-**Respuesta:**
+**Respuesta exitosa:**
 ```json
 {
-  "ok": true,
-  "totalConsultados": 3,
-  "totalEncontrados": 2,
-  "rows": [...],
-  "grouped": {
-    "202957": [...],
-    "123456": [...]
-  },
-  "clientesBuscados": ["202957", "123456", "789012"]
-}
-```
-
-### 📥 Cargar Medidores desde Excel
-**POST** `/api/medidores/load`
-
-Carga medidores desde un archivo Excel ubicado en `src/data/medidores.xlsx`.
-
-**Respuesta:**
-```json
-{
-  "ok": true,
-  "message": "Medidores cargados exitosamente",
-  "insertados": 150,
-  "actualizados": 25
+  "success": true,
+  "data": {
+    "cedula": "1004862354",
+    "temporaryToken": "<jwt>",
+    "requiresPasswordChange": true
+  }
 }
 ```
 
 ---
 
-## Clientes
+### Cambiar contraseña
+`POST /api/auth/change-password` 🔒 *(token temporal)*
 
-### 🔍 Consultar Registros de Cliente Individual
-**POST** `/api/cliente/records`
-
-Obtiene registros de lecturas para un cliente específico.
+La contraseña debe tener mínimo 8 caracteres, al menos una mayúscula, una minúscula y un número.
 
 **Body:**
 ```json
+{ "cedula": "1004862354", "newPassword": "NuevaPass1" }
+```
+
+**Respuesta exitosa:**
+```json
 {
-  "cliente": "1170143751",
-  "desde": 202401,
-  "hasta": 202512
+  "success": true,
+  "data": {
+    "authToken": "<jwt>",
+    "cedula": "1004862354",
+    "name": "Juan Pérez",
+    "cargo": "OPERATIVO 1",
+    "role": "BASICO"
+  }
 }
 ```
 
-**Parámetros:**
-- `cliente` (string, requerido): ID del cliente
-- `desde` (number, opcional): Período inicial (YYYYMM)
-- `hasta` (number, opcional): Período final (YYYYMM)
+---
+
+### Login normal
+`POST /api/auth/login`
+
+**Body:**
+```json
+{ "cedula": "1004862354", "password": "NuevaPass1" }
+```
+
+**Respuesta exitosa:**
+```json
+{
+  "success": true,
+  "data": {
+    "authToken": "<jwt>",
+    "cedula": "1004862354",
+    "name": "Juan Pérez",
+    "cargo": "OPERATIVO 1",
+    "role": "BASICO"
+  }
+}
+```
+
+---
+
+### Cerrar sesión
+`POST /api/auth/logout` 🔒
+
+Respuesta: `{ "success": true, "message": "Sesión cerrada exitosamente" }`
+
+---
+
+### Verificar token
+`GET /api/auth/verify-token` 🔒
+
+Respuesta:
+```json
+{
+  "success": true,
+  "data": {
+    "cedula": "1004862354",
+    "name": "Juan Pérez",
+    "cargo": "OPERATIVO 1",
+    "role": "BASICO",
+    "lastLogin": "2026-05-11T20:00:00.000Z",
+    "tokenValid": true
+  }
+}
+```
+
+---
+
+## Consultas (tiempos)
+
+### Consultar por cliente o medidor
+`POST /api/consulta/tiempos` 🔒
+
+Busca en la tabla `tiempos` con fallback automático por mes y año.
+
+**Body (por cliente):**
+```json
+{ "tipo": "cliente", "cliente": "1170143751", "usuario": "Juan Pérez" }
+```
+
+**Body (por medidor):**
+```json
+{ "tipo": "medidor", "medidor": "7647545", "usuario": "Juan Pérez" }
+```
+
+**Respuesta exitosa (cliente):**
+```json
+{
+  "success": true,
+  "code": "CONSULTA_OK",
+  "data": {
+    "cliente": 1170143751,
+    "clienteId": 1170143751,
+    "tipo": "cliente",
+    "mesConsultado": 4,
+    "total": 1,
+    "registro": { ... },
+    "rows": [ ... ]
+  }
+}
+```
+
+**Respuesta exitosa (medidor):**
+```json
+{
+  "success": true,
+  "code": "CONSULTA_OK",
+  "data": {
+    "medidor": "7647545",
+    "cliente": "1170143751",
+    "clienteId": "1170143751",
+    "tipo": "medidor",
+    "mesConsultado": 4,
+    "total": 1,
+    "registro": { ... },
+    "rows": [ ... ]
+  }
+}
+```
+
+**Campos enriquecidos en `registro`:**
+- `direccion`, `nombre_cliente`, `barrio`, `marca_medidor`
+- `transformador`, `alimentador`, `tipo_registrador`
+- `ruta_reparto`, `ruta_lectura`
+- `tipo_facturacion`, `correo_electronico`
+- `lector` (nombre resuelto desde tabla `empleados`)
+- `Cliente_anterior_N`, `Cliente_posterior_N` (hasta 5 de cada lado)
+
+**Códigos de error:**
+
+| Code | HTTP | Descripción |
+|------|------|-------------|
+| `CLIENTE_REQUIRED` | 400 | Falta el campo `cliente` |
+| `MEDIDOR_REQUIRED` | 400 | Falta el campo `medidor` |
+| `CLIENTE_NO_ENCONTRADO` | 404 | Cliente no existe en ningún mes consultado |
+| `MEDIDOR_NO_ENCONTRADO` | 404 | Medidor no existe en ningún mes consultado |
+| `TIPO_NO_SOPORTADO` | 400 | `tipo` debe ser `"cliente"` o `"medidor"` |
+
+---
+
+### Consultar historial completo de un cliente
+`POST /api/consulta/tiempos/Cl` 🔒
+
+Devuelve todos los registros históricos de un cliente con consumos calculados por mes.
+
+**Body:**
+```json
+{ "cliente": "1170143751" }
+```
 
 **Respuesta:**
 ```json
 {
-  "ok": true,
-  "cliente": "1170143751",
-  "total": 12,
-  "rows": [
-    {
-      "id": 1,
-      "cliente": "1170143751",
-      "medidor": "12345678",
-      "lectura_actual": 1250,
-      "periodo": 202401,
-      "zona": "A1",
-      "ciclo": "01"
+  "success": true,
+  "data": {
+    "cliente": 1170143751,
+    "total": 12,
+    "rows": [
+      {
+        "MES": 1, "ANO": 2026, "nombreMes": "Enero",
+        "lectura": 1250, "nombreEmpleado": "Juan Pérez",
+        "cedulaEmpleado": "1004862354"
+      }
+    ],
+    "consumos": {
+      "Enero": { "mes": 1, "lecturaActual": 1250, "lecturaSiguiente": 1300, "consumo": 50 }
     }
-  ]
+  }
 }
 ```
 
-### 🔍 Consultar Registros de Múltiples Clientes
-**POST** `/api/clientes/records`
+---
 
-Obtiene registros para múltiples clientes.
+### Consultar medidor en SAC
+`POST /api/consulta/tiempos/medidorSac` 🔒
+
+**Body:**
+```json
+{ "medidor": "7647545" }
+```
+
+**Respuesta:**
+```json
+{
+  "success": true,
+  "data": [ { "Medidor": "7647545", "clienteId": "...", "Direccion": "...", "DEstadoCliente": "..." } ]
+}
+```
+
+---
+
+### Perfil de lector
+`POST /api/consulta/info/perfilLector` 🔒
+
+Estadísticas de lecturas realizadas por un operario.
+
+**Body:**
+```json
+{ "lector": "1004862354", "orderDir": "DESC" }
+```
+
+---
+
+## Revisiones
+
+### Consultar revisiones de un cliente
+`POST /api/revisiones/consultar` 🔒
+
+Devuelve revisiones de `clientes_servicios`. Los campos devueltos dependen del `cargo` del usuario:
+- **OPERATIVO 1/2/3** → campos reducidos (sin datos técnicos internos)
+- **Otros cargos** → todos los campos
 
 **Body:**
 ```json
 {
-  "clientes": ["1170143751", "1160143703"],
-  "desde": 202401,
-  "hasta": 202512,
-  "planop": false
+  "cliente": "467222",
+  "usuario": "Juan Pérez",
+  "tipoConsulta": "revisiones",
+  "detalles": "Consulta desde app"
 }
 ```
 
-**Parámetros:**
-- `clientes` (array|object, requerido): Lista de IDs de clientes o objeto `{"id": true}`
-- `desde` (number, opcional): Período inicial (YYYYMM)
-- `hasta` (number, opcional): Período final (YYYYMM)
-- `planop` (boolean, opcional): Si `true` devuelve array plano, si `false` agrupa por cliente
-
-**Límites:**
-- Máximo 10,000 clientes por solicitud
-
-**Respuesta (agrupada):**
+**Respuesta (perfil operativo):**
 ```json
 {
   "ok": true,
-  "total": 24,
-  "desde": 202401,
-  "hasta": 202512,
-  "clientes": 2,
-  "data": {
-    "1170143751": [...],
-    "1160143703": [...]
-  }
+  "count": 2,
+  "rows": [
+    {
+      "CLIENTE_ID": "467222",
+      "NOMBRE": "...",
+      "DIRECCION": "...",
+      "CICLO": "01",
+      "SERIE_I": "...",
+      "MARCA_I": "...",
+      "NUMERO_REVISION": 123,
+      "D_TIPO": "...",
+      "FECHA_SOLICITUD": "...",
+      "FECHA_REVISION": "...",
+      "REVISOR": "...",
+      "D_REVISOR": "...",
+      "OBSERVACION": "...",
+      "D_OBSERVACION": "...",
+      "OBSREVISION": "...",
+      "TRANSFORMADOR": "..."
+    }
+  ]
 }
 ```
 
@@ -193,189 +341,150 @@ Obtiene registros para múltiples clientes.
 
 ## Empleados
 
-### 📥 Importar Empleados desde Excel
-**POST** `/api/empleados/importar`
+### Importar empleados desde Excel
+`POST /api/empleados/importar`
 
-Importa empleados desde un archivo Excel ubicado en `src/data/empleados.xlsx`.
+El archivo debe estar en `src/data/`. Solo inserta registros **nuevos** (no actualiza existentes).
 
-**Respuesta:**
+**Columnas requeridas en el Excel:** `Sede`, `Cedula`, `Nombre`, `Cargo`
+
+**Body:**
+```json
+{ "filename": "empleados.xlsx" }
+```
+
+**Respuesta exitosa:**
 ```json
 {
   "ok": true,
-  "message": "Empleados importados exitosamente",
-  "procesados": 50,
-  "insertados": 45,
-  "actualizados": 5,
-  "errores": []
+  "success": true,
+  "message": "Se insertaron 15 empleados nuevos.",
+  "totalLeidas": 202,
+  "insertados": 15,
+  "duplicados": 187,
+  "jsonGenerado": true
 }
 ```
 
 ---
 
-## Archivos
+## Archivos y carga de datos
 
-### 📁 Listar Archivos
-**GET** `/api/files`
+### Listar archivos de una carpeta
+`GET /api/files`
 
-Lista y cuenta archivos `.xlsx` en el directorio `filesTiempos`.
+Devuelve archivos `.xlsx` en `src/data/` o `filesTiempos/`.
 
-**Respuesta:**
+---
+
+### Cargar archivo de tiempos
+`POST /api/load`
+
+**Body:**
 ```json
-{
-  "ok": true,
-  "directorio": "filesTiempos",
-  "totalArchivos": 5,
-  "archivos": [
-    {
-      "nombre": "TIEMPO_CUT-01-ABRIL.xlsx",
-      "tamaño": "2.5 MB",
-      "fechaModificacion": "2024-01-15T10:30:00Z"
-    }
-  ]
-}
+{ "filename": "TIEMPOS_ABRIL.xlsx" }
 ```
 
-### 📤 Cargar Archivo
-**POST** `/api/load`
+---
 
-Procesa un archivo específico del directorio `filesTiempos`.
+### Cargar catálogos (clientes, revisiones, etc.)
+`POST /api/data/load`
+
+**Body:**
+```json
+{ "filename": "clientes.xlsx", "target": "clientes" }
+```
+
+Targets disponibles: `clientes`, `clientessac`, `tipofacturacion`, `revisiones`, `correria`, `revisionessac`, `revisionessirius`
+
+---
+
+### Cargar medidores
+`POST /api/medidores/load`
+
+Lee `src/data/medidores.xlsx` y hace upsert en la tabla `medidores`.
+
+---
+
+### Subir archivo a `src/data/`
+`POST /api/upload/data` — `multipart/form-data`, campo `files`
+
+### Subir archivo a `filesTiempos/`
+`POST /api/upload/times` — `multipart/form-data`, campo `files`
+
+Límite: 50 MB por archivo. Formatos: `.xlsx`, `.xls`, `.csv`
+
+---
+
+## Clientes
+
+### Consultar un cliente
+`POST /api/cliente/records`
+
+**Body:**
+```json
+{ "cliente": "1170143751", "desde": 202401, "hasta": 202512 }
+```
+
+### Consultar múltiples clientes
+`POST /api/clientes/records`
+
+**Body:**
+```json
+{ "clientes": ["1170143751", "1160143703"], "desde": 202401, "hasta": 202512 }
+```
+
+---
+
+## Log de consultas
+
+### Registrar una consulta externa
+`POST /api/logConsultas/registrar-consulta`
 
 **Body:**
 ```json
 {
-  "filename": "TIEMPO_CUT-01-ABRIL.xlsx"
+  "clienteId": "1170143751",
+  "usuario": "Juan Pérez",
+  "tipoConsulta": "cliente",
+  "detalles": "Consulta desde app móvil"
 }
 ```
+
+**Respuesta:** `{ "ok": true }`
+
+---
+
+## Panel de información
+
+### Obtener conteos del panel
+`GET /api/consulta/informacion/panel` 🔒
 
 **Respuesta:**
 ```json
 {
-  "ok": true,
-  "message": "Archivo procesado exitosamente",
-  "archivo": "TIEMPO_CUT-01-ABRIL.xlsx",
-  "registrosProcesados": 1250,
-  "registrosInsertados": 1200,
-  "errores": 50
+  "success": true,
+  "data": {
+    "cantidad_lectura": 150000,
+    "cantidad_consulta": 3200,
+    "cantidad_empleado": 202,
+    "cantidad_empleado_activo": 180,
+    "cantidad_cliente_sac": 95000,
+    "cantidad_tipo_factura": 1200
+  }
 }
 ```
 
 ---
 
-## Excel/Reportes
+## Códigos de respuesta
 
-### 📊 Generar Reporte Excel Completo
-**GET** `/api/excel/generate`
-
-Genera un archivo Excel completo con todos los registros enriquecidos y observaciones.
-
-**Respuesta:**
-- Descarga directa del archivo `RegistrosConObservaciones.xlsx`
-- Content-Type: `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
-
-**Columnas incluidas:**
-- Datos básicos: CLIENTE, MEDIDOR, ZONA, CICLO, PERIODO
-- Lecturas: LECTURA_ACTUAL, LECTURAFACTURADA, TIPOLECTURA
-- Observaciones: TIPODEERROR, ACLARACIONES, KWAJUSTADOS
-- Lecturas históricas: Lectura_1, Lectura_2, Lectura_3, Lectura_4
-- Observaciones históricas: Obs_Lectura_1, Obs_Lectura_2, Obs_Lectura_3, Obs_Lectura_4
-- Información del medidor: medidor, marcamedidor, tipomedidor
-- Operario: Operario, cedula, tipo, sede
-- Validación: Validacion, obsValidacion
-
-### 📊 Generar Reporte Excel Personalizado
-**POST** `/api/excel/custom`
-
-Genera un archivo Excel personalizado con filtros específicos.
-
-**Body:**
-```json
-{
-  "zona": "A1",
-  "ciclo": "01",
-  "tipoError": "LECTURA_IMPOSIBLE",
-  "operario": "JUAN_PEREZ",
-  "incluirLecturasHistoricas": true
-}
-```
-
-**Parámetros (todos opcionales):**
-- `zona` (string): Filtrar por zona específica
-- `ciclo` (string): Filtrar por ciclo específico
-- `tipoError` (string): Filtrar por tipo de error específico
-- `operario` (string): Filtrar por operario específico
-- `incluirLecturasHistoricas` (boolean): Incluir columnas de lecturas históricas
-
-**Respuesta:**
-- Descarga directa del archivo Excel filtrado
-- Content-Type: `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
-
----
-
-## Códigos de Respuesta
-
-| Código | Descripción |
-|--------|-------------|
+| HTTP | Significado |
+|------|-------------|
 | 200 | Éxito |
-| 400 | Solicitud incorrecta (parámetros faltantes o inválidos) |
+| 201 | Creado / registrado exitosamente |
+| 400 | Datos faltantes o inválidos |
+| 401 | Token inválido o expirado |
+| 403 | Sin permisos para este recurso |
 | 404 | Recurso no encontrado |
-| 413 | Payload demasiado grande (>10,000 clientes) |
 | 500 | Error interno del servidor |
-
----
-
-## Ejemplos de Uso
-
-### Consultar un medidor específico
-```bash
-curl -X GET "https://vms41rr2-3000.use2.devtunnels.ms/api/medidores/202957"
-```
-
-### Buscar múltiples medidores
-```bash
-curl -X POST "https://vms41rr2-3000.use2.devtunnels.ms/api/medidores/search" \
-  -H "Content-Type: application/json" \
-  -d '{"clientes": ["202957", "123456"]}'
-```
-
-### Obtener registros de un cliente
-```bash
-curl -X POST "https://vms41rr2-3000.use2.devtunnels.ms/api/cliente/records" \
-  -H "Content-Type: application/json" \
-  -d '{"cliente": "1170143751", "desde": 202401, "hasta": 202412}'
-```
-
-### Generar reporte Excel
-```bash
-curl -X GET "https://vms41rr2-3000.use2.devtunnels.ms/api/excel/generate" \
-  --output "reporte.xlsx"
-```
-
-### Generar reporte Excel personalizado
-```bash
-curl -X POST "https://vms41rr2-3000.use2.devtunnels.ms/api/excel/custom" \
-  -H "Content-Type: application/json" \
-  -d '{"zona": "A1", "incluirLecturasHistoricas": true}' \
-  --output "reporte_personalizado.xlsx"
-```
-
----
-
-## Notas Importantes
-
-1. **Formato de Fechas**: Los períodos se manejan en formato YYYYMM (ej: 202401 para enero 2024)
-
-2. **Límites de Solicitud**: 
-   - Máximo 10,000 clientes por solicitud en `/api/clientes/records`
-   - Tamaño máximo de JSON: 2MB
-
-3. **Archivos Excel**: 
-   - Los archivos se generan con formato profesional incluyendo bordes y estilos
-   - Las columnas se ajustan automáticamente al contenido
-
-4. **Manejo de Errores**: 
-   - Todos los endpoints devuelven un objeto JSON con la propiedad `ok`
-   - Los errores incluyen mensajes descriptivos en español
-
-5. **Base de Datos**: 
-   - La API utiliza MySQL con pool de conexiones
-   - Las consultas están optimizadas para grandes volúmenes de datos

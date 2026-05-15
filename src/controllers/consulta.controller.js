@@ -72,21 +72,24 @@ export const consultarTiempos = asyncHandler(async (req, res) => {
       });
     }
 
-    return res.status(200).json({
+    const responseCliente = {
       success: true,
       code: 'CONSULTA_OK',
-      message: mesConsultado 
-        ? `Registro encontrado en mes ${mesConsultado}` 
+      message: mesConsultado
+        ? `Registro encontrado en mes ${mesConsultado}`
         : 'Registro encontrado en tabla de clientes',
       data: {
         cliente: Number(cliente),
+        clienteId: Number(cliente),
         tipo: 'cliente',
         mesConsultado,
         total: rows.length,
         rows,
         registro: rows[0] || null,
       },
-    });
+    };
+    // console.log('📤 [consulta/cliente] Respuesta enviada:', JSON.stringify({ ...responseCliente, data: { ...responseCliente.data, rows: `[${rows.length} registros]` } }, null, 2));
+    return res.status(200).json(responseCliente);
   }
 
   // ==================== CONSULTA POR MEDIDOR ====================
@@ -121,19 +124,23 @@ export const consultarTiempos = asyncHandler(async (req, res) => {
       });
     }
 
-    return res.status(200).json({
+    const responseMedidor = {
       success: true,
       code: 'CONSULTA_OK',
       message: `Registro encontrado en mes ${mesConsultado}`,
       data: {
         medidor: medidorVal,
+        cliente: rows[0]?.CLIENTE ?? rows[0]?.cliente ?? null,
+        clienteId: rows[0]?.CLIENTE ?? rows[0]?.cliente ?? null,
         tipo: 'medidor',
         mesConsultado,
         total: rows.length,
         rows,
         registro: rows[0] || null,
       },
-    });
+    };
+    // console.log('📤 [consulta/medidor] Respuesta enviada:', JSON.stringify({ ...responseMedidor, data: { ...responseMedidor.data, rows: `[${rows.length} registros]` } }, null, 2));
+    return res.status(200).json(responseMedidor);
   }
 
   // ==================== TIPO NO SOPORTADO ====================

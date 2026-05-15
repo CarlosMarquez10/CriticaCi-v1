@@ -81,8 +81,7 @@
                                             <option value="clientes">Clientes</option>
                                             <option value="clientesSac">ClientesSac</option>
                                             <option value="tipofactura">TipoFactura</option>
-                                            <option value="reporte">Reporte</option>
-                                            <option value="revisiones">Revisiones</option>
+                                                            <option value="revisiones">Revisiones</option>
                                             <option value="correria">Correria</option>
                                             <option value="revisionesSac">Revisiones_Sac</option>
                                             <option value="revisionesSirius">Revisiones_Sirius</option>
@@ -231,17 +230,7 @@ function runFile(filename, fileType) {
     runBtn.disabled = true;
     runBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
     
-    if (fileType === 'reporte') {
-        // Ejecutar el endpoint de procesamiento completo
-        window.open(`${BASE_URL}/api/process/complete`, '_blank');
-        // Restaurar el botón después de abrir la ventana
-        setTimeout(() => {
-            runBtn.disabled = false;
-            runBtn.innerHTML = originalContent;
-            showAlert('success', 'Procesando reporte completo. Se abrirá una nueva ventana.');
-        }, 1000);
-        return;
-    } else if (fileType === 'empleados') {
+    if (fileType === 'empleados') {
         // Ejecutar el endpoint de empleados
         fetch(`${BASE_URL}/api/empleados/importar`, {
             method: 'POST',
@@ -252,23 +241,27 @@ function runFile(filename, fileType) {
         })
         .then(response => response.json())
         .then(data => {
-            // Restaurar el botón
             runBtn.disabled = false;
             runBtn.innerHTML = originalContent;
-            
-            if (data.success) {
-                showAlert('success', `Archivo "${filename}" procesado correctamente como ${fileType}`);
+
+            if (data.ok === true || data.success === true) {
+                let msg = data.message || 'Importación finalizada.';
+                if (data.insertados !== undefined) {
+                    msg += ` Nuevos: ${data.insertados}.`;
+                }
+                if (data.duplicados > 0) {
+                    msg += ` Ya existían: ${data.duplicados}.`;
+                }
+                showAlert('success', msg);
             } else {
-                showAlert('danger', `Error al procesar el archivo "${filename}": ${data.message}`);
+                showAlert('danger', `Error al procesar "${filename}": ${data.message || 'Error desconocido'}`);
             }
         })
         .catch(error => {
-            // Restaurar el botón
             runBtn.disabled = false;
             runBtn.innerHTML = originalContent;
-            
-            console.error('Error:', error);
-            showAlert('danger', `Error al procesar el archivo "${filename}": ${error.message}`);
+            console.error('Error empleados:', error);
+            showAlert('danger', `Error de red al procesar "${filename}": ${error.message}`);
         });
     } else if (fileType === 'medidores') {
         // Ejecutar el endpoint de medidores
