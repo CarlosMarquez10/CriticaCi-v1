@@ -141,20 +141,21 @@ app.use(errorHandler);
  * @constant {number} PORT
  * @description Puerto obtenido de variable de entorno PORT o 3001 por defecto
  */
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
+const HOST = process.env.HOST || '127.0.0.1';
 
 /**
  * @constant {string} BASE_URL
  * @description URL base obtenida de variable de entorno BASE_URL o localhost por defecto
  */
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const BASE_URL = process.env.BASE_URL || `http://${HOST}:${PORT}`;
 
 /**
  * Inicia el servidor HTTP
  * @description Arranca el servidor Express en el puerto especificado
  */
 // Inicializa el servidor y ajusta timeouts para cargas largas
-const server = app.listen(PORT, () => console.log(`API escuchando en ${BASE_URL}`));
+const server = app.listen(PORT, HOST, () => console.log(`API escuchando en ${BASE_URL}`));
 
 // Configuración de timeouts para evitar cortes en operaciones prolongadas
 const SERVER_TIMEOUT_MS = Number(process.env.SERVER_TIMEOUT_MS || 900000); // 10 minutos

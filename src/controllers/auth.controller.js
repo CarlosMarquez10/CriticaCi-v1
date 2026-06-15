@@ -40,7 +40,8 @@ const getRoleFromCargo = (cargo) => {
  * @returns {Object} Información del usuario y siguiente paso
  */
 export const validateCedula = asyncHandler(async (req, res) => {
-  const { cedula } = req.body;
+  const { cedula } = req.body || {};
+  console.log('Validando cédula:', cedula);
 
   if (!cedula) {
     return res.status(400).json({

@@ -1,12 +1,18 @@
 {
-  "name": "criticaci-v1",
+  "name": "criticaci-api",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon src/server.js",
     "empleados": "node scripts/convertir-empleados.js",
-    "emp": "node src/services/crearjsonempleados.js"
+    "emp": "node src/services/crearjsonempleados.js",
+    "start": "pm2 start ecosystem.config.cjs",
+    "start:prod": "pm2 start ecosystem.config.cjs --env production",
+    "stop": "pm2 stop criticaci-api",
+    "restart": "pm2 restart criticaci-api",
+    "logs": "pm2 logs criticaci-api",
+    "delete": "pm2 delete criticaci-api"
   },
   "keywords": [],
   "author": "",
