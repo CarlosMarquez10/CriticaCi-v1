@@ -149,6 +149,8 @@ const HOST = process.env.HOST || '127.0.0.1';
  * @description URL base obtenida de variable de entorno BASE_URL o localhost por defecto
  */
 const BASE_URL = process.env.BASE_URL || `http://${HOST}:${PORT}`;
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
+
 
 /**
  * Inicia el servidor HTTP
