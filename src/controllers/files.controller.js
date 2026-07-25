@@ -8,7 +8,7 @@ import { loadRevisionesFile } from '../services/loaderRevisiones.service.js';
 import { loadCorreriasFile } from '../services/loaderCorrerias.service.js';
 import { loadRevisionesSacFile } from '../services/loaderRevisionesSac.service.js';
 import { loadRevisionesSiriusFile } from '../services/loaderRevisionesSirius.service.js';
-import { loadOneFile } from '../services/loader.service.js';
+import { startTiemposLoadJob, getLoadJob } from '../services/loadJobs.service.js';
 
 /**
  * @fileoverview Controlador para manejo de archivos Excel
@@ -70,19 +70,48 @@ export const getDataFiles = asyncHandler(async (req, res) => {
  * // }
  */
 export const postLoad = asyncHandler(async (req, res) => {
-const { filename } = req.body || {};
-if (!filename) {
-return res.status(400).json({ ok: false, message: 'Falta filename' });
-}
-const full = resolveXlsx(filename);
-if (!fs.existsSync(full)) {
-return res.status(404).json({ ok: false, message: 'Archivo no encontrado' });
-}
-  // Extiende el timeout de la respuesta para cargas masivas
-  res.setTimeout(Number(process.env.REQ_TIMEOUT_MS || process.env.SERVER_TIMEOUT_MS || 600000));
+  const { filename } = req.body || {};
+  if (!filename) {
+    return res.status(400).json({ ok: false, message: 'Falta filename' });
+  }
+  const full = resolveXlsx(filename);
+  if (!fs.existsSync(full)) {
+    return res.status(404).json({ ok: false, message: 'Archivo no encontrado' });
+  }
 
-  const result = await loadOneFile(full);
-  res.json(result);
+  // Responde de inmediato y procesa en background (evita Cloudflare 524 ~100s)
+  const { jobId } = startTiemposLoadJob(full, filename);
+  res.status(202).json({
+    ok: true,
+    async: true,
+    jobId,
+    message: 'Carga iniciada en segundo plano',
+    file: filename,
+  });
+});
+
+/**
+ * Consulta el estado de una carga asíncrona de tiempos
+ * GET /api/load/status/:jobId
+ */
+export const getLoadStatus = asyncHandler(async (req, res) => {
+  const { jobId } = req.params;
+  const job = getLoadJob(jobId);
+  if (!job) {
+    return res.status(404).json({ ok: false, message: 'Job no encontrado o expirado' });
+  }
+
+  res.json({
+    ok: job.status !== 'error',
+    jobId: job.id,
+    status: job.status,
+    filename: job.filename,
+    file: job.file || job.filename,
+    inserted: job.inserted,
+    failedRows: job.failedRows,
+    message: job.message,
+    error: job.error,
+  });
 });
 
 /**

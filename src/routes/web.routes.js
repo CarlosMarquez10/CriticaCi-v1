@@ -6,8 +6,10 @@
 import { Router } from 'express';
 import path from 'path';
 import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
 import { 
-    upload, 
+    uploadData,
+    uploadTimes,
     showUploadDataView, 
     showUploadTimesView, 
     uploadFiles, 
@@ -16,6 +18,11 @@ import {
     downloadFile,
     handleMulterError 
 } from '../controllers/upload.controller.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const TIMES_DIR = path.join(__dirname, '../../filesTiempos');
+const DATA_DIR = path.join(__dirname, '../data');
 
 const router = Router();
 
@@ -46,19 +53,13 @@ router.get('/upload-times', showUploadTimesView);
  * @route POST /api/upload/data
  * @description Endpoint para subir archivos a la carpeta data
  */
-router.post('/api/upload/data', upload.array('files', 5), (req, res) => {
-    req.body.uploadType = 'data';
-    uploadFiles(req, res);
-}, handleMulterError);
+router.post('/api/upload/data', uploadData.array('files', 5), uploadFiles, handleMulterError);
 
 /**
  * @route POST /api/upload/times
  * @description Endpoint para subir archivos a la carpeta filesTiempos
  */
-router.post('/api/upload/times', upload.array('files', 5), (req, res) => {
-    req.body.uploadType = 'times';
-    uploadFiles(req, res);
-}, handleMulterError);
+router.post('/api/upload/times', uploadTimes.array('files', 5), uploadFiles, handleMulterError);
 
 /**
  * @route GET /files/:type
@@ -94,9 +95,9 @@ router.get('/api/files/:type', async (req, res) => {
         let folderPath;
         
         if (type === 'times') {
-            folderPath = path.join(__dirname, '../../filesTiempos');
+            folderPath = TIMES_DIR;
         } else {
-            folderPath = path.join(__dirname, '../data');
+            folderPath = DATA_DIR;
         }
 
         const files = await fs.readdir(folderPath);

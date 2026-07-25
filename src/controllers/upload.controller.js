@@ -11,40 +11,34 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/** Carpeta canónica de tiempos (raíz del proyecto) */
+const TIMES_DIR = path.join(__dirname, '../../filesTiempos');
+/** Carpeta canónica de datos */
+const DATA_DIR = path.join(__dirname, '../data');
+
 /**
- * Configuración de almacenamiento para multer
- * @description Define dónde y cómo se almacenan los archivos subidos
+ * Crea storage multer con destino fijo (no depende de req.body multipart)
+ * @param {'times'|'data'} uploadType
  */
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        // Determinar carpeta de destino basada en el tipo de archivo
-        const uploadType = req.body.uploadType || req.params.type;
-        let uploadPath;
-        
-        if (uploadType === 'times') {
-            // Usar ruta absoluta para la carpeta filesTiempos en la raíz del proyecto
-            uploadPath = path.join(process.cwd(), '../../filesTiempos');
-            console.log('Ruta de destino para archivos de tiempos:', uploadPath);
-        } else {
-            uploadPath = path.join(__dirname, '../data');
+function createStorage(uploadType) {
+    return multer.diskStorage({
+        destination: function (req, file, cb) {
+            const uploadPath = uploadType === 'times' ? TIMES_DIR : DATA_DIR;
+            fs.mkdir(uploadPath, { recursive: true })
+                .then(() => {
+                    console.log('Directorio destino upload:', uploadPath);
+                    cb(null, uploadPath);
+                })
+                .catch(err => {
+                    console.error('Error al crear directorio:', err);
+                    cb(err);
+                });
+        },
+        filename: function (req, file, cb) {
+            cb(null, file.originalname);
         }
-        
-        // Crear directorio si no existe
-        fs.mkdir(uploadPath, { recursive: true })
-            .then(() => {
-                console.log('Directorio creado/verificado:', uploadPath);
-                cb(null, uploadPath);
-            })
-            .catch(err => {
-                console.error('Error al crear directorio:', err);
-                cb(err);
-            });
-    },
-    filename: function (req, file, cb) {
-        // Usar el nombre original del archivo sin modificaciones
-        cb(null, file.originalname);
-    }
-});
+    });
+}
 
 /**
  * Filtro de archivos para validar tipos permitidos
@@ -71,18 +65,31 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
+const multerLimits = {
+    fileSize: 200 * 1024 * 1024, // 200MB (soporta Excel mensual ~700k filas)
+    files: 5
+};
+
 /**
- * Configuración de multer
- * @constant {multer.Multer} upload
+ * Multer para archivos de tiempos → filesTiempos/
  */
-export const upload = multer({
-    storage: storage,
-    fileFilter: fileFilter,
-    limits: {
-        fileSize: 90 * 1024 * 1024, // 90MB máximo (aumentado desde 50MB)
-        files: 5 // Máximo 5 archivos por vez
-    }
+export const uploadTimes = multer({
+    storage: createStorage('times'),
+    fileFilter,
+    limits: multerLimits
 });
+
+/**
+ * Multer para archivos de datos → src/data/
+ */
+export const uploadData = multer({
+    storage: createStorage('data'),
+    fileFilter,
+    limits: multerLimits
+});
+
+/** @deprecated Usar uploadTimes / uploadData */
+export const upload = uploadData;
 
 /**
  * Controlador para mostrar la vista de subida de archivos de datos
@@ -160,7 +167,7 @@ export const handleMulterError = (error, req, res, next) => {
         if (error.code === 'LIMIT_FILE_SIZE') {
             return res.status(413).json({
                 success: false,
-                message: 'El archivo es demasiado grande. El tamaño máximo permitido es 50MB.',
+                message: 'El archivo es demasiado grande. El tamaño máximo permitido es 200MB.',
                 error: 'FILE_TOO_LARGE'
             });
         }
@@ -208,10 +215,10 @@ export const listFiles = async (req, res) => {
         let folderName;
         
         if (type === 'times') {
-            folderPath = path.join(__dirname, '../../filesTiempos');
+            folderPath = TIMES_DIR;
             folderName = 'Archivos de Tiempos';
         } else {
-            folderPath = path.join(__dirname, '../data');
+            folderPath = DATA_DIR;
             folderName = 'Archivos de Datos';
         }
 
@@ -274,9 +281,9 @@ export const downloadFile = async (req, res) => {
         let folderPath;
         
         if (type === 'times') {
-            folderPath = path.join(__dirname, '../../filesTiempos');
+            folderPath = TIMES_DIR;
         } else {
-            folderPath = path.join(__dirname, '../data');
+            folderPath = DATA_DIR;
         }
 
         const filePath = path.join(folderPath, filename);
@@ -318,9 +325,9 @@ export const deleteFile = async (req, res) => {
         let folderPath;
         
         if (type === 'times') {
-            folderPath = path.join(__dirname, '../../filesTiempos');
+            folderPath = TIMES_DIR;
         } else {
-            folderPath = path.join(__dirname, '../data');
+            folderPath = DATA_DIR;
         }
 
         const filePath = path.join(folderPath, filename);

@@ -70,40 +70,86 @@ export const toNull = (v) => (v === undefined || v === null || String(v).trim() 
  * toInt(""); // null
  */
 export const toInt = (v) => {
+  if (v === undefined || v === null || String(v).trim() === '') return null;
   const n = Number(String(v).replace(/[^0-9-]/g, ''));
-  return Number.isFinite(n) ? n : null;
+  // Number('') === 0; no tratar vacío como cero válido
+  if (!Number.isFinite(n) || String(v).replace(/[^0-9-]/g, '') === '') return null;
+  return n;
 };
 
 /**
- * Convierte valores a fechas UTC desde diferentes formatos
+ * Formatea año/mes/día como fecha de calendario (sin zona horaria)
+ * @param {number} y
+ * @param {number} m - 1-12
+ * @param {number} d
+ * @returns {string|null} YYYY-MM-DD
+ */
+function formatYmd(y, m, d) {
+  if (!Number.isFinite(y) || !Number.isFinite(m) || !Number.isFinite(d)) return null;
+  if (y < 1000 || m < 1 || m > 12 || d < 1 || d > 31) return null;
+  return `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+}
+
+/**
+ * Convierte valores a fecha de calendario YYYY-MM-DD (sin desfase por timezone)
  * @function toDate
  * @param {any} v - Valor a convertir (Date, número serial Excel, string dd/mm/yyyy, ISO)
- * @returns {Date|null} Fecha UTC o null si no es válida
+ * @returns {string|null} Fecha 'YYYY-MM-DD' o null si no es válida
+ * @description
+ * Devuelve string (no Date) para que MySQL DATE guarde el día exacto del Excel.
+ * Antes se usaba Date UTC y mysql2 lo convertía a hora local (UTC-5) → un día menos.
  * @example
- * toDate("15/03/2024"); // Date UTC para 2024-03-15
- * toDate(45000); // Date desde serial Excel
- * toDate(new Date("2024-03-15")); // Date UTC normalizada
+ * toDate("15/03/2024"); // "2024-03-15"
+ * toDate(45520); // "2024-08-16" (serial Excel)
  * toDate("invalid"); // null
  */
 export const toDate = (v) => {
-  if (!v) return null;
-  // v puede venir como Excel date serial, Date, o string dd/mm/yyyy
-  if (v instanceof Date) return new Date(Date.UTC(v.getFullYear(), v.getMonth(), v.getDate()));
-  if (typeof v === 'number') {
-    // Excel serial (desde 1900-01-01)
-    const excelEpoch = new Date(Date.UTC(1899, 11, 30));
-    const ms = v * 86400000; // días a ms
-    return new Date(excelEpoch.getTime() + ms);
+  if (v === undefined || v === null || v === '') return null;
+
+  // Date de ExcelJS: suele ser medianoche UTC del día del Excel.
+  // En Colombia (UTC-5), getDate()/getMonth() locales bajan 1 día → hay que usar UTC.
+  if (v instanceof Date) {
+    if (Number.isNaN(v.getTime())) return null;
+    const isUtcMidnight =
+      v.getUTCHours() === 0 &&
+      v.getUTCMinutes() === 0 &&
+      v.getUTCSeconds() === 0 &&
+      v.getUTCMilliseconds() === 0;
+
+    if (isUtcMidnight) {
+      return formatYmd(v.getUTCFullYear(), v.getUTCMonth() + 1, v.getUTCDate());
+    }
+    return formatYmd(v.getFullYear(), v.getMonth() + 1, v.getDate());
   }
+
+  // Serial Excel (días desde 1899-12-30). Solo la parte entera = fecha de calendario.
+  if (typeof v === 'number' && Number.isFinite(v)) {
+    const serial = Math.floor(v);
+    if (serial < 1) return null;
+    const excelEpoch = Date.UTC(1899, 11, 30);
+    const utc = new Date(excelEpoch + serial * 86400000);
+    return formatYmd(utc.getUTCFullYear(), utc.getUTCMonth() + 1, utc.getUTCDate());
+  }
+
   const s = String(v).trim();
-  const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!s) return null;
+
+  // dd/mm/yyyy o dd-mm-yyyy
+  let m = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
   if (m) {
-    const [_, d, mo, y] = m.map(Number);
-    return new Date(Date.UTC(y, mo - 1, d));
+    return formatYmd(Number(m[3]), Number(m[2]), Number(m[1]));
   }
-  // ISO
-  const d = new Date(s);
-  return isNaN(d) ? null : new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+
+  // yyyy-mm-dd (con o sin hora)
+  m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) {
+    return formatYmd(Number(m[1]), Number(m[2]), Number(m[3]));
+  }
+
+  // Último recurso: parsear y tomar componentes UTC del día
+  const parsed = new Date(s);
+  if (Number.isNaN(parsed.getTime())) return null;
+  return formatYmd(parsed.getUTCFullYear(), parsed.getUTCMonth() + 1, parsed.getUTCDate());
 };
 
 /**
@@ -125,7 +171,7 @@ export const toTime = (v) => {
   if (typeof v === 'number' && v > 0 && v < 1.5) {
     const total = Math.round(v * 24 * 60 * 60);
     const hh = String(Math.floor(total / 3600)).padStart(2, '0');
-    const mm = String(Math.floor((total % 3600) / 60)).padStart(2, '00');
+    const mm = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
     const ss = String(total % 60).padStart(2, '0');
     return `${hh}:${mm}:${ss}`;
   }

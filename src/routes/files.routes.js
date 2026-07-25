@@ -4,7 +4,7 @@
  */
 
 import { Router } from 'express';
-import { getFiles, postLoad, getDataFiles, postLoadData } from '../controllers/files.controller.js';
+import { getFiles, postLoad, getLoadStatus, getDataFiles, postLoadData } from '../controllers/files.controller.js';
 
 const router = Router();
 
@@ -51,6 +51,7 @@ router.get('/data/files', getDataFiles);
  * // }
  */
 router.post('/load', postLoad);
+router.get('/load/status/:jobId', getLoadStatus);
 
 // Cargar clientes o tipo de facturación desde src/data
 router.post('/data/load', postLoadData);

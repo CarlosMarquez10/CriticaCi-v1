@@ -41,6 +41,13 @@
                         <div class="alert alert-info">
                             <i class="fas fa-info-circle me-2"></i>
                             Se encontraron <strong><%= files.length %></strong> archivo(s) en esta carpeta.
+                            <% if (folderType === 'times') { %>
+                                <br>
+                                <small>
+                                    Puedes copiar el Excel directo a <code>filesTiempos/</code> y solo usar <strong>Run</strong> (tipo <em>tiempos</em>).
+                                    Soporta un solo archivo mensual grande (~700k–800k filas); la inserción corre en segundo plano.
+                                </small>
+                            <% } %>
                         </div>
                         
                         <div class="file-list">
@@ -292,7 +299,7 @@ function runFile(filename, fileType) {
             showAlert('danger', `Error al procesar el archivo: ${error.message}`);
         });
     } else if (fileType === 'tiempos') {
-        // Ejecutar el endpoint de tiempos
+        // Carga asíncrona: evita timeout Cloudflare 524 en archivos grandes
         fetch(`${BASE_URL}/api/load`, {
             method: 'POST',
             headers: {
@@ -300,23 +307,81 @@ function runFile(filename, fileType) {
             },
             body: JSON.stringify({ filename: filename })
         })
-        .then(response => response.json())
-        .then(data => {
-            // Restaurar el botón
-            runBtn.disabled = false;
-            runBtn.innerHTML = originalContent;
-            
-            if (data.ok) {
-                showAlert('success', `Se insertaron ${data.inserted} registros correctamente del archivo ${data.file}`);
-            } else {
-                showAlert('danger', `Error al procesar el archivo: ${data.message || 'Error desconocido'}`);
+        .then(async (response) => {
+            const contentType = response.headers.get('content-type') || '';
+            if (!contentType.includes('application/json')) {
+                const text = await response.text();
+                throw new Error(
+                    response.status === 524
+                        ? 'Timeout del servidor (524). Reintenta; la carga ahora es en segundo plano.'
+                        : `Respuesta no JSON (HTTP ${response.status}). ${text.slice(0, 120)}`
+                );
             }
+            return response.json();
+        })
+        .then(async (data) => {
+            if (!data.ok || !data.jobId) {
+                runBtn.disabled = false;
+                runBtn.innerHTML = originalContent;
+                showAlert('danger', `Error al iniciar carga: ${data.message || 'Error desconocido'}`);
+                return;
+            }
+
+            // Polling lento + backoff ante 429 (Cloudflare rate limit)
+            let pollDelayMs = 5000;
+            const poll = async () => {
+                const statusRes = await fetch(`${BASE_URL}/api/load/status/${data.jobId}`, {
+                    cache: 'no-store'
+                });
+
+                if (statusRes.status === 429) {
+                    pollDelayMs = Math.min(pollDelayMs * 2, 30000);
+                    runBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Esperando...`;
+                    await new Promise(r => setTimeout(r, pollDelayMs));
+                    return poll();
+                }
+
+                const statusType = statusRes.headers.get('content-type') || '';
+                if (!statusType.includes('application/json')) {
+                    // No abortar la carga: reintentar (el job sigue en el servidor)
+                    pollDelayMs = Math.min(pollDelayMs * 2, 30000);
+                    runBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Reintentando...`;
+                    await new Promise(r => setTimeout(r, pollDelayMs));
+                    return poll();
+                }
+
+                const status = await statusRes.json();
+                pollDelayMs = 5000; // reset tras respuesta OK
+
+                if (status.status === 'running') {
+                    const n = status.inserted || 0;
+                    runBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${n.toLocaleString()}...`;
+                    await new Promise(r => setTimeout(r, pollDelayMs));
+                    return poll();
+                }
+
+                runBtn.disabled = false;
+                runBtn.innerHTML = originalContent;
+
+                if (status.status === 'done') {
+                    const failed = (status.failedRows && status.failedRows.length) || 0;
+                    let msg = `Se insertaron ${status.inserted} registros del archivo ${status.file || filename}`;
+                    if (failed) msg += ` (${failed} filas con error)`;
+                    showAlert('success', msg);
+                } else if (status.status === 'error') {
+                    showAlert('danger', `Error al procesar el archivo: ${status.error || status.message || 'Error desconocido'}`);
+                } else {
+                    // job expirado/no encontrado: la carga pudo haber terminado igual
+                    showAlert('warning', `No se pudo leer el estado del job. Revisa en BD si se insertó "${filename}" (ANO/MES).`);
+                }
+            };
+
+            showAlert('info', `Procesando "${filename}" en segundo plano...`);
+            await poll();
         })
         .catch(error => {
-            // Restaurar el botón
             runBtn.disabled = false;
             runBtn.innerHTML = originalContent;
-            
             console.error('Error:', error);
             showAlert('danger', `Error al procesar el archivo: ${error.message}`);
         });
