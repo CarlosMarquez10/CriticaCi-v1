@@ -41,6 +41,29 @@ const __dirname = path.dirname(__filename);
  */
 const app = express();
 
+const VIERNES_FRAME_ANCESTORS = [
+  "'self'",
+  'https://viernesci.web.app',
+  'https://viernesci.firebaseapp.com',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:4173',
+  'http://127.0.0.1:4173',
+  'https:',
+  'http:',
+].join(' ');
+
+app.use((_req, res, next) => {
+  const originalSet = res.setHeader.bind(res);
+  res.setHeader = (name, value) => {
+    if (String(name).toLowerCase() === 'x-frame-options') return res;
+    return originalSet(name, value);
+  };
+  res.removeHeader('X-Frame-Options');
+  originalSet('Content-Security-Policy', `frame-ancestors ${VIERNES_FRAME_ANCESTORS}`);
+  next();
+});
+
 // Configuración del motor de plantillas EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
